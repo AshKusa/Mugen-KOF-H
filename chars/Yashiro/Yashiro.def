@@ -1,0 +1,31 @@
+[Info]
+name = "Yashiro" 
+author = "Ahuron" 
+pal.defaults = 1,7 
+mugenversion = 1.1
+localcoord   = 427,240
+
+[Files]
+cmd     = Yashiro_Nanakase.cmd
+cns     = Yashiro_Nanakase.cns 
+st      = Yashiro_Nanakase.cns 
+st2     = Yashiro_Nanakase2.cns 
+st3     = ÐÂ.cns 
+st4     = ÐÂ2.cns 
+st5     = ÐÂ3.cns
+stcommon = common1.cns 
+sprite  = Yashiro_Nanakase.sff 
+anim    = Yashiro_Nanakase.air 
+sound   = Yashiro_Nanakase.snd 
+pal1    = pals/Yashiro_Nanakase.act
+pal2    = pals/Yashiro_Nanakase2.act
+pal3    = pals/Yashiro_Nanakase3.act
+pal4    = pals/Yashiro_Nanakase4.act
+pal5    = pals/Yashiro_Nanakase5.act
+pal6    = pals/Yashiro_Nanakase6.act
+pal7    = pals/Orochi_Yashiro.act
+pal8    = pals/Orochi_Yashiro2.act
+pal9    = pals/Orochi_Yashiro3.act
+pal10   = pals/Orochi_Yashiro4.act
+pal11   = pals/Orochi_Yashiro5.act
+pal12   = pals/Orochi_Yashiro6.act

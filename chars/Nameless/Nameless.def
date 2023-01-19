@@ -1,0 +1,36 @@
+[Info]
+name = "Nameless" 
+displayname = "Nameless" 
+author = "Ahuron" 
+pal.defaults = 1,2,3,4 
+mugenversion = 1.1
+localcoord   = 427,240
+
+[Files]
+cmd     = Nameless.cmd  
+cns     = Nameless.cns 
+st      = Nameless.cns 
+st2     = Nameless1.cns 
+st3     = Nameless2.cns 
+st4     = Nameless3.cns 
+st5     = AIconfig.cns
+st6     = 新.cns
+st7     = 新2.cns
+st8     = 新3.cns
+st9     = 新4.cns
+stcommon = common1.cns 
+sprite  = Nameless.sff 
+anim    = Nameless.air 
+sound   = Nameless.snd 
+pal1    = pals/Nameless1.act
+pal2    = pals/Nameless2.act
+pal3    = pals/Nameless3.act
+pal4    = pals/Nameless4.act
+pal5    = pals/Nameless1.act
+pal6    = pals/Nameless2.act
+pal7    = pals/Nameless3.act
+pal8    = pals/Nameless4.act
+pal9    = pals/Nameless1.act
+pal10    = pals/Nameless2.act
+pal11    = pals/Nameless3.act
+pal12    = pals/Nameless4.act

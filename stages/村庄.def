@@ -1,0 +1,439 @@
+
+;========================================================
+;  SAMURAI SHODOWN 6 BY  MASTER YODA
+;--------------------------------------------------------
+
+
+[Info]
+name = "snow in japan HR (SS6)"
+displayname = "@"
+author= "Master Yoda"
+
+[BGdef]
+spr = 村庄.sff
+debugbg = 0
+;--------------------------------------------------------
+[Music]
+bgmusic = sound\最后的挣扎.MP3
+bgvolume = 255
+
+;--------------------------------------------------------
+[Camera]
+startx = 0
+starty = 0
+boundleft = -170
+boundright = 170
+boundhigh = -55
+boundlow = 0
+verticalfollow = .8
+floortension = 50
+tension = 100
+overdrawhigh = 120
+overdrawlow = 120
+cuthigh = 0
+cutlow = 0
+zoomout = 0.9
+zoomin = 1
+tensionhigh = 200
+tensionlow = 200
+
+;--------------------------------------------------------
+[PlayerInfo]
+
+p1startx = -120       
+p1starty = 0            
+p1startz = 0            
+p1facing = 1            
+
+p2startx = 120
+p2starty = 0
+p2startz = 0
+p2facing = -1
+
+p3startx = -250       
+p3starty = 0            
+p3startz = 0            
+p3facing = 1            
+
+p4startx = 250
+p4starty = 0
+p4startz = 0
+p4facing = -1
+
+leftbound  = -4000 
+rightbound =  4000 
+topbound  =  0     
+botbound  =  0   
+
+;--------------------------------------------------------
+[Scaling]
+topz     = 0       ;Top z-coordinate for scaling
+botz     = 50      ;Bottom z-coordinate for scaling
+topscale = 1       ;Scale to use at top
+botscale = 1.2     ;Scale to use at bottom
+
+;--------------------------------------------------------
+[Bound]
+screenleft = 30    ;Dist from left of screen that player can move to
+screenright = 30  ;Right edge
+
+;--------------------------------------------------------
+[StageInfo]
+localcoord = 854,480
+zoffset = 438
+autoturn = 1
+
+;--------------------------------------------------------
+[Shadow]
+intensity = 118
+color = 0,0,0
+yscale = .25
+fade.range = -400,-100
+
+;--------------------------------------------------------
+[Reflection]
+;intensity = 128
+
+;========================================================
+;--------------------------------------------------------
+; Background definition
+; ***
+;-------------------------------------
+
+[BG sky]
+type  = normal
+spriteno = 0,0
+delta = 0.75,1.6
+trans = None
+mask = 1
+tile = 1, 0
+;tilespacing = 0, 0
+
+
+[BG mountain]
+type  = normal
+spriteno = 1,0
+delta = 0.8, 1.7
+trans = None
+mask = 1
+
+
+[BG arbol mediano]
+type  = normal
+spriteno = 2,0
+delta = 0.85, 1.7
+trans = None
+mask = 1
+
+[BG arbol peke駉]
+type  = normal
+spriteno = 2,1
+delta = 0.85, 1.7
+trans = None
+mask = 1
+
+
+[BG casa helada]
+type  = normal
+spriteno = 3,0
+delta = 0.9, 1.8
+trans = None
+mask = 1
+
+[BG cisnes]
+type  = anim
+spriteno = 4,0
+actionno = 4
+delta = 0.9, 1.8
+trans = None
+mask = 1
+
+[BG cisnes2]
+type  = anim
+spriteno = 5,0
+actionno = 5
+delta = 0.9, 1.8
+trans = None
+mask = 1
+
+[BG cisnes3]
+type  = anim
+spriteno = 6,0
+actionno = 6
+delta = 0.9, 1.8
+trans = None
+mask = 1
+
+[BG cisnes4]
+type  = anim
+spriteno = 7,0
+actionno = 7
+delta = 0.9, 1.8
+trans = None
+mask = 1
+
+[BG cisnes5]
+type  = anim
+spriteno = 8,0
+actionno = 8
+delta = 0.9, 1.8
+trans = None
+mask = 1
+
+[BG cisnes6]
+type  = normal
+spriteno = 9,0
+delta = 0.9, 1.8
+trans = None
+mask = 1
+
+[BG cisnes7]
+type  = anim
+spriteno = 10,0
+actionno = 10
+delta = 0.9, 1.8
+trans = None
+mask = 1
+
+[BG Aspas chikas]
+type  = anim
+spriteno = 11,0
+actionno = 11
+delta = 0.9, 1.8
+trans = None
+mask = 1
+
+[BG Aspas medianas]
+type  = anim
+spriteno = 12,0
+actionno = 12
+delta = 0.9, 1.8
+trans = None
+mask = 1
+
+[BG Aspas grandes]
+type  = anim
+spriteno = 13,0
+actionno = 13
+delta = 0.9, 1.8
+trans = None
+mask = 1
+
+
+[BG frente de casa]
+type  = normal
+spriteno = 14,0
+delta = 0.9, 1.8
+trans = None
+mask = 1
+
+[BG arbol gigante]
+type  = normal
+spriteno = 15,0
+delta = 0.95, 1.9
+trans = None
+mask = 1
+
+[BG cerkas]
+type  = normal
+spriteno = 16,0
+delta = 0.95, 1.9
+trans = None
+mask = 1
+
+[BG cerkas2]
+type  = normal
+spriteno = 16,1
+delta = 0.95, 1.9
+trans = None
+mask = 1
+
+[BG cerkas3]
+type  = normal
+spriteno = 16,2
+delta = 0.9, 1.8
+trans = None
+mask = 1
+
+[BG piso helado]
+type  = normal
+spriteno = 17,0
+delta = 1, 2
+trans = None
+mask = 1
+
+[BG piso madera]
+type  = normal
+spriteno = 17,1
+delta = 1, 2
+trans = None
+mask = 1
+
+[BG 3 tablones]
+type  = normal
+spriteno = 17,2
+delta = 1, 2
+trans = None
+mask = 1
+
+[BG 1 tabla]
+type  = normal
+spriteno = 17,3
+delta = 1, 2
+trans = None
+mask = 1
+
+[BG piedras]
+type  = normal
+spriteno = 17,4
+delta = 1, 2
+trans = None
+mask = 1
+
+
+[BG mas tablones]
+type  = normal
+spriteno = 17,5
+delta = 1, 2
+trans = None
+mask = 1
+
+[BG 2 piedras]
+type  = normal
+spriteno = 17,6
+delta = 1, 2
+trans = None
+mask = 1
+
+
+[BG snow 1]
+type = Normal
+spriteno = 18,0
+start = 0,-18
+delta = 1, 2
+layerno = 0
+velocity = .9,.9
+tile = 1,1
+mask = 1
+trans = add
+alpha	= 150,256
+
+[BG snow 2]
+type = Normal
+spriteno = 18,1
+start = 0,-18
+delta = 0.5,1
+layerno = 1
+velocity = -.5,.5
+tile = 1,1
+mask = 1
+trans = add
+alpha	= 150,256
+
+[BG Snow Fog]
+type	= normal
+spriteno	= 18,2
+delta	= 1,2
+mask	= 1
+tile	= 1,2
+velocity	= 1,0
+trans	= add
+alpha	= 256,256
+Layerno 	= 1
+
+
+;========================================================
+;                  ANIMATIONS
+;--------------------------------------------------------
+
+[Begin Action 4]
+4,0,0,0,30
+4,1,0,0,10
+4,2,0,0,15
+4,3,0,0,10
+
+[Begin Action 5]
+5,1,0,0,30
+5,0,0,0,10
+5,2,0,0,30
+5,0,0,0,10
+
+[Begin Action 6]
+6,1,0,0,30
+6,0,0,0,10
+6,2,0,0,15
+
+[Begin Action 7]
+7,3,0,0,30
+7,0,0,0,10
+7,1,0,0,15
+7,2,0,0,11
+
+[Begin Action 8]
+8,2,0,0,15
+8,0,0,0,15
+8,1,0,0,15
+
+[Begin Action 10]
+10,0,0,0,17
+10,1,0,0,17
+10,2,0,0,17
+
+[Begin Action 11]
+11,0,0,0,6
+11,1,0,0,6
+11,2,0,0,6
+
+[Begin Action 12]
+12,0,0,0,6
+12,1,0,0,6
+12,2,0,0,6
+12,3,0,0,6
+12,4,0,0,6
+12,5,0,0,6
+
+[Begin Action 13]
+13,0,0,0,6
+13,1,0,0,6
+13,2,0,0,6
+13,3,0,0,6
+
+
+;========================================================
+;                BG CONTROLS
+;--------------------------------------------------------
+
+;Nieve
+[BGctrldef Nieve]
+ctrlID=1
+
+[BGctrl Nieve]
+type=velset
+time=0
+x= -.2
+y = 1
+
+;Nieve 2
+[BGctrldef Nieve2]
+ctrlID=2
+
+[BGctrl Nieve2]
+type=velset
+time=0
+x= -.1
+y = .8
+
+;Nieve3
+;[BGctrldef Nieve3]
+;ctrlID=3
+
+:;[BGctrl Nieve3]
+;type=velset
+;time=0
+;x= -.05
+;y = .6
+
+
+
+
+

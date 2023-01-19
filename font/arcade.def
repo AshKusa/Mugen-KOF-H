@@ -1,0 +1,10 @@
+﻿[FNT v2]
+fntversion = 2,00
+name = "Arcade"
+
+[Def]
+Type = bitmap
+Size = 36,34
+Spacing = -12,4
+Offset = -2,3
+File = arcade.sff

@@ -1,0 +1,43 @@
+;===============================================================================
+[Info]
+Name         = "Elisabeth Blanctorche"
+DisplayName  = "Elisabeth"
+VersionDate  = 03/11/2019
+MugenVersion = 1.1
+Author       = "Fervicante (Edit by Vergil Kusanagi [Ariel Gonzalez Ordaz])"
+Pal.Defaults = 4,1,2,3,5,6
+Localcoord   = 427,240
+
+;===============================================================================
+
+[Files]
+sprite	  = Elisabeth.sff
+anim	  = Elisabeth.air
+sound	  = Elisabeth.snd
+cmd	  = Elisabeth.cmd
+cns	  = Elisabeth.cns
+stcommon = common1.cns
+st	  = Elisabeth.cns
+st1 	  = Elisabeth-N.cns
+st2	  = Elisabeth-S.cns
+st3	  = Elisabeth-H.cns
+st4	  = Elisabeth-3.cns
+
+pal1	= Paletas\Elisabeth-01.act
+pal2	= Paletas\Elisabeth-02.act
+pal3	= Paletas\Elisabeth-03.act
+pal4	= Paletas\Elisabeth-04.act
+pal5	= Paletas\Elisabeth-05.act
+pal6	= Paletas\Elisabeth-06.act
+pal7	= Paletas\Elisabeth-01.act
+pal8	= Paletas\Elisabeth-02.act
+pal9	= Paletas\Elisabeth-03.act
+pal10	= Paletas\Elisabeth-04.act
+pal11	= Paletas\Elisabeth-05.act
+pal12	= Paletas\Elisabeth-06.act
+;===============================================================================
+
+[Arcade]
+intro.storyboard	= 
+ending.storyboard	= 
+;===============================================================================

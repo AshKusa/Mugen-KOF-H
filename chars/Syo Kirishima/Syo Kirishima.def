@@ -1,0 +1,35 @@
+[Info]
+name = "Syo Kirishima"
+author = "ahuron" 
+pal.defaults = 1
+mugenversion = 1.1
+localcoord = 427,240
+
+[Files]
+cmd     = Syo-Kirishima.cmd
+cns     = Syo-Kirishima.cns
+st      = Syo-Kirishima.cns
+st2     = Syo-Kirishima2.cns
+st3     = 新1.cns
+st4     = 新2.cns
+st5     = 新3.cns
+st6     = 新4.cns
+st7     = 新5.cns
+Ai     = aistate.cns
+stcommon = common1.cns
+sprite  = Syo-Kirishima.sff
+anim    = Syo-Kirishima.air
+sound   = Syo-Kirishima.snd
+
+pal1    = pals/Syo-Kirishima.act
+pal2    = pals/Syo-Kirishima2.act
+pal3    = pals/Syo-Kirishima3.act
+pal4    = pals/Syo-Kirishima4.act
+pal5    = pals/Syo-Kirishima5.act
+pal6    = pals/Syo-Kirishima6.act
+pal7    = pals/Syo-Kirishima.act
+pal8    = pals/Syo-Kirishima2.act
+pal9    = pals/Syo-Kirishima3.act
+pal10    = pals/Syo-Kirishima4.act
+pal11    = pals/Syo-Kirishima5.act
+pal12    = pals/Syo-Kirishima6.act

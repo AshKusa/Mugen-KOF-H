@@ -1,0 +1,761 @@
+[Info]
+name = "Bamboo Forest of the Lost"   
+displayname = "L"
+mugenversion = 1.1        
+author = "Alice"
+
+[Camera]
+startx = 0
+starty = 0
+boundleft = -260
+boundright = 260
+boundhigh = -50
+boundlow = 0
+verticalfollow = .5
+tension = 100
+floortension = 50
+overdrawhigh = 120
+overdrawlow = 120
+cuthigh = 0
+cutlow = 0
+zoomout = 0.9
+zoomin = 1
+tensionhigh = 200
+tensionlow = 200
+
+;--------------------------------------------------------
+[PlayerInfo]
+;--- Player 1 ---
+p1startx = -120          ;Starting x coordinates
+p1starty = 0            ;Starting y coordinates
+p1startz = 0            ;Starting z coordinates
+p1facing = 1            ;Direction player faces: 1=right, -1=left
+
+;--- Player 2 ---
+p2startx = 120
+p2starty = 0
+p2startz = 0
+p2facing = -1
+
+;--- Player 3 ---
+p3startx = -250          ;Starting x coordinates
+p3starty = 0            ;Starting y coordinates
+p3startz = 0            ;Starting z coordinates
+p3facing = 1            ;Direction player faces: 1=right, -1=left
+
+;--- Player 4 ---
+p4startx = 250
+p4starty = 0
+p4startz = 0
+p4facing = -1
+
+;--- Common ---
+ ;Don't change these values.
+leftbound  = -4000 ;Left bound (x-movement)
+rightbound =  4000 ;Right bound
+topbound  =  0     ;Top bound (z-movement)
+botbound  =  0     ;Bottom bound
+
+;--------------------------------------------------------
+[Bound]
+screenleft = 30   ;Dist from left of screen that player can move to
+screenright = 30   ;Right edge
+
+;--------------------------------------------------------
+[StageInfo]
+zoffset = 438
+autoturn = 1
+resetBG = 0
+localcoord = 854,480
+xscale = 1
+yscale = 1
+;--------------------------------------------------------
+[Shadow]
+intensity = 90
+yscale = 0.1
+fade.range = -400,-100
+
+;--------------------------------------------------------
+[Reflection]
+intensity = 0
+
+;--------------------------------------------------------
+[Music]
+bgmusic = sound/The truth that you leave.mp3
+bgvolume = 100
+
+[BGdef]
+spr = stages/Bamboo_Forest.sff
+debugbg = 0
+
+;-------------------------start
+;--------------------------black
+
+[BG 1]
+type  = normal
+spriteno = 1, 0
+start = 0, -50
+delta = 0, 1
+mask = 0
+tile = 1,1
+tilespacing = 0,0
+trans = none
+
+;---------------------------------bamboo
+
+
+[BG 1]
+type  = normal
+spriteno = 2, 0
+start = 0, 150
+delta = .2, .2
+mask = 1
+trans = none
+zoomdelta = .4
+id = 2
+
+;------------------------------firefly
+
+;--------------------
+[BG 0]
+type  = anim
+actionno = 1
+start = 0,300
+delta = .25,.25
+layerno = 0
+sin.x = 310,800
+sin.y = 23,350
+scalestart = .25,.25
+zoomdelta = .45
+id = 5
+
+[BG 0]
+type  = anim
+actionno = 1
+start = 440,300
+delta = .25,.25
+layerno = 0
+sin.x = 310,800
+sin.y = 23,350
+scalestart = .25,.25
+zoomdelta = .45
+id = 5
+
+;--------------------
+[BG 0]
+type  = anim
+actionno = 1
+start = 0,200
+delta = .25,.25
+layerno = 0
+sin.x = 120,340
+sin.y = 15,220
+scalestart = .25,.25
+zoomdelta = .45
+id = 5
+
+[BG 0]
+type  = anim
+actionno = 1
+start = 340,200
+delta = .25,.25
+layerno = 0
+sin.x = 120,340
+sin.y = 15,220
+scalestart = .25,.25
+zoomdelta = .45
+id = 5
+
+
+;--------------------
+[BG 0]
+type  = anim
+actionno = 1
+start = -100,200
+delta = .25,.25
+layerno = 0
+sin.x = 210,999
+sin.y = 23,610
+scalestart = .25,.25
+zoomdelta = .45
+id = 5
+
+[BG 0]
+type  = anim
+actionno = 1
+start = 340,200
+delta = .25,.25
+layerno = 0
+sin.x = 210,999
+sin.y = 23,610
+scalestart = .25,.25
+zoomdelta = .45
+id = 5
+
+;----------------------
+[BG 0]
+type  = anim
+actionno = 1
+start = -150,200
+delta = .25,.25
+layerno = 0
+sin.x = -153,520
+sin.y = -24,220
+scalestart = .25,.25
+zoomdelta = .45
+id = 5
+
+[BG 0]
+type  = anim
+actionno = 1
+start = 400,200
+delta = .25,.25
+layerno = 0
+sin.x = -153,520
+sin.y = -24,220
+scalestart = .25,.25
+zoomdelta = .45
+id = 5
+;---------------------
+[BG 0]
+type  = anim
+actionno = 1
+start = -200,200
+delta = .25,.25
+layerno = 0
+sin.x = 115,1100
+sin.y = -20,340
+scalestart = .25,.25
+zoomdelta = .45
+id = 5
+
+[BG 0]
+type  = anim
+actionno = 1
+start = 340,200
+delta = .25,.25
+layerno = 0
+sin.x = 115,1100
+sin.y = -20,340
+scalestart = .25,.25
+zoomdelta = .45
+id = 5
+
+;------------------------------bamboo
+
+[BG 1]
+type  = normal
+spriteno = 2, 1
+start = 0, 0
+delta = .3, .3
+mask = 1
+trans = none
+zoomdelta = .5
+id = 2
+
+;------------------------------firefly
+
+[BG 0]
+type  = anim
+actionno = 1
+start = -200,350
+delta = .35,.35
+sin.x = 220,710
+sin.y = 15,420
+scalestart = .5,.5
+id = 4
+zoomdelta = .55
+
+;-------------------
+[BG 0]
+type  = anim
+actionno = 1
+start = -300,350
+delta = .35,.35
+sin.x = -220,1000
+sin.y = -33,350
+scalestart = .5,.5
+id = 4
+zoomdelta = .55
+
+;--------------------
+[BG 0]
+type  = anim
+actionno = 1
+start = -500,400
+delta = .35,.35
+layerno = 0
+sin.x = 310,800
+sin.y = 23,350
+scalestart = .5,.5
+id = 4
+zoomdelta = .55
+
+;--------------------
+[BG 0]
+type  = anim
+actionno = 1
+start = -100,300
+delta = .35,.35
+layerno = 0
+sin.x = 120,340
+sin.y = 15,220
+scalestart = .5,.5
+id = 4
+zoomdelta = .55
+
+;--------------------
+[BG 0]
+type  = anim
+actionno = 1
+start = -200,600
+delta = .35,.35
+layerno = 0
+sin.x = 210,999
+sin.y = 23,610
+scalestart = .5,.5
+id = 4
+zoomdelta = .55
+
+;----------------------
+[BG 0]
+type  = anim
+actionno = 1
+start = -250,400
+delta = .35,.35
+layerno = 0
+sin.x = -153,520
+sin.y = -24,220
+scalestart = .5,.5
+id = 4
+zoomdelta = .55
+
+;---------------------
+[BG 0]
+type  = anim
+actionno = 1
+start = -300,400
+delta = .35,.35
+layerno = 0
+sin.x = 115,1100
+sin.y = -20,340
+scalestart = .5,.5
+id = 4
+zoomdelta = .55
+
+;--------------------
+[BG 0]
+type  = anim
+actionno = 1
+start = -300,350
+delta = .35,.35
+layerno = 0
+sin.x = 200,1110
+sin.y = -27,777
+scalestart = .5,.5
+id = 4
+zoomdelta = .55
+
+;----------------------
+[BG 0]
+type  = anim
+actionno = 1
+start = -500,400
+delta = .35,.35
+layerno = 0
+sin.x = -115,560
+sin.y = -10,470
+scalestart = .5,.5
+id = 4
+zoomdelta = .55
+
+;-----------------------
+[BG 0]
+type  = anim
+actionno = 1
+start = -300,330
+delta = .35,.35
+layerno = 0
+sin.x = 250,1115
+sin.y = 10,440
+scalestart = .5,.5
+id = 4
+zoomdelta = .55
+
+;------------------------
+[BG 0]
+type  = anim
+actionno = 1
+start = -400,300
+delta = .35,.35
+layerno = 0
+sin.x = -190,1110
+sin.y = -25,700
+scalestart = .5,.5
+id = 4
+zoomdelta = .55
+
+;------------------------
+[BG 0]
+type  = anim
+actionno = 1
+start = -150,350
+delta = .35,.35
+layerno = 0
+sin.x = -315,920
+sin.y = -50,610
+scalestart = .5,.5
+id = 4
+zoomdelta = .55
+
+;---------------------------------bamboo
+
+[BG 1]
+type  = normal
+spriteno = 2, 2
+start = 0, 0
+delta = .4, .4
+mask = 1
+trans = none
+zoomdelta = .6
+id = 2
+
+[BG 1]
+type  = normal
+spriteno = 2, 3
+start = 0, 0
+delta = .5, .5
+mask = 1
+trans = none
+zoomdelta = .7
+id = 2
+
+;-----------------------------------firefly
+
+[BG 0]
+type  = anim
+actionno = 1
+start = -200,350
+delta = .55, .55
+sin.x = 220,710
+sin.y = 15,420
+scalestart = .75,.75
+zoomdelta = .75
+id = 3
+
+[Begin Action 1]
+3,0,0,0,3
+3,1,0,0,3
+
+;--------------------
+[BG 0]
+type  = anim
+actionno = 1
+start = -400,350
+delta = .55, .55
+layerno = 0
+sin.x = 200,1110
+sin.y = -27,777
+scalestart = .75,.75
+zoomdelta = .75
+id = 3
+
+[BG 0]
+type  = anim
+actionno = 1
+start = -50,350
+delta = .55, .55
+layerno = 0
+sin.x = 200,1110
+sin.y = -27,777
+scalestart = .75,.75
+zoomdelta = .75
+id = 3
+;----------------------
+[BG 0]
+type  = anim
+actionno = 1
+start = 0,400
+delta = .55, .55
+layerno = 0
+sin.x = -115,560
+sin.y = -10,470
+scalestart = .75,.75
+zoomdelta = .75
+id = 3
+
+[BG 0]
+type  = anim
+actionno = 1
+start = 840,400
+delta = .55, .55
+layerno = 0
+sin.x = -115,560
+sin.y = -10,470
+scalestart = .75,.75
+zoomdelta = .75
+id = 3
+;-----------------------
+[BG 0]
+type  = anim
+actionno = 1
+start = -400,330
+delta = .55, .55
+layerno = 0
+sin.x = 250,1115
+sin.y = 10,440
+scalestart = .75,.75
+zoomdelta = .75
+id = 3
+
+[BG 0]
+type  = anim
+actionno = 1
+start = 290,330
+delta = .55, .55
+layerno = 0
+sin.x = 250,1115
+sin.y = 10,440
+scalestart = .75,.75
+zoomdelta = .75
+id = 3
+;------------------------
+[BG 0]
+type  = anim
+actionno = 1
+spriteno = 9, 3
+start = 100,300
+delta = .55, .55
+layerno = 0
+sin.x = -190,1110
+sin.y = -25,700
+scalestart = .75,.75
+zoomdelta = .75
+id = 3
+
+[BG 0]
+type  = anim
+actionno = 1
+start = 740,300
+delta = .55, .55
+layerno = 0
+sin.x = -190,1110
+sin.y = -25,700
+scalestart = .75,.75
+zoomdelta = .75
+id = 3
+;------------------------
+[BG 0]
+type  = anim
+actionno = 1
+start = -300,350
+delta = .55, .55
+layerno = 0
+sin.x = -315,920
+sin.y = -50,610
+scalestart = .75,.75
+zoomdelta = .75
+id = 3
+
+[BG 0]
+type  = anim
+actionno = 1
+start = 490,350
+delta = .55, .55
+layerno = 0
+sin.x = -315,920
+sin.y = -50,610
+scalestart = .75,.75
+zoomdelta = .75
+id = 3
+;-------------------------
+[BG 0]
+type  = anim
+actionno = 1
+start = -200,350
+delta = .55, .55
+layerno = 0
+sin.x = -110,660
+sin.y = 25,390
+scalestart = .75,.75
+zoomdelta = .75
+id = 3
+
+[BG 0]
+type  = anim
+actionno = 1
+start = 540,350
+delta = .55, .55
+layerno = 0
+sin.x = -110,660
+sin.y = 25,390
+scalestart = .75,.75
+zoomdelta = .75
+id = 3
+
+;-----------------bamboo
+
+[BG 1]
+type  = normal
+spriteno = 2, 4
+start = 0, 0
+delta = .6, .6
+mask = 1
+trans = none
+zoomdelta = .8
+id = 2
+
+[BG 1]
+type  = normal
+spriteno = 2, 5
+start = 0, 0
+delta = .7, .7
+mask = 1
+trans = none
+zoomdelta = .9
+id = 2
+
+[BG 1]
+type  = normal
+spriteno = 2, 6
+start = 0, 0
+delta = .7, .7
+mask = 1
+trans = none
+zoomdelta = .9
+id = 2
+
+
+;-----------------------------floor
+
+[BG 1];wall
+type  = normal
+spriteno = 4, 2
+start = 0, -60
+delta = .87, 1
+mask = 1
+trans = none
+id = 2
+;----------center
+
+[BG 1];side left
+type  = normal
+spriteno = 4, 6
+start = -11, 30
+delta = 1.28, 1
+mask = 1
+trans = none
+scaledelta = -0.0013,0
+id = 2
+
+[BG 1];side right
+type  = normal
+spriteno = 4, 5
+start = -3, 30
+delta = 1.28, 1
+mask = 1
+trans = none
+scaledelta = 0.0013,0
+id = 2
+
+;----------
+[BG 1];side right
+type  = normal
+spriteno = 4, 6
+start = 661, 30
+delta = 1.28, 1
+mask = 1
+trans = none
+scaledelta = -0.0013,0
+id = 2
+
+[BG 1];side left
+type  = normal
+spriteno = 4, 5
+start = -670, 30
+delta = 1.28, 1
+mask = 1
+trans = none
+scaledelta = 0.0013,0
+id = 2
+
+[BG 1];p
+type  = normal
+spriteno = 4, 4
+start = -7, 30
+delta = 1.28, 1
+mask = 1
+trans = none
+id = 2
+;----------
+[BG 1];front
+type  = normal
+spriteno = 4, 3
+start = -7, 30
+delta = 1.28, 1
+mask = 1
+trans = none
+id = 2
+
+[bg 0];47 pix	
+type=parallax
+spriteno=4,1
+start=0,-86
+delta=.825,1
+mask=1
+xscale = 1,1.0365
+Id = 2
+
+[bg 0];102 pix	
+type=parallax
+spriteno=4,0
+start=0,-40;360
+delta=.85,1
+mask=1
+xscale = 1,1.5529
+Id = 2
+
+;-----------------------------------posset
+
+[BGctrldef posset]
+looptime = -1
+ctrlid = 2
+
+[BGCtrl xy]
+type = posset
+time = 0
+y = 400
+
+;------------------------firefly2
+[BGctrldef posset]
+looptime = -1
+ctrlid = 3
+
+[BGCtrl xy]
+type = posset
+time = 0
+x = 0
+y = -100
+
+;------------------------firefly2
+[BGctrldef posset]
+looptime = -1
+ctrlid = 4
+
+[BGCtrl xy]
+type = posset
+time = 0
+x = 300
+y = -100
+
+;------------------------firefly3
+[BGctrldef posset]
+looptime = -1
+ctrlid = 5
+
+[BGCtrl xy]
+type = posset
+time = 0
+x = 0
+y = 100
+

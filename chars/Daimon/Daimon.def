@@ -1,0 +1,32 @@
+[Info]
+name = "Daimon" 
+displayname = "Daimon" 
+author = "Ahuron" 
+mugenversion = 1.1
+localcoord   = 427,240
+
+[Files]
+cmd     = Daimon.cmd 
+cns     = Daimon.cns 
+st      = Daimon.cns 
+st2     = Daimon2.cns 
+st3     = helper.cns 
+st4     = Daimon-3.cns
+st5     = ÐÂ.cns
+stcommon = common1.cns 
+sprite  = Daimon.sff 
+anim    = Daimon.air 
+sound   = Daimon.snd 
+
+pal1    = pals/Goro_Daimon.act
+pal2    = pals/Goro_Daimon2.act
+pal3    = pals/Goro_Daimon3.act
+pal4    = pals/Goro_Daimon4.act
+pal5    = pals/Goro_Daimon5.act
+pal6    = pals/Goro_Daimon6.act
+pal7    = pals/Orochi_Goro.act
+pal8    = pals/Goro_Daimon2.act
+pal9    = pals/Goro_Daimon3.act
+pal10   = pals/Goro_Daimon4.act
+pal11   = pals/Goro_Daimon5.act
+pal12   = pals/Goro_Daimon6.act

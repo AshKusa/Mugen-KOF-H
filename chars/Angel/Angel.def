@@ -1,0 +1,37 @@
+[Info]
+Name         = "Angel"
+DisplayName  = "Angel"
+Author       = "jin"
+Pal.Defaults = 1,2,3,4,5,6
+mugenversion = 1.1
+Localcoord = 427,240
+
+[Files]
+Cmd      = Angel.cmd
+Cns      = Angel.cns
+St       = Angel.cns
+St0      = Angel-N.cns
+St1      = Angel-S.cns
+St2      = Angel-H.cns
+St3      = Angel-3.cns
+St4      = 3900.cns
+St5      = Clone-Angel-N.cns
+St6      = Clone-Angel-S.cns
+St7      = Clone-Angel-H.cns
+StCommon = common1.cns
+Sprite   = Angel.sff
+Anim     = Angel.air
+Sound    = Angel.snd
+
+Pal1 = pals/Angel01.act
+Pal2 = pals/Angel02.act
+Pal3 = pals/Angel03.act
+Pal4 = pals/Angel04.act
+Pal5 = pals/Angel05.act
+Pal6 = pals/Angel06.act
+Pal7 = pals/Clone-Angel01.act
+Pal8 = pals/Clone-Angel02.act
+Pal9 = pals/Clone-Angel03.act
+Pal10 = pals/Clone-Angel04.act
+Pal11 = pals/Clone-Angel05.act
+Pal12 = pals/Clone-Angel06.act

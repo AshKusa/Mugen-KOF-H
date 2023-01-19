@@ -1,0 +1,41 @@
+;***************************************************************************;
+;******************* Created in Fighter Factory Ultimate *******************;
+;*******************      http://www.virtualltek.com     *******************;
+;***************************************************************************;
+
+[Info]
+name = "Blue Mary"
+displayname = "MARY"
+versiondate = 01,03,2008
+mugenversion = 1.1
+author = "TESTP, Jerzy"
+pal.defaults = 1,2,3,4,5
+localcoord = 427,240
+
+[Files]
+sprite = mary.sff
+anim = mary.air
+sound = mary.snd
+cmd = mary.cmd
+cns = mary.cns
+stcommon = common1.cns
+st = mary.cns
+st1 = specials.cns
+st2 = hypers.cns
+
+pal1 = pal/1.act
+pal2 = pal/2.act
+pal3 = pal/3.act
+pal4 = pal/1.act
+pal5 = pal/2.act
+pal6 = pal/3.act
+pal7 = pal/1.act
+pal8 = pal/2.act
+pal9 = pal/3.act
+pal10 = pal/1.act
+pal11 = pal/2.act
+pal12 = pal/3.act
+
+[Arcade]
+;intro.storyboard = History.def
+;ending.storyboard = 

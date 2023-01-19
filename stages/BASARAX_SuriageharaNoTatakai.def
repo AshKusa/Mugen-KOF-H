@@ -1,0 +1,185 @@
+[Info]
+name ="BASARAX_SuriageharaNoTatakai"
+displayname = "x"
+author = "light"
+mugenversion = 1.1
+
+[Camera]
+startx =0
+starty =0
+boundleft  = -160 ;Å¶
+boundright = 160 ;Å¶
+boundhigh  = -56
+boundlow   = 0
+verticalfollow =.93
+tension = 100
+floortension = 50
+overdrawhigh = 120
+overdrawlow = 120
+cuthigh = 0
+cutlow = 0
+zoomout = 0.9
+zoomin = 1
+tensionhigh = 200
+tensionlow = 200
+
+
+[PlayerInfo]
+;--- Player 1 ---
+p1startx = -120          ;Starting x coordinates
+p1starty = 0            ;Starting y coordinates
+p1startz = 0            ;Starting z coordinates
+p1facing = 1            ;Direction player faces: 1=right, -1=left
+
+;--- Player 2 ---
+p2startx = 120
+p2starty = 0
+p2startz = 0
+p2facing = -1
+
+;--- Player 3 ---
+p3startx = -250          ;Starting x coordinates
+p3starty = 0            ;Starting y coordinates
+p3startz = 0            ;Starting z coordinates
+p3facing = 1            ;Direction player faces: 1=right, -1=left
+
+;--- Player 4 ---
+p4startx = 250
+p4starty = 0
+p4startz = 0
+p4facing = -1
+
+;--- Common ---
+ ;Don't change these values.
+leftbound  = -4000 ;Left bound (x-movement)
+rightbound =  4000 ;Right bound
+topbound  =  0     ;Top bound (z-movement)
+botbound  =  0     ;Bottom bound
+
+[Bound]
+screenleft  =30
+screenright =30
+
+[StageInfo]
+localcoord = 854,480
+zoffset  = 438
+autoturn = 2
+resetBG  = 1
+
+[Shadow]
+intensity = 128
+yscale =.18
+fade.range = -300,-50
+
+
+[Reflection]
+;intensity = 128
+
+
+[Music]
+bgmusic  = sound/¸\µ„.mp3
+
+;----------------------------------------------------------------------
+[BGdef]
+spr =BASARAX_SuriageharaNoTatakai.sff
+debugbg = 0
+
+[BG 01]
+type = normal
+spriteno =0, 0
+layerno = 0
+start = 0,0
+delta = 1,2
+trans = none
+mask = 1
+
+[BG 02]
+type = normal
+spriteno =0, 1
+layerno = 0
+start = 0,0
+delta = 1.04,2
+trans = none
+mask = 1
+
+[BG 03]
+type = normal
+spriteno =0, 2
+layerno = 0
+start = 0,0
+delta = 0.98,2
+trans = none
+mask = 1
+
+[BG anime01]
+type = anim
+layerno = 0
+actionno = 1
+start = 0, 0
+delta = 0.98,2
+trans = none
+mask = 0
+
+[BG 04]
+type = normal
+spriteno =0, 3
+layerno = 0
+start = 0,131
+delta = 1,2
+trans = none
+mask = 1
+
+[BG anime02]
+type = anim
+layerno = 0
+actionno = 2
+start = 0, 131
+delta = 1,2
+trans = add 
+mask = 0
+
+[BG anime03]
+type = anim
+layerno = 0
+actionno = 3
+start = 0, 131
+delta = 1,2
+trans = add
+mask = 0
+
+[BG anime04]
+type = anim
+layerno = 0
+actionno = 4
+start = 0, 131
+delta = 1,2
+trans = add
+mask = 0
+
+
+;///////////////////anime/////////////////////
+[Begin Action 1]
+5,0, 0,0, 4
+5,1, 0,0, 4
+5,2, 0,0, 4
+5,3, 0,0, 4
+
+[Begin Action 2]
+0,4, 0,0, 4 ,,AS64D256
+0,4, 0,0, 4 ,,AS32D256
+0,4, 1000000,0, 8
+
+[Begin Action 3]
+10,0, 0,0, 4 ,,AS256D256
+10,1, 0,0, 4 ,,AS256D256
+10,2, 0,0, 4 ,,AS192D256
+10,3, 0,0, 4 ,,AS128D256
+10,4, 0,0, 4 ,,AS64D256
+
+[Begin Action 4]
+20,2, 0,0, 4 ,,AS192D256
+20,3, 0,0, 4 ,,AS128D256
+20,4, 0,0, 4 ,,AS64D256
+20,0, 0,0, 4 ,,AS256D256
+20,1, 0,0, 4 ,,AS256D256
+

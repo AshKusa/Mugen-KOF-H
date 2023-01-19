@@ -1,0 +1,346 @@
+;==============================================================
+;***********THE KING OF FIGHTERS HALLUCINATION*********
+;==============================================================
+
+;order=1 普通人物
+;order=2 BONUS人物
+;order=4 中BOSS
+;order=5 BOSS
+;order=10 隐藏BOSS
+
+;==============================================================
+[Characters]
+;==============================================================
+
+;==============================================================
+; LINHA/LINE 0
+;==============================================================
+
+// NO CHAR //
+// NO CHAR //
+// NO CHAR //
+// NO CHAR //
+// NO CHAR //
+// NO CHAR //
+// NO CHAR //
+// NO CHAR //
+// NO CHAR //
+// NO CHAR //
+// NO CHAR //
+// NO CHAR //
+// NO CHAR //
+// NO CHAR //
+// NO CHAR //
+
+;==============================================================
+; LINHA/LINE 1
+;==============================================================
+
+// NO CHAR //
+// NO CHAR //
+D-Ash,stages/randomselect,order=5
+Ash,stages/randomselect,order=4
+Elisabeth,stages/randomselect,order=2
+Shen,stages/randomselect,order=2
+DuoLon,stages/randomselect,order=4
+// NO CHAR //
+// NO CHAR //
+K9999,stages/randomselect,order=2
+Nameless,stages/randomselect,order=4
+Angel,stages/randomselect,order=2
+Foxy,stages/randomselect,order=1
+// NO CHAR //
+// NO CHAR //
+// NO CHAR //
+
+;==============================================================
+; LINHA/LINE 2
+;==============================================================
+
+// NO CHAR //
+Kusanagi,stages/randomselect,order=1
+// NO CHAR //
+ex-kyo,stages/randomselect,order=4
+Benimaru,stages/randomselect,order=2
+Daimon,stages/randomselect,order=4
+K',stages/randomselect,order=1
+Kula,stages/randomselect,order=4
+// NO CHAR //
+maxima,stages/randomselect,order=1
+mature,stages/randomselect,order=2
+vice,stages/randomselect,order=2
+Yagami,stages/randomselect,order=5
+Yagami Iori,stages/randomselect,order=5
+// NO CHAR //
+// NO CHAR //
+// NO CHAR //
+
+;==============================================================
+; LINHA/LINE 3
+;==============================================================
+
+// NO CHAR //
+// NO CHAR //
+Ryo,randomselect,order=2
+Robert,stages/randomselect,order=1
+yuri,stages/randomselect,order=1
+Takuma&&Mr.karate,stages/randomselect,order=1
+// NO CHAR //
+// NO CHAR //
+Terry,stages/randomselect,order=1
+Andy,stages/randomselect,order=1
+joe,stages/randomselect,order=1
+Rock,stages/randomselect,order=2
+// NO CHAR //
+// NO CHAR //
+// NO CHAR //
+// NO CHAR //
+
+;==============================================================
+; LINHA/LINE 4
+;==============================================================
+
+// NO CHAR //
+// NO CHAR //
+Ralf,randomselect,order=1
+Clark,stages/randomselect,order=4
+Leona,stages/randomselect,order=1
+Whip,stages/randomselect,order=2
+// NO CHAR //
+// NO CHAR //
+kim,stages/randomselect,order=4
+Chang,stages/randomselect,order=1
+griffon,stages/randomselect,order=1
+Choi,stages/randomselect,order=4
+// NO CHAR //
+// NO CHAR //
+// NO CHAR //
+// NO CHAR //
+
+;==============================================================
+; LINHA/LINE 5
+;==============================================================
+
+// NO CHAR //
+// NO CHAR //
+Kyo,randomselect,order=1
+Iori,stages/randomselect,order=1
+Shingo,stages/randomselect,order=2
+Syo Kirishima,stages/randomselect,order=4
+// NO CHAR //
+// NO CHAR //
+Chris,stages/randomselect,order=1
+shermie,stages/randomselect,order=1
+Yashiro,stages/randomselect,order=2
+Goeniko,stages/randomselect,order=5
+// NO CHAR //
+Goenitz,stages/randomselect,order=5
+// NO CHAR //
+// NO CHAR //
+
+;==============================================================
+; LINHA/LINE 6
+;==============================================================
+
+// NO CHAR //
+// NO CHAR //
+Athena,stages/randomselect,order=2
+Kensou,stages/randomselect,order=1
+momoko,stages/randomselect,order=2
+hotaru,stages/randomselect,order=1
+// NO CHAR //
+// NO CHAR //
+kasumi,stages/randomselect,order=4
+Chizuru&Maki,stages/randomselect,order=5
+King,stages/randomselect,order=2
+Mai,stages/randomselect,order=2
+// NO CHAR //
+// NO CHAR //
+// NO CHAR //
+// NO CHAR //
+
+;==============================================================
+; LINHA/LINE 7
+;==============================================================
+
+// NO CHAR //
+// NO CHAR //
+setsuna,stages/randomselect,order=1
+Moriya,stages/randomselect,order=1
+Kaede,stages/randomselect,order=4
+Shiki,stages/randomselect,order=4
+// NO CHAR //
+// NO CHAR //
+Yamazaki,stages/randomselect,order=5
+billy,stages/randomselect,order=1
+Mary,stages/randomselect,order=1
+Lin,stages/randomselect,order=4
+// NO CHAR //
+// NO CHAR //
+// NO CHAR //
+Tung,stages/randomselect,order=2
+
+;==============================================================
+; LINHA/LINE 8
+;==============================================================
+
+// NO CHAR //
+Simali,stages/randomselect,order=1
+Sylvie,stages/randomselect,order=1
+Alfred,stages/randomselect,order=1
+Strider Hiryu,stages/randomselect,order=1
+Rozwel,stages/randomselect,order=4
+Shun Ei,stages/randomselect,order=2
+// NO CHAR //
+Sol Badguy,stages/randomselect,order=2
+Adel,stages/randomselect,order=2
+hibiki,stages/randomselect,order=1
+ingrid,stages/randomselect,order=1
+// NO CHAR //
+// NO CHAR //
+// NO CHAR //
+// NO CHAR //
+
+;==============================================================
+; LINHA/LINE 9
+;==============================================================
+
+// NO CHAR //
+// NO CHAR //
+randomselect,
+randomselect,
+demitri,stages/randomselect,order=5
+kouryu,stages/randomselect,order=4
+// NO CHAR //
+// NO CHAR //
+asura,stages/randomselect,order=5
+Neodio,stages/randomselect,order=5
+randomselect,
+randomselect,
+// NO CHAR //
+// NO CHAR //
+// NO CHAR //
+// NO CHAR //
+
+;==============================================================
+; LINHA/LINE 10
+;==============================================================
+
+// NO CHAR //
+// NO CHAR //
+Rugal,stages/randomselect,order=10
+Mizuchi,stages/randomselect,order=5
+Goodman,stages/randomselect,order=10
+Krizalid,stages/randomselect,order=4
+igniz,stages/randomselect,order=10
+// NO CHAR //
+zero,stages/randomselect,order=5
+mukai,stages/randomselect,order=5
+Magaki,stages/randomselect,order=10
+Apollo,stages/randomselect,order=10
+// NO CHAR //
+// NO CHAR //
+// NO CHAR //
+// NO CHAR //
+
+;==============================================================
+; LINHA/LINE 10
+;==============================================================
+
+// NO CHAR //
+// NO CHAR //
+Kain,stages/randomselect,order=10
+// NO CHAR //
+// NO CHAR //
+// NO CHAR //
+// NO CHAR //
+// NO CHAR //
+// NO CHAR //
+// NO CHAR //
+// NO CHAR //
+// NO CHAR //
+// NO CHAR //
+// NO CHAR //
+// NO CHAR //
+// NO CHAR //
+
+;==============================================================
+[ExtraStages]
+;==============================================================
+stages/Forest Mansion.def
+stages/AdelXIII.def
+stages/Bamboo_Forest.def
+stages/BASARAX_SuriageharaNoTatakai.def
+stages/battlearena.def
+stages/Blazblue_Church.def
+stages/Blazblue_Kagutsuchi_PM.def
+stages/Blazblue_Rachel_Clownish_Calendula.def
+stages/BlazBlue_RR_Reachel_Trone.def
+stages/STAGE SAIKI.def
+stages/Celia.def
+stages/City Metro.def
+stages/City View.def
+stages/cvs篇小boss.def
+stages/frasco.def
+stages/ggxxac_verdent.def
+stages/grove.def
+stages/Hi-RING_OF_FIRE.def
+stages/igniz.def
+stages/INSANITY.def
+stages/热气球.def
+stages/Lubu.def
+stages/NUCLEAR_ASSAULT.def
+stages/Rose Garden.def
+stages/Section VI.def
+stages/SkyIslands.def
+stages/SSBB_Pokemon_Stadium_NOINTRO.def
+stages/STAGE GOODMAN.def
+stages/STAGE MIZUCHI.def
+stages/STAGE ZERO 2002UM.def
+stages/tayutama_garden.def
+stages/Touma To Misaka.def
+stages/Tron_Legacy_Arena.def
+stages/WATERFALL.def
+stages/WetArrows.def
+stages/XX'CREEPY'XX.def
+stages/XX'DOWNTOWN'XX.def
+stages/XX'SKYLINE'XX.def
+stages/Zepp_GGI.def
+stages/Zest Corporation.def
+stages/比格.def
+stages/村庄.def
+stages/卡洛兹.def
+stages/禮拜堂.def
+stages/神伊格尼兹.def
+stages/下雨了.def
+stages/雪屋.def
+stages/早晨.def
+stages/CORE.def
+stages/Blazblue_Halloween.def
+stages/NGBC_GOODMAN_KAI.def
+stages/LABORATORY-A.def
+stages/kof_orochi.def
+stages/RugalStage.def
+stages/AP_Witch's_Ruins850.def
+stages/Kanda_ArtedaElementalTemple.def
+stages/ggxxac_colony_basarax_mix.def
+stages/kofxi-boss-hi.def
+stages/Blazblue_Requiem.def
+stages/Star-Lake.def
+stages/Cathedral.def
+stages/sydk.def
+stages/jggl.def
+stages/wzry.def
+stages/Umineko_Golden_Fantasia_roof.def
+stages/Margatroid_Hakugyokurou.def
+stages/Ex_Ororahana_Field.def
+stages/XX'GATE'XX.def
+stages/XX'FOUNTAIN'XX.def
+stages/Blazblue_Village_Posprandial.def
+stages/Magical_Book.def
+stages/XX'CLOCK'2'XX.def
+;==============================================================
+[Options]
+;==============================================================
+arcade.maxmatches = 5,3,0,5,5,0,0,0,0,1
+team.maxmatches = 4,3,0,5,6,0,0,0,0,4

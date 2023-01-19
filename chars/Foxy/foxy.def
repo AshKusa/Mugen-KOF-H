@@ -1,0 +1,31 @@
+[Info]
+name    = "Foxy"
+displayname = "Foxy"
+author = "M.M.R."
+mugenversion = 1.1
+localcoord   = 427,240
+
+[Files]
+cmd     = Foxy.cmd
+cns     = Foxy-N.cns 
+st      = Foxy-N.cns 
+st1     = Foxy-S.cns 
+st2     = Foxy-H.cns 
+st3     = Zmax.cns
+st4     = ÐÂ1.cns
+st5     = ÐÂ2.cns
+st6     = ÐÂ3.cns
+stcommon = common1.cns 
+sprite  = Foxy.sff 
+anim    = Foxy.air 
+sound   = Foxy.snd 
+
+pal1    = pals/Foxy01.act 
+pal2    = pals/Foxy02.act
+pal3    = pals/Foxy03.act
+pal4    = pals/Foxy04.act
+pal5    = pals/Foxy05.act
+pal6    = pals/Foxy06.act
+pal10   = pals/Foxy10.act
+pal11   = pals/Foxy11.act
+pal12   = pals/Foxy12.act

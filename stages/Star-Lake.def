@@ -1,0 +1,200 @@
+[Info]
+
+name = "Star-Lake"
+displayname ="q"
+mugenversion=1.1
+author="Profylebryon/NMO"
+
+;--------------------------------------------------------
+[Camera]
+
+startx = 0
+starty = 0
+
+boundleft = -110
+boundright = 170
+boundhigh = -51
+boundlow = 0
+verticalfollow = .2
+tension = 100
+floortension = 50
+overdrawhigh = 120
+overdrawlow = 120
+cuthigh = 0
+cutlow = 0
+zoomout = 0.9
+zoomin = 1
+tensionhigh = 200
+tensionlow = 200
+
+;--------------------------------------------------------
+[PlayerInfo]
+;--- Player 1 ---
+ 
+p1startx = -120          
+p1starty = 0            
+p1startz = 0           
+p1facing = 1            
+
+;--- Player 2 ---
+p2startx = 120
+p2starty = 0
+p2startz = 0
+p2facing = -1
+
+p3startx 	= -250
+p3starty 	= 0
+p3facing 	= 1
+
+p4startx 	= 250
+p4starty 	= 0
+p4facing 	= -1
+
+;--- Common ---
+leftbound  = -1000 
+rightbound =  1000 
+topbound  =  0 
+botbound  =  0 
+
+;--------------------------------------------------------
+[Scaling]
+topz     = 0     
+botz     = 50
+topscale = 1 
+botscale = 1.2
+
+;--------------------------------------------------------
+[Bound]
+screenleft = 30
+screenright = 30
+
+;--------------------------------------------------------
+[StageInfo]
+zoffset = 438
+autoturn = 1
+resetBG = 1
+localcoord = 854,480
+;--------------------------------------------------------
+[Shadow]
+intensity = 158
+color = 0,0,0
+yscale = 0.8
+fade.range = -300,-100
+
+[Reflection]
+intensity = 0
+
+;--------------------------------------------------------
+[Music]
+bgmusic = sound/I AM (Piano Version).mp3
+bgvolume = 255
+
+;========================================================
+[BGdef]
+spr = Star-Lake.sff
+debugbg = 0
+
+
+[BG 1]
+type = normal
+spriteno = 3,0          
+start = 0, 2
+delta = 1,2
+mask = 1
+
+[BG 0]
+type = normal
+spriteno = 1,0          
+start = 0, 2
+delta = 0.5,1
+trans = addalpha
+alpha = 256,256
+tile = 1,1
+
+[BG 2]
+type = normal
+spriteno = 2,0          
+start = 0, 2
+delta = 0.5,1
+mask = 1
+
+[BG 3] ; reds
+type = anim
+actionno = 5        
+start = 0, 2
+delta = 0.5,1
+
+[BG 4] ; greens
+type = anim
+actionno = 6        
+start = 0, 2
+delta = 0.5,1
+
+[BG 5] ; blues
+type = anim
+actionno = 7        
+start = 0, 2
+delta = 0.5,1
+
+[BG 0]
+type = normal
+spriteno = 9,0          
+start = 0, 2
+delta = 1,2
+trans = addalpha
+alpha = 256,256
+velocity = 2
+tile = 1
+
+[BG 6]
+type = normal
+spriteno = 10,0          
+start = 0, 2
+delta = 1,2
+mask = 1
+
+[BG 6]
+type = normal
+spriteno = 10,1          
+start = 0, 2
+delta = 1,2
+mask = 1
+
+[BG 6]
+type = normal
+spriteno = 11,0          
+start = 0, 2
+delta = 0.5,1
+mask = 1
+
+[BG 6]
+type = normal
+spriteno = 4,0          
+start = 0, 2
+delta = 1,2
+mask = 1
+
+;-----------------------------------------------------
+
+[Begin Action 5] ;reds
+5, 0, 0,0, 5
+5, 1, 0,0, 5
+5, 2, 0,0, 5
+5, 3, 0,0, 5
+5, 4, 0,0, 5
+
+
+[Begin Action 6] ;greens
+6, 0, 0,0, 5,,as256d256
+6, 1, 0,0, 5,,as256d256
+6, 2, 0,0, 5,,as256d256
+6, 3, 0,0, 5,,as256d256
+6, 4, 0,0, 5,,as256d256
+
+
+[Begin Action 7] ;blues
+7, 0, 0,0, 5,,as256d256
+7, 1, 0,0, 5,,as256d256
+7, 2, 0,0, 5,,as256d256
+7, 3, 0,0, 5,,as256d256
+7, 4, 0,0, 5,,as256d256

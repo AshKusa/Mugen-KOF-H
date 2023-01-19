@@ -1,0 +1,34 @@
+[Info]
+name = "K9999"
+author = "BLACK";Mouser
+pal.defaults =1,4
+mugenversion = 1.1
+localcoord = 427,240
+
+[Files]
+cmd      = k9999.cmd
+cns      = K49-C.cns
+st       = K49-C.cns
+st1      = K49-S.cns
+st2      = K49-H.cns
+st3      = K49-H2.cns
+st4      = K49-3.cns
+st5      = ÐÂ1.cns
+st6      = ÐÂ2.cns
+stcommon = common1.cns
+sprite   = k9999.sff
+anim     = k9999.air
+sound    = K49.snd
+
+pal1     = pals/k9999_AKOF.act 
+pal2     = pals/k9999_AKOF2.act
+pal3     = pals/k9999_03.act 
+pal4     = pals/k9999_04.act
+pal5     = pals/k9999_05.act 
+pal6     = pals/k9999_06.act 
+pal7     = pals/k9999_AKOF.act 
+pal8     = pals/k9999_AKOF2.act
+pal9     = pals/k9999_03.act 
+pal10     = pals/k9999_04.act
+pal11     = pals/k9999_05.act 
+pal12     = pals/k9999_06.act 

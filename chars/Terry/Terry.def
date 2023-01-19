@@ -1,0 +1,36 @@
+[Info]
+Name         = "Terry"
+DisplayName  = "Terry"
+MugenVersion = 1.1
+Author       = "Zelgadis"
+localcoord = 427,240
+
+[Files]
+Cmd      = Terry.cmd
+Cns      = Terry.cns
+St       = Terry.cns
+StCommon = common1.cns
+Sprite   = Terry.sff
+Anim     = Terry.air
+Sound    = Terry.snd
+st1      = Terry-N.cns
+st2      = Terry-S.cns
+st3      = Terry-H.cns
+st4      = Terry-3.cns
+
+pal1     = Paletas/Terry-1.act
+pal2     = Paletas/Terry-2.act
+pal3     = Paletas/Terry-3.act
+pal4     = Paletas/Terry-4.act
+pal5     = Paletas/Terry-5.act
+pal6     = Paletas/Terry-6.act
+pal7     = Paletas/Terry-1.act
+pal8     = Paletas/Terry-2.act
+pal9     = Paletas/Terry-3.act
+pal10     = Paletas/Terry-4.act
+pal11     = Paletas/Terry-5.act
+pal12     = Paletas/Terry-6.act
+
+[Arcade]
+;intro.storyboard  = 
+;ending.storyboard =

@@ -1,0 +1,1257 @@
+;===============================================================================
+;Ryo Sakazaki Kof Memorial Style
+;EN ESTA SECCION SE ENCUENTRABN TODOS LOS MOVIMIETOS VACICOS DEL CHAR
+;LA MODIFICACION SIN AUTORIZACION PUEDE SIGNIFICAR UNA FALLA TOTAL
+;EN EL MISMO
+;===============================================================================
+;---------------------------------------------------------------------------
+[Statedef 200]
+type     = S
+movetype = A
+physics  = S
+juggle   = 8
+velset   = 0,0
+ctrl     = 0
+anim     = 200
+poweradd = 0
+sprpriority = 2
+
+[State 200, ヒット定義]
+type = HitDef
+trigger1 = time = 0
+attr = S, NA
+damage = 23, 0
+animtype = Light
+guardflag = MA
+hitflag = MAF
+priority = 3, Hit
+pausetime = 9, 10
+sparkno = 0
+guard.sparkno = 40
+sparkxy = -20, -80
+hitsound = s1,0
+guardsound = s2,0
+ground.type = High
+ground.slidetime = 8
+ground.hittime  = 10
+ground.velocity = -4.5,0
+airguard.velocity = -1.9,-.8
+air.type = Low
+air.velocity = -1.4,-3
+air.hittime = 12
+p2stateno = ifelse(p2statetype = C && enemy,var(0) = 1,4985,ifelse(enemy,var(0) = 1,4975,ifelse(p2statetype = C && P2movetype != A,4277,4330)))
+
+[State 200, 音を鳴らす]
+type = PlaySnd
+trigger1 = AnimElem = 2
+value = 0,0
+
+[State 200, PlaySound]
+type = PlaySnd
+trigger1 = AnimElem = 1
+trigger1 = random < 700
+value = 10,17
+channel = 4
+
+[State 200, ステート変更]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+;---------------------------------------------------------------------------
+[Statedef 205]
+type     = S
+movetype = A
+physics  = S
+juggle   = 8
+velset   = 0,0
+ctrl     = 0
+anim     = 205
+poweradd = 0
+sprpriority = 2
+
+[State 200, ヒット定義]
+type = HitDef
+trigger1 = time = 0
+attr = S, NA
+damage = 23, 0
+animtype = Light
+guardflag = MA
+hitflag = MAF
+priority = 3, Hit
+pausetime = 9, 10
+sparkno = 0
+guard.sparkno = 40
+sparkxy = -15, -80
+hitsound = s1,0
+guardsound = s2,0
+ground.type = High
+ground.slidetime = 8
+ground.hittime  = 10
+ground.velocity = -4,0
+airguard.velocity = -1.9,-.8
+air.type = Low
+air.velocity = -1.4,-3
+air.hittime = 12
+p2stateno = ifelse(p2statetype = C && enemy,var(0) = 1,4985,ifelse(enemy,var(0) = 1,4975,ifelse(p2statetype = C && P2movetype != A,4277,4330)))
+
+[State 200, 音を鳴らす]
+type = PlaySnd
+trigger1 = AnimElem = 2
+value = 0, 0
+
+[State 200, PlaySound]
+type = PlaySnd
+trigger1 = AnimElem = 1
+trigger1 = random < 700
+value = 10,17
+channel = 4
+
+[State 200, ステート変更]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+;---------------------------------------------------------------------------
+[Statedef 210]
+type     = S
+movetype = A
+physics  = S
+juggle   = 8
+poweradd = 0
+ctrl     = 0
+velset   = 0,0
+anim     = 210
+sprpriority = 2
+
+[State 200, ヒット定義]
+type = HitDef
+trigger1 = time = 0
+attr = S, NA
+damage = 57, 0
+animtype = Hard
+guardflag = MA
+hitflag = MAF
+priority = 3, Hit
+pausetime = 10, 11
+sparkno = 1
+guard.sparkno = 41
+sparkxy = -25, -80
+hitsound = s1,1
+guardsound = s2,0
+ground.type = High
+ground.slidetime = 16
+ground.hittime  = 18
+ground.velocity = -7.5
+airguard.velocity = -2.3,-1.8
+air.type = High
+air.velocity = -2.5,-3
+air.hittime = 12
+p2stateno = ifelse(p2statetype = C && enemy,var(0) = 1,4985,ifelse(enemy,var(0) = 1,4975,ifelse(p2statetype = C && P2movetype != A,4277,4330)))
+
+[State 200, 音を鳴らす]
+type = PlaySnd
+trigger1 = AnimElem = 4
+value = 0, 1
+
+[State 200, PlaySound]
+type = PlaySnd
+trigger1 = AnimElem = 2
+trigger1 = random < 700
+value = 10,6
+channel = 4
+
+[State 210, ステート変更]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+;---------------------------------------------------------------------------
+[Statedef 215]
+type     = S
+movetype = A
+physics  = S
+juggle   = 8
+poweradd = 0
+ctrl     = 0
+velset   = 0,0
+anim     = 215
+sprpriority = 2
+
+[State 200, ヒット定義]
+type = HitDef
+trigger1 = time = 0
+attr = S, NA
+damage = 58, 0
+animtype = Hard
+guardflag = MA
+hitflag = MAF
+priority = 3, Hit
+pausetime = 10, 11
+sparkno = 1
+guard.sparkno = 41
+sparkxy = -20, -65
+hitsound = s1,1
+guardsound = s2,0
+ground.type = High
+ground.slidetime = 18
+ground.hittime  = 20
+ground.velocity = -8.3
+airguard.velocity = -2.3,-1.8
+air.type = High
+air.velocity = -2.5,-3
+air.hittime = 12
+p2stateno = ifelse(p2statetype = C && enemy,var(0) = 1,4985,ifelse(enemy,var(0) = 1,4975,ifelse(p2statetype = C && P2movetype != A,4277,4330)))
+
+[State 200, 音を鳴らす]
+type = PlaySnd
+trigger1 = AnimElem = 4
+value = 0, 1
+
+[State 200, PlaySound]
+type = PlaySnd
+trigger1 = AnimElem = 2
+trigger1 = random < 700
+value = 10,6
+channel = 4
+
+[State 210, ステート変更]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+;---------------------------------------------------------------------------
+[Statedef 230]
+type     = S
+movetype = A
+physics  = S
+juggle   = 8
+poweradd = 0
+ctrl     = 0
+velset   = 0,0
+anim     = 230
+sprpriority = 2
+
+[State 230, ヒット定義]
+type = HitDef
+trigger1 = time = 0
+attr = S, NA
+animtype  = Medium
+damage    = 26
+guardflag = MA
+pausetime = 9,10
+sparkno = 0
+guard.sparkno = 40
+sparkxy = -20, -70
+hitsound = s1,2
+guardsound = s2,0
+ground.type = Low
+ground.slidetime = 8
+ground.hittime  = 9
+ground.velocity = -5
+air.velocity = -2.5,-3.5
+p2stateno = ifelse(p2statetype = C && enemy,var(0) = 1,4985,ifelse(enemy,var(0) = 1,4975,ifelse(p2statetype = C && P2movetype != A,4277,4330)))
+
+[State 200, 音を鳴らす]
+type = PlaySnd
+trigger1 = AnimElem = 1
+value = 0, 2
+
+[State 200, PlaySound]
+type = PlaySnd
+trigger1 = AnimElem = 2
+trigger1 = random < 700
+value = 10,7
+channel = 4
+
+[State 230, ステート変更]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+;---------------------------------------------------------------------------
+; 近距離立ち弱キック
+; CNS レベル: 基本
+
+[Statedef 235]
+type     = S
+movetype = A
+physics  = S
+juggle   = 8
+poweradd = 0
+ctrl     = 0
+velset   = 0,0
+anim     = 235
+sprpriority = 2
+
+[State 230, ヒット定義]
+type = HitDef
+trigger1 = time = 0
+attr = S, NA
+animtype  = Medium
+damage    = 26
+guardflag = MA
+pausetime = 9,10
+sparkno = 0
+guard.sparkno = 40
+sparkxy = -20, -75
+hitsound = s1,2
+guardsound = s2,0
+ground.type = Low
+ground.slidetime = 10
+ground.hittime  = 11
+ground.velocity = -3.5
+air.velocity = -2.5,-3.5
+p2stateno = ifelse(p2statetype = C && enemy,var(0) = 1,4985,ifelse(enemy,var(0) = 1,4975,ifelse(p2statetype = C && P2movetype != A,4277,4330)))
+
+[State 200, 音を鳴らす]
+type = PlaySnd
+trigger1 = AnimElem = 1
+value = 0, 2
+
+[State 200, PlaySound]
+type = PlaySnd
+trigger1 = AnimElem = 2
+trigger1 = random < 700
+value = 10,7
+channel = 4
+
+[State 230, ステート変更]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+;---------------------------------------------------------------------------
+[Statedef 240]
+type     = S
+movetype = A
+physics  = S
+juggle   = 8
+poweradd = 0
+ctrl     = 0
+velset   = 0,0
+anim     = 240
+sprpriority = 2
+
+[State 240, ヒット定義]
+type = HitDef
+trigger1 = Time = 0
+attr = S, NA
+animtype  = Hard
+damage    = 59
+guardflag = MA
+pausetime = 10,11
+sparkno = 1
+guard.sparkno = 41
+sparkxy = -25,-70
+hitsound   = s1,3
+guardsound = s2,0
+ground.type = High
+ground.slidetime = 16
+ground.hittime  = 18
+ground.velocity = -9
+air.velocity = -3.2,-3.2
+p2stateno = ifelse(p2statetype = C && enemy,var(0) = 1,4985,ifelse(enemy,var(0) = 1,4975,ifelse(p2statetype = C && P2movetype != A,4277,4330)))
+
+[State 200, 音を鳴らす]
+type = PlaySnd
+trigger1 = AnimElem = 4
+value = 0, 3
+
+[State 200, PlaySound]
+type = PlaySnd
+trigger1 = AnimElem = 2
+trigger1 = random < 700
+value = 10,6
+channel = 4
+
+[State 240, ステート変更]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+;---------------------------------------------------------------------------
+[Statedef 245]
+type     = S
+movetype = A
+physics  = S
+juggle   = 8
+poweradd = 0
+ctrl     = 0
+velset   = 0,0
+anim     = 245
+sprpriority = 2
+
+[State 240, ヒット定義]
+type = HitDef
+trigger1 = time = 0
+attr = S, NA
+animtype  = Hard
+damage    = 60
+guardflag = MA
+pausetime = 10,11
+sparkno = 1
+guard.sparkno = 41
+sparkxy = -20,-70
+hitsound   = s1,3
+guardsound = s2,0
+ground.type = High
+ground.slidetime = 20
+ground.hittime  = 22
+ground.velocity = -8.2
+air.velocity = -3.6,-3.4
+p2stateno = ifelse(p2statetype = C && enemy,var(0) = 1,4985,ifelse(enemy,var(0) = 1,4975,ifelse(p2statetype = C && P2movetype != A,4277,4330)))
+
+[State 200, 音を鳴らす]
+type = PlaySnd
+trigger1 = AnimElem = 1
+value = 0, 3
+
+[State 200, PlaySound]
+type = PlaySnd
+trigger1 = AnimElem = 1
+trigger1 = random < 700
+value = 10,6
+channel = 4
+
+[State 240, ステート変更]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+;---------------------------------------------------------------------------
+[Statedef 400]
+type     = C
+movetype = A
+physics  = C
+juggle   = 8
+poweradd = 0
+ctrl     = 0
+anim     = 400
+sprpriority = 2
+
+[State 200, 音を鳴らす]
+type = PlaySnd
+trigger1 = AnimElem = 2
+value = 0, 0
+
+[State 400, ヒット定義]
+type = HitDef
+trigger1 = time = 0
+attr = C, NA
+damage    = 23
+priority  = 3
+animtype  = Light
+hitflag = MAF
+guardflag = M
+pausetime = 9,9
+sparkno = 0
+guard.sparkno = 40
+sparkxy = -10,-40
+hitsound   = s1,0
+guardsound = s2,0
+ground.type = Low
+ground.slidetime = 8
+ground.hittime  = 9
+ground.velocity = -5
+air.velocity = -1.5,-3
+p2stateno = ifelse(p2statetype = C && enemy,var(0) = 1,4985,ifelse(enemy,var(0) = 1,4975,ifelse(p2statetype = C && P2movetype != A,4277,4330)))
+
+[State 200, PlaySound]
+type = PlaySnd
+trigger1 = AnimElem = 1
+trigger1 = random < 700
+value = 10,17
+channel = 4
+
+[State 400, ステート変更]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 11
+ctrl = 1
+
+;---------------------------------------------------------------------------
+[Statedef 410]
+type     = C
+movetype = A
+physics  = C
+juggle   = 8
+poweradd = 0
+ctrl     = 0
+anim     = 410
+sprpriority = 2
+
+[State 200, 音を鳴らす]
+type = PlaySnd
+trigger1 = AnimElem = 3
+value = 0, 1
+
+[State 200, ヒット定義]
+type = HitDef
+trigger1 = time = 0
+attr = S, NA
+damage = 57, 0
+animtype = Hard
+guardflag = MA
+hitflag = MAF
+priority = 3, Hit
+pausetime = 10, 11
+sparkno = 1
+guard.sparkno = 41
+sparkxy = -20,-80
+hitsound = s1,1
+guardsound = s2,0
+ground.type = High
+ground.slidetime = 21
+ground.hittime  = 22
+ground.velocity = -7.5
+airguard.velocity = -2.3,-1.8
+air.type = High
+air.velocity = -2.5,-3
+air.hittime = 12
+p2stateno = ifelse(p2statetype = C && enemy,var(0) = 1,4985,ifelse(enemy,var(0) = 1,4975,ifelse(p2statetype = C && P2movetype != A,4277,4330)))
+
+[State 200, PlaySound]
+type = PlaySnd
+trigger1 = AnimElem = 1
+trigger1 = random < 700
+value = 10,6
+channel = 4
+
+[State 410, ステート変更]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 11
+ctrl = 1
+
+;---------------------------------------------------------------------------
+[Statedef 430]
+type     = C
+movetype = A
+physics  = C
+juggle   = 8
+poweradd = 0
+ctrl     = 0
+anim     = 430
+sprpriority = 2
+
+[State 200, 音を鳴らす]
+type = PlaySnd
+trigger1 = AnimElem = 2
+value = 0, 2
+
+[State 430, ヒット定義]
+type = HitDef
+trigger1 = Time = 0
+attr = C, NA
+damage    = 28
+animtype  = Light
+hitflag = MAF
+guardflag = L
+pausetime = 9,9
+sparkno = 0
+guard.sparkno = 40
+sparkxy = -10,-8
+hitsound   = s1,2
+guardsound = s2,0
+ground.type = Low
+ground.slidetime = 8
+ground.hittime  = 9
+ground.velocity = -5.5
+air.velocity = -2,-3
+p2stateno = ifelse(p2statetype = C && enemy,var(0) = 1,4985,ifelse(enemy,var(0) = 1,4975,ifelse(p2statetype = C && P2movetype != A,4277,4330)))
+
+[State 200, PlaySound]
+type = PlaySnd
+trigger1 = AnimElem = 1
+trigger1 = random < 700
+value = 10,7
+channel = 4
+
+[State 400, コントロール可否]
+type = CtrlSet
+trigger1 = AnimElem = 3
+value = 1
+
+[State 430, ステート変更]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 11
+ctrl = 1
+;---------------------------------------------------------------------------
+[Statedef 440]
+type     = C
+movetype = A
+physics  = C
+juggle   = 15
+poweradd = 0
+ctrl     = 0
+anim     = 440
+sprpriority = 2
+
+[State 200, 音を鳴らす]
+type = PlaySnd
+trigger1 = AnimElem = 3
+value = 0, 3
+
+[State 440, ヒット定義]
+type = HitDef
+trigger1 = Time = 0
+attr = C, NA
+damage    = 64
+hitflag = MAF
+guardflag = L
+pausetime = 10,11
+sparkno = 1
+guard.sparkno = 41
+sparkxy = -20,-10
+hitsound   = s1,3
+guardsound = s2,0
+ground.type = Trip
+ground.slidetime = 13
+ground.hittime  = 15
+p2stateno = 4840
+ground.velocity = -3,-4.5
+air.velocity = -3,-4.5
+guard.velocity = -7
+fall = 1
+
+[State 200, PlaySound]
+type = PlaySnd
+trigger1 = AnimElem = 1
+trigger1 = random < 700
+value = 10,6
+channel = 4
+
+[State 440, ステート変更]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 11
+ctrl = 1
+
+;---------------------------------------------------------------------------
+[Statedef 600]
+type     = A
+movetype = A
+physics  = A
+juggle   = 8
+poweradd = 0
+ctrl     = 0
+anim     = 600
+sprpriority = 2
+
+[State 200, 音を鳴らす]
+type = PlaySnd
+trigger1 = AnimElem = 2
+value = 0, 0
+
+[State 600, ヒット定義]
+type = HitDef
+trigger1 = Time = 0
+attr = A, NA
+damage    = 20
+guardflag = HA
+priority = 3
+pausetime = 8,9
+sparkno = 0
+guard.sparkno = 40
+sparkxy = -15,-60
+hitsound   = s1,0
+guardsound = s2,0
+ground.type = High
+ground.slidetime = 9
+ground.hittime  = 9
+ground.velocity = -4
+air.velocity = -1.3,-3
+p2stateno = ifelse(p2statetype = C && enemy,var(0) = 1,4985,ifelse(enemy,var(0) = 1,4975,ifelse(p2statetype = C && P2movetype != A,4277,4330)))
+
+[State 200, PlaySound]
+type = PlaySnd
+trigger1 = AnimElem = 1
+trigger1 = random < 700
+value = 10,7
+channel = 4
+
+;---------------------------------------------------------------------------
+[Statedef 610]
+type     = A
+movetype = A
+physics  = A
+juggle   = 8
+poweradd = 0
+ctrl     = 0
+anim     = 610
+sprpriority = 2
+
+[State 200, 音を鳴らす]
+type = PlaySnd
+trigger1 = AnimElem = 2
+value = 0, 1
+
+[State 610, ヒット定義]
+type = HitDef
+trigger1 = Time = 0
+attr = A, NA
+damage = 72
+guardflag = HA
+priority = 4
+pausetime = 13,13
+sparkno = 1
+guard.sparkno = 41
+sparkxy = -20,-80
+hitsound   = s1,1
+guardsound = s2,0
+animtype = Medium
+ground.type = High
+ground.slidetime = 16
+ground.hittime  = 16
+ground.velocity = -5
+air.velocity = -3,-4
+p2stateno = ifelse(p2statetype = C && enemy,var(0) = 1,4985,ifelse(enemy,var(0) = 1,4975,ifelse(p2statetype = C && P2movetype != A,4277,4330)))
+
+[State 200, PlaySound]
+type = PlaySnd
+trigger1 = AnimElem = 1
+trigger1 = random < 700
+value = 10,6
+channel = 4
+
+;---------------------------------------------------------------------------
+[Statedef 620]
+type     = A
+movetype = A
+physics  = A
+juggle   = 8
+poweradd = 0
+ctrl     = 0
+anim     = 620
+sprpriority = 2
+
+[State 200, 音を鳴らす]
+type = PlaySnd
+trigger1 = AnimElem = 2
+value = 0, 2
+
+[State 630, ヒット定義]
+type = HitDef
+trigger1 = Time = 0
+attr = A, NA
+damage = 26
+guardflag = HA
+priority = 3
+pausetime = 9,10
+sparkno = 0
+guard.sparkno = 40
+sparkxy = -10,-37
+hitsound   = s1,2
+guardsound = s2,0
+ground.type = High
+ground.slidetime = 9
+ground.hittime  = 9
+ground.velocity = -4
+air.velocity = -2,-3
+p2stateno = ifelse(p2statetype = C && enemy,var(0) = 1,4985,ifelse(enemy,var(0) = 1,4975,ifelse(p2statetype = C && P2movetype != A,4277,4330)))
+
+[State 200, PlaySound]
+type = PlaySnd
+trigger1 = AnimElem = 1
+trigger1 = random < 700
+value = 10,7
+channel = 4
+
+;---------------------------------------------------------------------------
+[Statedef 630]
+type     = A
+movetype = A
+physics  = A
+juggle   = 8
+poweradd = 0
+ctrl     = 0
+anim     = 630
+sprpriority = 2
+
+[State 200, 音を鳴らす]
+type = PlaySnd
+trigger1 = AnimElem = 2
+value = 0, 2
+
+[State 630, ヒット定義]
+type = HitDef
+trigger1 = Time = 0
+attr = A, NA
+damage = 26
+guardflag = HA
+priority = 3
+pausetime = 9,10
+sparkno = 0
+guard.sparkno = 40
+sparkxy = -20,-80
+hitsound   = s1,0
+guardsound = s2,0
+ground.type = High
+ground.slidetime = 9
+ground.hittime  = 9
+ground.velocity = -4
+air.velocity = -2,-3
+p2stateno = ifelse(p2statetype = C && enemy,var(0) = 1,4985,ifelse(enemy,var(0) = 1,4975,ifelse(p2statetype = C && P2movetype != A,4277,4330)))
+
+[State 200, PlaySound]
+type = PlaySnd
+trigger1 = AnimElem = 1
+trigger1 = random < 700
+value = 10,7
+channel = 4
+
+;---------------------------------------------------------------------------
+[Statedef 635]
+type     = A
+movetype = A
+physics  = A
+juggle   = 8
+poweradd = 0
+ctrl     = 0
+anim     = 635
+sprpriority = 2
+
+[State 200, 音を鳴らす]
+type = PlaySnd
+trigger1 = AnimElem = 2
+value = 0, 2
+
+[State 630, ヒット定義]
+type = HitDef
+trigger1 = Time = 0
+attr = A, NA
+damage = 26
+guardflag = HA
+priority = 5
+pausetime = 9,10
+sparkno = 0
+guard.sparkno = 40
+sparkxy = -20,-60
+hitsound   = s1,2
+guardsound = s2,0
+ground.type = High
+ground.slidetime = 13
+ground.hittime  = 14
+ground.velocity = -4
+air.velocity = -2,-3
+p2stateno = ifelse(p2statetype = C && enemy,var(0) = 1,4985,ifelse(enemy,var(0) = 1,4975,ifelse(p2statetype = C && P2movetype != A,4277,4330)))
+
+[State 200, PlaySound]
+type = PlaySnd
+trigger1 = AnimElem = 1
+trigger1 = random < 700
+value = 10,17
+channel = 4
+
+;---------------------------------------------------------------------------
+[Statedef 640]
+type     = A
+movetype = A
+physics  = A
+juggle   = 8
+poweradd = 0
+ctrl     = 0
+anim     = 640
+sprpriority = 2
+
+[State 200, 音を鳴らす]
+type = PlaySnd
+trigger1 = AnimElem = 2
+value = 0, 3
+
+[State 640, ヒット定義]
+type = HitDef
+trigger1 = Time = 0
+attr = A, NA
+damage    = 70
+guardflag = HA
+priority = 4
+pausetime = 12,13
+sparkno = 1
+guard.sparkno = 41
+sparkxy = -25,-70
+hitsound   = s1,3
+guardsound = s2,0
+animtype = Hard
+ground.type = High
+ground.slidetime = 16
+ground.hittime  = 16
+ground.velocity = -5
+air.velocity = -3,-4
+p2stateno = ifelse(p2statetype = C && enemy,var(0) = 1,4985,ifelse(enemy,var(0) = 1,4975,ifelse(p2statetype = C && P2movetype != A,4277,4330)))
+
+[State 200, PlaySound]
+type = PlaySnd
+trigger1 = AnimElem = 1
+trigger1 = random < 700
+value = 10,6
+channel = 4
+
+;---------------------------------------------------------------------------
+[Statedef 645]
+type     = A
+movetype = A
+physics  = A
+juggle   = 8
+poweradd = 0
+ctrl     = 0
+anim     = 645
+sprpriority = 2
+
+[State 200, 音を鳴らす]
+type = PlaySnd
+trigger1 = AnimElem = 3
+value = 0, 3
+
+[State 640, ヒット定義]
+type = HitDef
+trigger1 = Time = 0
+attr = A, NA
+damage    = 70
+guardflag = HA
+priority = 4
+pausetime = 12,13
+sparkno = 1
+guard.sparkno = 41
+sparkxy = -25,-70
+hitsound   = s1,3
+guardsound = s2,0
+animtype = Hard
+ground.type = High
+ground.slidetime = 16
+ground.hittime  = 16
+ground.velocity = -5
+air.velocity = -3,-4
+p2stateno = ifelse(p2statetype = C && enemy,var(0) = 1,4985,ifelse(enemy,var(0) = 1,4975,ifelse(p2statetype = C && P2movetype != A,4277,4330)))
+
+[State 200, PlaySound]
+type = PlaySnd
+trigger1 = AnimElem = 1
+trigger1 = random < 700
+value = 10,6
+channel = 4
+
+;---------------------------------------------------------------------------
+
+[Statedef 310]
+type     = S
+movetype = A
+physics  = S
+juggle   = 8
+poweradd = 0
+ctrl     = 0
+velset   = 0,0
+anim     = 310
+sprpriority = 2
+
+[State 10000, VelSet]
+type = VelSet
+trigger1 = animelem = 5
+x = 4
+
+[State 200, ヒット定義]
+type = HitDef
+trigger1 = time = 0
+attr = S, NA
+damage = 25, 0
+animtype = Hard
+guardflag = HA
+hitflag = MAF
+priority = 3, Hit
+pausetime = 11, 12
+sparkno = 1
+guard.sparkno = 41
+sparkxy = -20, -70
+hitsound = s1,3
+guardsound = s2,0
+ground.type = Low
+ground.slidetime = 21
+ground.hittime  = 22
+ground.velocity = -9
+air.type = Low
+air.velocity = -4.5,-4.5
+air.hittime = 12
+air.fall = 1
+fall.recovertime = 30
+p2stateno = ifelse(p2statetype = C && enemy,var(0) = 1,4985,ifelse(enemy,var(0) = 1,4975,ifelse(p2statetype = C && P2movetype != A,4277,4330)))
+
+[State 200, 音を鳴らす]
+type = PlaySnd
+trigger1 = AnimElem = 4
+value = 0, 1
+
+[State 200, PlaySound]
+type = PlaySnd
+trigger1 = AnimElem = 1
+trigger1 = random < 700
+value = 10,5
+channel = 4
+
+[State 210, ステート変更]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+;---------------------------------------------------------------------------
+
+[Statedef 800]
+type     = S
+movetype = A
+physics  = S
+juggle   = 0
+velset   = 0,0
+ctrl     = 0
+anim     = 800
+sprpriority = 2
+
+[State 800, ヒット定義（投げ用）]
+type = HitDef
+trigger1 = Time = 0
+attr = S, NT 
+hitflag = M-  
+priority = 1, Miss 
+sparkno = 8
+sparkxy = -25,-80
+p1sprpriority = 1 
+p2sprpriority = 0 
+p1facing = 1 
+p2facing = 1 
+p1stateno = ifelse(command="b",830,810) 
+p2stateno = ifelse(command="b",840,820) 
+guard.dist = 0 
+fall = 1 
+numhits = 0
+
+[State 170, 無敵]
+type = NotHitBy
+trigger1 = time = 0
+value = SCA,NT,ST,HT
+time = 1
+
+[State 800, ステート変更]
+type = ChangeState
+Trigger1 = AnimTime = 0
+value = ifelse(command="b",245,215);0
+ctrl = 0;1
+
+;-----------------------------------------------------------------------------
+;投げ１・投げている（自分）
+[Statedef 810]
+type    = S
+movetype= A
+physics = N
+anim = 810
+
+[State 170, 無敵]
+type = NotHitBy
+trigger1 = 1
+value = SCA
+
+[State 810, 物理的なキャラの幅]
+type = Width
+trigger1 = 1
+edge = 60,0
+
+[State 810, 1]
+type = PlaySnd
+Trigger1 = time = 0
+value = f800,0
+
+[State 810, 1]
+type = PlaySnd
+Trigger1 = AnimElem = 4
+value = s0,4
+
+[State 200,]
+type = Posadd
+trigger1 = AnimElem = 5
+x = 10
+
+[State 810, 3]
+type = TargetBind
+Trigger1 = AnimElemtime(1) >= 0 && AnimElemtime(4) < 0
+pos = 40, 0
+
+[State 810, 3]
+type = TargetBind
+Trigger1 = AnimElemtime(4) >= 0 && AnimElemtime(5) < 0
+pos = 60, 0
+
+[State 300 , 1]
+type = HitDef
+trigger1 = time = 0
+attr = S, NA
+animtype  = Hard
+damage    = 100
+priority = 5
+pausetime = 5,10
+sparkno = 2
+guard.sparkno = 42
+sparkxy = -20,-75
+hitsound = s1,4
+hitflag = MAF
+guardsound = s2,0
+ground.type = High
+ground.slidetime = 20
+ground.hittime  = 20
+ground.velocity = -4.5,-5.5
+air.velocity = -4.5,-5.5
+air.animtype = Back
+fall = 1
+fall.recovertime = 25
+ground.cornerpush.veloff = 0
+air.cornerpush.veloff = 0
+
+[State 810, 1]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+;---------------------------------------------------------------------------
+;投げ１・投げられている（相手の動作）動作
+[Statedef 820]
+type    = A
+movetype= H
+physics = N
+velset = 0,0
+
+[State 2120]
+type = ScreenBound
+trigger1 = 1
+value = 1
+movecamera = 1,0
+
+[State 820, 1]
+type = ChangeAnim2
+Trigger1 = Time = 0
+value = 820+var(55)*30000
+
+[State 820, 1]
+type = SelfState
+trigger1 = AnimTime = 0
+trigger2 = Enemy,Stateno != 810
+value = 0
+ctrl = 1
+
+;-----------------------------------------------------------------------------
+[Statedef 830]
+type    = S
+movetype= A
+physics = S
+anim = 830
+sprpriority = 2
+
+[State 915, 1]
+type = width
+trigger1 = AnimElem = 4
+edge = 0,60
+
+[State 240, 1]
+type = PlaySnd
+trigger1 = animelem = 3
+value = s10,8
+channel = 0
+
+[State 351, posadd1]
+type = Posadd
+trigger1 = AnimElem = 3
+trigger2 = AnimElem = 4
+trigger3 = AnimElem = 5
+trigger4 = AnimElem = 6
+x = -16
+
+[State 301, Bind1]
+type = TargetBind
+trigger1 = AnimElem = 1
+pos = 20, 0
+time = 1
+
+[State 301, Bind1]
+type = TargetBind
+trigger1 = AnimElem = 2
+pos = 12, -8
+time = 1
+
+[State 301, Bind3]
+type = TargetBind
+trigger1 = AnimElem = 3
+pos = -8, -20
+time = 1
+
+[State 301, Bind4]
+type = TargetBind
+trigger1 = AnimElem = 4
+pos = -12, -66
+time = 1
+
+[State 301, Bind5]
+type = TargetBind
+trigger1 = AnimElem = 5
+pos = -57, -40
+time = 1
+
+[State 301, DAMAGE]
+type = targetlifeadd
+Trigger1 = AnimElem = 5, =2
+value = -100
+
+[State 301, Grab Snd]
+type = PlaySnd
+trigger1 = AnimElem = 2
+value = f800,0
+
+[State 361, Turn]
+type = Turn
+Trigger1 = animelem = 11
+
+[State 301, end]
+type = ChangeState
+Trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+;-------------------------------------------------------------------------------
+[Statedef 840]
+type    = A
+movetype= H
+physics = N
+sprpriority = -2
+ctrl = 0
+velset = 0,0
+
+[State 9010, 1]
+type = ChangeAnim2
+trigger1 = Time = 0
+value = 840+var(55)*30000
+
+[State 9010, 1]
+type = ScreenBound
+trigger1 = AnimElem = 6,< 4
+movecamera = 1,0
+
+[State 9010, 1]
+type = velset
+trigger1 = AnimElem = 6
+x = 6
+y = -7
+
+[State 9010, 1]
+type = veladd
+trigger1 = AnimElem = 6,> 0
+y = .55
+
+[State 9010, 2]
+type = SelfState
+trigger1 = Pos Y >= -15 && Vel Y > 0
+value = 5100

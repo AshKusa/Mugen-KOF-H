@@ -1,0 +1,39 @@
+﻿
+[Info]
+name = "Iori"
+displayname = "Iori"
+versiondate = 06,23,2019
+author ="Asama Mohammed && MyMugen && ĩҶkof"
+mugenversion = 1.1
+localcoord = 427,240
+
+[Files]
+sprite = Iori.sff
+anim = Iori.air
+sound = Iori.snd
+cmd = Iori.cmd
+cns = Iori.cns
+stcommon = common1.cns
+st = Iori.cns
+st1 = Iori-N.cns
+st2 = Iori-S.cns
+st3 = Iori-H.cns
+st4 = Iori-3.cns
+
+pal1 = paletas\iori XIV-01.act
+pal2 = paletas\iori XIV-02.act
+pal3 = paletas\iori XIV-03.act
+pal4 = paletas\iori XIV-04.act
+pal5 = paletas\iori XIV-05.act
+pal6 = paletas\iori XIV-06.act
+pal7 = paletas\iori XIV-01.act
+pal8 = paletas\iori XIV-02.act
+pal9 = paletas\iori XIV-03.act
+pal10 = paletas\iori XIV-04.act
+pal11 = paletas\iori XIV-05.act
+pal12 = paletas\iori XIV-06.act
+
+
+[Arcade]
+intro.storyboard = 
+ending.storyboard = 

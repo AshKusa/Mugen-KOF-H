@@ -1,0 +1,33 @@
+[Info]
+name = "Joe"       
+author = "K.O.D"        
+pal.defaults = 4     
+mugenversion = 1.1
+localcoord   = 427,240
+
+[Files]
+cmd     = Joe.cmd 
+cns     = Joe.cns   
+st      = Joe.cns  
+st1     = Joe-3.cns
+st2     = new.cns
+st3     = ÐÂ1.cns
+st4     = ÐÂ2.cns
+;st5     = ÐÂ3.cns
+stcommon= common1.cns
+sprite  = Joe.sff 
+anim    = Joe.air   
+sound   = joe.snd
+
+pal1    = act/Default.act
+pal2    = act/Orange.act
+pal3    = act/Nigga.act 
+pal4    = act/RBFFSpecial.act
+pal5    = act/Grey.act
+pal6    = act/White.act
+pal7    = act/Default.act
+pal8    = act/Orange.act
+pal9    = act/Nigga.act
+pal10    = act/RBFFSpecial.act
+pal11    = act/Grey.act
+pal12    = act/White.act

@@ -1,0 +1,292 @@
+; -------------------------------------------------------------------
+; The King of Fighters XIII Screenpack by EnlightendShadow
+; credits Configuration.
+; -------------------------------------------------------------------
+
+[Info]
+name = "THE KING OF FIGHTERS XIII"
+author = "EnlightendShadow"
+versiondate = 07,15,2011
+mugenversion = 1.0
+localcoord = 854,480;1280,720
+
+; -------------------------------------------------------------------
+
+[SceneDef]
+spr = credits.sff
+startscene = 0
+
+; -------------------------------------------------------------------
+
+[Scene 0]
+fadein.time = 60
+fadeout.time = 60
+end.time = 300
+bg.name = BG0
+bgm = data/credits.mp3
+bgm.loop = 0
+bgm.volume = 255
+
+[BG0Def]
+
+[BG0 Wwise]
+type = normal
+spriteno = 0,0
+start = 0,0
+
+; -------------------------------------------------------------------
+
+[Scene 1]
+fadein.time = 60
+fadeout.time = 60
+end.time = 300
+bg.name = BG1
+;bgm = 
+;bgm.loop = 0
+;bgm.volume = 255
+
+[BG1Def]
+
+[BG1 scaleform]
+type = normal
+spriteno = 0,1
+start = 0,0
+
+; -------------------------------------------------------------------
+
+[Scene 2]
+fadein.time = 60
+fadeout.time = 60
+end.time = 300
+bg.name = BG2
+;bgm = 
+;bgm.loop = 0
+;bgm.volume = 255
+
+[BG2Def]
+
+[BG2 snk]
+type = normal
+spriteno = 0,2
+start = 0,0
+
+; -------------------------------------------------------------------
+
+[Scene 3]
+fadein.time = 60
+fadeout.time = 60
+end.time = 300
+bg.name = BG3
+;bgm = 
+;bgm.loop = 0
+;bgm.volume = 255
+
+[BG3Def]
+
+[BG3 enlightendshadow]
+type = normal
+spriteno = 0,3
+start = 0,0
+
+; -------------------------------------------------------------------
+
+[Scene 4]
+fadein.time = 60
+fadeout.time = 60
+end.time = 300
+bg.name = BG4
+;bgm = 
+;bgm.loop = 0
+;bgm.volume = 255
+
+[BG4Def]
+
+[BG4 Hloader]
+type = normal
+spriteno = 0,4
+start = 0,0
+
+
+; -------------------------------------------------------------------
+
+[Scene 5]
+fadein.time = 60
+fadeout.time = 60
+end.time = 300
+bg.name = BG5
+;bgm = 
+;bgm.loop = 0
+;bgm.volume = 255
+
+[BG5Def]
+
+[BG5 Hloader]
+type = normal
+spriteno = 0,5
+start = 0,0
+
+; -------------------------------------------------------------------
+
+[Scene 6]
+fadein.time = 60
+fadeout.time = 60
+end.time = 300
+bg.name = BG6
+;bgm = 
+;bgm.loop = 0
+;bgm.volume = 255
+
+[BG6Def]
+
+[BG6 Hloader]
+type = normal
+spriteno = 0,6
+start = 0,0
+
+; -------------------------------------------------------------------
+
+[Scene 7]
+fadein.time = 60
+fadeout.time = 60
+end.time = 300
+bg.name = BG7
+;bgm = 
+;bgm.loop = 0
+;bgm.volume = 255
+
+[BG7Def]
+
+[BG7 Hloader]
+type = normal
+spriteno = 0,7
+start = 0,0
+
+; -------------------------------------------------------------------
+
+[Scene 8]
+fadein.time = 60
+fadeout.time = 60
+end.time = 300
+bg.name = BG8
+;bgm = 
+;bgm.loop = 0
+;bgm.volume = 255
+
+[BG8Def]
+
+[BG8 Hloader]
+type = normal
+spriteno = 0,8
+start = 0,0
+
+; -------------------------------------------------------------------
+
+[Scene 9]
+fadein.time = 60
+fadeout.time = 60
+end.time = 300
+bg.name = BG9
+;bgm = 
+;bgm.loop = 0
+;bgm.volume = 255
+
+[BG9Def]
+
+[BG9 Hloader]
+type = normal
+spriteno = 0,9
+start = 0,0
+
+; -------------------------------------------------------------------
+
+[Scene 10]
+fadein.time = 60
+fadeout.time = 60
+end.time = 300
+bg.name = BG10
+;bgm = 
+;bgm.loop = 0
+;bgm.volume = 255
+
+[BG10Def]
+
+[BG10 Hloader]
+type = normal
+spriteno = 0,10
+start = 0,0
+
+; -------------------------------------------------------------------
+
+[Scene 11]
+fadein.time = 60
+fadeout.time = 60
+end.time = 300
+bg.name = BG11
+;bgm = 
+;bgm.loop = 0
+;bgm.volume = 255
+
+[BG11Def]
+
+[BG11 Hloader]
+type = normal
+spriteno = 0,11
+start = 0,0
+
+; -------------------------------------------------------------------
+
+[Scene 12]
+fadein.time = 60
+fadeout.time = 60
+end.time = 300
+bg.name = BG12
+;bgm = 
+;bgm.loop = 0
+;bgm.volume = 255
+
+[BG12Def]
+
+[BG12 Hloader]
+type = normal
+spriteno = 0,12
+start = 0,0
+
+; -------------------------------------------------------------------
+
+[Scene 13]
+fadein.time = 60
+fadeout.time = 60
+end.time = 300
+bg.name = BG13
+;bgm = 
+;bgm.loop = 0
+;bgm.volume = 255
+
+[BG13Def]
+
+[BG13 Hloader]
+type = normal
+spriteno = 0,13
+start = 0,0
+
+; -------------------------------------------------------------------
+
+[Scene 14]
+fadein.time = 60
+fadeout.time = 0;60
+end.time = 300
+bg.name = BG14
+;bgm = 
+;bgm.loop = 0
+;bgm.volume = 255
+
+[BG14Def]
+
+[BG14 Hloader]
+type = normal
+spriteno = 0,14
+start = 0,0
+
+; -------------------------------------------------------------------
+; 
+; -------------------------------------------------------------------

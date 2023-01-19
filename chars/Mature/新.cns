@@ -1,0 +1,439 @@
+;---------------------------------------------------------------------------
+[Statedef 2200]
+type    = S
+movetype= A
+physics = N
+velset = 0,0
+juggle = 0
+ctrl = 0
+anim = 2200
+poweradd = ifelse(fvar(30) > 0,0,-1000)
+sprpriority = 2
+
+;--------------------------------------SC
+[State 9000, 5]
+type = Explod
+trigger1 = (prevstateno = [1000,1999]) && time = 0
+persistent = 0
+anim = f7500
+pos = 0,80
+postype = left
+removetime = -2
+bindtime = -1
+supermove = 1
+pausemove = 1
+pausemovetime = 99999
+supermovetime = 99999
+sprpriority = 99999
+ownpal = 1
+;--------------------------------------
+
+;--------------------------------------DC
+[State 9000, 5]
+type = Explod
+trigger1 = (prevstateno = [2000,2999]) && time = 0
+persistent = 0
+anim = f7550
+pos = 0,80
+postype = left
+removetime = -2
+bindtime = -1
+supermove = 1
+pausemove = 1
+pausemovetime = 99999
+supermovetime = 99999
+sprpriority = 99999
+ownpal = 1
+;--------------------------------------
+
+;爆气取消=====================================================================
+[State a]
+type = palfx
+triggerall = fvar(30) > 0
+trigger1 = time <= 5
+trigger2 = prevstateno = [1000,1999]
+time = 1
+add = 256,256,256
+color = 1
+ignorehitpause = 1
+
+[State a];爆气中扣除爆气槽
+type = varadd
+triggerall = fvar(30) >=120
+trigger1 = time = 0
+trigger2 = prevstateno = [1000,1999]
+fvar(30) = -2000
+
+[State a];防止爆气条低于120(不同技能数字有区别)不出现字幕
+type = varset
+triggerall = fvar(30) > 0
+triggerall = fvar(30) <120
+trigger1 = time = 0
+trigger2 = prevstateno = [1000,1999]
+fvar(30) = 1
+
+;============================================================================
+
+[State 3000]
+type = NotHitBy
+trigger1 = Time = [0,30]
+value = SCA
+time = 1
+
+[State a]
+type = BGPalFX
+trigger1 = Time = [0,29]
+time  = 1
+color = 12+((time)*8)
+add   = -256+((time)*8),-256+((time)*8),-256+((time)*8)
+ignorehitpause = 1
+
+[State 6000, 时间暂停]
+type = SuperPause
+trigger1 = time = 1
+time = 33
+anim = -1
+darken=0
+movetime = 33
+
+[State 6000,黑色底色]
+type = Envcolor
+trigger1 = Time = 0
+persistent = 0
+ignorehitpause = 1
+value = 0, 0, 0
+time = 33
+under = 1
+supermove = 1
+
+[State 4000]
+type = Explod
+trigger1 = Time = 0
+anim = F7000
+scale = 0.5,0.5
+pos = 0,-92
+postype = P1
+sprpriority = -4
+supermove = 1
+ownpal = 0
+bindtime = -1
+persistent = 0
+;Removetime = 26
+pausemovetime = 9999999
+supermovetime = 9999999
+
+[State 4000]
+type = Explod
+trigger1 = Time = 0
+anim = F7010
+scale = 0.5,0.5
+pos = 0,-92
+postype = P1
+sprpriority = 4
+supermove = 1
+ownpal = 0
+bindtime = -1
+persistent = 0
+;Removetime = 26
+pausemovetime = 9999999
+supermovetime = 9999999
+
+[State 4000]
+type = PlaySnd
+trigger1 = Time = 0
+value = f9000,0
+
+[state a];设置超级暂停的变量
+type = VarSet
+TriggerAll = !IsHelper
+trigger1 = time = [0,30]
+fvar(1) = 30
+
+[state a];设置超级暂停后的变量
+type = VarSet
+TriggerAll = !IsHelper
+trigger1 = time >=31;超级暂停不同的时间也不同
+fvar(1) = 0
+
+[State Snd]
+type = PlaySnd
+trigger1 = Time = 1
+value = 9, 5
+channel = 1
+
+[State 3120]
+type = PlaySnd
+trigger1 = AnimElemTime(6) = 0
+value = 2, 5
+channel = 1
+
+[State 3120]
+type = PlaySnd
+trigger1 = AnimElemTime(7) = 0
+value = 8, 5
+
+[State 3120]
+type = Projectile
+trigger1 = AnimElemTime(7) = 0
+projID = 2200
+projanim = 1660
+projhitanim = 1670
+projcancelanim = 1670
+projpriority = 3
+Projremove = 1
+projhits = 4
+projmisstime = 5
+projscale =0.5,0.5
+offset = 20,-70
+velocity = 3,0
+remvelocity = 0,0
+attr = S,HP
+hitflag = MAFP
+guardflag = MA
+animtype = back
+damage = 50,10
+getpower = 0
+pausetime = 15,22
+sparkno = 2
+guard.sparkno = 42
+sparkxy = 50,0
+hitsound = s7, 0
+guardsound = s5, 8
+ground.type = High
+ground.slidetime = 25
+ground.hittime = 25
+yaccel = .45
+ground.velocity = -6,-7
+air.velocity = -3,-4
+airguard.velocity = -3,-4
+envshake.time = 10
+envshake.ampl = -2
+envshake.freq = 92
+fall = 1
+fall.recover = 0
+id=2200
+
+[State 3120]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+;---------------------------------------------------------------------------
+[Statedef 2201]
+type    = S
+movetype= A
+physics = N
+velset = 0,0
+juggle = 0
+ctrl = 0
+anim = 2200
+poweradd = ifelse(fvar(30) > 0,0,-1000)
+sprpriority = 2
+
+;--------------------------------------SC
+[State 9000, 5]
+type = Explod
+trigger1 = (prevstateno = [1000,1999]) && time = 0
+persistent = 0
+anim = f7500
+pos = 0,80
+postype = left
+removetime = -2
+bindtime = -1
+supermove = 1
+pausemove = 1
+pausemovetime = 99999
+supermovetime = 99999
+sprpriority = 99999
+ownpal = 1
+;--------------------------------------
+
+;--------------------------------------DC
+[State 9000, 5]
+type = Explod
+trigger1 = (prevstateno = [2000,2999]) && time = 0
+persistent = 0
+anim = f7550
+pos = 0,80
+postype = left
+removetime = -2
+bindtime = -1
+supermove = 1
+pausemove = 1
+pausemovetime = 99999
+supermovetime = 99999
+sprpriority = 99999
+ownpal = 1
+;--------------------------------------
+
+;爆气取消=====================================================================
+[State a]
+type = palfx
+triggerall = fvar(30) > 0
+trigger1 = time <= 5
+trigger2 = prevstateno = [1000,1999]
+time = 1
+add = 256,256,256
+color = 1
+ignorehitpause = 1
+
+[State a];爆气中扣除爆气槽
+type = varadd
+triggerall = fvar(30) >=120
+trigger1 = time = 0
+trigger2 = prevstateno = [1000,1999]
+fvar(30) = -2000
+
+[State a];防止爆气条低于120(不同技能数字有区别)不出现字幕
+type = varset
+triggerall = fvar(30) > 0
+triggerall = fvar(30) <120
+trigger1 = time = 0
+trigger2 = prevstateno = [1000,1999]
+fvar(30) = 1
+
+;============================================================================
+[State 3000]
+type = NotHitBy
+trigger1 = Time = [0,30]
+value = SCA
+time = 1
+
+[State a]
+type = BGPalFX
+trigger1 = Time = [0,29]
+time  = 1
+color = 12+((time)*8)
+add   = -256+((time)*8),-256+((time)*8),-256+((time)*8)
+ignorehitpause = 1
+
+[State 4000]
+type = Explod
+trigger1 = Time = 0
+anim = F7000
+scale = 0.5,0.5
+pos = 0,-92
+postype = P1
+sprpriority = -4
+supermove = 1
+ownpal = 0
+bindtime = -1
+persistent = 0
+;Removetime = 26
+pausemovetime = 9999999
+supermovetime = 9999999
+
+[State 4000]
+type = Explod
+trigger1 = Time = 0
+anim = F7010
+scale = 0.5,0.5
+pos = 0,-92
+postype = P1
+sprpriority = 4
+supermove = 1
+ownpal = 0
+bindtime = -1
+persistent = 0
+;Removetime = 26
+pausemovetime = 9999999
+supermovetime = 9999999
+
+[State 4000]
+type = PlaySnd
+trigger1 = Time = 0
+value = f9000,0
+
+[state a];设置超级暂停的变量
+type = VarSet
+TriggerAll = !IsHelper
+trigger1 = time = [0,30]
+fvar(1) = 30
+[state a];设置超级暂停后的变量
+type = VarSet
+TriggerAll = !IsHelper
+trigger1 = time >=31;超级暂停不同的时间也不同
+fvar(1) = 0
+
+[State 6000, 时间暂停]
+type = SuperPause
+trigger1 = time = 1
+time = 30
+anim = -1
+darken=0
+movetime = 30
+
+[State 6000,黑色底色]
+type = Envcolor
+trigger1 = Time = 0
+persistent = 0
+ignorehitpause = 1
+value = 0, 0, 0
+time = 33
+under = 1
+supermove = 1
+
+[State Snd]
+type = PlaySnd
+trigger1 = Time = 1
+value = 9, 5
+channel = 1
+
+[State 3120]
+type = PlaySnd
+trigger1 = AnimElemTime(6) = 0
+value = 2, 5
+channel = 1
+[State 3120]
+type = PlaySnd
+trigger1 = AnimElemTime(7) = 0
+value = 8, 5
+
+[State 3120]
+type = Projectile
+trigger1 = AnimElemTime(7) = 0
+projID = 2200
+projanim = 1660
+projhitanim = 1670
+projcancelanim = 1670
+projpriority = 3
+Projremove = 1
+projhits = 4
+projmisstime = 2
+projscale =0.5,0.5
+offset = 20,-70
+velocity = 8,0
+remvelocity = 0,0
+attr = S,HP
+hitflag = MAFP
+guardflag = MA
+animtype = back
+damage = 50,10
+getpower = 0
+pausetime = 15,22
+sparkno = 2
+guard.sparkno = 42
+sparkxy = 50,0
+hitsound = s7, 0
+guardsound = s5, 8
+ground.type = High
+ground.slidetime = 25
+ground.hittime = 25
+yaccel = .45
+ground.velocity = -6,-7
+air.velocity = -3,-5
+airguard.velocity = -3,-4
+envshake.time = 10
+envshake.ampl = -2
+envshake.freq = 92
+fall = 1
+fall.recover = 0
+id=2200
+
+[State 3120]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+

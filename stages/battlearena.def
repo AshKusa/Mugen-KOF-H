@@ -1,0 +1,138 @@
+[Info]
+name = "Dragon's Crown Battle Arena"
+displayname = "-"
+mugenversion = 1.1
+author = "Hoshi"
+
+[Camera]
+startx = 0
+starty = 0
+boundleft = -255
+boundright = 255
+boundhigh = -50
+boundlow = 0
+verticalfollow = 0.25
+tension = 100
+floortension = 50
+overdrawhigh = 120
+overdrawlow = 120
+cuthigh = 0
+cutlow = 0
+zoomout = 0.9
+zoomin = 1
+tensionhigh = 200
+tensionlow = 200
+
+;--------------------------------------------------------
+[PlayerInfo]
+;--- Player 1 ---
+p1startx = -120
+p1starty = 0
+p1facing = 1
+
+;--- Player 2 ---
+p2startx = 120
+p2starty = 0
+p2facing = -1
+
+;--- Player 3 ---
+p3startx = -250
+p3starty = 0
+p3facing = 1
+
+;--- Player 4 ---
+p4startx = 250
+p4starty = 0
+p4facing = -1
+
+;--- Common ---
+leftbound  = -4000
+rightbound =  4000
+
+[Bound]
+screenleft = 30
+screenright = 30
+
+[StageInfo]
+zoffset = 438
+autoturn = 1
+resetBG = 1
+localcoord = 854, 480
+xscale = .65
+yscale = .65
+
+[Shadow]
+intensity = 96
+color = 0,0,0
+yscale = .3
+fade.range = 0,0
+
+;--------------------------------------------------------
+[Reflection]
+intensity = 0
+
+[Music]
+bgmusic = sound/The Fast and the Furious.mp3
+bgmvolume = 100
+
+[BGdef]
+spr = battlearena.sff
+debugbg = 0
+
+[BG STATUELEFT]
+
+type  = normal
+spriteno = 0, 0
+layerno = 1
+start = 0, 668
+delta = 1, 1
+trans = AddAlpha
+alpha = 256, 100
+mask  = 1
+tilespacing = 0,0
+scalestart = 2,2
+
+[BG STATUERIGHT]
+type  = normal
+spriteno = 0, 1
+layerno = 1
+start = 0, 650
+delta = 1, 1
+trans = AddAlpha
+alpha = 256, 100
+mask  = 1
+tilespacing = 0,0
+scalestart = 2,2
+
+[BG BACK]
+type  = normal
+spriteno = 3, 0
+layerno = 0
+start = 0, 650
+delta = .80, .65
+trans = none
+mask  = 1
+tilespacing = 0,0
+scalestart = 2,2
+
+[BG ATHENA]
+type  = normal
+spriteno = 2, 0
+layerno = 0
+start = 0, 650
+delta = .9, .75
+trans = none
+mask  = 1
+tilespacing = 0,0
+scalestart = 2,2
+
+[BG GROUND]
+type  = normal
+spriteno = 1, 0
+layerno = 0
+start = 0, 650
+delta = 1,1
+trans = none
+mask  = 1
+tilespacing = 0,0
+scalestart = 2,2

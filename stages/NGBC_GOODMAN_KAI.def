@@ -1,0 +1,667 @@
+[Info]
+name = "NGBC - GOODMAN KAI"
+displayname = "("
+Author = "beterhans"
+versiondate = 05,10,2020
+mugenversion = 1.1
+
+;---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+[Camera]
+startx = 0
+starty = 0
+boundleft = -600
+boundright = 600
+boundhigh = -50
+boundlow = 0
+
+verticalfollow = 0.7
+tension = 100
+floortension = 50
+overdrawhigh = 120
+overdrawlow = 120
+cuthigh = 0
+cutlow = 0
+zoomout = 0.9
+zoomin = 1
+tensionhigh = 200
+tensionlow = 200
+
+
+
+[PlayerInfo]
+;--- Player 1 ---
+ 
+p1startx = -120    
+p1starty = 0            
+p1startz = 0           
+p1facing = 1            
+
+;--- Player 2 ---
+p2startx = 120
+p2starty = 0
+p2startz = 0
+p2facing = -1
+
+;--- Player 3 ---
+p3startx = -250
+p3starty = 0
+p3facing = 1
+
+;--- Player 4 ---
+p4startx = 250
+p4starty = 0
+p4facing = -1
+
+;--- Common ---
+ ;Don't change these values.
+leftbound  = -6000
+rightbound =  6000
+topbound  =  0     
+botbound  =  0     
+
+;---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+[Scaling]
+topz     = 0       
+botz     = 50      
+topscale = 1       
+botscale = 1.2  
+
+;---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+[Bound]
+screenleft =  30
+screenright = 30
+
+;---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+[StageInfo]
+localcoord = 854,480
+zoffset = 438
+autoturn = 1
+resetBG = 1
+xscale			= .5
+yscale			= .5
+
+;---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+[Shadow]
+intensity = 210
+color = 0,0,0
+yscale = 0.4
+fade.range = -100,-10
+
+;---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+[Reflection]
+ 
+intensity = 0
+
+;---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+[Music]
+bgmusic 		= sound/15 思い、思われ、ふり、ふられ もう一度。- 伊藤ゴロー.mp3
+bgmvolume		= 100
+
+;---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+[BGdef]
+spr = NGBC_GOODMAN_KAI.sff
+debugbg = 0
+
+;---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+[BG 0];BLACK BG
+type = normal
+spriteno = 0,0
+start = 0,580
+delta = 0,0
+scalestart = 8,8
+mask = 0
+
+[BG Star]
+type = Anim
+actionno = 1
+start = 0,400
+delta = 0.04, 0.04
+scalestart = 0.84, 0.84
+trans = none
+mask = 1
+
+[BG 1];Sky
+type = normal
+spriteno = 1,0
+start = 0,520
+delta = 0.04, 1
+scalestart = 2, 1
+trans = none
+mask = 1
+
+[BG Cloud]
+type = normal
+spriteno = 1,1
+start = 0,520;435
+delta = 0.1, 1
+scalestart = 1.8, 1.8
+mask = 1
+tile = 1,0
+velocity = 0.2, 0
+
+;[BG Water]
+;type  		= normal
+;spriteno	= 2,0
+;start 		= 0, 522
+;delta		= 0.4, 1
+;mask 		= 1
+;velocity                     = 0.5,0
+;tile                             = 1,0
+;trans                          = add
+
+[BG Moon]
+type = normal
+spriteno 	= 3,0
+start		= 0, 360
+delta		= 0.05, 0.8
+scalestart	= 1.6, 1.6
+trans		= add
+alpha		= 128,128
+mask		= 1
+
+[BG Stature]
+type 		= normal
+spriteno	= 12,1
+start		= 0,507
+delta		= 0.0428, 1
+scalestart	= 1.6, 1.6
+mask		= 1
+
+[BG Stature Light]
+type		= anim
+actionno		= 14
+start		= 0,507
+delta		= 0.0428, 1
+scalestart	= 1.6, 1.6
+mask 		= 1
+
+[BG Pillar far Left face]
+type		= anim
+actionno		= 41
+start 		= -152,556
+delta		= 0.175, 1
+scalestart	= 0.463, 0.463
+scaledelta	= 0.003046,0;							1 / distance to center * scalestart
+mask 		= 1
+
+[BG Pillar far Left flag]
+type		= anim
+actionno		= 42
+start 		= -152,556
+delta		= 0.175, 1
+scalestart	= 0.463, 0.463
+scaledelta	= 0.003046,0;							1 / distance to center * scalestart
+mask 		= 1
+
+;R=106
+[BG Pillar far Left]
+type		= anim
+actionno		= 40
+start 		= -152,556
+delta		= 0.175, 1
+scalestart	= 0.463, 0.463
+mask 		= 1
+
+[BG Pillar far right face]
+type		= anim
+actionno		= 51
+start 		= 152,556
+delta		= 0.175, 1
+scalestart	= 0.463, 0.463
+scaledelta	= -0.003046,0;							1 / distance to center * scalestart
+mask 		= 1
+
+;[BG Pillar far right flag]
+;type		= anim
+;actionno		= 52
+;start 		= 152,556
+;delta		= 0.175, 1
+;scalestart	= 0.463, 0.463
+;scaledelta	= -0.003046,0;							1 / distance to center * scalestart
+;mask 		= 1
+
+;R=106
+[BG Pillar far right]
+type		= anim
+actionno		= 50
+start 		= 152,556
+delta		= 0.175, 1
+scalestart	= 0.463, 0.463
+mask 		= 1
+
+[BG StoneTable mid left]
+type		= anim
+actionno		= 45
+start 		= -184,564
+delta		= 0.20, 1
+scalestart	= 0.66, 0.66
+mask 		= 1
+
+[BG crystal mid left]
+type		= anim
+actionno		= 46
+start 		= -184,487
+delta		= 0.20, 1
+sin.y		= 3,90,0
+scalestart	= 0.66, 0.66
+mask 		= 1
+
+[BG crystal mid near left]
+type		= anim
+actionno		= 47
+start 		= -184,487
+delta		= 0.20, 1
+sin.y		= 3,90,0
+scalestart	= 0.66, 0.66
+trans		= add
+alpha		= 78,256
+mask 		= 1
+
+[BG Pillar mid Left face]
+type		= anim
+actionno		= 41
+start 		= -218,580
+delta		= 0.252073, 1
+scalestart	= 0.66, 0.66
+scaledelta	= 0.0030275,0;							1 / distance to center * scalestart
+mask 		= 1
+
+;[BG Pillar mid Left flag]
+;type		= anim
+;actionno		= 42
+;start 		= -218,580
+;delta		= 0.252073, 1
+;scalestart	= 0.66, 0.66
+;scaledelta	= 0.0030275,0;							1 / distance to center * scalestart
+;mask 		= 1
+
+;R=152
+[BG Pillar mid Left]
+type		= anim
+actionno		= 40
+start 		= -218,580
+delta		= 0.252073, 1
+scalestart	= 0.66, 0.66
+mask 		= 1
+
+[BG StoneTable mid right]
+type		= anim
+actionno		= 55
+start 		= 184,564
+delta		= 0.20, 1
+scalestart	= 0.66, 0.66
+mask 		= 1
+
+[BG crystal mid right]
+type		= anim
+actionno		= 46
+start 		= 184,487
+delta		= 0.20, 1
+sin.y		= 3,90,0
+scalestart	= 0.66, 0.66
+mask 		= 1
+
+[BG crystal mid near right]
+type		= anim
+actionno		= 47
+start 		= 184,487
+delta		= 0.20, 1
+sin.y		= 3,90,0
+scalestart	= 0.66, 0.66
+trans		= add
+alpha		= 78,256
+mask 		= 1
+
+[BG Pillar mid right face]
+type		= anim
+actionno		= 51
+start 		= 218,580
+delta		= 0.252073, 1
+scalestart	= 0.66, 0.66
+scaledelta	= -0.0030275,0;							1 / distance to center * scalestart
+mask 		= 1
+
+[BG Pillar mid right flag]
+type		= anim
+actionno		= 52
+start 		= 218,580
+delta		= 0.252073, 1
+scalestart	= 0.66, 0.66
+scaledelta	= -0.0030275,0;							1 / distance to center * scalestart
+mask 		= 1
+
+;R=152
+[BG Pillar mid right]
+type		= anim
+actionno		= 50
+start 		= 218,580
+delta		= 0.252073, 1
+scalestart	= 0.66, 0.66
+mask 		= 1
+
+[BG StoneTable near left]
+type		= anim
+actionno		= 45
+start 		= -270,596
+delta		= 0.29, 1
+scalestart	= 1, 1
+mask 		= 1
+
+[BG crystal near left]
+type		= anim
+actionno		= 46
+start 		= -270,480
+delta		= 0.29, 1
+sin.y		= 4,90,0
+scalestart	= 1, 1
+mask 		= 1
+
+[BG crystal light near left]
+type		= anim
+actionno		= 47
+start 		= -270,480
+delta		= 0.29, 1
+sin.y		= 4,90,0
+scalestart	= 1, 1
+trans		= add
+alpha		= 78,256
+mask 		= 1
+
+
+
+[BG Pillar near Left face]
+type		= anim
+actionno		= 41
+start 		= -328,620
+delta		= 0.38, 1
+scalestart	= 1, 1
+scaledelta	= 0.003048780,0;							1 / distance to center * scalestart
+mask 		= 1
+
+[BG Pillar near Left flag]
+type		= anim
+actionno		= 42
+start 		= -328,620
+delta		= 0.38, 1
+scalestart	= 1, 1
+scaledelta	= 0.003048780,0;							1 / distance to center * scalestart
+mask 		= 1
+
+;R=229
+[BG Pillar near Left]
+type		= anim
+actionno		= 40
+start 		= -328,620
+delta		= 0.38, 1
+scalestart	= 1, 1
+mask 		= 1
+
+[BG StoneTable near right]
+type		= anim
+actionno		= 55
+start 		= 270,596
+delta		= 0.29, 1
+scalestart	= 1, 1
+mask 		= 1
+
+[BG crystal near right]
+type		= anim
+actionno		= 46
+start 		= 270,480
+delta		= 0.29, 1
+sin.y		= 4,90,0
+scalestart	= 1, 1
+mask 		= 1
+
+[BG crystal light near right]
+type		= anim
+actionno		= 47
+start 		= 270,480
+delta		= 0.29, 1
+sin.y		= 4,90,0
+scalestart	= 1, 1
+trans		= add
+alpha		= 78,256
+mask 		= 1
+
+[BG Pillar near right face]
+type		= anim
+actionno		= 51
+start 		= 328,620
+delta		= 0.38, 1
+scalestart	= 1, 1
+scaledelta	= -0.003048780,0;							1 / distance to center * scalestart
+mask 		= 1
+
+;[BG Pillar near right flag]
+;type		= anim
+;actionno		= 52
+;start 		= 328,620
+;delta		= 0.38, 1
+;scalestart	= 1, 1
+;scaledelta	= -0.003048780,0;							1 / distance to center * scalestart
+;mask 		= 1
+
+;R=229
+[BG Pillar near right]
+type		= anim
+actionno	= 50
+start 		= 328,620
+delta		= 0.38, 1
+scalestart	= 1, 1
+mask 		= 1
+
+;H = 147 603/1 = 27/x = 1205/y 			up detal = 27/603 = 0.044776 	botton detal = 1205/603 = 1.99834
+[BG Floor Parallax]
+type		= parallax
+spriteno	= 12,0
+start		= 0, 740
+mask		= 1
+delta		= 0.044776, 1
+xscale		= 0.044776, 1.99834
+scalestart	= 1.6, 1.6
+trans		= none
+
+[BG Floor Parallax];Higher
+type		= parallax
+spriteno	= 12,11
+start		= 0, 510
+mask		= 1
+delta		= 0.0428, 1
+width		= 35,480
+scalestart	= 1.6, 0.608
+tile		= 0,0
+
+[BG Floor Parallax];Lower
+type		= parallax
+spriteno	= 12,10
+start		= 0, 740
+mask		= 1
+delta		= 0.5837479, 1
+width		= 476,1629
+scalestart	= 1.6, 1.6
+trans		= none
+alpha		= 128,128
+tile		= 1,0
+ID		= 12
+
+[BG Sidebar Left]
+type		= anim
+actionno	= 1221
+start 		= -372,618
+delta		= 0.5837479, 1
+scalestart	= 1.6, 1.6
+scaledelta	= 0.004301,0
+mask 		= 1
+
+[BG Sidebar right]
+type		= anim
+actionno	= 1231
+start 		= 380,619
+delta		= 0.5837479, 1
+scalestart	= 1.6, 1.6
+scaledelta	= -0.00421,0
+mask 		= 1
+
+[BG Brikes Left far]
+type		= anim
+actionno	= 1220
+start 		= -600,616
+delta		= 0.5837479, 1
+scalestart	= 1.6, 1.6
+mask 		= 1
+
+[BG Brikes Left]
+type		= anim
+actionno	= 1220
+start 		= -372,616
+delta		= 0.5837479, 1
+scalestart	= 1.6, 1.6
+mask 		= 1
+
+[BG Brikes Left]
+type		= anim
+actionno	= 1220
+start 		= -1072,616
+delta		= 0.5837479, 1
+scalestart	= 1.6, 1.6
+mask 		= 1
+
+[BG Brikes far right]
+type		= anim
+actionno	= 1230
+start 		= 600,616
+delta		= 0.5837479, 1
+scalestart	= 1.6, 1.6
+mask 		= 1
+
+[BG Brikes right]
+type		= anim
+actionno	= 1230
+start 		= 380,616
+delta		= 0.5837479, 1
+scalestart	= 1.6, 1.6
+mask 		= 1
+
+[BG Brikes right]
+type		= anim
+actionno	= 1230
+start 		= 1080,616
+delta		= 0.5837479, 1
+scalestart	= 1.6, 1.6
+mask 		= 1
+
+[BG bar Parallax left]
+type		= parallax
+spriteno	= 12,40
+start 		= -29,507
+mask		= 1
+delta		= 0.039, 1
+width		= 5.3,80
+scalestart	= 1.6, 1.6
+tile		= 0,0
+
+[BG bar Parallax left]
+type		= parallax
+spriteno	= 12,40
+start 		= 29.5,507
+mask		= 1
+delta		= 0.039, 1
+width		= 5.3,80
+scalestart	= 1.6, 1.6
+tile		= 0,0
+
+; Star
+[Begin Action 1]
+;,Flip,Trans,
+0,1, 0,0, 9600,,,1,1,0
+Interpolate Angle
+0,1, 0,0, 1,,,1,1,359
+
+; Light spot
+[Begin Action 14]
+14,0, 0,0, 4, , A
+14,1, 0,0, 4, , A
+14,2, 0,0, 4, , A
+14,1, 0,0, 4, , A
+
+; Pillar
+[Begin Action 40]
+4,0, 0,0, -1
+
+[Begin Action 41]
+4,1, 0,0, -1
+
+[Begin Action 42]
+4,2, 0,0, -1
+
+[Begin Action 45]
+5,0, 0,0, -1
+
+[Begin Action 46]
+6,0, 0,0, 2
+6,1, 0,0, 2
+6,2, 0,0, 2
+6,3, 0,0, 2
+6,4, 0,0, 2
+6,5, 0,0, 2
+6,6, 0,0, 2
+6,7, 0,0, 2
+6,8, 0,0, 2
+6,9, 0,0, 2
+6,10, 0,0, 2
+6,11, 0,0, 2
+6,12, 0,0, 2
+6,13, 0,0, 2
+6,14, 0,0, 2
+6,15, 0,0, 2
+6,16, 0,0, 2
+6,17, 0,0, 2
+6,18, 0,0, 2
+6,19, 0,0, 2
+6,20, 0,0, 2
+6,21, 0,0, 2
+6,22, 0,0, 2
+6,23, 0,0, 2
+6,24, 0,0, 2
+6,25, 0,0, 2
+6,26, 0,0, 2
+6,27, 0,0, 2
+
+[Begin Action 47]
+7,0, 0,0, 4, , AS128D256
+7,1, 0,0, 4, , AS128D256
+7,2, 0,0, 4, , AS128D256
+7,1, 0,0, 4, , A
+
+[Begin Action 50]
+4,0, 0,0, -1, H
+
+[Begin Action 51]
+4,1, 0,0, -1, H
+
+[Begin Action 52]
+4,2, 0,0, -1, H
+[Begin Action 55]
+5,0, 0,0, -1, H
+
+[Begin Action 1220]
+12,20, 0,0, -1
+
+[Begin Action 1221]
+12,30, 0,0, -1
+
+[Begin Action 1230]
+12,20, 0,0, -1, H
+
+[Begin Action 1231]
+12,30, 0,0, -1, H

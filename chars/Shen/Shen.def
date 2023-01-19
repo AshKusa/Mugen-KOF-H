@@ -1,0 +1,36 @@
+[Info]
+Name         = "Shen"
+DisplayName  = "Shen"
+Author       = "jin"
+Pal.Defaults = 1,2,3,4,5,6
+mugenversion = 1.1
+localcoord = 427,240
+
+[Files]
+Cmd      = Shen.cmd
+Cns      = Shen.cns
+St       = Shen.cns
+St0      = Shen-N.cns
+St1      = Shen-S.cns
+St2      = Shen-H.cns
+St3      = Config.cns
+St4      = Shen-3.cns
+St5      = ÐÂ1.cns
+St6      = ÐÂ2.cns
+StCommon = common1.cns
+Sprite   = Shen.sff
+Anim     = Shen.air
+Sound    = Shen.snd
+
+Pal1 = pals/Shen01.act
+Pal2 = pals/Shen02.act
+Pal3 = pals/Shen03.act
+Pal4 = pals/Shen04.act
+Pal5 = pals/Shen05.act
+Pal6 = pals/Shen06.act
+Pal7 = pals/Shen01.act
+Pal8 = pals/Shen02.act
+Pal9 = pals/Shen03.act
+Pal10 = pals/Shen04.act
+Pal11 = pals/Shen05.act
+Pal12 = pals/Shen06.act

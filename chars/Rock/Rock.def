@@ -1,0 +1,38 @@
+[Info]
+Name         = "Rock"
+DisplayName  = "Rock"
+Author       = "jin && ??kof"
+Pal.Defaults = 1,2,3,4,5,6
+mugenversion = 1.1
+localcoord = 427,240
+
+[Files]
+Cmd      = Rock.cmd
+Cns      = Rock.cns
+St       = Rock.cns
+St0      = Rock-N.cns
+St1      = Rock-S.cns
+St2      = Rock-H.cns
+St3      = Rock-3.cns
+St4      = 新.cns
+St5      = 罗生门.cns
+St6      = 新2.cns
+St7      = 新3.cns
+St8      = 新4.cns
+StCommon = common1.cns
+Sprite   = Rock.sff
+Anim     = Rock.air
+Sound    = Rock.snd
+
+Pal1 = pals/Rock01.act
+Pal2 = pals/Rock02.act
+Pal3 = pals/Rock03.act
+Pal4 = pals/Rock04.act
+Pal5 = pals/Rock05.act
+Pal6 = pals/Rock06.act
+pal7 = pals/Rock-LV3-1.act
+pal8 = pals/Rock-LV3-2.act
+pal9 = pals/Rock-LV3-3.act
+pal10 = pals/Rock-LV3-4.act
+pal11 = pals/Rock-LV3-5.act
+pal12 = pals/Rock-LV3-6.act

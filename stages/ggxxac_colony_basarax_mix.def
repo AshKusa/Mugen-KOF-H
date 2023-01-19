@@ -1,0 +1,2693 @@
+;------------------------------------------------------
+[Info]
+name = "ggxxac_colony_basarax_mix"
+displayname = "!"
+
+;------------------------------------------------------
+[Camera]
+startx =0
+starty =0
+boundleft  = -270
+boundright = 250
+boundhigh  = -36
+boundlow   = 0
+verticalfollow = .25
+tension = 100
+floortension = 50
+overdrawhigh = 120
+overdrawlow = 120
+cuthigh = 0
+cutlow = 0
+zoomout = 0.9
+zoomin = 1
+tensionhigh = 200
+tensionlow = 200
+
+;------------------------------------------------------
+[PlayerInfo]
+p1startx = -120      
+p1starty = 0          
+p1startz = 0         
+p1facing = 1       
+p2startx = 120
+p2starty = 0
+p2startz = 0
+p2facing = -1
+p3startx = -250
+p3starty = 0
+p3facing = 1
+p4startx = 250
+p4starty = 0
+p4facing = -1
+leftbound =-1000
+rightbound =1000
+topbound =0
+botbound =0
+
+;------------------------------------------------------
+[Scaling]
+topz = 0
+botz = 50
+topscale = 1
+botscale = 1.2
+
+;------------------------------------------------------
+[Bound]
+screenleft =30
+screenright =30
+
+;------------------------------------------------------
+[StageInfo]
+zoffset = 438
+autoturn = 2
+resetBG = 0
+localcoord = 854,480
+;------------------------------------------------------
+[Shadow]
+color = 100,120,100
+yscale = .12
+reflect = 0
+
+;------------------------------------------------------
+[Reflection]
+;intensity = 128
+
+;------------------------------------------------------
+[Music]
+bgmusic  = sound/ЩёЭўЧЇжи.mp3
+bgvolume = 155
+
+;------------------------------------------------------
+[BGdef]
+spr = ggxxac_colony_basarax_mix.sff
+debugbg = 1
+
+;------------------------------------------------------
+[BG 0]
+type = normal
+spriteno = 5, 0
+layerno = 0
+start = 0,101
+delta = .42, .91
+trans = none
+mask = 1
+
+;------------------------------------------------------
+[BG 01]
+type = anim
+actionno = 1
+start = 0, 101
+delta = .42, .91
+trans = None 
+mask = 1
+
+[Begin Action 1]
+4,0, 0,0, 5
+4,1, 0,0, 5
+4,2, 0,0, 5
+4,3, 0,0, 5
+4,4, 0,0, 5
+
+;------------------------------------------------------
+[BG 02]
+type = anim
+actionno = 2
+layerno = 0
+start = 0,-29
+delta = 0.65, 1.30
+trans = None
+mask = 1
+
+[Begin Action 2]
+3,0, 0,0, 2 ,,AS10D256
+3,1, 0,0, 2 ,,AS11D255
+3,2, 0,0, 2 ,,AS12D254
+3,3, 0,0, 2 ,,AS13D253
+3,4, 0,0, 2 ,,AS14D252
+3,5, 0,0, 2 ,,AS15D251
+3,6, 0,0, 2 ,,AS16D250
+3,7, 0,0, 2 ,,AS17D249
+3,8, 0,0, 2 ,,AS18D248
+3,9, 0,0, 2 ,,AS19D247
+3,10, 0,0, 2 ,,AS20D246
+3,11, 0,0, 2 ,,AS21D245
+3,12, 0,0, 2 ,,AS22D244
+3,13, 0,0, 2 ,,AS23D243
+3,14, 0,0, 2 ,,AS24D242
+3,15, 0,0, 2 ,,AS25D241
+3,16, 0,0, 2 ,,AS26D240
+3,17, 0,0, 2 ,,AS27D239
+3,18, 0,0, 2 ,,AS28D238
+3,19, 0,0, 2 ,,AS29D237
+3,20, 0,0, 2 ,,AS30D236
+3,21, 0,0, 2 ,,AS31D235
+3,22, 0,0, 2 ,,AS32D234
+3,23, 0,0, 2 ,,AS33D233
+3,24, 0,0, 2 ,,AS34D232
+3,25, 0,0, 2 ,,AS35D231
+3,26, 0,0, 2 ,,AS36D230
+3,27, 0,0, 2 ,,AS37D229
+3,28, 0,0, 2 ,,AS38D228
+3,29, 0,0, 2 ,,AS39D227
+3,30, 0,0, 2 ,,AS40D226
+3,31, 0,0, 2 ,,AS41D225
+3,32, 0,0, 2 ,,AS42D224
+3,33, 0,0, 2 ,,AS43D223
+3,34, 0,0, 2 ,,AS44D222
+3,35, 0,0, 2 ,,AS45D221
+3,36, 0,0, 2 ,,AS46D220
+3,37, 0,0, 2 ,,AS47D219
+3,38, 0,0, 2 ,,AS48D218
+3,39, 0,0, 2 ,,AS49D217
+3,40, 0,0, 2 ,,AS50D216
+3,41, 0,0, 2 ,,AS49D215
+3,42, 0,0, 2 ,,AS48D214
+3,43, 0,0, 2 ,,AS47D213
+3,44, 0,0, 2 ,,AS46D212
+3,45, 0,0, 2 ,,AS45D211
+3,46, 0,0, 2 ,,AS46D210
+3,47, 0,0, 2 ,,AS47D209
+3,48, 0,0, 2 ,,AS48D208
+3,49, 0,0, 2 ,,AS49D207
+3,50, 0,0, 2 ,,AS50D206
+3,51, 0,0, 2 ,,AS49D205
+3,52, 0,0, 2 ,,AS48D204
+3,53, 0,0, 2 ,,AS47D203
+3,54, 0,0, 2 ,,AS46D202
+3,55, 0,0, 2 ,,AS45D201
+3,56, 0,0, 2 ,,AS44D200
+3,57, 0,0, 2 ,,AS43D201
+3,58, 0,0, 2 ,,AS42D202
+3,59, 0,0, 2 ,,AS41D203
+3,60, 0,0, 2 ,,AS40D204
+3,61, 0,0, 2 ,,AS39D205
+3,62, 0,0, 2 ,,AS38D206
+3,63, 0,0, 2 ,,AS37D207
+3,64, 0,0, 2 ,,AS36D208
+3,65, 0,0, 2 ,,AS35D209
+3,66, 0,0, 2 ,,AS34D210
+3,67, 0,0, 2 ,,AS33D211
+3,68, 0,0, 2 ,,AS32D212
+3,69, 0,0, 2 ,,AS31D213
+3,70, 0,0, 2 ,,AS30D214
+3,71, 0,0, 2 ,,AS29D215
+3,72, 0,0, 2 ,,AS28D216
+3,73, 0,0, 2 ,,AS27D217
+3,74, 0,0, 2 ,,AS26D218
+3,75, 0,0, 2 ,,AS25D219
+3,76, 0,0, 2 ,,AS24D220
+3,77, 0,0, 2 ,,AS23D221
+3,78, 0,0, 2 ,,AS22D222
+3,79, 0,0, 2 ,,AS21D223
+3,80, 0,0, 2 ,,AS20D224
+3,81, 0,0, 2 ,,AS19D225
+3,82, 0,0, 2 ,,AS18D226
+3,83, 0,0, 2 ,,AS17D227
+3,84, 0,0, 2 ,,AS16D228
+3,85, 0,0, 2 ,,AS15D229
+3,86, 0,0, 2 ,,AS14D230
+3,87, 0,0, 2 ,,AS13D231
+3,88, 0,0, 2 ,,AS12D232
+3,89, 0,0, 2 ,,AS11D233
+3,90, 0,0, 2 ,,AS10D234
+3,91, 0,0, 2 ,,AS9D235
+3,92, 0,0, 2 ,,AS8D236
+3,93, 0,0, 2 ,,AS7D237
+3,94, 0,0, 2 ,,AS6D238
+3,95, 0,0, 2 ,,AS5D239
+3,96, 0,0, 2 ,,AS6D240
+3,97, 0,0, 2 ,,AS7D241
+3,98, 0,0, 2 ,,AS8D242
+3,99, 0,0, 2 ,,AS9D243
+3,100, 0,0, 2 ,,AS10D244
+3,101, 0,0, 2 ,,AS11D245
+3,102, 0,0, 2 ,,AS12D246
+3,103, 0,0, 2 ,,AS13D247
+3,104, 0,0, 2 ,,AS14D248
+3,105, 0,0, 2 ,,AS15D247
+3,106, 0,0, 2 ,,AS16D246
+3,107, 0,0, 2 ,,AS17D245
+3,108, 0,0, 2 ,,AS18D244
+3,109, 0,0, 2 ,,AS20D243
+3,110, 0,0, 2 ,,AS21D242
+3,111, 0,0, 2 ,,AS22D241
+3,112, 0,0, 2 ,,AS23D240
+3,113, 0,0, 2 ,,AS24D239
+3,114, 0,0, 2 ,,AS25D238
+3,115, 0,0, 2 ,,AS26D237
+3,116, 0,0, 2 ,,AS27D236
+3,117, 0,0, 2 ,,AS28D235
+3,118, 0,0, 2 ,,AS29D234
+3,119, 0,0, 2 ,,AS30D233
+3,120, 0,0, 2 ,,AS31D232
+3,121, 0,0, 2 ,,AS32D231
+3,122, 0,0, 2 ,,AS33D230
+3,123, 0,0, 2 ,,AS34D229
+3,124, 0,0, 2 ,,AS35D228
+3,125, 0,0, 2 ,,AS34D227
+3,126, 0,0, 2 ,,AS33D226
+3,127, 0,0, 2 ,,AS32D225
+3,128, 0,0, 2 ,,AS31D224
+3,129, 0,0, 2 ,,AS30D223
+3,130, 0,0, 2 ,,AS29D222
+3,131, 0,0, 2 ,,AS28D221
+3,132, 0,0, 2 ,,AS27D220
+3,133, 0,0, 2 ,,AS26D219
+3,134, 0,0, 2 ,,AS25D218
+3,135, 0,0, 2 ,,AS24D217
+3,136, 0,0, 2 ,,AS23D216
+3,137, 0,0, 2 ,,AS22D215
+3,138, 0,0, 2 ,,AS21D214
+3,139, 0,0, 2 ,,AS20D213
+3,140, 0,0, 2 ,,AS22D212
+3,141, 0,0, 2 ,,AS23D211
+3,142, 0,0, 2 ,,AS24D210
+3,143, 0,0, 2 ,,AS25D209
+3,144, 0,0, 2 ,,AS26D208
+3,145, 0,0, 2 ,,AS27D207
+3,146, 0,0, 2 ,,AS28D206
+3,147, 0,0, 2 ,,AS29D205
+3,148, 0,0, 2 ,,AS30D204
+3,149, 0,0, 2 ,,AS31D203
+3,150, 0,0, 2 ,,AS32D202
+3,151, 0,0, 2 ,,AS33D201
+3,152, 0,0, 2 ,,AS34D200
+3,153, 0,0, 2 ,,AS35D201
+3,154, 0,0, 2 ,,AS36D202
+3,155, 0,0, 2 ,,AS37D203
+3,156, 0,0, 2 ,,AS38D204
+3,157, 0,0, 2 ,,AS39D205
+3,158, 0,0, 2 ,,AS40D206
+3,159, 0,0, 2 ,,AS41D207
+3,160, 0,0, 2 ,,AS42D208
+3,161, 0,0, 2 ,,AS43D209
+3,162, 0,0, 2 ,,AS44D210
+3,163, 0,0, 2 ,,AS45D211
+3,164, 0,0, 2 ,,AS44D212
+3,165, 0,0, 2 ,,AS43D213
+3,166, 0,0, 2 ,,AS42D214
+3,167, 0,0, 2 ,,AS41D215
+3,168, 0,0, 2 ,,AS40D216
+3,169, 0,0, 2 ,,AS39D217
+3,170, 0,0, 2 ,,AS38D218
+3,171, 0,0, 2 ,,AS37D219
+3,172, 0,0, 2 ,,AS36D220
+3,173, 0,0, 2 ,,AS35D221
+3,174, 0,0, 2 ,,AS34D222
+3,175, 0,0, 2 ,,AS33D223
+3,176, 0,0, 2 ,,AS32D224
+3,177, 0,0, 2 ,,AS31D225
+3,178, 0,0, 2 ,,AS30D226
+3,179, 0,0, 2 ,,AS29D227
+3,180, 0,0, 2 ,,AS28D228
+3,181, 0,0, 2 ,,AS27D229
+3,182, 0,0, 2 ,,AS26D230
+3,183, 0,0, 2 ,,AS25D231
+3,184, 0,0, 2 ,,AS24D232
+3,185, 0,0, 2 ,,AS23D233
+3,186, 0,0, 2 ,,AS22D234
+3,187, 0,0, 2 ,,AS21D235
+3,188, 0,0, 2 ,,AS20D236
+3,189, 0,0, 2 ,,AS19D237
+3,190, 0,0, 2 ,,AS18D238
+3,191, 0,0, 2 ,,AS17D239
+3,192, 0,0, 2 ,,AS16D240
+3,193, 0,0, 2 ,,AS15D241
+3,194, 0,0, 2 ,,AS14D242
+3,195, 0,0, 2 ,,AS13D243
+3,196, 0,0, 2 ,,AS12D244
+3,197, 0,0, 2 ,,AS11D245
+3,198, 0,0, 2 ,,AS10D246
+3,199, 0,0, 2 ,,AS9D247
+3,200, 0,0, 2 ,,AS8D248
+3,201, 0,0, 2 ,,AS7D249
+3,202, 0,0, 2 ,,AS6D250
+3,203, 0,0, 2 ,,AS5D251
+3,204, 0,0, 2 ,,AS6D252
+3,205, 0,0, 2 ,,AS7D253
+3,206, 0,0, 2 ,,AS8D254
+3,207, 0,0, 2 ,,AS9D255
+
+;------------------------------------------------------
+[BG 03]
+type = normal
+spriteno = 0, 4
+layerno = 0
+start = 0,-32
+delta = 0.70, 1.41
+trans = none
+mask = 1
+
+;------------------------------------------------------
+[BG 04]
+type = normal
+spriteno = 0, 3
+layerno = 0
+start = 0,-32
+delta = 0.76, 1.52
+trans = none
+mask = 1
+
+;------------------------------------------------------
+[BG 05]
+type = normal
+spriteno = 1, 0
+layerno = 0
+start = 0,-32
+delta = 0.79, 1.58
+trans = none
+mask = 1
+
+;------------------------------------------------------
+[BG 06]
+type = anim
+actionno = 3
+layerno = 0
+start = 0,-32
+delta = 0.79, 1.58
+trans = None
+mask = 1
+
+[Begin Action 3]
+2,0, 0,0, 19
+2,1, 0,0, 10
+2,2, 0,0, 8
+2,3, 0,0, 6
+2,4, 0,0, 4
+2,5, 0,0, 4
+2,6, 0,0, 6
+2,7, 0,0, 8
+2,8, 0,0, 10
+2,0, 0,0, 298
+2,9, 0,0, 10
+2,10, 0,0, 8
+2,11, 0,0, 6
+2,12, 0,0, 4
+2,13, 0,0, 4
+2,14, 0,0, 6
+2,15, 0,0, 8
+2,8, 0,0, 10
+2,0, 0,0, 99
+2,16, 0,0, 10
+2,17, 0,0, 8
+2,18, 0,0, 6
+2,19, 0,0, 4
+2,20, 0,0, 4
+2,21, 0,0, 6
+2,22, 0,0, 8
+2,8, 0,0, 10
+2,0, 0,0, 350
+2,23, 0,0, 10
+2,24, 0,0, 8
+2,25, 0,0, 6
+2,26, 0,0, 4
+2,27, 0,0, 4
+2,28, 0,0, 6
+2,29, 0,0, 8
+2,8, 0,0, 10
+2,0, 0,0, 196
+2,1, 0,0, 10
+2,2, 0,0, 8
+2,3, 0,0, 6
+2,4, 0,0, 4
+2,5, 0,0, 4
+2,6, 0,0, 6
+2,7, 0,0, 8
+2,8, 0,0, 10
+2,0, 0,0, 137
+2,9, 0,0, 10
+2,10, 0,0, 8
+2,11, 0,0, 6
+2,12, 0,0, 4
+2,13, 0,0, 4
+2,14, 0,0, 6
+2,15, 0,0, 8
+2,8, 0,0, 10
+2,0, 0,0, 301
+2,16, 0,0, 10
+2,17, 0,0, 8
+2,18, 0,0, 6
+2,19, 0,0, 4
+2,20, 0,0, 4
+2,21, 0,0, 6
+2,22, 0,0, 8
+2,8, 0,0, 10
+2,0, 0,0, 100
+2,23, 0,0, 10
+2,24, 0,0, 8
+2,25, 0,0, 6
+2,26, 0,0, 4
+2,27, 0,0, 4
+2,28, 0,0, 6
+2,29, 0,0, 8
+2,8, 0,0, 10
+
+;------------------------------------------------------
+[BG 07]
+type = normal
+spriteno = 0, 2
+layerno = 0
+start = 0,-29
+delta = 0.9, 2
+trans = none
+mask = 1
+
+;------------------------------------------------------------
+[BG 8]
+type = anim
+actionno = 4
+start = -290,-190
+delta = 1, 2
+layerno = 0
+mask = 1
+id = 1
+
+[BGCtrlDef 1]
+CtrlID = 1
+loopTime = 1900
+
+[BGCtrl 1]
+type = posset
+time = 0
+x = 0
+y = 0
+
+[BGCtrl 1]
+type = velset
+time = 0,100
+x = 0.3
+y = 1.6
+
+[BGCtrl 1]
+type = velset
+time = 100,200
+x = -0.2
+y = 1.6
+
+[BGCtrl 1]
+type = velset
+time = 200,300
+x = 0.1
+y = 1.6
+
+[BGCtrl 1]
+type = velset
+time = 300,400
+x = -0.1
+y = 1.6
+
+[BGCtrl 1]
+type = velset
+time = 400,500
+x = 0.1
+y = 1.6
+
+[BGCtrl 1]
+type = velset
+time = 500,600
+x = -0.1
+y = 1.6
+
+[BGCtrl 1]
+type = velset
+time = 600,700
+x = 0.1
+y = 1.6
+
+[BGCtrl 1]
+type = velset
+time = 700,800
+x = -0.1
+y = 1.6
+
+
+;------------------------------------------------------
+[BG 9]
+type = anim
+actionno = 4
+start = -762,-394
+delta = 1, 2
+layerno = 0
+mask = 1
+id = 2
+
+[BGCtrlDef 2]
+CtrlID = 2
+loopTime = 1180
+
+[BGCtrl 2]
+type = posset
+time = 
+x = 0
+y = 0
+
+[BGCtrl 2]
+type = velset
+time = 0,100
+x = 0.3
+y = 1.6
+
+[BGCtrl 2]
+type = velset
+time = 100,200
+x = -0.3
+y = 1.6
+
+[BGCtrl 2]
+type = velset
+time = 200,300
+x = 0.3
+y = 1.6
+
+[BGCtrl 2]
+type = velset
+time = 300,400
+x = -0.2
+y = 1.6
+
+[BGCtrl 2]
+type = velset
+time = 400,500
+x = 0.2
+y = 1.6
+
+[BGCtrl 2]
+type = velset
+time = 500,600
+x = -0.1
+y = 1.6
+
+[BGCtrl 2]
+type = velset
+time = 600,700
+x = 0.1
+y = 1.6
+
+[BGCtrl 2]
+type = velset
+time = 700,800
+x = -0.1
+y = 1.6
+
+[BGCtrl 2]
+type = velset
+time = 800,900
+x = 0.1
+y = 1.6
+
+[BGCtrl 2]
+type = velset
+time = 900,1000
+x = -0.1
+y = 1.6
+
+;------------------------------------------------------
+[BG 10]
+type = anim
+actionno = 4
+start = -473,-1813
+delta = 1, 2
+layerno = 0
+mask = 1
+id = 3
+
+[BGCtrlDef 3]
+CtrlID = 3
+loopTime = 1190
+
+[BGCtrl 3]
+type = posset
+time = 
+x = 0
+y = 0
+
+[BGCtrl 3]
+type = velset
+time = 0,100
+x = 0.3
+y = 1.6
+
+[BGCtrl 3]
+type = velset
+time = 100,200
+x = -0.3
+y = 1.6
+
+[BGCtrl 3]
+type = velset
+time = 200,300
+x = 0.3
+y = 1.6
+
+[BGCtrl 3]
+type = velset
+time = 300,400
+x = -0.3
+y = 1.6
+
+[BGCtrl 3]
+type = velset
+time = 400,500
+x = 0.3
+y = 1.6
+
+[BGCtrl 3]
+type = velset
+time = 500,600
+x = -0.3
+y = 1.6
+
+[BGCtrl 3]
+type = velset
+time = 600,700
+x = 0.2
+y = 1.6
+
+[BGCtrl 3]
+type = velset
+time = 700,800
+x = -0.1
+y = 1.6
+
+[BGCtrl 3]
+type = velset
+time = 800,900
+x = 0.1
+y = 1.6
+
+[BGCtrl 3]
+type = velset
+time = 900,1000
+x = -0.1
+y = 1.6
+
+[BGCtrl 3]
+type = velset
+time = 1000,1200
+x = 0.3
+y = 1.6
+
+;------------------------------------------------------
+[BG 11]
+type = anim
+actionno = 4
+start = -501,-150
+delta = 1, 2
+layerno = 0
+mask = 1
+id = 4
+
+[BGCtrlDef 4]
+CtrlID = 4
+loopTime = 820
+
+[BGCtrl 4]
+type = posset
+time = 0
+x = 0
+y = 0
+
+[BGCtrl 4]
+type = velset
+time = 0,100
+x = 0.3
+y = 1.6
+
+[BGCtrl 4]
+type = velset
+time = 100,200
+x = -0.2
+y = 1.6
+
+[BGCtrl 4]
+type = velset
+time = 200,300
+x = 0.1
+y = 1.6
+
+[BGCtrl 4]
+type = velset
+time = 300,400
+x = -0.1
+y = 1.6
+
+[BGCtrl 4]
+type = velset
+time = 400,500
+x = 0.1
+y = 1.6
+
+[BGCtrl 4]
+type = velset
+time = 500,600
+x = -0.1
+y = 1.6
+
+[BGCtrl 4]
+type = velset
+time = 600,700
+x = 0.1
+y = 1.6
+
+[BGCtrl 4]
+type = velset
+time = 700,800
+x = -0.1
+y = 1.6
+
+;------------------------------------------------------
+[BG 12]
+type = anim
+actionno = 4
+start = -871,-680
+delta = 1, 2
+layerno = 0
+mask = 1
+id = 5
+
+[BGCtrlDef 5]
+CtrlID = 5
+loopTime = 1920
+
+[BGCtrl 5]
+type = posset
+time = 
+x = 0
+y = 0
+
+[BGCtrl 5]
+type = velset
+time = 0,100
+x = 0.3
+y = 1.6
+
+[BGCtrl 5]
+type = velset
+time = 100,200
+x = -0.3
+y = 1.6
+
+[BGCtrl 5]
+type = velset
+time = 200,300
+x = 0.3
+y = 1.6
+
+[BGCtrl 5]
+type = velset
+time = 300,400
+x = -0.2
+y = 1.6
+
+[BGCtrl 5]
+type = velset
+time = 400,500
+x = 0.2
+y = 1.6
+
+[BGCtrl 5]
+type = velset
+time = 500,600
+x = -0.1
+y = 1.6
+
+[BGCtrl 5]
+type = velset
+time = 600,700
+x = 0.1
+y = 1.6
+
+[BGCtrl 5]
+type = velset
+time = 700,800
+x = -0.1
+y = 1.6
+
+[BGCtrl 5]
+type = velset
+time = 800,900
+x = 0.1
+y = 1.6
+
+[BGCtrl 5]
+type = velset
+time = 900,1000
+x = -0.1
+y = 1.6
+
+;------------------------------------------------------
+[BG 13]
+type = anim
+actionno = 4
+start = -556,-650
+delta = 1, 2
+layerno = 0
+mask = 1
+id = 6
+
+[BGCtrlDef 6]
+CtrlID = 6
+loopTime = 2000
+
+[BGCtrl 6]
+type = posset
+time = 
+x = 0
+y = 0
+
+[BGCtrl 6]
+type = velset
+time = 0,100
+x = 0.3
+y = 1.6
+
+[BGCtrl 6]
+type = velset
+time = 100,200
+x = -0.3
+y = 1.6
+
+[BGCtrl 6]
+type = velset
+time = 200,300
+x = 0.3
+y = 1.6
+
+[BGCtrl 6]
+type = velset
+time = 300,400
+x = -0.3
+y = 1.6
+
+[BGCtrl 6]
+type = velset
+time = 400,500
+x = 0.3
+y = 1.6
+
+[BGCtrl 6]
+type = velset
+time = 500,600
+x = -0.3
+y = 1.6
+
+[BGCtrl 6]
+type = velset
+time = 600,700
+x = 0.2
+y = 1.6
+
+[BGCtrl 6]
+type = velset
+time = 700,800
+x = -0.1
+y = 1.6
+
+[BGCtrl 6]
+type = velset
+time = 800,900
+x = 0.1
+y = 1.6
+
+[BGCtrl 6]
+type = velset
+time = 900,1000
+x = -0.1
+y = 1.6
+
+[BGCtrl 6]
+type = velset
+time = 1000,1200
+x = 0.3
+y = 1.6
+
+;------------------------------------------------------
+[BG 14]
+type = anim
+actionno = 4
+start = -401,-650
+delta = 1, 2
+layerno = 0
+mask = 1
+id = 7
+
+[BGCtrlDef 7]
+CtrlID = 7
+loopTime = 790
+
+[BGCtrl 7]
+type = posset
+time = 0
+x = 0
+y = 0
+
+[BGCtrl 7]
+type = velset
+time = 0,100
+x = 0.3
+y = 1.6
+
+[BGCtrl 7]
+type = velset
+time = 100,200
+x = -0.2
+y = 1.6
+
+[BGCtrl 7]
+type = velset
+time = 200,300
+x = 0.1
+y = 1.6
+
+[BGCtrl 7]
+type = velset
+time = 300,400
+x = -0.1
+y = 1.6
+
+[BGCtrl 7]
+type = velset
+time = 400,500
+x = 0.1
+y = 1.6
+
+[BGCtrl 7]
+type = velset
+time = 500,600
+x = -0.1
+y = 1.6
+
+[BGCtrl 7]
+type = velset
+time = 600,700
+x = 0.1
+y = 1.6
+
+[BGCtrl 7]
+type = velset
+time = 700,800
+x = -0.1
+y = 1.6
+
+;------------------------------------------------------
+[BG 15]
+type = anim
+actionno = 4
+start = -371,-990
+delta = 1, 2
+layerno = 0
+mask = 1
+id = 8
+
+[BGCtrlDef 8]
+CtrlID = 8
+loopTime = 1380
+
+[BGCtrl 8]
+type = posset
+time = 
+x = 0
+y = 0
+
+[BGCtrl 8]
+type = velset
+time = 0,100
+x = 0.3
+y = 1.6
+
+[BGCtrl 8]
+type = velset
+time = 100,200
+x = -0.3
+y = 1.6
+
+[BGCtrl 8]
+type = velset
+time = 200,300
+x = 0.3
+y = 1.6
+
+[BGCtrl 8]
+type = velset
+time = 300,400
+x = -0.2
+y = 1.6
+
+[BGCtrl 8]
+type = velset
+time = 400,500
+x = 0.2
+y = 1.6
+
+[BGCtrl 8]
+type = velset
+time = 500,600
+x = -0.1
+y = 1.6
+
+[BGCtrl 8]
+type = velset
+time = 600,700
+x = 0.1
+y = 1.6
+
+[BGCtrl 8]
+type = velset
+time = 700,800
+x = -0.1
+y = 1.6
+
+[BGCtrl 8]
+type = velset
+time = 800,900
+x = 0.1
+y = 1.6
+
+[BGCtrl 8]
+type = velset
+time = 900,1000
+x = -0.1
+y = 1.6
+
+;------------------------------------------------------
+[BG 16]
+type = anim
+actionno = 4
+start = -589,-250
+delta = 1, 2
+layerno = 0
+mask = 1
+id = 9
+
+[BGCtrlDef 9]
+CtrlID = 9
+loopTime = 1570
+
+[BGCtrl 9]
+type = posset
+time = 
+x = 0
+y = 0
+
+[BGCtrl 9]
+type = velset
+time = 0,100
+x = 0.3
+y = 1.6
+
+[BGCtrl 9]
+type = velset
+time = 100,200
+x = -0.3
+y = 1.6
+
+[BGCtrl 9]
+type = velset
+time = 200,300
+x = 0.3
+y = 1.6
+
+[BGCtrl 9]
+type = velset
+time = 300,400
+x = -0.3
+y = 1.6
+
+[BGCtrl 9]
+type = velset
+time = 400,500
+x = 0.3
+y = 1.6
+
+[BGCtrl 9]
+type = velset
+time = 500,600
+x = -0.3
+y = 1.6
+
+[BGCtrl 9]
+type = velset
+time = 600,700
+x = 0.2
+y = 1.6
+
+[BGCtrl 9]
+type = velset
+time = 700,800
+x = -0.1
+y = 1.6
+
+[BGCtrl 9]
+type = velset
+time = 800,900
+x = 0.1
+y = 1.6
+
+[BGCtrl 9]
+type = velset
+time = 900,1000
+x = -0.1
+y = 1.6
+
+[BGCtrl 9]
+type = velset
+time = 1000,1200
+x = 0.3
+y = 1.6
+
+;------------------------------------------------------
+[BG 17]
+type = anim
+actionno = 4
+start = -721,-650
+delta = 1, 2
+layerno = 0
+mask = 1
+id = 10
+
+[BGCtrlDef 10]
+CtrlID = 10
+loopTime = 1680
+
+[BGCtrl 10]
+type = posset
+time = 0
+x = 0
+y = 0
+
+[BGCtrl 10]
+type = velset
+time = 0,100
+x = 0.3
+y = 1.6
+
+[BGCtrl 10]
+type = velset
+time = 100,200
+x = -0.2
+y = 1.6
+
+[BGCtrl 10]
+type = velset
+time = 200,300
+x = 0.1
+y = 1.6
+
+[BGCtrl 10]
+type = velset
+time = 300,400
+x = -0.1
+y = 1.6
+
+[BGCtrl 10]
+type = velset
+time = 400,500
+x = 0.1
+y = 1.6
+
+[BGCtrl 10]
+type = velset
+time = 500,600
+x = -0.1
+y = 1.6
+
+[BGCtrl 10]
+type = velset
+time = 600,700
+x = 0.1
+y = 1.6
+
+[BGCtrl 10]
+type = velset
+time = 700,800
+x = -0.1
+y = 1.6
+
+;------------------------------------------------------
+[BG 18]
+type = anim
+actionno = 4
+start = -251,-990
+delta = 1, 2
+layerno = 0
+mask = 1
+id = 11
+
+[BGCtrlDef 11]
+CtrlID = 11
+loopTime = 1370
+
+[BGCtrl 11]
+type = posset
+time = 
+x = 0
+y = 0
+
+[BGCtrl 11]
+type = velset
+time = 0,100
+x = 0.3
+y = 1.6
+
+[BGCtrl 11]
+type = velset
+time = 100,200
+x = -0.3
+y = 1.6
+
+[BGCtrl 11]
+type = velset
+time = 200,300
+x = 0.3
+y = 1.6
+
+[BGCtrl 11]
+type = velset
+time = 300,400
+x = -0.2
+y = 1.6
+
+[BGCtrl 11]
+type = velset
+time = 400,500
+x = 0.2
+y = 1.6
+
+[BGCtrl 11]
+type = velset
+time = 500,600
+x = -0.1
+y = 1.6
+
+[BGCtrl 11]
+type = velset
+time = 600,700
+x = 0.1
+y = 1.6
+
+[BGCtrl 11]
+type = velset
+time = 700,800
+x = -0.1
+y = 1.6
+
+[BGCtrl 11]
+type = velset
+time = 800,900
+x = 0.1
+y = 1.6
+
+[BGCtrl 11]
+type = velset
+time = 900,1000
+x = -0.1
+y = 1.6
+
+;------------------------------------------------------
+[BG 19]
+type = anim
+actionno = 4
+start = -671,-150
+delta = 1, 2
+layerno = 0
+mask = 1
+id = 12
+
+[BGCtrlDef 12]
+CtrlID = 12
+loopTime = 1610
+
+[BGCtrl 12]
+type = posset
+time = 
+x = 0
+y = 0
+
+[BGCtrl 12]
+type = velset
+time = 0,100
+x = 0.3
+y = 1.6
+
+[BGCtrl 12]
+type = velset
+time = 100,200
+x = -0.3
+y = 1.6
+
+[BGCtrl 12]
+type = velset
+time = 200,300
+x = 0.3
+y = 1.6
+
+[BGCtrl 12]
+type = velset
+time = 300,400
+x = -0.3
+y = 1.6
+
+[BGCtrl 12]
+type = velset
+time = 400,500
+x = 0.3
+y = 1.6
+
+[BGCtrl 12]
+type = velset
+time = 500,600
+x = -0.3
+y = 1.6
+
+[BGCtrl 12]
+type = velset
+time = 600,700
+x = 0.2
+y = 1.6
+
+[BGCtrl 12]
+type = velset
+time = 700,800
+x = -0.1
+y = 1.6
+
+[BGCtrl 12]
+type = velset
+time = 800,900
+x = 0.1
+y = 1.6
+
+[BGCtrl 12]
+type = velset
+time = 900,1000
+x = -0.1
+y = 1.6
+
+[BGCtrl 12]
+type = velset
+time = 1000,1200
+x = 0.3
+y = 1.6
+
+;------------------------------------------------------
+[BG 20]
+type = anim
+actionno = 4
+start = -591,-350
+delta = 1, 2
+layerno = 0
+mask = 1
+id = 13
+
+[BGCtrlDef 13]
+CtrlID = 13
+loopTime = 1290
+
+[BGCtrl 13]
+type = posset
+time = 
+x = 0
+y = 0
+
+[BGCtrl 13]
+type = velset
+time = 0,100
+x = 0.3
+y = 1.6
+
+[BGCtrl 13]
+type = velset
+time = 100,200
+x = -0.3
+y = 1.6
+
+[BGCtrl 13]
+type = velset
+time = 200,300
+x = 0.3
+y = 1.6
+
+[BGCtrl 13]
+type = velset
+time = 300,400
+x = -0.3
+y = 1.6
+
+[BGCtrl 13]
+type = velset
+time = 400,500
+x = 0.3
+y = 1.6
+
+[BGCtrl 13]
+type = velset
+time = 500,600
+x = -0.3
+y = 1.6
+
+[BGCtrl 13]
+type = velset
+time = 600,700
+x = 0.2
+y = 1.6
+
+[BGCtrl 13]
+type = velset
+time = 700,800
+x = -0.1
+y = 1.6
+
+[BGCtrl 13]
+type = velset
+time = 800,900
+x = 0.1
+y = 1.6
+
+[BGCtrl 13]
+type = velset
+time = 900,1000
+x = -0.1
+y = 1.6
+
+[BGCtrl 13]
+type = velset
+time = 1000,1200
+x = 0.3
+y = 1.6
+
+;------------------------------------------------------
+[BG 21]
+type = anim
+actionno = 4
+start = -592,464
+delta = 1, 2
+layerno = 0
+mask = 1
+id = 14
+
+[BGCtrlDef 14]
+CtrlID = 14
+loopTime = 992
+
+[BGCtrl 14]
+type = posset
+time = 
+x = 0
+y = 0
+
+[BGCtrl 14]
+type = velset
+time = 0,100
+x = 0.3
+y = 1.6
+
+[BGCtrl 14]
+type = velset
+time = 100,200
+x = -0.3
+y = 1.6
+
+[BGCtrl 14]
+type = velset
+time = 200,300
+x = 0.3
+y = 1.6
+
+[BGCtrl 14]
+type = velset
+time = 300,400
+x = -0.3
+y = 1.6
+
+[BGCtrl 14]
+type = velset
+time = 400,500
+x = 0.3
+y = 1.6
+
+[BGCtrl 14]
+type = velset
+time = 500,600
+x = -0.3
+y = 1.6
+
+[BGCtrl 14]
+type = velset
+time = 600,700
+x = 0.2
+y = 1.6
+
+[BGCtrl 14]
+type = velset
+time = 700,800
+x = -0.1
+y = 1.6
+
+[BGCtrl 14]
+type = velset
+time = 800,900
+x = 0.1
+y = 1.6
+
+[BGCtrl 14]
+type = velset
+time = 900,1000
+x = -0.1
+y = 1.6
+
+[BGCtrl 14]
+type = velset
+time = 1000,1200
+x = 0.3
+y = 1.6
+
+;------------------------------------------------------
+[BG 22]
+type = normal
+spriteno = 0, 0
+layerno = 0
+start = 0,-29
+delta = 1, 2
+trans = none
+mask = 1
+
+;------------------------------------------------------------
+[BG 23]
+type = anim
+actionno = 4
+start = -222,-80
+delta = 1, 2
+layerno = 1
+mask = 1
+id = 15
+
+[BGCtrlDef 15]
+CtrlID = 15
+loopTime = 980
+
+[BGCtrl 15]
+type = posset
+time = 0
+x = 0
+y = 0
+
+[BGCtrl 15]
+type = velset
+time = 0,100
+x = 0.3
+y = 1.6
+
+[BGCtrl 15]
+type = velset
+time = 100,200
+x = -0.2
+y = 1.6
+
+[BGCtrl 15]
+type = velset
+time = 200,300
+x = 0.1
+y = 1.6
+
+[BGCtrl 15]
+type = velset
+time = 300,400
+x = -0.1
+y = 1.6
+
+[BGCtrl 15]
+type = velset
+time = 400,500
+x = 0.1
+y = 1.6
+
+[BGCtrl 15]
+type = velset
+time = 500,600
+x = -0.1
+y = 1.6
+
+[BGCtrl 15]
+type = velset
+time = 600,700
+x = 0.1
+y = 1.6
+
+[BGCtrl 15]
+type = velset
+time = 700,800
+x = -0.1
+y = 1.6
+
+
+;------------------------------------------------------
+[BG 24]
+type = anim
+actionno = 4
+start = -262,-594
+delta = 1, 2
+layerno = 1
+mask = 1
+id = 16
+
+[BGCtrlDef 16]
+CtrlID = 16
+loopTime = 1120
+
+[BGCtrl 16]
+type = posset
+time = 
+x = 0
+y = 0
+
+[BGCtrl 16]
+type = velset
+time = 0,100
+x = 0.3
+y = 1.6
+
+[BGCtrl 16]
+type = velset
+time = 100,200
+x = -0.3
+y = 1.6
+
+[BGCtrl 16]
+type = velset
+time = 200,300
+x = 0.3
+y = 1.6
+
+[BGCtrl 16]
+type = velset
+time = 300,400
+x = -0.2
+y = 1.6
+
+[BGCtrl 16]
+type = velset
+time = 400,500
+x = 0.2
+y = 1.6
+
+[BGCtrl 16]
+type = velset
+time = 500,600
+x = -0.1
+y = 1.6
+
+[BGCtrl 16]
+type = velset
+time = 600,700
+x = 0.1
+y = 1.6
+
+[BGCtrl 16]
+type = velset
+time = 700,800
+x = -0.1
+y = 1.6
+
+[BGCtrl 16]
+type = velset
+time = 800,900
+x = 0.1
+y = 1.6
+
+[BGCtrl 16]
+type = velset
+time = 900,1000
+x = -0.1
+y = 1.6
+
+;------------------------------------------------------
+[BG 25]
+type = anim
+actionno = 4
+start = -573,-813
+delta = 1, 2
+layerno = 1
+mask = 1
+id = 17
+
+[BGCtrlDef 17]
+CtrlID = 17
+loopTime = 1200
+
+[BGCtrl 17]
+type = posset
+time = 
+x = 0
+y = 0
+
+[BGCtrl 17]
+type = velset
+time = 0,100
+x = 0.3
+y = 1.6
+
+[BGCtrl 17]
+type = velset
+time = 100,200
+x = -0.3
+y = 1.6
+
+[BGCtrl 17]
+type = velset
+time = 200,300
+x = 0.3
+y = 1.6
+
+[BGCtrl 17]
+type = velset
+time = 300,400
+x = -0.3
+y = 1.6
+
+[BGCtrl 17]
+type = velset
+time = 400,500
+x = 0.3
+y = 1.6
+
+[BGCtrl 17]
+type = velset
+time = 500,600
+x = -0.3
+y = 1.6
+
+[BGCtrl 17]
+type = velset
+time = 600,700
+x = 0.2
+y = 1.6
+
+[BGCtrl 17]
+type = velset
+time = 700,800
+x = -0.1
+y = 1.6
+
+[BGCtrl 17]
+type = velset
+time = 800,900
+x = 0.1
+y = 1.6
+
+[BGCtrl 17]
+type = velset
+time = 900,1000
+x = -0.1
+y = 1.6
+
+[BGCtrl 17]
+type = velset
+time = 1000,1200
+x = 0.3
+y = 1.6
+
+;------------------------------------------------------
+[BG 26]
+type = anim
+actionno = 4
+start = -551,-50
+delta = 1, 2
+layerno = 1
+mask = 1
+id = 18
+
+[BGCtrlDef 18]
+CtrlID = 18
+loopTime = 980
+
+[BGCtrl 18]
+type = posset
+time = 0
+x = 0
+y = 0
+
+[BGCtrl 18]
+type = velset
+time = 0,100
+x = 0.3
+y = 1.6
+
+[BGCtrl 18]
+type = velset
+time = 100,200
+x = -0.2
+y = 1.6
+
+[BGCtrl 18]
+type = velset
+time = 200,300
+x = 0.1
+y = 1.6
+
+[BGCtrl 18]
+type = velset
+time = 300,400
+x = -0.1
+y = 1.6
+
+[BGCtrl 18]
+type = velset
+time = 400,500
+x = 0.1
+y = 1.6
+
+[BGCtrl 18]
+type = velset
+time = 500,600
+x = -0.1
+y = 1.6
+
+[BGCtrl 18]
+type = velset
+time = 600,700
+x = 0.1
+y = 1.6
+
+[BGCtrl 18]
+type = velset
+time = 700,800
+x = -0.1
+y = 1.6
+
+;------------------------------------------------------
+[BG 27]
+type = anim
+actionno = 4
+start = -671,-280
+delta = 1, 2
+layerno = 1
+mask = 1
+id = 19
+
+[BGCtrlDef 19]
+CtrlID = 19
+loopTime = 1120
+
+[BGCtrl 19]
+type = posset
+time = 
+x = 0
+y = 0
+
+[BGCtrl 19]
+type = velset
+time = 0,100
+x = 0.3
+y = 1.6
+
+[BGCtrl 19]
+type = velset
+time = 100,200
+x = -0.3
+y = 1.6
+
+[BGCtrl 19]
+type = velset
+time = 200,300
+x = 0.3
+y = 1.6
+
+[BGCtrl 19]
+type = velset
+time = 300,400
+x = -0.2
+y = 1.6
+
+[BGCtrl 19]
+type = velset
+time = 400,500
+x = 0.2
+y = 1.6
+
+[BGCtrl 19]
+type = velset
+time = 500,600
+x = -0.1
+y = 1.6
+
+[BGCtrl 19]
+type = velset
+time = 600,700
+x = 0.1
+y = 1.6
+
+[BGCtrl 19]
+type = velset
+time = 700,800
+x = -0.1
+y = 1.6
+
+[BGCtrl 19]
+type = velset
+time = 800,900
+x = 0.1
+y = 1.6
+
+[BGCtrl 19]
+type = velset
+time = 900,1000
+x = -0.1
+y = 1.6
+
+;------------------------------------------------------
+[BG 28]
+type = anim
+actionno = 4
+start = -771,-950
+delta = 1, 2
+layerno = 1
+mask = 1
+id = 20
+
+[BGCtrlDef 20]
+CtrlID = 20
+loopTime = 1200
+
+[BGCtrl 20]
+type = posset
+time = 
+x = 0
+y = 0
+
+[BGCtrl 20]
+type = velset
+time = 0,100
+x = 0.3
+y = 1.6
+
+[BGCtrl 20]
+type = velset
+time = 100,200
+x = -0.3
+y = 1.6
+
+[BGCtrl 20]
+type = velset
+time = 200,300
+x = 0.3
+y = 1.6
+
+[BGCtrl 20]
+type = velset
+time = 300,400
+x = -0.3
+y = 1.6
+
+[BGCtrl 20]
+type = velset
+time = 400,500
+x = 0.3
+y = 1.6
+
+[BGCtrl 20]
+type = velset
+time = 500,600
+x = -0.3
+y = 1.6
+
+[BGCtrl 20]
+type = velset
+time = 600,700
+x = 0.2
+y = 1.6
+
+[BGCtrl 20]
+type = velset
+time = 700,800
+x = -0.1
+y = 1.6
+
+[BGCtrl 20]
+type = velset
+time = 800,900
+x = 0.1
+y = 1.6
+
+[BGCtrl 20]
+type = velset
+time = 900,1000
+x = -0.1
+y = 1.6
+
+[BGCtrl 20]
+type = velset
+time = 1000,1200
+x = 0.3
+y = 1.6
+
+;------------------------------------------------------
+[BG 29]
+type = anim
+actionno = 4
+start = -601,-150
+delta = 1, 2
+layerno = 1
+mask = 1
+id = 21
+
+[BGCtrlDef 21]
+CtrlID = 21
+loopTime = 980
+
+[BGCtrl 21]
+type = posset
+time = 0
+x = 0
+y = 0
+
+[BGCtrl 21]
+type = velset
+time = 0,100
+x = 0.3
+y = 1.6
+
+[BGCtrl 21]
+type = velset
+time = 100,200
+x = -0.2
+y = 1.6
+
+[BGCtrl 21]
+type = velset
+time = 200,300
+x = 0.1
+y = 1.6
+
+[BGCtrl 21]
+type = velset
+time = 300,400
+x = -0.1
+y = 1.6
+
+[BGCtrl 21]
+type = velset
+time = 400,500
+x = 0.1
+y = 1.6
+
+[BGCtrl 21]
+type = velset
+time = 500,600
+x = -0.1
+y = 1.6
+
+[BGCtrl 21]
+type = velset
+time = 600,700
+x = 0.1
+y = 1.6
+
+[BGCtrl 21]
+type = velset
+time = 700,800
+x = -0.1
+y = 1.6
+
+;------------------------------------------------------
+[BG 30]
+type = anim
+actionno = 4
+start = -371,-480
+delta = 1, 2
+layerno = 1
+mask = 1
+id = 22
+
+[BGCtrlDef 22]
+CtrlID = 22
+loopTime = 1120
+
+[BGCtrl 22]
+type = posset
+time = 
+x = 0
+y = 0
+
+[BGCtrl 22]
+type = velset
+time = 0,100
+x = 0.3
+y = 1.6
+
+[BGCtrl 22]
+type = velset
+time = 100,200
+x = -0.3
+y = 1.6
+
+[BGCtrl 22]
+type = velset
+time = 200,300
+x = 0.3
+y = 1.6
+
+[BGCtrl 22]
+type = velset
+time = 300,400
+x = -0.2
+y = 1.6
+
+[BGCtrl 22]
+type = velset
+time = 400,500
+x = 0.2
+y = 1.6
+
+[BGCtrl 22]
+type = velset
+time = 500,600
+x = -0.1
+y = 1.6
+
+[BGCtrl 22]
+type = velset
+time = 600,700
+x = 0.1
+y = 1.6
+
+[BGCtrl 22]
+type = velset
+time = 700,800
+x = -0.1
+y = 1.6
+
+[BGCtrl 22]
+type = velset
+time = 800,900
+x = 0.1
+y = 1.6
+
+[BGCtrl 22]
+type = velset
+time = 900,1000
+x = -0.1
+y = 1.6
+
+;------------------------------------------------------
+[BG 31]
+type = anim
+actionno = 4
+start = -289,-750
+delta = 1, 2
+layerno = 1
+mask = 1
+id = 23
+
+[BGCtrlDef 23]
+CtrlID = 23
+loopTime = 1200
+
+[BGCtrl 23]
+type = posset
+time = 
+x = 0
+y = 0
+
+[BGCtrl 23]
+type = velset
+time = 0,100
+x = 0.3
+y = 1.6
+
+[BGCtrl 23]
+type = velset
+time = 100,200
+x = -0.3
+y = 1.6
+
+[BGCtrl 23]
+type = velset
+time = 200,300
+x = 0.3
+y = 1.6
+
+[BGCtrl 23]
+type = velset
+time = 300,400
+x = -0.3
+y = 1.6
+
+[BGCtrl 23]
+type = velset
+time = 400,500
+x = 0.3
+y = 1.6
+
+[BGCtrl 23]
+type = velset
+time = 500,600
+x = -0.3
+y = 1.6
+
+[BGCtrl 23]
+type = velset
+time = 600,700
+x = 0.2
+y = 1.6
+
+[BGCtrl 23]
+type = velset
+time = 700,800
+x = -0.1
+y = 1.6
+
+[BGCtrl 23]
+type = velset
+time = 800,900
+x = 0.1
+y = 1.6
+
+[BGCtrl 23]
+type = velset
+time = 900,1000
+x = -0.1
+y = 1.6
+
+[BGCtrl 23]
+type = velset
+time = 1000,1200
+x = 0.3
+y = 1.6
+
+;------------------------------------------------------
+[BG 32]
+type = anim
+actionno = 4
+start = -421,-350
+delta = 1, 2
+layerno = 1
+mask = 1
+id = 24
+
+[BGCtrlDef 24]
+CtrlID = 24
+loopTime = 980
+
+[BGCtrl 24]
+type = posset
+time = 0
+x = 0
+y = 0
+
+[BGCtrl 24]
+type = velset
+time = 0,100
+x = 0.3
+y = 1.6
+
+[BGCtrl 24]
+type = velset
+time = 100,200
+x = -0.2
+y = 1.6
+
+[BGCtrl 24]
+type = velset
+time = 200,300
+x = 0.1
+y = 1.6
+
+[BGCtrl 24]
+type = velset
+time = 300,400
+x = -0.1
+y = 1.6
+
+[BGCtrl 24]
+type = velset
+time = 400,500
+x = 0.1
+y = 1.6
+
+[BGCtrl 24]
+type = velset
+time = 500,600
+x = -0.1
+y = 1.6
+
+[BGCtrl 24]
+type = velset
+time = 600,700
+x = 0.1
+y = 1.6
+
+[BGCtrl 24]
+type = velset
+time = 700,800
+x = -0.1
+y = 1.6
+
+;------------------------------------------------------
+[BG 33]
+type = anim
+actionno = 4
+start = -301,-90
+delta = 1, 2
+layerno = 1
+mask = 1
+id = 25
+
+[BGCtrlDef 25]
+CtrlID = 25
+loopTime = 1120
+
+[BGCtrl 25]
+type = posset
+time = 
+x = 0
+y = 0
+
+[BGCtrl 25]
+type = velset
+time = 0,100
+x = 0.3
+y = 1.6
+
+[BGCtrl 25]
+type = velset
+time = 100,200
+x = -0.3
+y = 1.6
+
+[BGCtrl 25]
+type = velset
+time = 200,300
+x = 0.3
+y = 1.6
+
+[BGCtrl 25]
+type = velset
+time = 300,400
+x = -0.2
+y = 1.6
+
+[BGCtrl 25]
+type = velset
+time = 400,500
+x = 0.2
+y = 1.6
+
+[BGCtrl 25]
+type = velset
+time = 500,600
+x = -0.1
+y = 1.6
+
+[BGCtrl 25]
+type = velset
+time = 600,700
+x = 0.1
+y = 1.6
+
+[BGCtrl 25]
+type = velset
+time = 700,800
+x = -0.1
+y = 1.6
+
+[BGCtrl 25]
+type = velset
+time = 800,900
+x = 0.1
+y = 1.6
+
+[BGCtrl 25]
+type = velset
+time = 900,1000
+x = -0.1
+y = 1.6
+
+;------------------------------------------------------
+[BG 34]
+type = anim
+actionno = 4
+start = -471,-1050
+delta = 1, 2
+layerno = 1
+mask = 1
+id = 26
+
+[BGCtrlDef 26]
+CtrlID = 26
+loopTime = 1200
+
+[BGCtrl 26]
+type = posset
+time = 
+x = 0
+y = 0
+
+[BGCtrl 26]
+type = velset
+time = 0,100
+x = 0.3
+y = 1.6
+
+[BGCtrl 26]
+type = velset
+time = 100,200
+x = -0.3
+y = 1.6
+
+[BGCtrl 26]
+type = velset
+time = 200,300
+x = 0.3
+y = 1.6
+
+[BGCtrl 26]
+type = velset
+time = 300,400
+x = -0.3
+y = 1.6
+
+[BGCtrl 26]
+type = velset
+time = 400,500
+x = 0.3
+y = 1.6
+
+[BGCtrl 26]
+type = velset
+time = 500,600
+x = -0.3
+y = 1.6
+
+[BGCtrl 26]
+type = velset
+time = 600,700
+x = 0.2
+y = 1.6
+
+[BGCtrl 26]
+type = velset
+time = 700,800
+x = -0.1
+y = 1.6
+
+[BGCtrl 26]
+type = velset
+time = 800,900
+x = 0.1
+y = 1.6
+
+[BGCtrl 26]
+type = velset
+time = 900,1000
+x = -0.1
+y = 1.6
+
+[BGCtrl 26]
+type = velset
+time = 1000,1200
+x = 0.3
+y = 1.6
+
+;------------------------------------------------------
+[BG 35]
+type = anim
+actionno = 4
+start = -991,-50
+delta = 1, 2
+layerno = 1
+mask = 1
+id = 27
+
+[BGCtrlDef 27]
+CtrlID = 27
+loopTime = 1200
+
+[BGCtrl 27]
+type = posset
+time = 
+x = 0
+y = 0
+
+[BGCtrl 27]
+type = velset
+time = 0,100
+x = 0.3
+y = 1.6
+
+[BGCtrl 27]
+type = velset
+time = 100,200
+x = -0.3
+y = 1.6
+
+[BGCtrl 27]
+type = velset
+time = 200,300
+x = 0.3
+y = 1.6
+
+[BGCtrl 27]
+type = velset
+time = 300,400
+x = -0.3
+y = 1.6
+
+[BGCtrl 27]
+type = velset
+time = 400,500
+x = 0.3
+y = 1.6
+
+[BGCtrl 27]
+type = velset
+time = 500,600
+x = -0.3
+y = 1.6
+
+[BGCtrl 27]
+type = velset
+time = 600,700
+x = 0.2
+y = 1.6
+
+[BGCtrl 27]
+type = velset
+time = 700,800
+x = -0.1
+y = 1.6
+
+[BGCtrl 13]
+type = velset
+time = 800,900
+x = 0.1
+y = 1.6
+
+[BGCtrl 27]
+type = velset
+time = 900,1000
+x = -0.1
+y = 1.6
+
+[BGCtrl 27]
+type = velset
+time = 1000,1200
+x = 0.3
+y = 1.6
+
+;------------------------------------------------------
+[BG 36]
+type = anim
+actionno = 4
+start = -392,64
+delta = 1, 2
+layerno = 1
+mask = 1
+id = 28
+
+[BGCtrlDef 28]
+CtrlID = 28
+loopTime = 900
+
+[BGCtrl 28]
+type = posset
+time = 
+x = 0
+y = 0
+
+[BGCtrl 28]
+type = velset
+time = 0,100
+x = 0.3
+y = 1.6
+
+[BGCtrl 28]
+type = velset
+time = 100,200
+x = -0.3
+y = 1.6
+
+[BGCtrl 28]
+type = velset
+time = 200,300
+x = 0.3
+y = 1.6
+
+[BGCtrl 28]
+type = velset
+time = 300,400
+x = -0.3
+y = 1.6
+
+[BGCtrl 28]
+type = velset
+time = 400,500
+x = 0.3
+y = 1.6
+
+[BGCtrl 28]
+type = velset
+time = 500,600
+x = -0.3
+y = 1.6
+
+[BGCtrl 28]
+type = velset
+time = 600,700
+x = 0.2
+y = 1.6
+
+[BGCtrl 28]
+type = velset
+time = 700,800
+x = -0.1
+y = 1.6
+
+[BGCtrl 28]
+type = velset
+time = 800,900
+x = 0.1
+y = 1.6
+
+[BGCtrl 28]
+type = velset
+time = 900,1000
+x = -0.1
+y = 1.6
+
+[BGCtrl 28]
+type = velset
+time = 1000,1200
+x = 0.3
+y = 1.6
+
+[Begin Action 4]
+20,0,0,0,9
+20,1,0,0,9
+20,2,0,0,9
+20,3,0,0,9
+20,4,0,0,9
+20,5,0,0,9
+20,6,0,0,9
+20,7,0,0,9
+
+;------------------------------------------------------

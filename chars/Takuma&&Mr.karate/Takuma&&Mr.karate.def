@@ -1,0 +1,32 @@
+
+[Info]
+name = "Takuma Mr.karate"
+displayname = "Takuma karate"
+mugenversion = 1.1
+localcoord = 427,240
+
+[Files]
+cmd=Takuma&&Mr.karate.cmd
+stcommon=common1.cns
+sprite=Takuma&&Mr.karate.sff
+anim=Takuma&&Mr.karate.air
+sound=Takuma&&Mr.karate.snd
+cns=Takuma&&Mr.karate.cns
+st=Takuma&&Mr.karate.cns
+st2=Takuma&&Mr.karate1.cns
+st3=Takuma&&Mr.karate2.cns
+st4=Takuma&&Mr.karate3.cns
+st5=helper.cns
+
+pal1=act/Takuma&&Mr.karate01.act
+pal2=act/Takuma&&Mr.karate02.act
+pal3=act/Takuma&&Mr.karate03.act
+pal4=act/Takuma&&Mr.karate04.act
+pal5=act/Takuma&&Mr.karate10.act
+pal6=act/Takuma&&Mr.karate08.act
+pal7=act/Takuma&&Mr.karate07.act
+pal8=act/Takuma&&Mr.karate09.act
+pal9=act/Takuma&&Mr.karate10.act
+pal10=act/Takuma&&Mr.karate08.act
+pal11=act/Takuma&&Mr.karate02.act
+pal12=act/Takuma&&Mr.karate04.act

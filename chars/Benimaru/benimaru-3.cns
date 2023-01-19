@@ -1,0 +1,394 @@
+
+;=============================================================================
+[Statedef -3]
+;---------------------------------------------------------------------------
+
+[State -3, 2];跳跃系统相关(普通跳)
+type = PlaySnd
+triggerall = time = 1
+trigger1 = stateno = 40 
+trigger1 = var(25) <= 0
+value = F40, 0
+channel = 13
+
+[State -3, 2];跳跃系统相关（大跳/小跳）
+type = PlaySnd
+triggerall = time = 1
+trigger1 = stateno = 40 
+trigger1 = var(25) > 1
+value = F40, 1
+channel = 13
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; AH大神的大跳系统
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[State -3, 5]
+type = varset
+trigger1 = stateno = 10
+trigger1 = time = 0
+trigger2 = stateno = [100,101]
+v = 25
+value = 20
+
+[State -3, 5]
+type = varset
+trigger1 = stateno = 52
+trigger1 = time = 0
+v = 25
+value = 0
+
+[State -3, 5]
+type = varset
+trigger1 = stateno = 40
+trigger1 = command != "holdup"
+v = 26
+value = 1
+
+[State -3, 5]
+type = varset
+trigger1 = stateno = 40
+trigger1 = command = "holdup"
+v = 26
+value = 0
+
+[State -3, 5]
+type = VelAdd
+trigger1 = stateno = 50
+trigger1 = anim = 41
+trigger1 = time = 1
+trigger1 = var(25) >= 1
+y = -0.6
+
+[State -3, 5]
+type = velset
+trigger1 = stateno = 50
+trigger1 = anim = 42
+trigger1 = time = 1
+trigger1 = var(25) >= 1
+x = 4.5
+
+[State -3, 5]
+type = velset
+trigger1 = stateno = 50
+trigger1 = anim = 43
+trigger1 = time = 1
+trigger1 = var(25) >= 1
+x = -4.5
+
+[State -3, 5]
+type = veladd
+trigger1 = stateno = 50
+trigger1 = time = 1
+trigger1 = var(26) = 1
+y = 3
+
+[State -3, 5]
+type = AfterImage
+triggerall = fvar(20) < 1
+triggerall = fvar(21) < 1
+trigger1 = stateno = 50
+trigger1 = time = 1
+trigger1 = var(25) >= 1
+time = 10
+trans = add1
+timegap = 1
+framegap = 2
+length = 8
+palbright = 12,12,12
+palcontrast = 225,225,225
+palpostbright = 0,0,0
+paladd = 0,0,0
+palmul = 1,1,1
+;--------------------------------------------
+;==============================================================================
+[state -2, a]
+type = varset
+triggerall = stateno = 5900
+trigger1 = palno = [1,6]
+v = 55
+value = 0
+
+[state -2, a]
+type = varset
+triggerall = stateno = 5900
+trigger1 = palno = [7,12]
+v = 55
+value = 1
+;=========================================================================
+
+;======================================================================
+;---------------------------------------------------------------
+;----------------------火焰受击伴随烟雾-------------------------
+;---------------------------------------------------------------
+;人物受到带火属性的招式攻击Var设定
+[State 2300, Burn]
+type = Varset
+trigger1 = (p2stateno = 1320 && time > 15) || p2stateno = 3145  || p2stateno = 3150 || (p2stateno = 3220 && time > 14) || p2stateno = 3830 || p2stateno = 4170 || p2stateno = 2220 || p2stateno = 2226 || p2stateno = 4115 || p2stateno = 7311 || p2stateno = 3152
+trigger2 = Projhittime(13500) >= 0 && Projhittime(13500) <= 55 
+trigger3 = NumHelper(2910) || NumHelper(6201) || NumHelper(13701) || NumHelper(13702)  || NumHelper(14510) || NumHelper(14520) || NumHelper(14530)
+trigger4 = Projhittime(4900) >= 0 && Projhittime(4900) <= 55 
+trigger5 = stateno = 1000 || stateno = 1050 || stateno = 1130 || stateno = 1135 || stateno = 1197 || stateno = 1410 || stateno = 1460 || stateno = 1610 || stateno = 1660 || stateno = 1801 || stateno = 1851 || stateno = 1920|| stateno = 2200|| stateno = 2210|| stateno = 2617 || stateno = 2800 || stateno = 1900 ||  stateno = 3000 ||stateno = 3050 || stateno = 3500 || stateno = 3810|| stateno = 3860 || stateno = 9011 || stateno = 1501
+trigger5 = Movehit
+trigger6 = Projhittime(6011) >= 0 && Projhittime(6011) <= 55 
+trigger7 = Projhittime(2001) >= 0 && Projhittime(2001) <= 55 
+trigger8 = Projhittime(2002) >= 0 && Projhittime(2002) <= 55 
+persistent = 0
+ignorehitpause = 1
+var(23) = 1
+
+[State -2, Spark1]
+type = Explod
+triggerall = p2movetype = H
+triggerall = Random < 80
+trigger1 = (p2stateno = 1320 && time > 15) || p2stateno = 3145  || p2stateno = 3150 || (p2stateno = 3220 && time > 14) || p2stateno = 3830 || p2stateno = 4170 || p2stateno = 2220 || p2stateno = 2226 || p2stateno = 4115 || p2stateno = 7311 || p2stateno = 3152
+trigger2 = Projhittime(13500) >= 0 && Projhittime(13500) <= 55 
+trigger3 = NumHelper(2910) || NumHelper(6201) || NumHelper(13701) || NumHelper(13702)  || NumHelper(14510) || NumHelper(14520) || NumHelper(14530)
+trigger4 = Projhittime(4900) >= 0 && Projhittime(4900) <= 55 
+trigger5 = stateno = 1000 || stateno = 1050 || stateno = 1130 || stateno = 1135 || stateno = 1197 || stateno = 1410 || stateno = 1460 || stateno = 1610 || stateno = 1660 || stateno = 1801 || stateno = 1851 || stateno = 1920|| stateno = 2200|| stateno = 2210|| stateno = 2617 || stateno = 2800 || stateno = 1900 ||  stateno = 3000 ||stateno = 3050 || stateno = 3500 || stateno = 3810|| stateno = 3860 || stateno = 9011 || stateno = 1501
+trigger5 = Movehit
+trigger6 = Projhittime(6011) >= 0 && Projhittime(6011) <= 55 
+trigger7 = Projhittime(2001) >= 0 && Projhittime(2001) <= 55 
+trigger8 = Projhittime(2002) >= 0 && Projhittime(2002) <= 55 
+anim = 1340
+id = 1340
+postype = p2
+pos = -10,-70
+random = 20,80
+bindtime = 1
+sprpriority = 5
+
+;---------------------------------------------------------------
+;P2倒地之后的雷电
+;---------------------------------------------------------------
+
+[State 1000, explods]
+type = Explod
+triggerall = var(23) > 0 && Random < 70
+trigger1 = (p2stateno = [5100,5110]) && p2movetype = H
+trigger2 = (p2stateno = [4167,4169]) && p2movetype = H
+anim = 1340
+postype = p2
+sprpriority = 999
+bindtime = 1
+pos = -10,-40
+random = 70,20
+ownpal = 1
+supermove = 1
+ignorehitpause = 1
+
+[State 1000, VarSet]
+type = VarSet
+trigger1 = p2movetype != H
+v = 23
+value = 0
+persistent = 0
+;---------------------------------------------------------------
+;------------------------END OF STATE---------------------------
+;---------------------------------------------------------------
+[State -2, AirGuard]
+type = AssertSpecial
+trigger1 = 1
+flag = NoAirGuard
+IgnoreHitPause = 1
+
+[State -2, StopAI]
+type = VarSet
+triggerall = (var(59) > 0)
+trigger1 = (RoundState != 2)
+trigger2 = !Alive
+var(59) = -2
+IgnoreHitPause = 1
+
+[State -2, Simplifier]
+type = VarSet
+trigger1 = 1
+var(9) = (var(59) = 1)
+IgnoreHitPause = 1
+
+;Stop Shinkuu Katategoma sound if hit
+[State 1220, StopSnd]
+type = StopSnd
+trigger1 = stateno != [1200,1210] 
+channel = 4
+
+;Kill Afterimages when hit
+[State -2, 12]
+type = AfterImage
+trigger1 = movetype = H || stateno = 0
+value = 0
+
+[State -2, StopDashSound]
+type = StopSnd
+trigger1 = stateno != 100
+channel = 8
+
+[State -2, StopChargeSound]
+type = StopSnd
+trigger1 = stateno != 704
+channel = 15
+
+[State -2, StopDashSound]
+type = StopSnd
+trigger1 = prevstateno = 195 && stateno <= 40
+channel = 0
+
+;Determine Originating Side
+[State -2, StartOnLeft]
+type = VarSet
+trigger1 = var(30) = 0
+trigger1 = Pos X < 0
+v = 30
+value = 1
+
+[State -2, StartOnRight]
+type = VarSet
+trigger1 = var(30) = 0
+trigger1 = Pos X >= 0
+v = 30
+value = 2
+
+[State -2, Lightning when hit]
+type = RemoveExplod
+trigger1 = movetype = H
+id = 1620
+
+[State CPU,1]
+type = DisplayToClipboard
+trigger1 = time >=0
+text = "POWER: %d  VELOCITIES: X %f, Y %d" ;POS:  X %d, Y %d"
+params = power, vel x, floor(vel y)
+
+[State CPU,2]
+type = AppendToClipboard
+trigger1 = time >=0
+text = "\nAI: %d,  POS:  X %d, Y %d, Timer: %d"
+params = var(9), floor(p2dist x), floor(p2dist y), time % 4
+
+;=====================================
+; ------- MAX ------- 
+;=====================================
+
+;MAximum PalFx
+[State -2, PalFX]
+type = PalFX
+triggerall = var(10) != 0
+trigger1 = MoveType != H && (GameTime%2)=0 
+time = 1
+add = 60,60,60
+ignorehitpause = 1
+
+[State -2, Defense Up]
+type = DefenceMulSet
+trigger1 = Life <= 437
+value = ifelse(life < 262,.75,.85)
+
+;Get rid of trailing anims when hit
+[State -2, 3]
+type = AfterImageTime
+triggerall = movetype = H || stateno = 0
+trigger1 = Time = 1
+time = 0
+
+[State -3, 1];kill the corner push bug
+type = VelSet
+trigger1 = FrontEdgeDist < 10 && Vel x > 0.1
+x = 0.1
+;=============================================================================
+
+; Kamek and Luchini appear to have been the first ones to use the IsHomeTeam AI activation concept.
+[State -3, SetAI]
+type = VarSet
+triggerall = !RoundState
+triggerall = IsHomeTeam
+trigger1 = (TeamSide = 2)
+trigger2 = (MatchNo > 1)
+var(59) = 1
+
+[State -3, Unfair]
+type = VarSet
+trigger1 = !RoundState
+trigger1 = (var(59) != 1)
+trigger1 = NumPartner
+trigger1 = (ID > Partner,ID)
+trigger1 = (TeamSide = 2)
+var(59) = 1
+
+[State -3, AI Helper (Compatibly Partnered Version)]
+type = Helper
+trigger1 = !var(59)
+trigger1 = !NumHelper(9742)
+trigger1 = (RoundState = 2)
+trigger1 = Alive
+trigger1 = NumPartner
+trigger1 = Partner,SelfAnimExist(9741)
+HelperType = normal
+name = "AI Helper (Simul Version)"
+ID = 9742
+pos = 9999999,99999
+StateNo = 9742
+KeyCtrl = 1
+PauseMoveTime = 999999999
+SuperMoveTime = 999999999
+
+[State -3, AI Helper]
+type = Helper
+triggerall = !var(59)
+triggerall = !NumHelper(9741)
+triggerall = (RoundState = 2)
+triggerall = Alive
+trigger1 = !NumPartner
+trigger2 = !(Partner,SelfAnimExist(9741))
+HelperType = normal
+name = "AI Helper"
+ID = 9741
+pos = 9999999,99999
+StateNo = 9741
+KeyCtrl = 1
+PauseMoveTime = 999999999
+SuperMoveTime = 999999999
+
+[State -3, TurnBackOnAI]
+type = VarSet
+trigger1 = (var(59) = -2)
+trigger1 = (RoundState = 2)
+trigger1 = Alive
+var(59) = 1
+
+[State -3, XOR]
+type = null;VarSet
+triggerall = var(59)!=1
+triggerall = !var(57)
+triggerall = (var(58) = GameTime-1)
+trigger1 = (command = "a") ^^ (command = "a")
+trigger2 = (command = "b") ^^ (command = "b")
+trigger3 = (command = "c") ^^ (command = "c")
+trigger4 = (command = "x") ^^ (command = "x")
+trigger5 = (command = "y") ^^ (command = "y")
+trigger6 = (command = "z") ^^ (command = "z")
+trigger7 = (command = "start") ^^ (command = "start")
+trigger8 = (command = "holda") ^^ (command = "holda")
+trigger9 = (command = "holdb") ^^ (command = "holdb")
+trigger10 = (command = "holdc") ^^ (command = "holdc")
+trigger11 = (command = "holdx") ^^ (command = "holdx")
+trigger12 = (command = "holdy") ^^ (command = "holdy")
+trigger13 = (command = "holdz") ^^ (command = "holdz")
+trigger14 = (command = "holds") ^^ (command = "holds")
+trigger15 = (command = "holdfwd") ^^ (command = "holdfwd")
+trigger16 = (command = "holdback") ^^ (command = "holdback")
+trigger17 = (command = "holdup") ^^ (command = "holdup")
+trigger18 = (command = "holddown") ^^ (command = "holddown")
+trigger19 = (command = "recovery") ^^ (command = "recovery")
+var(59) = 1
+
+[State -3, fiXOR]
+type = null;VarSet
+trigger1 = !HitPauseTime
+trigger2 = (var(58) < GameTime-1)
+var(57) = HitPauseTime
+IgnoreHitPause = 1
+
+[State -3, GameTimeVar]
+type = null;VarSet
+trigger1 = 1
+var(58) = GameTime
+IgnoreHitPause = 1

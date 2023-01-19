@@ -1,0 +1,213 @@
+;------------------------
+[Info]
+name = "Waterfall"
+displayname = "+"
+mugenversion = 1.1
+
+[BGdef]
+spr = WATERFALL.sff
+debugbg = 0
+
+[Music]
+bgmusic = sound/SAIKA.mp3
+        
+[Camera]
+startx = 0            
+starty = 0            
+boundleft = -165
+boundright = 165
+boundhigh = -50
+boundlow = 0          
+verticalfollow = .2
+tension = 100
+floortension = 50
+overdrawhigh = 120
+overdrawlow = 120
+cuthigh = 0
+cutlow = 0
+zoomout = 0.9
+zoomin = 1
+tensionhigh = 200
+tensionlow = 200
+       
+[PlayerInfo]
+;--- Player 1 ---
+ 
+p1startx = -120          
+p1starty = 0            
+p1startz = 0           
+p1facing = 1            
+
+;--- Player 2 ---
+p2startx = 120
+p2starty = 0
+p2startz = 0
+p2facing = -1
+
+p3startx 	= -250
+p3starty 	= 0
+p3facing 	= 1
+
+p4startx 	= 250
+p4starty 	= 0
+p4facing 	= -1
+
+;--- Common ---
+ ;Don't change these values.
+leftbound  = -4000
+rightbound =  4000 
+topbound  =  0     
+botbound  =  0   
+      
+[Bound]
+screenleft = 30        
+screenright = 30  
+  
+[StageInfo]
+zoffset = 438
+autoturn = 1         
+resetBG = 0           
+localcoord = 854,480
+
+[Shadow]
+intensity = 96
+color = 0,0,0
+yscale = .12
+fade.range = -400,-100
+
+[Reflection]
+intensity = 0 
+
+
+[BG WATERFALL]
+type = anim
+actionno = 0
+delta = 0.55,1.6
+mask = 1
+[BG WATERFALL]
+type = anim
+actionno = 0
+start = 960,0
+delta = 0.55,1.6
+mask = 1
+[BG WATERFALL]
+type = anim
+actionno = 0
+start = -960,0
+delta = 0.55,1.6
+mask = 1
+
+[Begin Action 0]
+0,1,0,0,10
+0,2,0,0,10
+0,3,0,0,10
+0,4,0,0,10
+[BG SPOTLIGHT FX]
+type = anim
+actionno = 1
+delta = 0.55,1.6
+mask = 1
+[Begin Action 1]
+0,5,0,0,4,,AS200D256
+0,5,0,0,4,,AS190D256
+0,5,0,0,4,,AS180D256
+0,5,0,0,4,,AS170D256
+0,5,0,0,4,,AS160D256
+0,5,0,0,4,,AS150D256
+0,5,0,0,4,,AS140D256
+0,5,0,0,4,,AS130D256
+0,5,0,0,4,,AS120D256
+0,5,0,0,4,,AS110D256
+0,5,0,0,4,,AS100D256
+0,5,0,0,4,,AS90D256
+0,5,0,0,4,,AS80D256
+0,5,0,0,4,,AS70D256
+0,5,0,0,4,,AS60D256
+0,5,0,0,4,,AS50D256
+0,5,0,0,4,,AS60D256
+0,5,0,0,4,,AS70D256
+0,5,0,0,4,,AS80D256
+0,5,0,0,4,,AS90D256
+0,5,0,0,4,,AS100D256
+0,5,0,0,4,,AS110D256
+0,5,0,0,4,,AS120D256
+0,5,0,0,4,,AS130D256
+0,5,0,0,4,,AS140D256
+0,5,0,0,4,,AS150D256
+0,5,0,0,4,,AS160D256
+0,5,0,0,4,,AS170D256
+0,5,0,0,4,,AS180D256
+0,5,0,0,4,,AS190D256
+[BG PARTICLES]
+type = normal
+spriteno = 1,0
+delta = 0.9,1.6
+mask = 1
+velocity = 0,-.5
+tile = 0,1
+tilespacing = 1, 1
+trans = add
+[BG PARTICLES 2]
+type = normal
+spriteno = 1,1
+delta = 0.85,1.7
+mask = 1
+velocity = 0,-.6
+tile = 0,1
+tilespacing = 1, 1
+trans = add
+[BG PARTICLES 3]
+type = normal
+spriteno = 1,2
+delta = 0.8,1.6
+mask = 1
+velocity = 0,-.7
+tile = 0,1
+tilespacing = 1, 1
+trans = add
+[BG FLOOR]
+type = normal
+spriteno = 2,0
+delta = 0.8,1.8
+mask = 1
+[BG PARTICLES 4]
+type = normal
+spriteno = 2,1
+delta = 0.9,1.6
+mask = 1
+velocity = 0,-.8
+tile = 0,1
+tilespacing = 1, 1
+trans = add
+[BG PARTICLES 5]
+type = normal
+spriteno = 2,2
+delta = 0.85,1.7
+mask = 1
+velocity = 0,-.9
+tile = 0,1
+tilespacing = 1, 1
+trans = add
+[BG PARTICLES 6]
+type = normal
+spriteno = 2,3
+delta = 0.9,1.6
+mask = 1
+velocity = 0,-.3
+tile = 0,1
+tilespacing = 1, 1
+trans = add
+[BG PARTICLES 7]
+type = normal
+spriteno = 2,4
+delta = 0.85,1.7
+mask = 1
+velocity = 0,-.4
+tile = 0,1
+tilespacing = 1, 1
+trans = add
+[BG FLOOR]
+type = normal
+spriteno = 2,5
+delta = 1,2
+mask = 1

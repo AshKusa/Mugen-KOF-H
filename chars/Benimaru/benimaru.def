@@ -1,0 +1,41 @@
+[Info]
+name         = "Benimaru"
+displayname  = "Benimaru"
+author       = "Deuce"
+updated by   = "Sander71113"
+;versiondate  = 08,23,2004
+mugenversion = 1.1
+pal.defaults = 10,1,3,2
+localcoord   = 427,240
+
+; Files for the character
+[Files]
+cmd      = benimaru.cmd
+cns      = benimaru.cns  
+st       = benimaru.cns   
+stcommon = common1.cns    
+st1      = benimaru-N.cns
+st2      = benimaru-S.cns
+st3      = benimaru-H.cns
+st4      = helper.cns
+st5      = benimaru-3.cns
+sprite   = benimaru.sff  
+anim     = benimaru.air   
+sound    = benimaru.snd   
+
+pal1       = act/beni98b.act    ;KOF98 B Alternate
+pal2       = act/beni98c.act    ;KOF98 C Alternate
+pal3       = act/beni98d.act    ;KOF98 D Alternate
+pal4       = act/beni2ka.act    ;KOF2K Standard
+pal5       = act/beni2kb.act    ;KOF2K Alternate
+pal6       = act/extra.act      ;Added Alternate
+pal7       = act/beni96d.act    ;KOF96 Alternate
+pal8       = act/beni97d.act    ;KOF97 Alternate
+pal9       = act/beni99d.act    ;KOF99 Alternate
+pal10     = act/beni99a.act    ;Standard (KOF99 base)
+pal11     = act/beni94d.act    ;KOF94 Alternate
+pal12     = act/beni95d.act    ;KOF95 Alternate
+
+
+[Arcade]
+;ending.storyboard = beniend.def

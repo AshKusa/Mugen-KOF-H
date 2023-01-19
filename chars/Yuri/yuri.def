@@ -1,0 +1,39 @@
+[Info]
+name ="yuri"        
+displayname ="Yuri" 
+author ="Fervicante"        
+pal.defaults =1,2,3,4,5,6,7,8,9,10,11,12 
+mugenversion = 1.1
+localcoord   = 427,240
+
+[Files]
+cmd      =yuri.cmd
+cns      =yuri.cns
+st       =yuri.cns
+st2      =yuri-N.cns
+st3      =yuri-S.cns
+st4      =yuri-H.cns
+st5      =yuri-Weaki.cns
+st6      =yuri-119way.cns
+st7      =ÐÂ.cns
+stcommon =common1.cns
+sprite   =yuri.sff
+anim     =yuri.air
+sound    =yuri.snd
+
+pal1=pals/xi_yuri01.act
+pal2=pals/xi_yuri02.act
+pal3=pals/xi_yuri03.act
+pal4=pals/xi_yuri04.act
+pal5=pals/xi_yuri05.act
+pal6=pals/xi_yuri06.act
+pal7=pals/xi_yuri07.act
+pal8=pals/xi_yuri08.act
+pal9=pals/xi_yuri09.act
+pal10=pals/xi_yuri10.act
+pal11=pals/xi_yuri11.act
+pal12=pals/xi_yuri12.act
+
+[Arcade]
+intro.storyboard = 
+ending.storyboard = 

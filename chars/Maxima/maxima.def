@@ -1,0 +1,34 @@
+[Info]
+name         = "maxima"
+displayname  = "maxima"
+author       = "Gargoyle"
+pal.defaults = 1,2,3,4,5,6
+mugenversion = 1.1
+localcoord   = 427,240
+
+[Files]
+cmd     = maxima.cmd
+cns     = maxima.cns
+st      = maxima.cns
+st1     = Maxima-N.cns
+st2     = Maxima-S.cns
+st3     = Maxima-T.cns
+st4     = ÐÂ.cns
+st5     = ÐÂ2.cns
+st6     = ÐÂ3.cns
+stcommon= common1.cns
+sprite  = maxima.sff
+anim    = maxima.air
+sound   = maxima.snd
+pal1    = act/maxima1.act
+pal2    = act/maxima2.act
+pal3    = act/maxima3.act
+pal4    = act/maxima4.act
+pal5    = act/maxima5.act
+pal6    = act/maxima6.act
+pal7    = act/maxima7.act
+pal8    = act/maxima8.act
+pal9    = act/maxima9.act
+pal10   = act/maxima0.act
+pal11    = act/maxima5.act
+pal12    = act/maxima6.act

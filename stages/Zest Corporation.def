@@ -1,0 +1,601 @@
+[Info]
+name = "Zest Research Facility"
+displayname = "K"
+Author = "EXShadow"
+mugenversion = 1.1
+
+[Camera]
+startx = 0
+starty = 0
+boundleft = -260
+boundright = 260
+boundhigh = -50
+verticalfollow = .95
+tension = 100
+floortension = 50
+overdrawhigh = 120
+overdrawlow = 120
+cuthigh = 0
+cutlow = 0
+zoomout = 0.9
+zoomin = 1
+tensionhigh = 200
+tensionlow = 200
+
+[PlayerInfo]
+p1startx = -120          
+p1starty = 0            
+p1startz = 0            
+p1facing = 1            
+
+;--- Player 2 ---
+p2startx = 120
+p2starty = 0
+p2startz = 0
+p2facing = -1
+
+p3startx 	= -250
+p3starty 	= 0
+p3facing 	= 1
+
+p4startx 	= 250
+p4starty 	= 0
+p4facing 	= -1
+
+;--- Common ---
+leftbound  = -4000 ;Left bound (x-movement)
+rightbound =  4000 ;Right bound
+topbound  =  0     ;Top bound (z-movement)
+botbound  =  0     ;Bottom bound
+
+;--------------------------------------------------------
+[Bound]
+screenleft = 30
+screenright = 30
+
+;--------------------------------------------------------
+[StageInfo]
+localcoord = 854, 480
+zoffset = 438
+autoturn = 1
+resetBG = 0
+;hires = 1
+
+;--------------------------------------------------------
+[Shadow]
+intensity = 0
+color = 0,0,0
+yscale = .4
+fade.range = -400,-100
+
+;--------------------------------------------------------
+[Reflection]
+intensity = 60
+
+;--------------------------------------------------------
+[Music]
+bgmusic = sound/Çà¤¤¹ûŒg.mp3
+bgvolume = 555
+
+;--------------------------------------------------------Main background definition
+[BGdef]
+spr = Zest Corporation.sff
+debugbg = 0
+
+[BG Black]
+type  = normal
+spriteno = 0, 0
+start = 0, 10
+delta = 0, 0
+mask = 0
+layerno = 0
+
+[BG Back]
+type  = normal
+spriteno = 2, 0
+start = 0, 10
+delta = 1, 2
+mask = 0
+layerno = 0
+
+[BG Sky]
+type  = normal
+spriteno = 4, 0
+start = 0, 10
+delta = 0.90, 1.80
+mask = 0
+tile = 1,0
+velocity = .5,0
+layerno = 0
+
+[BG Floor]
+type  = normal
+spriteno = 1, 0
+start = 0, 10
+delta = 1, 2
+mask = 1
+layerno = 0
+
+[BG Floor01]
+type  = normal
+spriteno = 1, 1
+start = 0, 10
+delta = 1, 2
+mask = 0
+trans = add
+layerno = 0
+
+[BG Floor02]
+type  = normal
+spriteno = 1, 2
+start = 0, 10
+delta = 1, 2
+mask = 0
+trans = add
+layerno = 0
+
+[BG Red]
+type  = anim
+actionno = 2
+spriteno = 2, 2
+start = 0, 10
+delta = 1, 2
+layerno = 0
+
+[BG Phase]
+type  = anim
+actionno = 1
+spriteno = 2, 1
+start = 0, 10
+delta = 1, 2
+layerno = 0
+
+[BG Info]
+type  = normal
+spriteno = 5, 0
+delta = 1, 2
+mask = 1
+tile = 0,1
+trans = addalpha
+alpha = 256,156
+velocity = 0,-.5
+window = 0,238, 640, 330
+windowdelta = 2,2
+layerno = 0
+
+[BG Lines]
+type  = normal
+spriteno = 7, 0
+start = 0,40
+delta = 1, 2
+mask = 0
+trans = addalpha
+alpha = 50,256
+layerno = 0
+
+[BG InfoTop]
+type  = normal
+spriteno = 5, 1
+start = 0,40
+delta = 1, 2
+mask = 1
+trans = addalpha
+alpha = 256,106
+layerno = 0
+
+[BG InfoBottom]
+type  = normal
+spriteno = 5, 1
+start = 0,142
+delta = 1, 2
+mask = 1
+trans = addalpha
+alpha = 256,106
+layerno = 0
+
+[BG Sides]
+type  = anim
+actionno = 3
+spriteno = 6, 1
+start = 0,40
+delta = 1, 2
+layerno = 0
+
+[BG Lights]
+type  = anim
+actionno = 4
+spriteno = 2, 3
+delta = 1, 2
+layerno = 0
+
+[BG BrokenScreen]
+type  = anim
+actionno = 5
+spriteno = 8, 1
+start = 0, 10
+delta = 1, 2
+layerno = 0
+
+[BG BotScreenTopAnim]
+type  = anim
+actionno = 6
+spriteno = 9, 1
+start = 0, 10
+delta = 1, 2
+layerno = 0
+
+[BG BotScreenLines]
+type  = normal
+spriteno = 9,31
+start = 0, 10
+delta = 1, 2
+mask = 0
+trans = addalpha
+alpha = 50,256
+layerno = 0
+
+[BG BotScreenTop]
+type  = normal
+spriteno = 2, 4
+start = 0, 10
+delta = 1, 2
+mask = 1
+layerno = 0
+
+[BG BotScreenTopAnim2]
+type  = anim
+actionno = 7
+spriteno = 10, 1
+start = 0, 10
+delta = 1, 2
+layerno = 0
+
+[BG BotScreenLines2]
+type  = normal
+spriteno = 10,31
+start = 0, 10
+delta = 1, 2
+mask = 0
+trans = addalpha
+alpha = 50,256
+layerno = 0
+
+[BG BotScreenTop2]
+type  = normal
+spriteno = 2, 5
+start = 0, 10
+delta = 1, 2
+mask = 1
+layerno = 0
+
+[BG Zest]
+type  = anim
+actionno = 10
+spriteno = 14, 0
+start = 0, 10
+delta = 1, 2
+layerno = 0
+
+[BG FrontJackBack]
+type  = normal
+spriteno = 3, 1
+start = 0, 10
+delta = 1, 2
+mask = 1
+layerno = 0
+
+[BG FrontJack]
+type  = normal
+spriteno = 3, 1
+start = 0, 10
+delta = 1, 2
+mask = 1
+trans = addalpha
+alpha = 100,100
+layerno = 1
+
+[BG Floor03]
+type  = normal
+spriteno = 1, 3
+start = 0, 10
+delta = 1, 2
+mask = 1
+trans = addalpha
+alpha = 256,256
+layerno = 1
+
+[BG Floor04]
+type  = normal
+spriteno = 1, 4
+start = 0, 10
+delta = 1, 2
+mask = 0
+trans = add
+layerno = 1
+
+[BG Floor05]
+type  = normal
+spriteno = 1, 5
+start = 0, 10
+delta = 1, 2
+mask = 0
+trans = add
+layerno = 1
+
+[BG Ray]
+type  = anim
+actionno = 8
+spriteno = 11, 0
+start = 0, 10
+delta = 1, 2
+layerno = 1
+
+
+;--------------------------------------------------------Animations
+[Begin Action 1]
+2,1, 0,0, 3,, as166d256
+2,1, 0,0, 3,, as156d256
+2,1, 0,0, 3,, as146d256
+2,1, 0,0, 3,, as136d256
+2,1, 0,0, 3,, as126d256
+2,1, 0,0, 3,, as116d256
+2,1, 0,0, 3,, as106d256
+2,1, 0,0, 3,, as116d256
+2,1, 0,0, 3,, as126d256
+2,1, 0,0, 3,, as136d256
+2,1, 0,0, 3,, as146d256
+2,1, 0,0, 3,, as136d256
+2,1, 0,0, 3,, as126d256
+2,1, 0,0, 3,, as116d256
+2,1, 0,0, 3,, as106d256
+2,1, 0,0, 3,, as96d256
+2,1, 0,0, 3,, as86d256
+2,1, 0,0, 3,, as76d256
+2,1, 0,0, 3,, as66d256
+2,1, 0,0, 3,, as56d256
+2,1, 0,0, 3,, as46d256
+2,1, 0,0, 3,, as36d256
+2,1, 0,0, 3,, as26d256
+2,1, 0,0, 3,, as16d256
+2,1, 0,0, 3,, as6d256
+2,1, 0,0, 3,, as16d256
+2,1, 0,0, 3,, as26d256
+2,1, 0,0, 3,, as36d256
+2,1, 0,0, 3,, as46d256
+2,1, 0,0, 3,, as56d256
+2,1, 0,0, 3,, as66d256
+2,1, 0,0, 3,, as76d256
+2,1, 0,0, 3,, as86d256
+2,1, 0,0, 3,, as96d256
+2,1, 0,0, 3,, as106d256
+2,1, 0,0, 3,, as116d256
+2,1, 0,0, 3,, as126d256
+2,1, 0,0, 3,, as136d256
+2,1, 0,0, 3,, as146d256
+2,1, 0,0, 3,, as156d256
+
+[Begin Action 2]
+2,2, 0,0, 40
+0,0, 0,0, 40
+
+[Begin Action 3]
+6,0, 0,0, 2,, as200d256
+6,1, 0,0, 2,, as200d256
+6,2, 0,0, 2,, as200d256
+6,3, 0,0, 2,, as200d256
+6,4, 0,0, 2,, as200d256
+6,5, 0,0, 2,, as200d256
+6,6, 0,0, 2,, as200d256
+6,7, 0,0, 2,, as200d256
+6,8, 0,0, 2,, as200d256
+6,9, 0,0, 2,, as200d256
+6,10, 0,0, 2,, as200d256
+6,11, 0,0, 2,, as200d256
+6,12, 0,0, 2,, as200d256
+6,13, 0,0, 2,, as200d256
+6,14, 0,0, 2,, as200d256
+6,15, 0,0, 2,, as200d256
+6,14, 0,0, 2,, as200d256
+6,13, 0,0, 2,, as200d256
+6,12, 0,0, 2,, as200d256
+6,11, 0,0, 2,, as200d256
+6,10, 0,0, 2,, as200d256
+6,9, 0,0, 2,, as200d256
+6,8, 0,0, 2,, as200d256
+6,7, 0,0, 2,, as200d256
+6,6, 0,0, 2,, as200d256
+6,5, 0,0, 2,, as200d256
+6,4, 0,0, 2,, as200d256
+6,3, 0,0, 2,, as200d256
+6,2, 0,0, 2,, as200d256
+6,1, 0,0, 2,, as200d256
+
+[Begin Action 4]
+2,3, 0,0, 1,, as12d256
+2,3, 0,0, 1,, as6d256
+
+[Begin Action 5]
+8,1, 0,0, 2
+8,2, 0,0, 2
+8,3, 0,0, 2
+8,4, 0,0, 2
+8,5, 0,0, 2
+
+[Begin Action 6]
+9,1, 0,0, 4
+9,2, 0,0, 4
+9,3, 0,0, 4
+9,4, 0,0, 4
+9,5, 0,0, 4
+9,6, 0,0, 4
+9,7, 0,0, 4
+9,8, 0,0, 4
+9,9, 0,0, 4
+9,10, 0,0, 4
+9,11, 0,0, 4
+9,12, 0,0, 4
+9,13, 0,0, 4
+9,14, 0,0, 4
+9,15, 0,0, 4
+9,16, 0,0, 4
+9,17, 0,0, 4
+9,18, 0,0, 4
+9,19, 0,0, 4
+9,20, 0,0, 4
+9,21, 0,0, 4
+9,22, 0,0, 4
+9,23, 0,0, 4
+9,24, 0,0, 4
+9,25, 0,0, 4
+9,26, 0,0, 4
+9,27, 0,0, 4
+9,28, 0,0, 4
+9,29, 0,0, 4
+9,30, 0,0, 4
+
+[Begin Action 7]
+10,1, 0,0, 4
+10,2, 0,0, 4
+10,3, 0,0, 4
+10,4, 0,0, 4
+10,5, 0,0, 4
+10,6, 0,0, 4
+10,7, 0,0, 4
+10,8, 0,0, 4
+10,9, 0,0, 4
+10,10, 0,0, 4
+10,11, 0,0, 4
+10,12, 0,0, 4
+10,13, 0,0, 4
+10,14, 0,0, 4
+10,15, 0,0, 4
+10,16, 0,0, 4
+10,17, 0,0, 4
+10,18, 0,0, 4
+10,19, 0,0, 4
+10,20, 0,0, 4
+10,21, 0,0, 4
+10,22, 0,0, 4
+10,23, 0,0, 4
+10,24, 0,0, 4
+10,25, 0,0, 4
+10,26, 0,0, 4
+10,27, 0,0, 4
+10,28, 0,0, 4
+10,29, 0,0, 4
+10,30, 0,0, 4
+
+[Begin Action 8]
+11,0, 0,0, 1, ,as100d256
+11,0, 0,0, 1, ,as86d256
+
+[Begin Action 9]
+0,0,0,0,100
+12,0, 0,0, 1,, as1d256
+12,0, 0,0, 1,, as2d256
+12,0, 0,0, 1,, as3d256
+12,0, 0,0, 1,, as4d256
+12,0, 0,0, 1,, as5d256
+12,0, 0,0, 1,, as6d256
+12,0, 0,0, 1,, as7d256
+12,0, 0,0, 1,, as8d256
+12,0, 0,0, 1,, as9d256
+12,0, 0,0, 1,, as10d256
+12,0, 0,0, 1,, as11d256
+12,0, 0,0, 1,, as12d256
+12,0, 0,0, 1,, as13d256
+12,0, 0,0, 1,, as14d256
+12,0, 0,0, 1,, as15d256
+12,0, 0,0, 1,, as16d256
+12,0, 0,0, 1,, as17d256
+12,0, 0,0, 1,, as18d256
+12,0, 0,0, 1,, as19d256
+12,0, 0,0, 1,, as20d256
+12,0, 0,0, 1,, as21d256
+12,0, 0,0, 1,, as22d256
+12,0, 0,0, 1,, as23d256
+12,0, 0,0, 1,, as24d256
+12,0, 0,0, 1,, as25d256
+12,0, 0,0, 1,, as26d256
+12,0, 0,0, 1,, as27d256
+12,0, 0,0, 1,, as28d256
+12,0, 0,0, 1,, as29d256
+12,0, 0,0, 1,, as30d256
+12,0, 0,0, 1,, as31d256
+12,0, 0,0, 1,, as32d256
+12,0, 0,0, 1,, as33d256
+12,0, 0,0, 1,, as34d256
+12,0, 0,0, 1,, as35d256
+12,0, 0,0, 1,, as36d256
+12,0, 0,0, 1,, as37d256
+12,0, 0,0, 1,, as38d256
+12,0, 0,0, 1,, as39d256
+12,0, 0,0, 1,, as40d256
+12,0, 0,0, 1,, as41d256
+12,0, 0,0, 1,, as42d256
+12,0, 0,0, 1,, as43d256
+12,0, 0,0, 1,, as44d256
+12,0, 0,0, 1,, as45d256
+12,0, 0,0, 1,, as46d256
+12,0, 0,0, 1,, as47d256
+12,0, 0,0, 1,, as48d256
+12,0, 0,0, 1,, as49d256
+12,0, 0,0, 1,, as50d256
+12,2, 0,0, 6,, as50d256
+12,3, 0,0, 6,, as50d256
+12,4, 0,0, 6,, as50d256
+12,5, 0,0, 6,, as50d256
+12,6, 0,0, 6,, as50d256
+12,6, 0,0, 6,, as49d256
+12,6, 0,0, 6,, as48d256
+12,6, 0,0, 6,, as47d256
+12,6, 0,0, 6,, as46d256
+12,6, 0,0, 6,, as45d256
+12,6, 0,0, 6,, as44d256
+12,6, 0,0, 6,, as43d256
+12,6, 0,0, 6,, as42d256
+12,6, 0,0, 6,, as41d256
+12,6, 0,0, 6,, as40d256
+12,6, 0,0, 6,, as39d256
+12,6, 0,0, 6,, as38d256
+12,6, 0,0, 6,, as37d256
+12,6, 0,0, 6,, as36d256
+12,6, 0,0, 6,, as35d256
+12,6, 0,0, 6,, as34d256
+12,6, 0,0, 6,, as33d256
+12,6, 0,0, 6,, as32d256
+12,6, 0,0, 6,, as31d256
+12,6, 0,0, 6,, as30d256
+12,6, 0,0, 6,, as29d256
+12,6, 0,0, 6,, as28d256
+12,6, 0,0, 6,, as27d256
+12,6, 0,0, 6,, as26d256
+12,6, 0,0, 6,, as25d256
+12,6, 0,0, 6,, as24d256
+12,6, 0,0, 6,, as23d256
+12,6, 0,0, 6,, as22d256
+12,6, 0,0, 6,, as21d256
+12,6, 0,0, 6,, as20d256
+12,6, 0,0, 6,, as19d256
+12,6, 0,0, 6,, as18d256
+12,6, 0,0, 6,, as17d256
+12,6, 0,0, 6,, as16d256
+12,6, 0,0, 6,, as15d256
+12,6, 0,0, 6,, as14d256
+12,6, 0,0, 6,, as13d256
+12,6, 0,0, 6,, as12d256
+12,6, 0,0, 6,, as11d256
+12,6, 0,0, 6,, as10d256
+12,6, 0,0, 6,, as9d256
+12,6, 0,0, 6,, as8d256
+12,6, 0,0, 6,, as7d256
+12,6, 0,0, 6,, as6d256
+12,6, 0,0, 6,, as5d256
+12,6, 0,0, 6,, as4d256
+12,6, 0,0, 6,, as3d256
+12,6, 0,0, 6,, as2d256
+12,6, 0,0, 6,, as1d256
+
+[Begin Action 10]
+14,0, 0,0, 3, ,as10d256
+14,0, 0,0, 3, ,as0d256

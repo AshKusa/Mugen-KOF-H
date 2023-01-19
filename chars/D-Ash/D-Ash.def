@@ -1,0 +1,38 @@
+[Info]
+Name         ="D-Ash"
+DisplayName  ="D-Ash"
+MugenVersion =1.1
+Author       ="Jin"
+pal.defaults =4
+localcoord   = 427,240
+
+[Files]
+cmd          =D-Ash.cmd   
+stcommon     =common1.cns
+Sprite       =D-Ash.sff
+Anim         =D-Ash.air
+Sound        =D-Ash.snd
+Cns          =D-Ash.cns
+St           =D-Ash.cns
+st1          =D-Ash_N.cns
+st2          =D-Ash_S.cns
+st3          =D-Ash_H.cns
+st4          =newmax.cns
+st5          =D-Ash_AI.cns
+
+pal1         =pal/D-Ash.act
+pal2         =pal/D-Ash-S.act
+pal3         =pal/D-Ash.act
+pal4         =pal/D-Ash-S.act
+pal5         =pal/D-Ash.act
+pal6         =pal/D-Ash-S.act
+pal7         =pal/D-Ash.act
+pal8         =pal/D-Ash-S.act
+pal9         =pal/D-Ash.act
+pal10         =pal/D-Ash-S.act
+pal11         =pal/D-Ash.act
+pal12         =pal/D-Ash-S.act
+
+[Arcade]
+;intro.storyboard=intro.def
+;ending.storyboard=The-end.def

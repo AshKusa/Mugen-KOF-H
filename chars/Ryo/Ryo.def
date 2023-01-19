@@ -1,0 +1,39 @@
+[Info]
+Name         ="Ryo Sakazaki"
+DisplayName  ="Ryo"
+mugenversion = 1.1
+localcoord   = 427,240
+Author       ="Zelgadis"
+Pal.Defaults =1
+
+[Files]
+Cmd      =Ryo.cmd
+Cns      =Ryo.cns
+St       =Ryo.cns
+StCommon =common1.cns
+Sprite   =Ryo.sff
+Anim     =Ryo.air
+Sound    =Ryo.snd
+st1=Ryo-N.cns
+st2=Ryo-S.cns
+st3=Ryo-H.cns
+st4=Ryo-3.cns
+st5=ÐÂ.cns
+st6=ÐÂ2.cns
+
+pal1=paletas\Ryo-a.act
+pal2=paletas\Ryo-b.act
+pal3=paletas\Ryo-e.act
+pal4=paletas\Ryo-c.act
+pal5=paletas\Ryo-d.act
+pal6=paletas\Ryo-f.act
+pal7=paletas\Ryo-a.act
+pal8=paletas\Ryo-b.act
+pal9=paletas\Ryo-e.act
+pal10=paletas\Ryo-c.act
+pal11=paletas\Ryo-d.act
+pal12=paletas\Ryo-f.act
+
+[Arcade]
+intro.storyboard =
+ending.storyboard =

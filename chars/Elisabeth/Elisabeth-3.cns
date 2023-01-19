@@ -1,0 +1,229 @@
+;===================================================================================;
+[Statedef -3]
+;---------------------------------------------------------------------------
+
+[State -3, 2];跳跃系统相关(普通跳)
+type = PlaySnd
+triggerall = time = 1
+trigger1 = stateno = 40 
+trigger1 = var(25) <= 0
+value = F40, 0
+channel = 13
+
+[State -3, 2];跳跃系统相关（大跳/小跳）
+type = PlaySnd
+triggerall = time = 1
+trigger1 = stateno = 40 
+trigger1 = var(25) > 1
+value = F40, 1
+channel = 13
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; AH大神的大跳系统
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[State -3, 5]
+type = varset
+trigger1 = stateno = 10
+trigger1 = time = 0
+trigger2 = stateno = [100,101]
+v = 25
+value = 20
+
+[State -3, 5]
+type = varset
+trigger1 = stateno = 52
+trigger1 = time = 0
+v = 25
+value = 0
+
+[State -3, 5]
+type = varset
+trigger1 = stateno = 40
+trigger1 = command != "holdup"
+v = 26
+value = 1
+
+[State -3, 5]
+type = varset
+trigger1 = stateno = 40
+trigger1 = command = "holdup"
+v = 26
+value = 0
+
+[State -3, 5]
+type = VelAdd
+trigger1 = stateno = 50
+trigger1 = anim = 41
+trigger1 = time = 1
+trigger1 = var(25) >= 1
+y = -0.6
+
+[State -3, 5]
+type = velset
+trigger1 = stateno = 50
+trigger1 = anim = 42
+trigger1 = time = 1
+trigger1 = var(25) >= 1
+x = 4.5
+;y = -9
+
+[State -3, 5]
+type = velset
+trigger1 = stateno = 50
+trigger1 = anim = 43
+trigger1 = time = 1
+trigger1 = var(25) >= 1
+x = -4.5
+;y = -9
+
+[State -3, 5]
+type = veladd
+trigger1 = stateno = 50
+trigger1 = time = 1
+trigger1 = var(26) = 1
+y = 3
+
+[State -3, 5]
+type = AfterImage
+trigger1 = stateno = 50
+trigger1 = time = 1
+trigger1 = var(25) >= 1
+time = 10
+trans = add1
+timegap = 1
+framegap = 2
+length = 8
+palbright = 12,12,12
+palcontrast = 225,225,225
+palpostbright = 0,0,0
+paladd = 0,0,0
+palmul = 1,1,1
+;--------------------------------------------
+;===================================================================================;
+;===================================================================================;
+;Detener el Sonido y Explod de Carga Sin Estar en estos Estados
+[State -2, StopSnd]
+type = StopSnd
+trigger1 = stateno != 11910 && stateno != 11911
+channel = 11
+
+[State -2, StopSnd]
+type = StopSnd
+trigger1 = stateno != 11910 && stateno != 11911
+channel = 12
+
+[State 1100, 1]
+type = RemoveExplod
+trigger1 = stateno != 11911
+ID = 11910
+
+[State 1100, 1]
+type = RemoveExplod
+trigger1 = stateno != 11911
+ID = 11911
+
+;===================================================================================;
+;Pausa de ataques en Proyectiles
+[State -3, Pausa de ataques en Proyectiles]
+type = Pause
+triggerall = RoundState = 2
+trigger1 = ProjHitTime(2000) = [5,15]
+time = 1
+movetime = 0
+ignorehitpause = 1
+
+;Pantalla Blanca en Proyectiles
+[State -2, Pantalla Blanca en Proyectiles]
+type = EnvColor
+trigger1 = Projhittime(2000) >= 0 && Projhittime(2000) <= 1
+trigger2 = Projhittime(2050) >= 0 && Projhittime(2050) <= 1
+value = 255,255,255
+time = 1
+under = 1
+;===================================================================================;
+
+[State 3100, 12]
+type = Changestate
+Triggerall = !(stateno = [3000,3999])
+Triggerall = statetype != A
+trigger1 = projhit3200=1
+value = 3210
+ctrl = 0
+
+[State 3100, 12]
+type = Changestate
+Triggerall = !(stateno = [3000,3999])
+Triggerall = statetype = A
+trigger1 = projhit3200=1
+value = 3230
+ctrl = 0
+
+;===================================================================================;
+
+[State -2,explods]
+type = Explod
+triggerall = p2movetype = H
+trigger1 = Anim = 1000 && Movehit && Random < 100
+trigger2 = Anim = 1050 && Movehit && Random < 100
+trigger3 = Anim = 1100 && Movehit && Random < 100
+trigger4 = Anim = 1150 && Movehit && Random < 100
+trigger5 = Anim = 1505 && Movehit && Random < 100
+trigger6 = Anim = 2000 && Movehit && Random < 100
+trigger7 = helper,Anim = 2515 && helper,Movehit && Random < 100
+trigger8 = Anim = 2105 && Movehit && Random < 100
+trigger9 = Anim = 2110 && Movehit && Random < 100
+trigger10 = Projhittime(3601) >= 0 && Projhittime(3601) <= 25 && Random < 100
+trigger11 = Anim = 3220 && Movehit && Random < 100
+trigger12 = Anim = 3240 && Movehit && Random < 100
+trigger13 = Anim = 3920 && Movehit && Random < 100
+trigger14 = Anim = 3930 && Movehit && Random < 100
+anim = 4200
+scale = .5,.5
+pos = 0,-50
+postype = p2
+sprpriority = 9
+bindtime = 1
+random = 50,75
+ownpal = 1
+supermove = 1
+ignorehitpause = 1
+
+[State -2,explods]
+type = Explod
+triggerall = p2movetype = H
+trigger1 = Anim = 1000 && Movehit && Random < 100
+trigger2 = Anim = 1050 && Movehit && Random < 100
+trigger3 = Anim = 1100 && Movehit && Random < 100
+trigger4 = Anim = 1150 && Movehit && Random < 100
+trigger5 = Anim = 1505 && Movehit && Random < 100
+trigger6 = Anim = 2000 && Movehit && Random < 100
+trigger7 = helper,Anim = 2515 && helper,Movehit && Random < 100
+trigger8 = Anim = 2105 && Movehit && Random < 100
+trigger9 = Anim = 2110 && Movehit && Random < 100
+trigger10 = Projhittime(3601) >= 0 && Projhittime(3601) <= 25 && Random < 100
+trigger11 = Anim = 3220 && Movehit && Random < 100
+trigger12 = Anim = 3240 && Movehit && Random < 100
+trigger13 = Anim = 3920 && Movehit && Random < 100
+trigger14 = Anim = 3930 && Movehit && Random < 100
+anim = 4210
+scale = .5,.5
+pos = 0,-50
+postype = p2
+sprpriority = 9
+bindtime = 1
+random = 75,50
+ownpal = 1
+supermove = 1
+ignorehitpause = 1
+
+;===================================================================================;
+;Electric PalFx
+;===================================================================================;
+[State -3, palfx]
+type = palfx
+trigger1 = gethitvar(chainid) = 17000 && time%2 = 0 && movetype=h && (stateno!=[120,160]) && (StateNo !=[5100,5460])&& Stateno != [20,21]
+time = 1
+add = 0,15,75
+color = 0
+invertall = 1
+ignorehitpause = 1

@@ -1,0 +1,284 @@
+;--------------------------------------------------------
+[Info]
+name = "Magical Book"
+displayname = "b"
+mugenversion = 1.1 
+author = "Necro_rk"
+
+;-------------------------------------
+[BGdef]
+spr = Magical_Book.sff
+debugbg = 0
+
+;--------------------------------------------------------
+[Music]
+bgmusic = sound/defeat him and protect her.mp3             
+bgvolume = 255        
+;--------------------------------------------------------
+[Camera]
+startx = 0
+starty = 0
+boundleft = -190
+boundright = 190
+boundhigh = -50
+boundlow = 0
+verticalfollow = .7
+tension = 100
+floortension = 50
+overdrawhigh = 120
+overdrawlow = 120
+cuthigh = 0
+cutlow = 0
+zoomout = 0.9
+zoomin = 1
+tensionhigh = 200
+tensionlow = 200
+
+;--------------------------------------------------------
+[PlayerInfo]
+p1startx = -120       
+p1starty = 0            
+p1startz = 0            
+p1facing = 1            
+
+p2startx = 120
+p2starty = 0
+p2startz = 0
+p2facing = -1
+
+p3startx = -250       
+p3starty = 0            
+p3startz = 0            
+p3facing = 1            
+
+p4startx = 250
+p4starty = 0
+p4startz = 0
+p4facing = -1
+
+leftbound  = -4000 
+rightbound =  4000 
+topbound  =  0     
+botbound  =  0  
+
+;--------------------------------------------------------
+[Bound]
+screenleft = 30
+screenright = 30
+
+;--------------------------------------------------------
+[StageInfo]
+localcoord = 854,480
+zoffset = 438
+autoturn = 1
+resetBG = 0
+xscale = 1
+yscale = 1
+
+;--------------------------------------------------------
+[Shadow]
+intensity = 0
+color = 0,0,250
+yscale = .1
+fade.range = -400,-100
+
+;--------------------------------------------------------
+[Reflection]
+intensity = 30
+
+;========================================================
+[BG background] 
+type = normal
+spriteno = 0, 0
+layerno = 0
+start = -593, -130
+delta = 0.2,0.2
+trans = none
+
+;----------
+[BG floor]  
+type = normal
+spriteno = 0,1
+start = 0, 435
+mask = 1
+layerno = 0
+trans=add
+delta = 1,1
+
+;----------
+[BG orb3]  
+type = anim
+actionno = 3
+start = 0, 80
+delta = 1,1
+mask = 1
+trans=add
+sin.y = 10, 200, 100
+
+;----------
+[BG orb2]  
+type = anim
+actionno = 2
+start = 0, 80
+delta = 1,1
+mask = 1
+trans=add
+sin.y = 10, 200, 50
+
+;----------
+[BG orb1]  
+type = anim
+actionno = 1
+start = 0, 80
+delta = 1,1
+mask = 1
+trans=add
+sin.y = 10, 200, 0
+
+;----------
+[BG cristal] 
+type = normal
+spriteno = 2,0
+layerno = 0
+start = 0, 90
+delta = 1,1
+mask = 1
+sin.y = 10, 200, 0
+
+;----------
+[BG bookshineleft]  
+type = anim
+actionno = 4
+start = -323, 291
+delta = 1,1
+mask = 1
+trans = add
+
+;----------
+[BG bookshineright]  
+type = anim
+actionno = 5
+start = 322, 291
+delta = 1,1
+mask = 1
+trans = add
+
+;----------
+[BG techfxleft]  
+type = anim
+actionno = 6
+start = -41, 261
+delta = 1,1
+mask = 1
+trans = add
+
+;----------
+[BG techfxright]  
+type = anim
+actionno = 7
+start = 40, 261
+delta = 1,1
+mask = 1
+trans = add
+
+;=========================================================
+[Begin Action 1] ;(more ticks = slower rotation/animation)
+1,2, 0,0, 70,,,1,1,0 
+interpolate angle                     
+1,2, 0,0, 1,,,1,1,360
+
+[Begin Action 2] ;(more ticks = slower rotation/animation)
+1,1, 0,0, 40,,,1,1,0 
+interpolate angle                     
+1,1, 0,0, 1,,,1,1,360
+
+[Begin Action 3] ;(more ticks = slower rotation/animation)
+1,0, 0,0, 20,,,1,1,0 
+interpolate angle                     
+1,0, 0,0, 1,,,1,1,360
+
+[Begin Action 4] ;book shine left
+3,0, 0,0, 3
+3,1, 0,0, 3
+3,2, 0,0, 3
+3,3, 0,0, 3
+3,4, 0,0, 3
+3,5, 0,0, 3
+3,6, 0,0, 3
+3,7, 0,0, 3
+3,8, 0,0, 3
+3,9, 0,0, 3
+3,10, 0,0, 3
+3,11, 0,0, 3
+3,12, 0,0, 3
+3,13, 0,0, 3
+3,14, 0,0, 3
+3,15, 0,0, 3
+3,16, 0,0, 3
+3,17, 0,0, 3
+3,18, 0,0, 3
+3,19, 0,0, 3
+3,20, 0,0, 3
+3,21, 0,0, 3
+3,22, 0,0, 3
+3,23, 0,0, 3
+3,24, 0,0, 105
+
+[Begin Action 5] ;book shine right
+3,0, 0,0, 3,H
+3,1, 0,0, 3,H
+3,2, 0,0, 3,H
+3,3, 0,0, 3,H
+3,4, 0,0, 3,H
+3,5, 0,0, 3,H
+3,6, 0,0, 3,H
+3,7, 0,0, 3,H
+3,8, 0,0, 3,H
+3,9, 0,0, 3,H
+3,10, 0,0, 3,H
+3,11, 0,0, 3,H
+3,12, 0,0, 3,H
+3,13, 0,0, 3,H
+3,14, 0,0, 3,H
+3,15, 0,0, 3,H
+3,16, 0,0, 3,H
+3,17, 0,0, 3,H
+3,18, 0,0, 3,H
+3,19, 0,0, 3,H
+3,20, 0,0, 3,H
+3,21, 0,0, 3,H
+3,22, 0,0, 3,H
+3,23, 0,0, 3,H
+3,24, 0,0, 105,H
+
+[Begin Action 6];tech FX left
+4,0, 0,0, 4
+4,1, 0,0, 4
+4,2, 0,0, 4
+4,3, 0,0, 4
+4,4, 0,0, 4
+4,5, 0,0, 4
+4,6, 0,0, 4
+4,7, 0,0, 4
+4,8, 0,0, 4
+4,9, 0,0, 4
+4,10, 0,0, 4
+4,11, 0,0, 4
+4,12, 0,0, 4
+4,13, 0,0, 85
+
+[Begin Action 7] ;tech FX right
+4,0, 0,0, 4,H
+4,1, 0,0, 4,H
+4,2, 0,0, 4,H
+4,3, 0,0, 4,H
+4,4, 0,0, 4,H
+4,5, 0,0, 4,H
+4,6, 0,0, 4,H
+4,7, 0,0, 4,H
+4,8, 0,0, 4,H
+4,9, 0,0, 4,H
+4,10, 0,0, 4,H
+4,11, 0,0, 4,H
+4,12, 0,0, 4,H
+4,13, 0,0, 85,H

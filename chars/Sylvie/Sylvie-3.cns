@@ -1,0 +1,291 @@
+
+;---------------------------------------------------------------------------------
+[Statedef -3]
+;---------------------------------------------------------------------------------
+[State -3, 2];跳跃系统相关(普通跳)
+type = PlaySnd
+triggerall = time = 1
+trigger1 = stateno = 40 
+trigger1 = var(25) <= 0
+value = F40, 0
+channel = 13
+
+[State -3, 2];跳跃系统相关（大跳/小跳）
+type = PlaySnd
+triggerall = time = 1
+trigger1 = stateno = 40 
+trigger1 = var(25) > 1
+value = F40, 1
+channel = 13
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; AH大神的大跳系统
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[State -3, 5]
+type = varset
+trigger1 = stateno = 10
+trigger1 = time = 0
+trigger2 = stateno = [100,101]
+v = 25
+value = 20
+
+[State -3, 5]
+type = varset
+trigger1 = stateno = 52
+trigger1 = time = 0
+v = 25
+value = 0
+
+[State -3, 5]
+type = varset
+trigger1 = stateno = 40
+trigger1 = command != "holdup"
+v = 26
+value = 1
+
+[State -3, 5]
+type = varset
+trigger1 = stateno = 40
+trigger1 = command = "holdup"
+v = 26
+value = 0
+
+[State -3, 5]
+type = VelAdd
+trigger1 = stateno = 50
+trigger1 = anim = 41
+trigger1 = time = 1
+trigger1 = var(25) >= 1
+y = -0.6
+
+[State -3, 5]
+type = velset
+trigger1 = stateno = 50
+trigger1 = anim = 42
+trigger1 = time = 1
+trigger1 = var(25) >= 1
+x = 4.5
+
+[State -3, 5]
+type = velset
+trigger1 = stateno = 50
+trigger1 = anim = 43
+trigger1 = time = 1
+trigger1 = var(25) >= 1
+x = -4.5
+
+[State -3, 5]
+type = veladd
+trigger1 = stateno = 50
+trigger1 = time = 1
+trigger1 = var(26) = 1
+y = 3
+
+[State -3, 5]
+type = AfterImage
+triggerall = fvar(20) < 1
+triggerall = fvar(21) < 1
+trigger1 = stateno = 50
+trigger1 = time = 1
+trigger1 = var(25) >= 1
+time = 10
+trans = add1
+timegap = 1
+framegap = 2
+length = 8
+palbright = 12,12,12
+palcontrast = 225,225,225
+palpostbright = 0,0,0
+paladd = 0,0,0
+palmul = 1,1,1
+;--------------------------------------------
+
+;---------------------------------------------------------------------------
+; 抂偱傔偔傜側偄傛偆偵
+
+[State -3, CornerPush]
+type = Width
+triggerall = var(0) = 1
+trigger1 = Enemy, BackEdgeDist < 10
+trigger2 = Enemy, FrontEdgeDist < 10
+edge = 10
+
+;---------------------------------------------------------------------------
+; 揋嬻拞嬺傜偄峴摦晄擻嵞尰梡扗庢僗僥乕僩
+
+[State -3, TargetState]
+type = TargetState
+triggerall = numtarget(200)
+triggerall = target(200),alive
+trigger1 = target(200),stateno = 5020
+trigger1 = target(200),statetype = A
+trigger1 = target(200),movetype = H
+value = 290
+
+;---------------------------------------------------------------------------
+; 嬻拞僸僢僩偟偨傜僗儔僀僪僟僂儞
+
+[State -3, TargetState]
+type = TargetState
+triggerall = numtarget(1300)
+triggerall = target(1300),alive
+trigger1 = target(1300),stateno = 5020
+trigger1 = target(1300),statetype = A
+trigger1 = target(1300),movetype = H
+value = 5620
+
+;---------------------------------------------------------------------------
+
+[State -2, 4]
+type = VarRandom
+triggerall = Time = 1
+trigger1 = stateno = 5000
+trigger2 = stateno = 5010
+trigger3 = stateno = 5020
+v = 12
+range = 0,19
+
+[State -2, 5]
+type = PlaySnd
+triggerall = Time = 1
+triggerall = Var(12) = [0,3]
+triggerall = alive = 1
+trigger1 = stateno = 5000
+trigger2 = stateno = 5010
+trigger3 = stateno = 5020
+value = s11,0
+
+[State -2, 6]
+type = PlaySnd
+triggerall = Time = 1
+triggerall = Var(12) = [4,7]
+triggerall = alive = 1
+trigger1 = stateno = 5000
+trigger2 = stateno = 5010
+trigger3 = stateno = 5020
+value = s11,1
+
+[State -2, 6]
+type = PlaySnd
+triggerall = Time = 1
+triggerall = Var(12) = [8,11]
+triggerall = alive = 1
+trigger1 = stateno = 5000
+trigger2 = stateno = 5010
+trigger3 = stateno = 5020
+value = s11,2
+
+[State -2, 6]
+type = PlaySnd
+triggerall = Time = 1
+triggerall = Var(12) = [12,15]
+triggerall = alive = 1
+trigger1 = stateno = 5000
+trigger2 = stateno = 5010
+trigger3 = stateno = 5020
+value = s11,3
+
+[State -2, 6]
+type = PlaySnd
+triggerall = Time = 1
+triggerall = Var(12) = [16,19]
+triggerall = alive = 1
+trigger1 = stateno = 5000
+trigger2 = stateno = 5010
+trigger3 = stateno = 5020
+value = s11,4+random%2
+
+[State -2, 6]
+type = PlaySnd
+triggerall = Time = 1
+triggerall = !alive
+trigger1 = stateno = 5100
+value = s11,6
+
+;----------------------------------------------------------------------------
+
+;---------------------------------------------------------------------------
+;p2state梡
+;---------------------------------------------------------------------------
+[State 1000, 壒傪柭傜偡]
+type = PlaySnd
+trigger1 = P2Movetype = H
+trigger1 = P2Stateno = 5621
+trigger1 = P2Statetype = A
+trigger1 = enemy, Pos Y >= 0
+trigger1 = enemy, Vel Y > 0
+value = s6,0
+
+[State 1000, 壒傪柭傜偡]
+type = PlaySnd
+trigger1 = P2Movetype = H
+trigger1 = P2Stateno = 5621
+trigger1 = P2Statetype = A
+trigger1 = enemy, Pos Y >= 0
+trigger1 = enemy, Vel Y > 0
+value = s6,1
+
+[State -2, 13]
+type = PlaySnd
+triggerall = P2stateno = 5631
+trigger1 = Enemy, Pos Y >= 0 && Enemy, Time = 1
+value = s6,0
+
+;-------------------------------------------------------------------------------
+
+[State -2,]
+type = PlaySnd
+triggerall = alive = 1
+triggerall = random <= 250
+triggerall = time = 1
+trigger1 = stateno = 5000
+trigger1 = anim = 5000 || anim = 5001 || anim = 5010 || anim = 5011
+trigger2 = stateno = 5010
+trigger2 = anim = 5020 || anim = 5021
+value = s11+(var(8)*10),1+(var(7)*100)
+
+[State -2,]
+type = PlaySnd
+triggerall = alive = 1
+triggerall = random <= 250
+triggerall = time = 1
+trigger1 = stateno = 5000
+trigger1 = anim = 5002 || anim = 5012
+trigger2 = stateno = 5010
+trigger2 = anim = 5022
+value = s11+(var(8)*10),2+(var(7)*100)
+
+[State -2,]
+type = PlaySnd
+triggerall = alive = 1
+triggerall = random <= 250
+triggerall = time = 1
+trigger1 = stateno = 5101
+value = s11+(var(8)*10),3+(var(7)*100)
+
+;惗懚敾掕
+[State -2, ];曵傟俲俷梡
+type = varset
+triggerall = var(18) = 0 && alive
+trigger1 = statetype != A
+var(18) = 1
+
+[State -2, ];曵傟俲俷梡
+type = varset
+triggerall = var(18) != 0 && alive
+trigger1 = statetype = A
+var(18) = 0
+
+;-----------------------------------------------------------------------------
+;僨僶僢僌巟墖婰弎廤
+;-----------------------------------------------------------------------------
+
+;僨僶僢僌儌乕僪偵敀偄暥帤偺昞帵傪壛偊傞
+[State -2, 僨僶僢僌昞帵]
+type = DisplayToClipboard
+trigger1 = 1
+text = "V1-C=%d,V3-J=%d,V4-D=%d,V5-B=%d,V15=%d"
+params = var(1),var(3),var(4),var(5),var(15)
+ignorehitpause = 1
+
+;-----------------------------------------------------------------------------

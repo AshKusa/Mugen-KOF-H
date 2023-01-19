@@ -1,0 +1,1363 @@
+;-----------------------------------------------------------------------------
+;愝掕崁栚
+;-----------------------------------------------------------------------------
+[Statedef 40000]
+anim = 99999
+Ctrl = 0
+
+;-----------------------------------------------------------------------------
+;愝掕崁栚
+;-----------------------------------------------------------------------------
+;嬻拞僈乕僪愝掕
+; var(20) = 0ゥ髵唭K乕僪壜丅偨偩偟帺暘偺慡偰偺媄偑嬻拞僈乕僪壜丅
+; var(20) = 1ゥ⿻獋鄳妿鑲鄫髵唭K乕僪晄壜丅
+; var(20) = 2ゥ⿻獋蛬髵唭K乕僪壜丄憡庤偼晄壜(僙僐偄)丅捠徧娒偊儌乕僪丅
+[State -2, AirguardSET]
+Type = parentvarset
+Trigger1 = 1
+var(20) = 1
+
+;僎乕僕僨僓僀儞愝掕(仸Single乛Turns儌乕僪偺傒揔梡)
+;丂var(38) = 0ゥp儚乕僎乕僕亄僗僉儖僎乕僕
+;丂var(38) = 1ゥX僉儖僎乕僕偺傒
+[State 40000, Setting]
+type = parentvarset
+trigger1 = 1
+var(38) = 0
+
+;-----------------------------------------------------------------------------
+;AI愝掕
+;-----------------------------------------------------------------------------
+;AI儗儀儖愝掕
+;丂var(57)偺悢抣傪1乣8偺娫偱曄峏偟偰壓偝偄丅
+;丂怴Mugen偺応崌丄AILevel偱傕戙梡壜擻偱偡丅
+;丂丂1乣2ゥゥEasy
+;丂丂3乣4ゥゥNormal
+;丂丂5乣6ゥゥHard
+;丂丂7乣8ゥゥ懳AI摿壔
+[State -3, AILV]
+Type = parentvarset
+trigger1 = !Parent,var(57)
+var(57) = 8
+
+;斀墳懍搙愝掕
+;丂var(56)偺悢抣傪1乣10偺娫偱曄峏偟偰壓偝偄丅
+;丂斀墳懍搙50F(儗儀儖0)偐傜儗儀儖傪1忋偘傞偛偲偵5F偢偮懍偔側傝傑偡丅10偱斀墳惂尷側偟丅
+[State -3, AILV]
+Type = parentvarset
+trigger1 = !Parent,var(56)
+var(56) = 10
+
+;挧敪愝掕
+;丂var(55)偺悢抣傪1(埲忋)偵偡傞偲丄儗儀儖偲斀墳懍搙傪忋偘傞偨傔偵挧敪傪巊梡偟偰偒傑偡丅
+[State -3, AItaunt]
+Type = parentvarset
+trigger1 = 1
+var(55) = 0
+
+;-----------------------------------------------------------------------------
+;愝掕崁栚偼偙偙傑偱丅埲壓偼偄偠傜側偄偱偔偩偝偄
+;-----------------------------------------------------------------------------
+
+[State 6000]
+type = AssertSpecial
+Trigger1 = 1
+flag = NoShadow
+flag2 = invisible
+
+[State 6000]
+type = NotHitBy
+Trigger1 = 1
+value = SCA,AA,AT,AP
+
+[State 6000]
+type = DestroySelf
+trigger1 = RoundState > 1
+
+;-----------------------------------------------------------------------------
+; AI梡偺僗僥乕僩
+;-----------------------------------------------------------------------------
+; Walk
+[Statedef 19]
+type    = S
+physics = S
+sprpriority = 0
+
+[State 20, 1]
+type = VelSet
+trigger1 = 1
+x = const(velocity.walk.fwd.x)
+
+[State 20, 3]
+type = ChangeAnim
+triggerall = vel x > 0
+trigger1 = Anim != 20 && Anim != 5
+trigger2 = Anim = 5 && AnimTime = 0
+value = 20
+
+[State 20, 4]
+type = ChangeAnim
+triggerall = vel x < 0
+trigger1 = Anim != 21 && Anim != 5
+trigger2 = Anim = 5 && AnimTime = 0
+value = 21
+
+;---------------------------------------------------------------------------
+; AI慜僕儍儞僾
+[Statedef 30,]
+type    = S
+physics = S
+anim = 40
+ctrl = 0
+sprpriority = 1
+
+[State 40, 跳起的水花]
+type = Explod
+trigger1 = StageVar(info.author) = "water"
+trigger1 = Time = 1
+anim = F22
+facing = -1
+postype = p1
+pos = 0,0
+ownpal = 1
+ontop = 1
+bindtime = 1
+removetime = -2
+
+[State 40, 水花声效]
+type = PlaySnd
+trigger1 = StageVar(info.author) = "water"
+trigger1 = Time = 1
+value = F47,1
+
+[State 40, 2]
+type = VarSet
+trigger1 = 1
+sysvar(1) = 1
+
+[State 40, 1]
+type = VarSet
+trigger1 = 1
+var(4) = 0
+
+[State 40, 4]
+type = VelSet
+trigger1 = AnimTime = 0
+trigger1 = Var(4) = 0
+x = ifelse(sysvar(1)=0, const(velocity.jump.neu.x), ifelse(sysvar(1)=1, const(velocity.jump.fwd.x), const(velocity.jump.back.x)))
+y = const(velocity.jump.y)
+
+[State 40, 4];彫僕儍儞僾
+type = VelSet
+trigger1 = AnimTime = 0
+trigger1 = Var(4) = 1
+x = ifelse(sysvar(1)=0, const(velocity.jump.neu.x), ifelse(sysvar(1)=1, const(velocity.jump.fwd.x), const(velocity.jump.back.x)))
+y = const(velocity.jump.y)
+
+[State 40, 6]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 50
+ctrl = 1
+
+;---------------------------------------------------------------------------
+;屻傠僕儍儞僾
+[Statedef 31,]
+type    = S
+physics = S
+anim = 40
+ctrl = 0
+sprpriority = 1
+
+[State 40, 跳起的水花]
+type = Explod
+trigger1 = StageVar(info.author) = "water"
+trigger1 = Time = 1
+anim = F22
+facing = -1
+postype = p1
+pos = 0,0
+ownpal = 1
+ontop = 1
+bindtime = 1
+removetime = -2
+
+[State 40, 水花声效]
+type = PlaySnd
+trigger1 = StageVar(info.author) = "water"
+trigger1 = Time = 1
+value = F47,1
+
+[State 40, 2]
+type = VarSet
+trigger1 = 1
+sysvar(1) = -1
+
+[State 40, 1]
+type = VarSet
+trigger1 = 1
+var(4) = 0
+
+[State 40, 4]
+type = VelSet
+trigger1 = AnimTime = 0
+trigger1 = Var(4) = 0
+x = ifelse(sysvar(1)=0, const(velocity.jump.neu.x), ifelse(sysvar(1)=1, const(velocity.jump.fwd.x), const(velocity.jump.back.x)))
+y = const(velocity.jump.y)
+
+[State 40, 4];彫僕儍儞僾
+type = VelSet
+trigger1 = AnimTime = 0
+trigger1 = Var(4) = 1
+x = ifelse(sysvar(1)=0, const(velocity.jump.neu.x), ifelse(sysvar(1)=1, const(velocity.jump.fwd.x), const(velocity.jump.back.x)))
+y = const(velocity.jump.y)
+
+[State 40, 6]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 50
+ctrl = 1
+
+;---------------------------------------------------------------------------
+;慜彫僕儍儞僾
+[Statedef 32,]
+type    = S
+physics = S
+anim = 40
+ctrl = 0
+sprpriority = 1
+
+[State 40, 跳起的水花]
+type = Explod
+trigger1 = StageVar(info.author) = "water"
+trigger1 = Time = 1
+anim = F22
+facing = -1
+postype = p1
+pos = 0,0
+ownpal = 1
+ontop = 1
+bindtime = 1
+removetime = -2
+
+[State 40, 水花声效]
+type = PlaySnd
+trigger1 = StageVar(info.author) = "water"
+trigger1 = Time = 1
+value = F47,1
+
+[State 40, 2]
+type = VarSet
+trigger1 = 1
+sysvar(1) = 1
+
+[State 40, 1]
+type = VarSet
+trigger1 = 1
+var(4) = 1
+
+[State 40, 4]
+type = VelSet
+trigger1 = AnimTime = 0
+trigger1 = Var(4) = 0
+x = ifelse(sysvar(1)=0, const(velocity.jump.neu.x), ifelse(sysvar(1)=1, const(velocity.jump.fwd.x), const(velocity.jump.back.x)))
+y = const(velocity.jump.y)
+
+[State 40, 4];彫僕儍儞僾
+type = VelSet
+trigger1 = AnimTime = 0
+trigger1 = Var(4) = 1
+x = ifelse(sysvar(1)=0, const(velocity.jump.neu.x), ifelse(sysvar(1)=1, const(velocity.jump.fwd.x), const(velocity.jump.back.x)))
+y = const(velocity.jump.y)
+
+[State 40, 6]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 50
+ctrl = 1
+
+;---------------------------------------------------------------------------
+;屻傠彫僕儍儞僾
+[Statedef 33,]
+type    = S
+physics = S
+anim = 40
+ctrl = 0
+sprpriority = 1
+
+[State 40, 跳起的水花]
+type = Explod
+trigger1 = StageVar(info.author) = "water"
+trigger1 = Time = 1
+anim = F22
+facing = -1
+postype = p1
+pos = 0,0
+ownpal = 1
+ontop = 1
+bindtime = 1
+removetime = -2
+
+[State 40, 水花声效]
+type = PlaySnd
+trigger1 = StageVar(info.author) = "water"
+trigger1 = Time = 1
+value = F47,1
+
+[State 40, 2]
+type = VarSet
+trigger1 = 1
+sysvar(1) = -1
+
+[State 40, 1]
+type = VarSet
+trigger1 = 1
+var(4) = 1
+
+[State 40, 4]
+type = VelSet
+trigger1 = AnimTime = 0
+trigger1 = Var(4) = 0
+x = ifelse(sysvar(1)=0, const(velocity.jump.neu.x), ifelse(sysvar(1)=1, const(velocity.jump.fwd.x), const(velocity.jump.back.x)))
+y = const(velocity.jump.y)
+
+[State 40, 4];彫僕儍儞僾
+type = VelSet
+trigger1 = AnimTime = 0
+trigger1 = Var(4) = 1
+x = ifelse(sysvar(1)=0, const(velocity.jump.neu.x), ifelse(sysvar(1)=1, const(velocity.jump.fwd.x), const(velocity.jump.back.x)))
+y = const(velocity.jump.y)
+
+[State 40, 6]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 50
+ctrl = 1
+
+;---------------------------------------------------------------------------
+;慜拞僕儍儞僾
+[Statedef 34,]
+type    = S
+physics = S
+anim = 40
+ctrl = 0
+sprpriority = 1
+
+[State 40, 跳起的水花]
+type = Explod
+trigger1 = StageVar(info.author) = "water"
+trigger1 = Time = 1
+anim = F22
+facing = -1
+postype = p1
+pos = 0,0
+ownpal = 1
+ontop = 1
+bindtime = 1
+removetime = -2
+
+[State 40, 水花声效]
+type = PlaySnd
+trigger1 = StageVar(info.author) = "water"
+trigger1 = Time = 1
+value = F47,1
+
+[State 40, 2]
+type = VarSet
+trigger1 = 1
+sysvar(1) = 1
+
+[State 40, 1]
+type = VarSet
+trigger1 = 1
+var(4) = 1
+
+[State 40, 4]
+type = VelSet
+trigger1 = AnimTime = 0
+trigger1 = Var(4) = 0
+x = ifelse(sysvar(1)=0, const(velocity.jump.neu.x), ifelse(sysvar(1)=1, const(velocity.jump.fwd.x), const(velocity.jump.back.x)))
+y = const(velocity.jump.y)
+
+[State 40, 4];彫僕儍儞僾
+type = VelSet
+trigger1 = AnimTime = 0
+trigger1 = Var(4) = 1
+x = ifelse(sysvar(1)=0, const(velocity.jump.neu.x), ifelse(sysvar(1)=1, const(velocity.jump.fwd.x), const(velocity.jump.back.x)))
+y = const(velocity.jump.y)
+
+[State 40, 6]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 50
+ctrl = 1
+
+;---------------------------------------------------------------------------
+;屻傠拞僕儍儞僾
+[Statedef 35,]
+type    = S
+physics = S
+anim = 40
+ctrl = 0
+sprpriority = 1
+
+[State 40, 跳起的水花]
+type = Explod
+trigger1 = StageVar(info.author) = "water"
+trigger1 = Time = 1
+anim = F22
+facing = -1
+postype = p1
+pos = 0,0
+ownpal = 1
+ontop = 1
+bindtime = 1
+removetime = -2
+
+[State 40, 水花声效]
+type = PlaySnd
+trigger1 = StageVar(info.author) = "water"
+trigger1 = Time = 1
+value = F47,1
+
+[State 40, 2]
+type = VarSet
+trigger1 = 1
+sysvar(1) = -1
+
+[State 40, 1]
+type = VarSet
+trigger1 = 1
+var(4) = 1
+
+[State 40, 4]
+type = VelSet
+trigger1 = AnimTime = 0
+trigger1 = Var(4) = 0
+x = ifelse(sysvar(1)=0, const(velocity.jump.neu.x), ifelse(sysvar(1)=1, const(velocity.jump.fwd.x), const(velocity.jump.back.x)))
+y = const(velocity.jump.y)
+
+[State 40, 4];彫僕儍儞僾
+type = VelSet
+trigger1 = AnimTime = 0
+trigger1 = Var(4) = 1
+x = ifelse(sysvar(1)=0, const(velocity.jump.neu.x), ifelse(sysvar(1)=1, const(velocity.jump.fwd.x), const(velocity.jump.back.x)))
+y = const(velocity.jump.y)
+
+[State 40, 6]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 50
+ctrl = 1
+
+;---------------------------------------------------------------------------
+;慜戝僕儍儞僾
+[Statedef 36,]
+type    = S
+physics = S
+anim = 40
+ctrl = 0
+sprpriority = 1
+
+[State 40, 跳起的水花]
+type = Explod
+trigger1 = StageVar(info.author) = "water"
+trigger1 = Time = 1
+anim = F22
+facing = -1
+postype = p1
+pos = 0,0
+ownpal = 1
+ontop = 1
+bindtime = 1
+removetime = -2
+
+[State 40, 水花声效]
+type = PlaySnd
+trigger1 = StageVar(info.author) = "water"
+trigger1 = Time = 1
+value = F47,1
+
+[State 40, 2]
+type = VarSet
+trigger1 = 1
+sysvar(1) = 1
+
+[State 40, 1]
+type = VarSet
+trigger1 = 1
+var(4) = 0
+
+[State 40, 4]
+type = VelSet
+trigger1 = AnimTime = 0
+trigger1 = Var(4) = 0
+x = ifelse(sysvar(1)=0, const(velocity.jump.neu.x), ifelse(sysvar(1)=1, const(velocity.jump.fwd.x), const(velocity.jump.back.x)))
+y = const(velocity.jump.y)
+
+[State 40, 4];彫僕儍儞僾
+type = VelSet
+trigger1 = AnimTime = 0
+trigger1 = Var(4) = 1
+x = ifelse(sysvar(1)=0, const(velocity.jump.neu.x), ifelse(sysvar(1)=1, const(velocity.jump.fwd.x), const(velocity.jump.back.x)))
+y = const(velocity.jump.y)
+
+[State 40, 6]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 50
+ctrl = 1
+
+;---------------------------------------------------------------------------
+;屻傠戝僕儍儞僾
+[Statedef 37,]
+type    = S
+physics = S
+anim = 40
+ctrl = 0
+sprpriority = 1
+
+[State 40, 跳起的水花]
+type = Explod
+trigger1 = StageVar(info.author) = "water"
+trigger1 = Time = 1
+anim = F22
+facing = -1
+postype = p1
+pos = 0,0
+ownpal = 1
+ontop = 1
+bindtime = 1
+removetime = -2
+
+[State 40, 水花声效]
+type = PlaySnd
+trigger1 = StageVar(info.author) = "water"
+trigger1 = Time = 1
+value = F47,1
+
+[State 40, 2]
+type = VarSet
+trigger1 = 1
+sysvar(1) = -1
+
+[State 40, 1]
+type = VarSet
+trigger1 = 1
+var(4) = 0
+
+[State 40, 4]
+type = VelSet
+trigger1 = AnimTime = 0
+trigger1 = Var(4) = 0
+x = ifelse(sysvar(1)=0, const(velocity.jump.neu.x), ifelse(sysvar(1)=1, const(velocity.jump.fwd.x), const(velocity.jump.back.x)))
+y = const(velocity.jump.y)
+
+[State 40, 4];彫僕儍儞僾
+type = VelSet
+trigger1 = AnimTime = 0
+trigger1 = Var(4) = 1
+x = ifelse(sysvar(1)=0, const(velocity.jump.neu.x), ifelse(sysvar(1)=1, const(velocity.jump.fwd.x), const(velocity.jump.back.x)))
+y = const(velocity.jump.y)
+
+[State 40, 6]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 50
+ctrl = 1
+
+;---------------------------------------------------------------------------
+;忋僕儍儞僾
+[Statedef 38,]
+type    = S
+physics = S
+anim = 40
+ctrl = 0
+sprpriority = 1
+
+[State 40, 跳起的水花]
+type = Explod
+trigger1 = StageVar(info.author) = "water"
+trigger1 = Time = 1
+anim = F22
+facing = -1
+postype = p1
+pos = 0,0
+ownpal = 1
+ontop = 1
+bindtime = 1
+removetime = -2
+
+[State 40, 水花声效]
+type = PlaySnd
+trigger1 = StageVar(info.author) = "water"
+trigger1 = Time = 1
+value = F47,1
+
+[State 40, 2]
+type = VarSet
+trigger1 = 1
+sysvar(1) = 0
+
+[State 40, 1]
+type = VarSet
+trigger1 = 1
+var(4) = 0
+
+[State 40, 4]
+type = VelSet
+trigger1 = AnimTime = 0
+trigger1 = Var(4) = 0
+x = ifelse(sysvar(1)=0, const(velocity.jump.neu.x), ifelse(sysvar(1)=1, const(velocity.jump.fwd.x), const(velocity.jump.back.x)))
+y = const(velocity.jump.y)
+
+[State 40, 4];彫僕儍儞僾
+type = VelSet
+trigger1 = AnimTime = 0
+trigger1 = Var(4) = 1
+x = ifelse(sysvar(1)=0, const(velocity.jump.neu.x), ifelse(sysvar(1)=1, const(velocity.jump.fwd.x), const(velocity.jump.back.x)))
+y = const(velocity.jump.y)
+
+[State 40, 5]
+type = null;VelSet
+trigger1 = AnimTime = 0
+trigger1 = prevstateno = 100 ;RUN_FWD
+trigger1 = sysvar(1) = 1
+x = const(velocity.runjump.fwd.x)
+
+[State 40, 6]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 50
+ctrl = 1
+
+;---------------------------------------------------------------------------
+;悅捈彫僕儍儞僾
+[Statedef 39,]
+type    = S
+physics = S
+anim = 40
+ctrl = 0
+sprpriority = 1
+
+[State 40, 跳起的水花]
+type = Explod
+trigger1 = StageVar(info.author) = "water"
+trigger1 = Time = 1
+anim = F22
+facing = -1
+postype = p1
+pos = 0,0
+ownpal = 1
+ontop = 1
+bindtime = 1
+removetime = -2
+
+[State 40, 水花声效]
+type = PlaySnd
+trigger1 = StageVar(info.author) = "water"
+trigger1 = Time = 1
+value = F47,1
+
+[State 40, 2]
+type = VarSet
+trigger1 = 1
+sysvar(1) = 0
+
+[State 40, 1]
+type = VarSet
+trigger1 = 1
+var(4) = 1
+
+[State 40, 4]
+type = VelSet
+trigger1 = AnimTime = 0
+trigger1 = Var(4) = 0
+x = ifelse(sysvar(1)=0, const(velocity.jump.neu.x), ifelse(sysvar(1)=1, const(velocity.jump.fwd.x), const(velocity.jump.back.x)))
+y = const(velocity.jump.y)
+
+[State 40, 4];彫僕儍儞僾
+type = VelSet
+trigger1 = AnimTime = 0
+trigger1 = Var(4) = 1
+x = ifelse(sysvar(1)=0, const(velocity.jump.neu.x), ifelse(sysvar(1)=1, const(velocity.jump.fwd.x), const(velocity.jump.back.x)))
+y = const(velocity.jump.y)
+
+[State 40, 6]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 50
+ctrl = 1
+
+;---------------------------------------------------------------------------
+; RUN_FWD(AI)
+[Statedef 99]
+type    = S
+physics = S
+anim = 100
+sprpriority = 1
+ctrl = 0
+
+[State 100, jump]
+type = ChangeState
+triggerall = !var(59)
+triggerall = command = "holdup"
+Trigger1 = command = "holdfwd"
+Trigger2 = command = "holddown"
+Trigger3 = command != "holdfwd"
+Trigger3 = command != "holddown"
+value = 40
+
+[State 100, 1]
+type = VelSet
+trigger1 = AnimElemtime(2) >= 0
+x = const(velocity.run.fwd.x)
+
+[State 191, Spray Anim P1]
+type = Explod
+trigger1 = time >= 0 && timemod = 10,0
+trigger1 = StageVar(info.author) = "water"
+ID = 20
+anim = F21
+postype = p1
+pos = -10,0
+ownpal = 1
+ontop = 1
+bindtime = 1
+removetime = -2
+
+[State 191,]
+type = PlaySnd
+triggerall = time = 1
+trigger1 = Alive
+loop = 1
+value = F100,0+(StageVar(info.author) = "water")
+channel = 6
+
+[State 100, 2] ;Prevent run from canceling into walk
+type = AssertSpecial
+trigger1 = 1
+flag = NoWalk
+
+[State 100, 3] ;Prevent from turning
+type = AssertSpecial
+trigger1 = 1
+flag = NoAutoTurn
+
+[State 100, 4]
+type = ChangeState
+triggerall = var(59) != 1
+triggerall = AnimElemtime(2) >= 0
+trigger1 = command != "holdfwd"
+value = 101
+
+[State -1,AI]
+Type = ChangeState
+triggerall = var(59) = 1
+triggerall = AnimElemtime(2) >= 0
+Trigger1 = time = 60
+Trigger2 = P2BodyDist X <= 40
+Trigger2 = P2BodyDist Y >= -120
+Trigger2 = EnemyNear,MoveType != H
+Trigger2 = EnemyNear,facing != facing || P2BodyDist X < 0
+Trigger3 = EnemyNear,MoveType = A
+Trigger3 = EnemyNear,facing != facing
+Trigger4 =(EnemyNear,StateNo = [5100,5299]) || (EnemyNear,StateNo = [4400,4460])
+Trigger4 = P2BodyDist X <= 60
+Trigger5 = inguarddist
+Trigger5 = EnemyNear,facing != facing
+Trigger6 = Enemy,NumProj
+value = 101
+ctrl = 0
+
+;---------------------------------------------------------------------------
+; Initialize (at the start of the round)
+[Statedef 5900]
+type = S
+
+[State 5900, 1] ;Clear all int variables
+type = VarRangeSet
+trigger1 = roundsexisted = 0
+value = 0
+
+[State 5900, 2] ;Clear all float variables
+type = VarRangeSet
+trigger1 = roundsexisted = 0
+fvalue = 0
+
+[State 5900, 3]	;亙捛壛亜僠乕儉愴偱弌偰偔傞帪偵僀儞僩儘(媽KOF晽)
+type = ChangeState
+Trigger1 = RoundNo > 1
+Trigger1 = TeamMode = Turns	
+trigger1 = roundsexisted = 0
+value = 5901
+
+[State 5900, 4] ;Intro for round 1
+type = ChangeState
+trigger1 = roundno = 1
+;亙捛壛亜僠乕儉愴偱嵟弶偵弌偰偔傞帪偵僀儞僩儘丅
+Trigger2 = RoundNo > 1
+Trigger2 = TeamMode = Turns	
+trigger2 = roundsexisted = 0
+value = 190
+
+[State 5900, 5] ;All other rounds
+type = ChangeState
+trigger1 = 1
+value = 0
+
+;僠乕儉愴僀儞僩儘
+[Statedef 5901]
+movetype = I
+physics = N
+anim = 42
+velset = 0,0
+ctrl = 0
+
+[State 50, 2]
+type = ChangeAnim
+trigger1 = Time = 0
+value = ifelse((vel x)=0, 41, ifelse((vel x)>0, 42, 43))
+
+[State 50, 3]
+type = ChangeAnim
+trigger1 = Vel y > -2
+trigger1 = SelfAnimExist(anim + 3)
+persistent = 0
+value = Anim + 3
+
+[State 5901, AS]
+type = AssertSpecial
+trigger1 = 1
+flag = Intro
+
+[State 5901]
+type = NotHitBy
+value = SCA
+trigger1 = 1
+
+[State 5901, SB]
+type = screenbound
+trigger1 = 1
+value = 0
+
+[State 5901, 1]
+type = posadd
+trigger1 = time = 0
+x = -140
+y = 0
+
+[State 5901, 1]
+type = VelSet
+trigger1 = time = 0
+x = 4
+y = -7.2
+
+[State 5901, 2]
+type = veladd
+trigger1 = 1
+y = .4
+
+[State 5901, 3]
+type = ChangeState
+trigger1 = pos y >= 0 && vel y > 0 && Time > 0
+Trigger2 = Time > 34
+value = 5902
+
+;---------------------------------------------------------------------------
+; Jump Land
+[Statedef 5902]
+type    = S
+physics = S
+ctrl = 0
+anim = 47
+
+[State 5902, AS]
+type = AssertSpecial
+trigger1 = 1
+flag = Intro
+
+[State 5902]
+type = NotHitBy
+value = SCA
+trigger1 = 1
+
+[State 5902, 1]
+type = VelSet
+trigger1 = Time = 0
+x = 0
+y = 0
+
+[State 5902, 2]
+type = PosSet
+trigger1 = Time = 0
+y = 0
+
+[State -3, Landing Sound]
+type = PlaySnd
+trigger1 = Time = 1
+value = 40, 0
+
+[State 5902, 4]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 190
+
+;---------------------------------------------------------------------------
+;僇儊儔惂屼僿儖僷乕
+[Statedef 2047483647]
+type=L
+movetype=I
+physics=N
+anim=0
+ctrl=0
+sprpriority=-5
+[state ];GameWidth (币貛亶鞇?
+type=varset
+triggerall=!fvar(39)*!time
+trigger1=fvar(39):=320&&FrontEdgeDist+BackEdgeDist<=1920;1740-4
+trigger1=fvar(39):=1920&&FrontEdgeDist+BackEdgeDist<=1600;1450-4
+trigger1=fvar(39):=1600&&FrontEdgeDist+BackEdgeDist<=1280;1160-3
+trigger1=fvar(39):=1280&&FrontEdgeDist+BackEdgeDist<=960;870-3;trigger1=var(49):=1280&&FrontEdgeDist+BackEdgeDist<=1200;1087-3
+;trigger1=fvar(39):=1200&&FrontEdgeDist+BackEdgeDist<=960;870-3
+trigger1=fvar(39):=960&&FrontEdgeDist+BackEdgeDist<=800;724-2
+trigger1=fvar(39):=800&&FrontEdgeDist+BackEdgeDist<=640;580-2
+trigger1=fvar(39):=640&&FrontEdgeDist+BackEdgeDist<=400;361+1
+trigger1=fvar(39):=400&&FrontEdgeDist+BackEdgeDist<=320;290-2
+trigger1=fvar(39):=320&&FrontEdgeDist+BackEdgeDist<=200;180+1
+trigger1=fvar(39):=200&&FrontEdgeDist+BackEdgeDist<=160;144+1
+trigger1=fvar(39):=160;;Bound.screenleft+Bound.screenright=15+15+1
+fvar(39)=(fvar(39)>0)*fvar(39)+(fvar(39)<=0)*320
+[state ]
+type=varset
+trigger1=!time*fvar(39)
+sysfvar(3)=fvar(39)
+[state ]
+type=turn
+triggerall=ishelper(2047483647)&!time&&numenemy
+trigger1=numenemy<2|!enemy(0),alive|!enemy(numenemy>1),alive
+trigger1=facing>0&enemy(numenemy>1&!enemy(0),alive),screenpos X>sysfvar(3)*.5
+trigger2=numenemy<2|!enemy(0),alive|!enemy(numenemy>1),alive
+trigger2=facing<0&enemy(numenemy>1&!enemy(0),alive),screenpos X<sysfvar(3)*.5
+trigger3=numenemy>1&enemy(0),alive&enemy(numenemy>1),alive
+trigger3=facing>0&abs(enemy(0),screenpos X+enemy(1),screenpos X)*.5>sysfvar(3)*.5
+trigger4=numenemy>1&enemy(0),alive&enemy(numenemy>1),alive
+trigger4=facing<0&abs(enemy(0),screenpos X+enemy(1),screenpos X)*.5<sysfvar(3)*.5
+ignorehitpause=1
+[State ]
+type = VelMul
+triggerall=ishelper(2047483647)&&numenemy
+trigger1=numenemy<2|!enemy(0),alive|!enemy(numenemy>1),alive
+trigger1=enemy(numenemy>1&!enemy(0),alive),ScreenPos X-sysfvar(3)*.5=[-40*(sysfvar(3)/320),40*(sysfvar(3)/320)]
+trigger2=numenemy>1&enemy(0),alive&enemy(numenemy>1),alive
+trigger2=abs(enemy(0),screenpos X+enemy(1),screenpos X)*.5-sysfvar(3)*.5=[-40*(sysfvar(3)/320),40*(sysfvar(3)/320)]
+x=.845
+ignorehitpause=1;									Def0
+[State ]
+type = Velset
+trigger1 = !time
+x = -7*(sysfvar(3)/320)
+[State ]
+type = NotHitBy
+trigger1 = 1
+value = SCA
+time = 1
+[State ]
+type = NotHitBy
+trigger1 = 1
+value2 = SCA
+time = 1
+[State ]
+type = AssertSpecial
+Trigger1 = 1
+flag = invisible
+flag2 = noshadow
+[State ]
+type = ScreenBound
+trigger1 =1
+value =0
+movecamera = 1,1
+[State ]
+type = PlayerPush
+trigger1 =1
+value = 0
+[state ]
+type=varset
+trigger1=ishelper(2047483647)&(vel X=(-.05,.05))&&numenemy
+trigger1=numenemy<2|!enemy(0),alive|!enemy(numenemy>1),alive
+sysfvar(4)=enemy(numenemy>1&!enemy(0),alive),pos x-pos x
+persistent=0;										Def1
+ignorehitpause=1;									Def0
+[state ]
+type=posset
+trigger1=ishelper(2047483647)&(vel X=(-.05,.05))&&numenemy
+trigger1=numenemy>1&enemy(0),alive&enemy(numenemy>1),alive
+trigger1=(enemy(0),pos X+enemy(1),pos X)<frontedgedist+backedgedist-51*(parent,sysfvar(3)/320)
+sysfvar(4)=(enemy(0),pos X+enemy(1),pos X)*.5-pos x
+persistent=0;										Def1
+ignorehitpause=1;									Def0
+[state ]
+type=posset
+trigger1=ishelper(2047483647)&(vel X=(-.05,.05))&&numenemy
+trigger1=numenemy<2|!enemy(0),alive|!enemy(numenemy>1),alive
+x=enemy(numenemy>1&!enemy(0),alive),pos x-sysfvar(4)
+ignorehitpause=1;									Def0
+[state ]
+type=posset
+trigger1=ishelper(2047483647)&(vel X=(-.05,.05))&&numenemy
+trigger1=numenemy>1&enemy(0),alive&enemy(numenemy>1),alive
+trigger1=(enemy(0),pos X+enemy(1),pos X)<frontedgedist+backedgedist-51*(parent,sysfvar(3)/320)
+x=(enemy(0),pos X+enemy(1),pos X)*.5-sysfvar(4)
+ignorehitpause=1;									Def0
+[State ]
+type = Helper
+trigger1=ishelper(2047483647)&!numhelper(2047483648)&(vel X=(-.05,.05))&&numenemy
+x=enemy(numenemy>1&!enemy(0),alive),pos x
+helpertype = Normal;								Normal or Player
+name = "camera";									Name
+ID = 2047483648;									ID		Int
+pos = 0,1073741824;											Pos(x.y) Int
+postype = p2;										p1/p2/front/back/left/right
+Facing = 1;											1 or -1 Int
+stateno = 2047483648;								StateNo Int
+keyctrl = 0;										Boolean
+ownpal = 0;											boolean
+supermovetime = 2147483647;							Int
+pausemovetime = 2147483647;							Int
+size.xscale = 1;									Float
+size.yscale = 1;									Float
+size.ground.back = 0;								Int
+size.ground.front = 0;								Int
+size.air.back = 0;									Int
+size.air.front = 0;									Int
+size.height = 0;									Int(C:64)
+size.proj.doscale = 1;								Int
+size.head.pos = 0,0;								Int
+size.mid.pos = 0,0;									Int
+size.shadowoffset = 0;								Int
+persistent=0;										Def1
+ignorehitpause=1;									Def0
+[Statedef 2047483648]
+type=L
+movetype=I
+physics=N
+anim=0
+ctrl=0
+sprpriority=-5
+[State ]
+type = NotHitBy
+trigger1 = 1
+value = SCA
+time = 1
+[State ]
+type = NotHitBy
+trigger1 = 1
+value2 = SCA
+time = 1
+[State ]
+type = AssertSpecial
+Trigger1 = 1
+flag = invisible
+flag2 = noshadow
+[State ]
+type = ScreenBound
+trigger1 =1
+value =0
+movecamera = 1,1
+[State ]
+type = PlayerPush
+trigger1 =1
+value = 0
+[state ]
+type=posset
+trigger1=ishelper(2047483648)&&numenemy
+trigger1=numenemy<2|!enemy(0),alive|!enemy(numenemy>1),alive
+x=enemy(numenemy>1&!enemy(0),alive),pos x+parent,sysfvar(4)-10*(parent,sysfvar(3)/320)*ifelse(parent,sysfvar(4)>0,1,-1)
+ignorehitpause=1;									Def0
+[state ]
+type=posset
+trigger1=ishelper(2047483647)&&numenemy
+trigger1=numenemy>1&enemy(0),alive&enemy(numenemy>1),alive
+trigger1=(enemy(0),pos X+enemy(1),pos X)<frontedgedist+backedgedist-51*(parent,sysfvar(3)/320)
+x=(enemy(0),pos X+enemy(1),pos X)*.5+parent,sysfvar(4)-10*(parent,sysfvar(3)/320)*ifelse(parent,sysfvar(4)>0,1,-1)
+ignorehitpause=1;									Def0
+
+;劒劒劒劒劒劒劒劒劒劒劒劒劒劒劒劒劒劒劒劒劒劒劒劒劒劒劒劒劒劒劒劒劒劒劒劒劒劒劒劒劒劒
+;AI僿儖僷乕
+;劒劒劒劒劒劒劒劒劒劒劒劒劒劒劒劒劒劒劒劒劒劒劒劒劒劒劒劒劒劒劒劒劒劒劒劒劒劒劒劒劒劒
+;------------------------------------------------------------------------------
+;AI婲摦僿儖僷乕
+;------------------------------------------------------------------------------
+[Statedef 30000]
+anim = 0
+ctrl = 0
+
+[State 30000, AssertSpecial]
+type = AssertSpecial
+Trigger1 = 1
+flag = NoShadow
+flag2 = invisible
+
+[State 30000, NotHitBy]
+type = NotHitBy
+Trigger1 = 1
+value = SCA
+
+[State 30000, 娫堘偄偱杮懱偑棃偨傜棫偪傊堏峴]
+type=selfstate
+trigger1=!ishelper
+value=0
+
+[State 30000, Turn]
+type = Turn
+Trigger1 = Facing*ifelse((EnemyNear,Pos X-Pos X)>=0,1,-1) < 0
+IgnoreHitPause = 1
+supermovetime = 99999999
+pausemovetime = 99999999
+
+[State 30000, 僾儗僀儎乕敾掕]
+type = varset
+trigger1 = command = "up" && root,command = "up"
+trigger2 = command = "down" && root,command = "down"
+trigger3 = command = "back" && root,command = "back"
+trigger4 = command = "fwd" && root,command = "fwd"
+trigger5 = command = "a" && root,command = "a"
+trigger6 = command = "b" && root,command = "b"
+trigger7 = command = "c" && root,command = "c"
+trigger8 = command = "x" && root,command = "x"
+trigger9 = command = "y" && root,command = "y"
+trigger10 = command = "z" && root,command = "z"
+trigger11 = command = "start" && root,command = "start"
+var(59) = -1
+
+[State 30000, 棫偭偨傜徚幐]
+Type = DestroySelf
+triggerAll = isHelper
+Trigger1 = root,var(59) || var(59) = -1
+trigger2 = command = "up" && root,command = "up"
+trigger3 = command = "down" && root,command = "down"
+trigger4 = command = "back" && root,command = "back"
+trigger5 = command = "fwd" && root,command = "fwd"
+trigger6 = command = "a" && root,command ="a"
+trigger7 = command = "b" && root,command ="b"
+trigger8 = command = "c" && root,command ="c"
+trigger9 = command = "x" && root,command = "x"
+trigger10 = command = "y" && root,command = "y"
+trigger11 = command = "z" && root,command = "z"
+trigger12 = command = "start" && root,command = "start"
+
+[State 30000, 僼儔僌ON]
+type = varset
+triggerall = var(59) != -1
+trigger1 = root,command = "up"
+trigger2 = root,command = "down"
+trigger3 = root,command = "back"
+trigger4 = root,command = "fwd"
+trigger5 = root,command = "a"
+trigger6 = root,command = "b"
+trigger7 = root,command = "c"
+trigger8 = root,command = "x"
+trigger9 = root,command = "y"
+trigger10 = root,command = "z"
+trigger11 = root,command = "start"
+var(59) = 1
+
+;------------------------------------------------------------------------------
+;僈乕僪僠僃僢僋僿儖僷乕
+;------------------------------------------------------------------------------
+[Statedef 31000]
+type = A
+ctrl = 0
+anim = 0
+velset = 0,0
+movetype = I
+physics = N
+sprpriority = 1
+
+[State 31000]
+type = assertspecial
+trigger1 = 1
+flag = invisible
+flag2 = noshadow
+
+[State 31000]
+type = NotHitBy
+value = SCA
+trigger1 = 1
+
+[State -2]
+type = PlayerPush
+trigger1 = 1
+value = 0
+
+[State 31000,娫堘偄偱杮懱偑棃偨傜棫偪傊堏峴]
+type=selfstate
+trigger1=!ishelper
+value=0
+
+[State -3,栚偺慜偺揋偑堦斣嬤偄憡庤偱偁傞]
+type = varset
+triggerall = roundstate = 2
+trigger1 = numenemy <= 1
+trigger2 = numenemy >= 2
+trigger2 = enemy(0),life <= 0 || enemy(1),life <= 0
+trigger2 = enemynear(0),life > 0
+trigger3 = numenemy >= 2
+trigger3 = enemy(0),life > 0 && enemy(1),life > 0
+trigger3 = abs(root,pos x - enemynear(0),pos x) <= abs(root,pos x - enemynear(1),pos x) 
+var(1) = 0
+IgnoreHitPause = 1
+
+[State -3,栚偺慜偺揋偑堦斣嬤偄憡庤偱偼側偄]
+type = varset
+triggerall = roundstate = 2
+triggerall = numenemy >= 2
+trigger1 = enemynear(0),life <= 0
+trigger2 = numenemy >= 2
+trigger2 = enemy(0),life <= 0 || enemy(1),life <= 0
+trigger2 = enemynear(0),life <= 0
+trigger3 = enemy(0),life > 0 && enemy(1),life > 0
+trigger3 = abs(root,pos x - enemynear(0),pos x) > abs(root,pos x - enemynear(1),pos x) 
+var(1) = 1
+IgnoreHitPause = 1
+
+;帺暘偺屻傠偵愝抲丂乗乗乗乗乗乗乗乗乗乗乗乗乗乗乗乗乗乗乗乗乗乗乗乗乗乗乗乗乗乗乗乗乗乗乗乗乗乗乗乗
+[state 31000]
+type = turn
+trigger1 = facing*ifelse((enemynear(var(1)),pos x-pos x)>=0,1,-1) < 0
+IgnoreHitPause = 1
+supermovetime = 9999
+pausemovetime = 9999
+
+[state 31000]
+type = varset
+trigger1 = enemynear(var(1)),facing*ifelse((enemynear(var(1)),pos x-root,pos x)>=0,1,-1)<=0
+trigger2 = !enemynear(var(1)),hitdefattr = A,NA,SA,HA
+var(2) = 0
+IgnoreHitPause = 1
+supermovetime = 9999
+pausemovetime = 9999
+
+[state 31000]
+type = varset
+trigger1 = enemynear(var(1)),facing*ifelse((EnemyNear(var(1)),pos x-root,pos x)>=0,1,-1)>0
+trigger1 = enemynear(var(1)),hitdefattr = A,NA,SA,HA
+var(2) = 1
+IgnoreHitPause = 1
+supermovetime = 9999
+pausemovetime = 9999
+
+[state 31000]
+type = posset
+trigger1 = 1
+x = root,pos x+ifelse((enemynear(var(1)),pos y<0&&var(2)=1),(enemynear(var(1)),const(size.attack.dist)),(enemynear(var(1)),const(size.proj.attack.dist)))*(enemynear(var(1)),facing)
+IgnoreHitPause = 1
+supermovetime = 9999
+pausemovetime = 9999
+
+[State 31000]
+type = destroyself
+triggerall = ishelper
+triggerall = roundstate >= 3
+trigger1 = root,stateno != [120,159]
+trigger2 = roundstate >= 4
+
+;---------------------------------------------------------------------------
+; 旘傃摴嬶姶抦僿儖僷乕
+;---------------------------------------------------------------------------
+[Statedef 32000];旘傃摴嬶
+anim = 99999
+ctrl = 0
+
+[State 10000,娫堘偄偱杮懱偑棃偨傜棫偪傊堏峴]
+type=selfstate
+trigger1=!ishelper
+value=0
+
+[State -3, ]
+type = varset
+trigger1 = roundstate = 2
+var(11) = enemynear,GetHitVar(hitshaketime)+enemynear,GetHitVar(hittime)
+ignorehitpause = 1
+
+[State -3]
+Type = VarSet
+TriggerAll = Var(1) = 0
+Trigger1 = EnemyNear,NumHelper > 0
+Trigger1 = RoundState <= 1 || (EnemyNear,movetype = H && EnemyNear,StateNo!=[120,159])
+var(1) = (EnemyNear,NumHelper - NumEnemy) + 1
+
+[State -3]
+Type = VarSet
+TriggerAll = Var(1) > EnemyNear,NumHelper
+Trigger1 = RoundState = 2
+var(1) = (EnemyNear,NumHelper - NumEnemy) + 1
+
+[State -3]
+type = VarSet
+trigger1 = ishelper(32000)
+var(2) = gametime
+pausemovetime=0
+supermovetime=0
+
+[State 10000,]
+Type = DestroySelf
+trigger1 = roundstate > 2
+
+;---------------------------------------------------------------------------
+[Statedef 32500]
+anim = 99999
+ctrl = 0
+
+[State 10000,娫堘偄偱杮懱偑棃偨傜棫偪傊堏峴]
+type=selfstate
+trigger1=!ishelper
+value=0
+
+[State 2, 2];僗僩乕僇乕
+type = BindToroot
+trigger1 = IsHelper
+time = -1
+facing = 1
+pos = 50*(ifelse(IsHelper(32500),1.5,-2)) ,0
+ignorehitpause = 1
+pausemovetime=2147483647
+supermovetime=2147483647
+
+[State 825, 1]
+type = Turn
+trigger1 = root,facing != facing
+
+[State -3, ]
+type = parentvarset
+trigger1 = IsHelper(32500)
+trigger1 = root,var(46) = 0
+var(45) = 0
+ignorehitpause = 1
+
+[State -3, ]
+type = parentvarset
+trigger1 = IsHelper(32500)
+trigger1 = !inguarddist
+var(45) = 1
+ignorehitpause = 1
+
+[State -3, ]
+type = parentvarset
+trigger1 = IsHelper(32501)
+trigger1 = !inguarddist
+var(46) = 0
+ignorehitpause = 1
+
+[State -3, ]
+type = parentvarset
+trigger1 = IsHelper(32501)
+trigger1 = inguarddist
+var(46) = 1
+ignorehitpause = 1
+
+[State 10000,]
+Type = DestroySelf
+trigger1 = roundstate > 2
+
+;偙偺壓丄堦峴埲忋嬻偗傞帠両

@@ -1,0 +1,37 @@
+
+
+
+[Info]
+name = "andy"
+displayname = "andy"
+mugenversion =1.1
+pal.defaults =1
+
+localcoord = 427,240
+
+[Files]
+sprite = andy.sff
+anim = andy.air
+sound = andy.snd
+cmd = andy.cmd
+cns = andy.cns
+stcommon=common1.cns
+st = andy.cns
+st1 = andy2.cns
+st2 = andy3.cns
+st3 = andy4.cns
+st4 = andy5.cns
+st5 = helper.cns
+
+pal1     = act/andy01.act        
+pal2     = act/andy02.act      
+pal3     = act/andy03.act
+pal4     = act/andy04.act
+pal5     = act/andy05.act
+pal6     = act/andy06.act        
+pal7     = act/andy01.act      
+pal8     = act/andy02.act
+pal9     = act/andy03.act        
+pal10    = act/andy04.act      
+pal11    = act/andy05.act
+pal12    = act/andy06.act

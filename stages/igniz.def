@@ -1,0 +1,385 @@
+;=============================================================
+[Info]
+name 	= "Gustab the Nightmare"
+displayname = "v"
+mugenversion = 1.1
+author 	= "Matter & oskr"
+
+[Camera]
+startx         = 0         
+starty         = 0           
+                             
+boundleft      = -255        
+boundright     = 255        
+boundhigh      = -10          
+boundlow       = 0          
+verticalfollow = 0       
+tension = 100
+floortension = 50
+overdrawhigh = 120
+overdrawlow = 120
+cuthigh = 0
+cutlow = 0
+zoomout = 0.9
+zoomin = 1
+tensionhigh = 200
+tensionlow = 200        
+
+[PlayerInfo]       
+;--- Player 1 ---
+
+p1startx = -120         
+p1starty = 0           
+p1startz = 0         
+p1facing = 1         
+
+;--- Player 2 ---
+p2startx = 120
+p2starty = 0
+p2startz = 0
+p2facing = -1
+
+;--- Player 3 ---
+p3startx = -250
+p3starty = 0
+p3facing = 1
+
+;--- Player 4 ---
+p4startx = 250
+p4starty = 0
+p4facing = -1
+
+;--- Common ---
+leftbound  = -4000 
+rightbound =  4000 
+topbound  =  0    
+botbound  =  0      
+         
+[Bound]
+screenleft = 30
+screenright = 30
+
+[StageInfo]
+zoffset        = 438        
+autoturn       = 1           
+localcoord = 854, 480
+
+
+[Scaling]
+topz     = 0
+botz     = 50
+topscale = 1
+botscale = 1.2
+
+
+[Shadow]
+color = 70,70,70
+yscale = 0.4
+reflect = 0
+
+
+[Reflection]
+intensity = 0
+;____________________________________________________________
+
+[Music]
+bgmusic 	= sound/Dragon Rises.mp3
+bgvolume 	= 0
+;____________________________________________________________
+
+[BGdef]
+spr 		= stages/igniz.sff
+debugbg 	= 0
+;____________________________________________________________
+
+
+
+
+[BG cielo]
+type  = normal
+spriteno = 2, 1;0
+start 	= 0,0
+delta 	= 0.05,0.5
+mask= 0
+layerno= 0
+
+[BG rocks0]
+type = normal
+spriteno = 9,0
+start =420,170
+delta = 0.3,1
+mask = 1
+trans = add
+layerno = 0
+velocity = -.15,0
+tile = 1,0
+tilespacing = 1000,0
+
+
+[BG rocks0]
+type = normal
+spriteno = 9,2
+start =220,220
+delta = 0.5,1
+mask = 1
+trans = add
+layerno = 0
+velocity = -.05,0
+tile = 0,0
+
+
+
+
+
+
+
+[BG rocks0]
+type = normal
+spriteno = 9,1
+start =220,170
+delta = 0.5,1
+mask = 1
+trans = add
+layerno = 0
+velocity = -.15,0
+tile = 1,0
+tilespacing = 1000,0
+
+[BG rocks0]
+type = normal
+spriteno = 9,6
+start =220,120
+delta = 0.5,1
+mask = 1
+trans = add
+layerno = 0
+velocity = -.05,0
+tile = 0,0
+
+[BG rocks0]
+type = normal
+spriteno = 9,6
+start =-420,20
+delta = 0.5,1
+mask = 1
+trans = add
+layerno = 0
+velocity = -.45,0
+tile = 1,0
+tilespacing = 1700,0
+
+
+
+
+
+
+[BG rocks0]
+type = normal
+spriteno = 9,6
+start =-320,-70
+delta = 0.5,1
+mask = 1
+trans = add
+layerno = 0
+velocity = .35,0
+tile = 1,0
+tilespacing = 1400,0
+
+
+
+
+
+[BG rocks1]
+type = normal
+spriteno = 9,1
+start =1220,170
+delta = 0.5,1
+mask = 1
+trans = add
+layerno = 0
+velocity = -.05,0
+tile = 0,0
+
+[BG rocks1]
+type = normal
+spriteno = 9,6
+start =1220,120
+delta = 0.5,1
+mask = 1
+trans = add
+layerno = 0
+velocity = -.05,0
+tile = 0,0
+
+
+
+
+
+
+[BG rocks2]
+type = normal
+spriteno = 9,1
+start =2220,170
+delta = 0.5,1
+mask = 1
+trans = add
+layerno = 0
+velocity = -.05,0
+tile = 0,0
+
+[BG rocks2]
+type = normal
+spriteno = 9,6
+start =2220,120
+delta = 0.5,1
+mask = 1
+trans = add
+layerno = 0
+velocity = -.15,0
+tile = 0,0
+
+
+
+[BG rocks2]
+type = normal
+spriteno = 9,0
+start =2220,150
+delta = 0.5,1
+mask = 1
+trans = add
+layerno = 0
+velocity = -.05,0
+tile = 0,0
+
+
+
+
+
+
+
+
+[BG fog]
+type = normal
+spriteno = 3,2
+start = 0,185
+delta = 0.25,1.1
+trans = add
+mask = 1
+tile = 1,0
+velocity = -0.3,0
+
+
+
+[BG pared]
+type  	= normal
+spriteno = 0, 3;0
+start 	= 0,0
+delta 	= 1,2
+mask= 1
+
+[BG piso]
+type  	= normal
+spriteno = 0, 2;1
+start 	= 0,0
+delta 	= 1,2
+mask= 1
+
+[BG alfombra]
+type  	= normal
+spriteno = 1, 0
+start 	= 0,0
+delta 	= 1,2
+mask= 1
+
+[BG estatuas1]
+type  	= normal
+spriteno = 6, 0
+start 	= 0,0
+delta 	= 1,2
+mask= 1
+
+[BG estatuas2]
+type  	= normal
+spriteno = 6, 1
+start 	= 0,0
+delta 	= 1,2
+mask= 1
+trans= add
+
+[BG estatuas3]
+type  	= normal
+spriteno = 6, 2
+start 	= 0,0
+delta 	= 1,2
+mask= 1
+trans= add
+
+[BG fuego1]
+type = anim
+actionno = 20
+delta = 1,2
+start= -325,130
+layerno = 0
+mask = 1
+trans = add
+
+[BG fuego2]
+type = anim
+actionno = 20
+delta = 1,2
+start= 220,120
+layerno = 0
+mask = 1
+trans = add
+
+[BG estatua1]
+type  		= normal
+spriteno 	= 8, 0
+start 		= 0,0
+delta 		= 1,2
+mask= 1
+
+[BG estatua2]
+type  		= normal
+spriteno 	= 8, 1
+start 		= 0,0
+delta 		= 1,2
+mask= 1
+
+[BG image]
+type  		= normal
+spriteno 	= 5, 1;0
+start 		= 0,0
+delta 		= 1,2
+mask= 1
+
+[Begin Action 7]
+7,0, 0,0, 6,,A
+-1,-1,0,0,4
+
+
+[Begin Action 20]
+20,0,0,0,2,,AS256D256
+20,1,0,0,2,,AS256D256
+20,2,0,0,2,,AS256D256
+20,3,0,0,2,,AS256D256
+20,4,0,0,2,,AS256D256
+20,5,0,0,2,,AS256D256
+20,6,0,0,2,,AS256D256
+20,7,0,0,2,,AS256D256
+20,8,0,0,2,,AS256D256
+20,9,0,0,2,,AS256D256
+20,10,0,0,2,,AS256D256
+20,11,0,0,2,,AS256D256
+20,12,0,0,2,,AS256D256
+20,13,0,0,2,,AS256D256
+20,14,0,0,2,,AS256D256
+20,15,0,0,2,,AS256D256
+20,16,0,0,2,,AS256D256
+20,17,0,0,2,,AS256D256
+20,18,0,0,2,,AS256D256
+20,19,0,0,2,,AS256D256
+20,20,0,0,2,,AS256D256
+
+
+

@@ -1,0 +1,34 @@
+[Info]
+name = "Shermie"    
+displayname = "Shermie" 
+mugenversion = 1.1
+author = "Ahuron"  
+pal.defaults = 6,3,4,2 
+localcoord = 427,240
+
+[Files]
+cmd     = Shermie.cmd   ;Command set
+cns     = Shermie.cns   ;Constants
+st      = Shermie.cns   ;States
+st2     = Shermie2.cns   ;States
+st3     = helper.cns   ;States
+st4     = ÐÂ.cns
+st5     = ÐÂ2.cns
+st6     = ÐÂ3.cns
+stcommon = common1.cns ;Common states
+sprite  = Shermie.sff   ;Sprite
+anim    = Shermie.air   ;Animation
+sound   = Shermie.snd   ;Sound
+
+pal1    = act/Shermie.act
+pal2    = act/Shermie2.act
+pal3    = act/Shermie3.act
+pal4    = act/Shermie4.act
+pal5    = act/Shermie5.act
+pal6    = act/Shermie6.act
+pal7    = act/Orochi_Shermie.act
+pal8    = act/Orochi_Shermie2.act
+pal9    = act/Orochi_Shermie3.act
+pal10   = act/Orochi_Shermie4.act
+pal11   = act/Orochi_Shermie5.act
+pal12   = act/Orochi_Shermie6.act

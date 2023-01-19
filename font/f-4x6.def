@@ -1,0 +1,12 @@
+﻿
+[FNT v2]
+fntversion = 2,00
+name = "4x6 variable"
+
+[Def]
+Type = bitmap
+BankType = palette
+Size = 3,6
+Spacing = 1,0
+Offset = 0,1
+File = f-4x6.sff

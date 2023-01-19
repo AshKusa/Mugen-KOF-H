@@ -1,0 +1,427 @@
+;---------------------------------------------------------------------------
+;===========================================================================
+[Statedef -3]
+;===========================================================================
+;---------------------------------------------------------------------------
+
+[State -3, 2];跳跃系统相关(普通跳)
+type = PlaySnd
+triggerall = time = 1
+trigger1 = stateno = 40 
+trigger1 = var(25) <= 0
+value = F40, 0
+channel = 13
+
+[State -3, 2];跳跃系统相关（大跳/小跳）
+type = PlaySnd
+triggerall = time = 1
+trigger1 = stateno = 40 
+trigger1 = var(25) > 1
+value = F40, 1
+channel = 13
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; AH大神的大跳系统
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[State -3, 5]
+type = varset
+trigger1 = stateno = 10
+trigger1 = time = 0
+trigger2 = stateno = 100
+v = 25
+value = 20
+
+[State -3, 5]
+type = varset
+trigger1 = stateno = 52
+trigger1 = time = 0
+v = 25
+value = 0
+
+[State -3, 5]
+type = varset
+trigger1 = stateno = 40
+trigger1 = command != "holdup"
+v = 26
+value = 1
+
+[State -3, 5]
+type = varset
+trigger1 = stateno = 40
+trigger1 = command = "holdup"
+v = 26
+value = 0
+
+[State -3, 5]
+type = VelAdd
+trigger1 = stateno = 50
+trigger1 = anim = 41
+trigger1 = time = 1
+trigger1 = var(25) >= 1
+y = -0.6
+
+[State -3, 5]
+type = velset
+trigger1 = stateno = 50
+trigger1 = anim = 42
+trigger1 = time = 1
+trigger1 = var(25) >= 1
+x = 4.8
+;y = -9
+
+[State -3, 5]
+type = velset
+trigger1 = stateno = 50
+trigger1 = anim = 43
+trigger1 = time = 1
+trigger1 = var(25) >= 1
+x = -4.8
+;y = -9
+
+[State -3, 5]
+type = veladd
+trigger1 = stateno = 50
+trigger1 = time = 1
+trigger1 = var(26) = 1
+y = 3
+
+[State -3, 5]
+type = AfterImage
+trigger1 = stateno = 50
+trigger1 = time = 1
+trigger1 = var(25) >= 1
+time = 10
+trans = add1
+timegap = 1
+framegap = 2
+length = 8
+palbright = 12,12,12
+palcontrast = 225,225,225
+palpostbright = 0,0,0
+paladd = 0,0,0
+palmul = 1,1,1
+;--------------------------------------------
+
+[State -3, Corner];ZOMG STOLEN FROM IRON (AND COPIED FROM VANS)
+type = Velset
+trigger1 = FrontEdgeDist < 10 && vel x > 0.1
+x = 0.1
+
+;Get Hit Sound
+[State -3, PlaySnd]
+type = PlaySnd
+triggerall = time = 1
+triggerall = alive
+trigger1 = random < 500
+trigger1 = StateNo = 5000 || StateNo = 5010 || StateNo = 5020
+value = 5001,0+(random%3)
+channel = 5
+
+[State -3, PlaySnd]
+type = PlaySnd
+triggerall = time = 1
+triggerall = alive
+trigger1 = StateNo = 5070
+value = 5000,0+(random%3)
+channel = 5
+
+;Stop sounds when hit
+[State -3, StopSnd]
+type = StopSnd
+trigger1 = StateNo = 5000 || StateNo = 5010 || StateNo = 5020
+trigger2 = StateNo = 5001 || StateNo = 5011 || StateNo = 5021
+trigger3 = StateNo = 5002 || StateNo = 5012 || StateNo = 5022
+trigger4 = StateNo = 5070 || StateNo = 5100
+trigger5 = StateNo = [150,159]
+channel = 0
+
+;Intro,Winpose and Taunt StopSnd
+[State -3, StopSnd]
+type = StopSnd
+trigger1 = stateno != [180,196]
+channel = 8
+
+;Thanks to [E]
+[State -2, Width]
+type = Width
+trigger1 = movetype != H
+trigger1 = 1
+edge = 24,0
+
+;-----------------------------------------------------------------------------------------
+
+[State 100, 4]
+type = StopSnd
+triggerall = name = "Joe"
+trigger1 = stateno != 2910
+trigger2 = movetype = H
+channel = 12
+
+;VS Terry
+[State 0, VarSet]
+type = VarSet
+triggerall = name = "Joe"
+trigger1 = (P2Name = "Terry Bogard" || P4Name = "Terry Bogard")
+trigger2 = enemy,name = "Terry Bogard"
+v = 20
+value = 1
+
+;Damage Dampener
+[State 0, VarSet]
+type = VarSet
+triggerall = name = "Joe"
+trigger1 = movetype = H
+v = 21
+value = 0
+
+;Decreaser
+[State 0, VarAdd]
+type = VarAdd
+triggerall = name = "Joe"
+trigger1 = var(21) > 0
+v = 21
+value = -1
+ignorehitpause = 1
+
+;Hitout
+[State 0, VarSet]
+type = VarSet
+triggerall = name = "Joe"
+trigger1 = movetype = H
+v = 23
+value = 0
+
+;Decreaser
+[State 0, VarAdd]
+type = VarAdd
+triggerall = name = "Joe"
+trigger1 = var(23) > 0
+v = 23
+value = -1
+ignorehitpause = 1
+
+;Jump Basic -> Crouching Hard Kick Juggle Corrector
+[State 0, VarAdd]
+type = VarAdd
+triggerall = name = "Joe"
+trigger1 = var(18) > 0
+v = 18
+value = -5
+ignorehitpause = 1
+
+[State 0, VarSet]
+type = VarSet
+triggerall = name = "Joe"
+trigger1 = stateno = [600,650]
+v = 18
+value = 50
+ignorehitpause = 1
+
+;K.O Voice, thanks to Anjel
+[State -2, Helper]
+type = Helper
+triggerall = name = "Joe"
+trigger1 = !alive && numhelper(16600) = 0
+helpertype = normal
+name = "I died"
+ID = 16600
+stateno = 16600
+pos = 9999,9999
+postype = p1
+facing = 1
+keyctrl = 0
+ownpal = 1
+supermovetime = 999
+pausemovetime = 999
+ignorehitpause = 1
+persistent = 0
+
+[State 0, VarSet]
+type = VarSet
+triggerall = name = "Joe"
+trigger1 = stateno = [0,995]
+v = 11
+value = 0
+ignorehitpause = 1
+
+[State 0, VarSet]
+type = Varset
+triggerall = name = "Joe"
+triggerall = movehit
+trigger1 = stateno = [1300,1310]
+trigger2 = stateno = 3400
+trigger3 = stateno = 3500
+trigger4 = stateno = 2800
+v = 11
+value = 1
+ignorehitpause = 1
+
+[State 0, VarAdd]
+type = VarAdd
+triggerall = name = "Joe"
+trigger1 = var(12) > 0
+v = 12
+value = -5
+ignorehitpause = 1
+
+[State 0, VarSet]
+type = VarSet
+triggerall = name = "Joe"
+trigger1 = var(12) = 0
+trigger1 = var(11) = 1
+v = 12
+value = 50
+ignorehitpause = 1
+
+[State 0, Explod]
+type = Explod
+triggerall = name = "Joe"
+triggerall = random <= 500
+triggerall = numexplod(11500) < 1
+triggerall = var(11) = 1 && var(12) > 0
+trigger1 = p2movetype = H
+anim = 11500
+ID = 11500
+pos = -5,-70
+postype = p2
+facing = 1
+vfacing = 1
+bindtime = 1
+random = 50,90
+removetime = 24
+sprpriority = 4
+ontop = 1
+ownpal = 1
+removeongethit = 0
+ignorehitpause = 1
+
+[State 0, Explod]
+type = Explod
+triggerall = name = "Joe"
+triggerall = random <= 500
+triggerall = numexplod(11000) < 1
+triggerall = var(11) = 1 && var(12) > 0
+trigger1 = p2movetype = H
+anim = 11000
+ID = 11000
+pos = -5,-70
+postype = p2
+facing = 1
+vfacing = 1
+bindtime = 1
+random = 50,90
+removetime = 26
+sprpriority = 4
+ontop = 1
+ownpal = 1
+removeongethit = 0
+ignorehitpause = 1
+
+[State -2, DisplayToClipboard]
+type = DisplayToClipboard
+triggerall = name = "Joe"
+trigger1 = 1
+text = "Limiter = %d,Vel X = %f,Vel Y = %f"
+params = var(12),Vel X,Vel Y
+
+;Liedown state fix by Caddie
+[State -2, hitby]
+type = hitby
+triggerall = name = "Joe"
+trigger1 = life > 0
+trigger1 = stateno = 5100 || stateno = 5110 || stateno = 5120
+trigger1 = anim != 5120
+value = SCA, NA, SA, HA, NP, SP, HP, NT, ST, HT
+time = 1
+
+;===============================================================================
+[State 0, changeanim]
+type = changeanim
+triggerall = roundno >= 2
+trigger1 = palno > 6
+value = 1
+
+[state varadd]
+type = varset
+triggerall = roundstate <= 1
+trigger1 = palno = [7,12]
+var(55) = 1
+
+[State 0, AssertSpecial]
+type = AssertSpecial
+triggerall = name = "Joe"
+trigger1 = 1
+flag = noairguard
+
+[State 50, reset]
+type = VarSet
+triggerall = name = "Joe"
+trigger1 = stateno != [40,50]
+var(2) = 0
+
+;Cheese Kill
+[State -2, Cheese Kill]
+type = ChangeState
+triggerall = name = "Joe"
+trigger1 = !alive
+trigger1 = prevstateno = 130 || prevstateno = 131 || prevstateno = [150,153]
+trigger1 = Stateno = [5000,5050]
+value = 5400
+
+[State -2, Cheese Kill]
+type = VarSet
+triggerall = name = "Joe"
+triggerall = stateno = [120,155]
+trigger1 = StateType = S
+ignorehitpause = 1
+fvar(2) = 0
+
+;Throw Limiter
+[State -2, VarSet]
+type = VarSet
+triggerall = name = "Joe"
+trigger1 = HitDefAttr = SCA, NA, AP && MoveContact
+var(16) = 15
+ignorehitpause = 1 
+
+[State -2, VarAdd]
+type = VarAdd
+triggerall = name = "Joe"
+trigger1 = var(16) >= 1
+var(16) = -1
+ignorehitpause = 1 
+
+[State -2, VarSet]
+type = VarSet
+triggerall = name = "Joe"
+trigger1 = MoveGuarded
+var(17) = 15
+ignorehitpause = 1 
+
+[State -2, VarAdd]
+type = VarAdd
+triggerall = name = "Joe"
+trigger1 = var(17) >= 1
+var(17) = -1
+ignorehitpause = 1
+
+;Power Charge StopSnd
+[State -3, StopSnd]
+type = StopSnd
+triggerall = name = "Joe"
+trigger1 = stateno != 771
+channel = 7
+
+[State -3, StopSnd]
+type = StopSnd
+triggerall = name = "Joe"
+trigger1 = stateno != 771
+channel = 9
+
+;Run StopSnd
+[State -3, StopSnd]
+type = StopSnd
+triggerall = name = "Joe"
+trigger1 = stateno != 100
+channel = 10
+

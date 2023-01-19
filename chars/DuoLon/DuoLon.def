@@ -1,0 +1,35 @@
+[Info]
+name = "DuoLon" 
+displayname = "DuoLon" 
+author = "ahuron" 
+pal.defaults = 4
+mugenversion = 1.1
+localcoord   = 427,240
+
+[Files]
+cmd     = DuoLon.cmd 
+cns     = DuoLon.cns 
+stcommon = common1.cns 
+sprite  = DuoLon.sff 
+anim    = DuoLon.air 
+sound   = DuoLon.snd 
+st      = DuoLon.cns 
+st2     = DuoLon2.cns
+st3     = ai.cns
+st4     = 新.cns
+st5     = 新2.cns
+st6     = 新3.cns
+st7     = 新4.cns
+
+pal1    = pals/DuoLon_3.act
+pal2    = pals/DuoLon_2.act
+pal3    = pals/DuoLon_7.act
+pal4    = pals/DuoLon_1.act
+pal5    = pals/DuoLon_4.act
+pal6    = pals/DuoLon_6.act
+pal7    = pals/DuoLon_3.act
+pal8    = pals/DuoLon_2.act
+pal9    = pals/DuoLon_7.act
+pal10    = pals/DuoLon_1.act
+pal11    = pals/DuoLon_4.act
+pal12    = pals/DuoLon_6.act

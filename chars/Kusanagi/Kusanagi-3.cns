@@ -1,0 +1,301 @@
+
+;---------------------------------------------------------------------------------
+[Statedef -3]
+;---------------------------------------------------------------------------------
+;---------------------------------------------------------------------------
+
+[State -3, 2];跳跃系统相关(普通跳)
+type = PlaySnd
+triggerall = time = 1
+trigger1 = stateno = 40 
+trigger1 = var(25) <= 0
+value = F40, 0
+channel = 13
+
+[State -3, 2];跳跃系统相关（大跳/小跳）
+type = PlaySnd
+triggerall = time = 1
+trigger1 = stateno = 40 
+trigger1 = var(25) > 1
+value = F40, 1
+channel = 13
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; AH大神的大跳系统
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[State -3, 5]
+type = varset
+trigger1 = stateno = 10
+trigger1 = time = 0
+trigger2 = stateno = [100,101]
+v = 25
+value = 20
+
+[State -3, 5]
+type = varset
+trigger1 = stateno = 52
+trigger1 = time = 0
+v = 25
+value = 0
+
+[State -3, 5]
+type = varset
+trigger1 = stateno = 40
+trigger1 = command != "holdup"
+v = 26
+value = 1
+
+[State -3, 5]
+type = varset
+trigger1 = stateno = 40
+trigger1 = command = "holdup"
+v = 26
+value = 0
+
+[State -3, 5]
+type = VelAdd
+trigger1 = stateno = 50
+trigger1 = anim = 41+var(55)*30000
+trigger1 = time = 1
+trigger1 = var(25) >= 1
+y = -0.6
+
+[State -3, 5]
+type = velset
+trigger1 = stateno = 50
+trigger1 = anim = 42+var(55)*30000
+trigger1 = time = 1
+trigger1 = var(25) >= 1
+x = 4.5
+;y = -9
+
+[State -3, 5]
+type = velset
+trigger1 = stateno = 50
+trigger1 = anim = 43+var(55)*30000
+trigger1 = time = 1
+trigger1 = var(25) >= 1
+x = -4.5
+;y = -9
+
+[State -3, 5]
+type = veladd
+trigger1 = stateno = 50
+trigger1 = time = 1
+trigger1 = var(26) = 1
+y = 3
+
+[State -3, 5]
+type = AfterImage
+trigger1 = stateno = 50
+trigger1 = time = 1
+trigger1 = var(25) >= 1
+time = 10
+trans = add1
+timegap = 1
+framegap = 2
+length = 8
+palbright = 12,12,12
+palcontrast = 225,225,225
+palpostbright = 0,0,0
+paladd = 0,0,0
+palmul = 1,1,1
+;--------------------------------------------
+;---------------------------------------------------------------
+;----------------------火焰受击伴随烟雾-------------------------
+;---------------------------------------------------------------
+;人物受到带火属性的招式攻击Var设定
+[State 2300, Burn]
+type = Varset
+trigger1 = Projhittime(3810) >= 0 && Projhittime(3810) <= 55
+trigger2 = stateno = 3900 || stateno = 3910 || stateno = 2110  || stateno = 2210 || stateno = 3000 || stateno = 3100 || stateno = 1100 || stateno = 1150 || stateno = 1410 || stateno = 1420
+trigger2 = Movehit
+trigger3 = p2stateno = 3850 || p2stateno = 3855 || p2stateno = 4215
+trigger3 = gametime%8 = 0
+trigger4 = p2stateno = 3950
+trigger4 = gametime%3 = 0
+trigger5 = Projhittime(3100) >= 0 && Projhittime(3100) <= 55
+trigger6 = NumHelper(2015) || NumHelper(3015)
+trigger7 = Projhittime(1000) >= 0 && Projhittime(1000) <= 35
+persistent = 0
+ignorehitpause = 1
+var(23) = 1
+
+[State -2,红色双烟雾];Random < 50
+type = Explod
+triggerall = p2movetype = H
+triggerall = Random < 50
+trigger1 = Projhittime(3810) >= 0 && Projhittime(3810) <= 55
+trigger2 = stateno = 3900 || stateno = 3910 || stateno = 2110   || stateno = 2210 || stateno = 3000 || stateno = 3100 || stateno = 1100 || stateno = 1150 || stateno = 1410 || stateno = 1420
+trigger2 = Movehit
+trigger3 = p2stateno = 3850 || p2stateno = 3855 || p2stateno = 4215
+trigger3 = gametime%8 = 0
+trigger4 = p2stateno = 3950
+trigger4 = gametime%3 = 0
+trigger5 = Projhittime(3100) >= 0 && Projhittime(3100) <= 55
+trigger6 = Projhittime(1000) >= 0 && Projhittime(1000) <= 35
+anim = f400
+pos = 0,-50
+postype = p2
+sprpriority = 999
+bindtime = 1
+random = 100,100
+ownpal = 1
+supermove = 1
+
+[State -2,红色雾气]
+type = Explod
+triggerall = p2movetype = H
+triggerall = Random < 100
+trigger1 = Projhittime(3810) >= 0 && Projhittime(3810) <= 55
+trigger2 = stateno = 3900 || stateno = 3910 || stateno = 2110   || stateno = 2210 || stateno = 3000 || stateno = 3100 || stateno = 1100 || stateno = 1150 || stateno = 1410 || stateno = 1420
+trigger2 = Movehit
+trigger3 = p2stateno = 3850 || p2stateno = 3855 || p2stateno = 4215
+trigger3 = gametime%8 = 0
+trigger4 = p2stateno = 3950
+trigger4 = gametime%3 = 0
+trigger5 = Projhittime(3100) >= 0 && Projhittime(3100) <= 55
+trigger6 = Projhittime(1000) >= 0 && Projhittime(1000) <= 35
+anim = f401
+pos = 0,-50
+postype = p2
+sprpriority = 999
+bindtime = 1
+random = 100,100
+ownpal = 1
+supermove = 1
+
+[State -2,三个小爆点]
+type = Explod
+triggerall = p2movetype = H
+triggerall = Random < 100
+trigger1 = Projhittime(3810) >= 0 && Projhittime(3810) <= 55
+trigger2 = stateno = 3900 || stateno = 3910 || stateno = 2110   || stateno = 2210 || stateno = 3000 || stateno = 3100 || stateno = 1100 || stateno = 1150 || stateno = 1410 || stateno = 1420
+trigger2 = Movehit
+trigger3 = p2stateno = 3850 || p2stateno = 3855 || p2stateno = 4215
+trigger3 = gametime%8 = 0
+trigger4 = p2stateno = 3950
+trigger4 = gametime%3 = 0
+trigger5 = Projhittime(3100) >= 0 && Projhittime(3100) <= 55
+trigger6 = Projhittime(1000) >= 0 && Projhittime(1000) <= 35
+anim = f402
+pos = 0,-50
+postype = p2
+sprpriority = 999
+bindtime = 1
+random = 100,100
+ownpal = 1
+supermove = 1
+
+[State -2,红色单烟雾];Random < 70
+type = Explod
+triggerall = p2movetype = H
+triggerall = Random < 70
+trigger1 = Projhittime(3810) >= 0 && Projhittime(3810) <= 55
+trigger2 = stateno = 3900 || stateno = 3910 || stateno = 2110   || stateno = 2210 || stateno = 3000 || stateno = 3100 || stateno = 1100 || stateno = 1150 || stateno = 1410 || stateno = 1420
+trigger2 = Movehit
+trigger3 = p2stateno = 3850 || p2stateno = 3855 || p2stateno = 4215
+trigger3 = gametime%8 = 0
+trigger4 = p2stateno = 3950
+trigger4 = gametime%3 = 0
+trigger5 = Projhittime(3100) >= 0 && Projhittime(3100) <= 55
+trigger6 = Projhittime(1000) >= 0 && Projhittime(1000) <= 35
+anim = f403
+pos = 0,-50
+postype = p2
+sprpriority = 999
+bindtime = 1
+random = 100,100
+ownpal = 1
+supermove = 1
+
+;---------------------------------------------------------------
+;P2倒地之后的烟雾（红色）
+;---------------------------------------------------------------
+[State 1000, explods];红色小明火
+type = Explod
+triggerall = var(23) > 0 && Random < 70
+trigger1 = (p2stateno = [5100,5110]) && p2movetype = H
+trigger2 = (p2stateno = [4167,4169]) && p2movetype = H
+anim = f404
+pos = 0,0
+postype = p2
+sprpriority = 999
+bindtime = 1
+random = 100,100
+ownpal = 1
+supermove = 1
+ignorehitpause = 1
+
+[State 1000, explods];红色小灰雾
+type = Explod
+triggerall = var(23) > 0 && Random < 70
+trigger1 = (p2stateno = [5100,5110]) && p2movetype = H
+trigger2 = (p2stateno = [4167,4169]) && p2movetype = H
+anim = f405
+pos = 0,0
+postype = p2
+sprpriority = 999
+bindtime = 1
+random = 100,100
+ownpal = 1
+supermove = 1
+ignorehitpause = 1
+
+[State 1000, explods];红色小圈
+type = Explod
+triggerall = var(23) > 0 && Random < 70
+trigger1 = (p2stateno = [5100,5110]) && p2movetype = H
+trigger2 = (p2stateno = [4167,4169]) && p2movetype = H
+anim = f406
+pos = 0,0
+postype = p2
+sprpriority = 999
+bindtime = 1
+random = 100,100
+ownpal = 1
+supermove = 1
+ignorehitpause = 1
+
+[State 1000, explods];红色贴地喷雾1
+type = Explod
+triggerall = StageVar(info.author) != "water"
+triggerall = var(23) > 0 && Random < 50
+trigger1 = (p2stateno = [5100,5110]) && p2movetype = H
+trigger2 = (p2stateno = [4167,4169]) && p2movetype = H
+anim = f407
+pos = 0,0
+postype = p2
+sprpriority = 999
+bindtime = 1
+random = 100,0
+ownpal = 1
+supermove = 1
+ignorehitpause = 1
+
+[State 1000, explods];红色贴地喷雾2
+type = Explod
+triggerall = StageVar(info.author) != "water"
+triggerall = var(23) > 0 && Random < 50
+trigger1 = (p2stateno = [5100,5110]) && p2movetype = H
+trigger2 = (p2stateno = [4167,4169]) && p2movetype = H
+anim = f407
+pos = 0,0
+facing = -1
+postype = p2
+sprpriority = 999
+bindtime = 1
+random = 100,0
+ownpal = 1
+supermove = 1
+ignorehitpause = 1
+
+[State 1000, VarSet]
+type = VarSet
+trigger1 = p2movetype != H
+v = 23
+value = 0
+persistent = 0
+;---------------------------------------------------------------
+;------------------------END OF STATE---------------------------
+;---------------------------------------------------------------

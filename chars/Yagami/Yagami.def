@@ -1,0 +1,36 @@
+[Info]
+Name         ="Iori"
+DisplayName  ="Iori"
+MugenVersion =1.1
+Author       ="Jin"
+pal.defaults =4,1,5,2
+localcoord = 427,240
+
+[Files]
+cmd          =Yagami.cmd   
+stcommon     =common1.cns
+Sprite       =Yagami.sff
+Anim         =Yagami.air
+Sound        =Yagami.snd
+Cns          =Yagami.cns
+St           =Yagami.cns
+st1          =Yagami_N.cns
+st2          =Yagami_S.cns
+st3          =Yagami_H.cns
+st4          =Yagami-3.cns
+st5          =helper.cns
+st6          =ÐÂ.cns
+st7          =ÐÂ2.cns
+
+pal1         =pals/Yagami-A.act
+pal2         =pals/Yagami-B.act
+pal3         =pals/Yagami-C.act
+pal4         =pals/Yagami-D.act
+pal5         =pals/Yagami-E.act
+pal6         =pals/Yagami-F.act
+pal7         =pals/Yagami-A-S.act
+pal8         =pals/Yagami-B-S.act
+pal9         =pals/Yagami-C-S.act
+pal10        =pals/Yagami-D-S.act
+pal11        =pals/Yagami-E-S.act
+pal12        =pals/Yagami-F-S.act

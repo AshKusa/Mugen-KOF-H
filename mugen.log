@@ -1,0 +1,531 @@
+---------------------------------------------------
+M.U.G.E.N ver 1.1.0 Beta 1 P1 (2013.08.11) status log
+---------------------------------------------------
+Parsing command line...
+Command line: E:\KOFH\KOFH.exe
+Parse command line OK
+Initializing...
+Allocating game variables
+Reading configuration file...Setting language "zh".
+OK
+Initializing timer...performance timer enabled...frequency 10000000...OK
+Initializing keyboard...configuring...OK
+Initializing input engine...OK
+Initializing sound...OK
+Initializing BGM...  OK
+Initializing graphics...gameCoord 854x480...render mode 2_20...trying 854x480x32 mode 0x0...success...OK
+Setting callbacks...OK
+Initializing font...OK
+Initializing game variables...OK
+Session RNG seed is 1656009338
+Loading system fonts...OK
+Loading options...
+Initializing pads...failed
+Reinitializing input engine...OK
+Remapping keys...OK
+Reinitializing input engine...OK
+Options loaded OK
+Loading system...
+  Load system file system.def...OK
+  Load system spr...OK
+  Load system snd...OK
+  Load system fonts...OK
+  Load system anim...OK
+  Load [Title Info]...OK
+  Load [Option Info]...OK
+  Load [Select Info]...OK
+  Load [VS Screen]...OK
+  Load [Victory Screen]...OK
+  Load [Demo Mode]...OK
+  Load [Continue Screen]...OK
+  Load [Game Over Screen]...OK
+  Load [Win Screen]...OK
+  Load [Survival Results Screen]...OK
+  Load [Default Ending]...OK
+  Load [End Credits]...OK
+  Load TitleBG...VersusBG...VictoryBG...SelectBG...OptionBG...OK
+  Loading fight data
+    Opening fight data file data/fight.def...OK
+    Reading [Files]...OK
+    Loading fonts...OK
+    Load fight anim...OK
+    Reading [Lifebar]...[Turns Lifebar]...[Simul Lifebar]...[Powerbar]...
+    [Face]...[Simul Face]...[Turns Face]...
+    [Name]...[Simul Name]...[Turns Name]...
+    [Time]...[Combo]...[Round]...[WinIcon]...OK
+    Allocating explods...OK
+  Fight data loaded OK
+Lua initing
+Lua init complete
+System loaded OK
+Initialize OK
+Set up graphics...timer...OK
+
+Entering gameflow loop
+Gameflow 0
+Gameflow 1
+Playing storyboard logo.def: scene
+Unloading match assets
+Freeing players
+Game loop init
+Game loop deinit
+Finished playing storyboard logo.def: scene
+Gameflow 2
+Initializing character info...OK
+Initializing select screen...finding characters...
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: chars/Yagami Iori/Yagami Iori.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: chars/Leona/Leona.def
+
+  Error reading character file: chars/Whip/Whip.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: chars/kim/kim.def
+
+  Error reading character file: chars/griffon/griffon.def
+
+  Error reading character file: chars/Choi/Choi.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: chars/Chris/Chris.def
+
+  Error reading character file: chars/Goeniko/Goeniko.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: chars/Goenitz/Goenitz.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: chars/Athena/Athena.def
+
+  Error reading character file: chars/Kensou/Kensou.def
+
+  Error reading character file: chars/momoko/momoko.def
+
+  Error reading character file: chars/hotaru/hotaru.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: chars/kasumi/kasumi.def
+
+  Error reading character file: chars/Chizuru&Maki/Chizuru&Maki.def
+
+  Error reading character file: chars/King/King.def
+
+  Error reading character file: chars/Mai/Mai.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: chars/setsuna/setsuna.def
+
+  Error reading character file: chars/Moriya/Moriya.def
+
+  Error reading character file: chars/Kaede/Kaede.def
+
+  Error reading character file: chars/Shiki/Shiki.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: chars/Yamazaki/Yamazaki.def
+
+  Error reading character file: chars/billy/billy.def
+
+  Error reading character file: chars/Lin/Lin.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: chars/Simali/Simali.def
+
+  Error reading character file: chars/Alfred/Alfred.def
+
+  Error reading character file: chars/Strider Hiryu/Strider Hiryu.def
+
+  Error reading character file: chars/Rozwel/Rozwel.def
+
+  Error reading character file: chars/Shun Ei/Shun Ei.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: chars/Sol Badguy/Sol Badguy.def
+
+  Error reading character file: chars/Adel/Adel.def
+
+  Error reading character file: chars/hibiki/hibiki.def
+
+  Error reading character file: chars/ingrid/ingrid.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: chars/demitri/demitri.def
+
+  Error reading character file: chars/kouryu/kouryu.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: chars/asura/asura.def
+
+  Error reading character file: chars/Neodio/Neodio.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: chars/Rugal/Rugal.def
+
+  Error reading character file: chars/Mizuchi/Mizuchi.def
+
+  Error reading character file: chars/Goodman/Goodman.def
+
+  Error reading character file: chars/Krizalid/Krizalid.def
+
+  Error reading character file: chars/igniz/igniz.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: chars/zero/zero.def
+
+  Error reading character file: chars/mukai/mukai.def
+
+  Error reading character file: chars/Magaki/Magaki.def
+
+  Error reading character file: chars/Apollo/Apollo.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: chars/Kain/Kain.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+
+  Error reading character file: // NO CHAR //.def
+OK
+Gameflow 3
+Playing storyboard press.def: scene
+Unloading match assets
+Freeing players
+Game loop init
+Game loop deinit
+Finished playing storyboard press.def: scene
+Gameflow 4
+Entering mode select.
+Unloading match assets
+Freeing players
+Game loop init
+Mode select init
+End of mode select loop
+Game loop deinit
+Gameflow 6
+Reset persist vars team 0
+Reset persist vars team 1
+Gameflow 7
+Entering character select.
+Unloading match assets
+Freeing players
+Game loop init
+Unreserved all palettes
+Charsel init
+Selected char 33 on teamslot 0.0
+Char Syo Kirishima.def (33) request pal 0 FFF (FFF) -> reserved 0 (FFE)
+Selected char 8 on teamslot 1.0
+Char Foxy.def (8) request pal 0 E3F (E3F) -> reserved 0 (E3E)
+End of charsel loop
+Game loop deinit
+Gameflow 8
+Gameflow 9
+Gameflow 10
+Entering versus screen.
+Unloading match assets
+Freeing players
+Game loop init
+Versus screen init
+End of versus screen loop
+Game loop deinit
+Gameflow 11
+Unloading system background data...sprite data...OK
+Loading match assets...
+Loading stage...
+  Loading BG...OK
+Stage loaded OK
+  Allocating helpers...OK
+Match RNG seed: 1471587686
+Reset persist vars team 0
+Reset persist vars team 1
+Loading character chars/Syo Kirishima/Syo Kirishima.def...
+  Loading info...OK
+  Loading cmd command set Syo-Kirishima.cmd...OK
+  Loading cns Syo-Kirishima.cns...OK
+  Loading cns Syo-Kirishima2.cns...OK
+  Loading cns 新1.cns...OK
+  Loading cns 新2.cns...OK
+  Loading cns 新3.cns...OK
+  Loading cns 新4.cns...OK
+  Loading cns 新5.cns...OK
+  Loading cmd state entry Syo-Kirishima.cmd...OK
+  Loading common states common1.cns...OK
+  Loading sff Syo-Kirishima.sff...OK
+  Loading anim Syo-Kirishima.air...OK
+  Loading snd Syo-Kirishima.snd...OK
+  Loading pals...(1,2)(1,3)(1,4)(1,5)(1,6)(1,7)(1,8)(1,9)(1,10)(1,11)(1,12)OK
+  Loading learned AI aistate.cns...OK
+  28358 expressions (10162 on trigger lines)
+Character Syo Kirishima.def loaded OK
+New char Syo Kirishima loaded into cache: (1/2 cached) Load time: 1400.000ms
+Loading character chars/Foxy/Foxy.def...
+  Loading info...OK
+  Loading cmd command set Foxy.cmd...OK
+  Loading cns Foxy-N.cns...OK
+  Loading cns Foxy-S.cns...OK
+  Loading cns Foxy-H.cns...OK
+  Loading cns Zmax.cns...OK
+  Loading cns 新1.cns...OK
+  Loading cns 新2.cns...OK
+  Loading cns 新3.cns...OK
+  Loading cmd state entry Foxy.cmd...OK
+  Loading common states common1.cns...OK
+  Loading sff Foxy.sff...OK
+  Loading anim Foxy.air...OK
+  Loading snd Foxy.snd...OK
+  Loading pals...(1,2)(1,3)(1,4)(1,5)(1,6)(1,10)(1,11)(1,12)OK
+  27193 expressions (9147 on trigger lines)
+Character Foxy.def loaded OK
+New char Foxy loaded into cache: (2/2 cached) Load time: 950.000ms
+Resetting round
+Match assets initialized OK
+Game loop init
+Match loop init
+CloseWindow event forced common loop quit.
+End of match loop
+Total time: 218.37s
+Total frames: 13037 	Skipped frames: 48
+Avg game rate: 59.70
+Avg frame rate: 59.48
+
+Finishing match
+Freeing players
+Save persist vars P56 Syo Kirishima
+Player Syo Kirishima cache count reduced: 0
+Save persist vars P57 Foxy
+Player Foxy cache count reduced: 0
+Match RNG closed
+Game loop deinit
+Gameflow 6
+Reset persist vars team 0
+Reset persist vars team 1
+Gameflow 7
+Entering character select.
+Reloading system sprite data...Reloading system background data...OK
+Unloading match assets
+Freeing players
+Unloading stage...OK
+Game loop init
+Unreserved all palettes
+Charsel init
+Game loop deinit
+Canceled character select.
+Gameflow 4
+Entering mode select.
+Unloading match assets
+Freeing players
+Game loop init
+Mode select init
+End of mode select loop
+Game loop deinit
+Returned from gameflow loop
+Deinitializing...
+Frames      : 16984
+Time elapsed: 292.330 sec
+ticks: 29233, tps: 100, start 894, end 30127
+
+Unloading match assets
+Freeing players
+Clearing player cache...Freeing player RC Foxy...CMD...CNS...SFF...AIR...SND...Misc...OK
+Freeing player RC Syo Kirishima...CMD...CNS...SFF...AIR...SND...Misc...OK
+OK
+Freeing character info...OK
+Freeing select screen...OK
+Freeing fight data...OK
+Freeing system data...OK
+Freeing game variables...Unloading match assets
+Freeing players
+OK
+Deinitializing input...pad...keyboard...OK
+Removing callbacks...OK
+Deintializing timer...OK
+Deinitializing graphics...OK
+Deinitializing BGM...OK
+Deinitializing sound...OK
+Successful program termination.
+
+Log file successfully closed.

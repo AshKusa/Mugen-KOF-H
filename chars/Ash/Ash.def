@@ -1,0 +1,34 @@
+[Info]
+Name         = "Ash"
+Author       = "Jin&S.K.Y.&D-Tox"; "eric and auia from mugenchina"
+mugenversion = 1.1
+localcoord   = 427,240
+
+[Files]
+Cmd      = Ash.cmd
+Cns      = Ash.cns
+St       = Ash.cns
+St1      = Ash-N.cns
+St2      = Ash-S.cns
+St3      = Ash-H.cns
+St4      = 3500.cns
+St5      = 果实月.cns
+St6      = 新1.cns
+St7     = 新2.cns
+StCommon = common1.cns
+Sprite   = Ash.sff
+Anim     = Ash.air
+Sound    = Ash.snd
+
+Pal1 = pals/Ash01.act
+Pal2 = pals/Ash02.act
+Pal3 = pals/Ash03.act
+Pal4 = pals/Ash04.act
+Pal5 = pals/Ash05.act
+Pal6 = pals/Ash06.act
+Pal7 = pals/Ash01.act
+Pal8 = pals/Ash02.act
+Pal9 = pals/Ash03.act
+Pal10 = pals/Ash04.act
+Pal11 = pals/Ash05.act
+Pal12 = pals/Ash06.act

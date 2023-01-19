@@ -1,0 +1,269 @@
+
+[Info]
+name ="NUCLEAR ASSAULT"
+displayname ="C"
+mugenversion = 1.1
+
+[BGdef]
+spr = stages/NUCLEAR_ASSAULT.sff
+debugbg = 0
+
+[Music]
+bgmusic  = sound\Sanctity.mp3
+bgvolume = 255
+
+[Camera]
+startx =0
+starty =0
+boundleft=-165
+boundright=165
+boundhigh=-50
+boundlow   = 0
+verticalfollow =.75
+floortension = 260
+tension =150
+overdrawhigh 	= 180
+overdrawlow 	= 180
+cuthigh = 0
+cutlow = 0
+zoomout = 0.9
+zoomin = 1
+startzoom = 1
+tensionhigh = 200
+tensionlow = 200
+
+[PlayerInfo]
+p1startx =-150
+p1starty =0
+p1startz =0
+p1facing =1
+p2startx =150
+p2starty =0
+p2startz =0
+p2facing =-1
+p3startx 	= -250
+p3starty 	= 0
+p3facing 	= 1
+p4startx 	= 250
+p4starty 	= 0
+p4facing 	= -1
+leftbound =-4000
+rightbound =4000
+topbound =0
+botbound =0
+
+[Bound]
+screenleft  =30
+screenright =30
+
+[StageInfo]
+localcoord = 854,480
+zoffset = 438
+autoturn = 1
+resetBG = 0
+
+[Shadow]
+intensity = 0
+color = 0,0,0
+yscale = -.1
+fade.range = -400,-100
+
+[Reflection]
+intensity = 128
+
+[BG BACKDROP]
+type = normal
+spriteno = 0,1
+start = -640, -210
+delta = 1,2
+mask = 1
+[BG ENERGY]
+type = normal
+spriteno = 1,1
+delta = 1,2
+tile = 1,1
+trans = addalpha
+alpha = 128,256
+velocity = 0,-.3
+[BG FLOOR]
+type = normal
+spriteno = 2,1
+start = -640, -210
+delta = 1,2
+mask = 1
+[BG ORB]
+type  = anim
+actionno = 1
+start = -160, 0
+delta = 1,2
+[Begin Action 1]
+3,1,0,0,3, ,as256d256
+3,2,0,0,3, ,as256d256
+3,3,0,0,3, ,as256d256
+3,4,0,0,3, ,as256d256
+3,5,0,0,3, ,as256d256
+3,6,0,0,3, ,as256d256
+3,7,0,0,3, ,as256d256
+3,8,0,0,3, ,as256d256
+3,9,0,0,3, ,as256d256
+3,10,0,0,3, ,as256d256
+3,11,0,0,3, ,as256d256
+3,12,0,0,3, ,as256d256
+3,13,0,0,3, ,as256d256
+3,14,0,0,3, ,as256d256
+3,15,0,0,3, ,as256d256
+3,16,0,0,3, ,as256d256
+3,17,0,0,3, ,as256d256
+3,18,0,0,3, ,as256d256
+3,19,0,0,3, ,as256d256
+3,20,0,0,3, ,as256d256
+3,21,0,0,3, ,as256d256
+3,22,0,0,3, ,as256d256
+3,23,0,0,3, ,as256d256
+3,24,0,0,3, ,as256d256
+3,25,0,0,3, ,as256d256
+3,26,0,0,3, ,as256d256
+3,27,0,0,3, ,as256d256
+3,28,0,0,3, ,as256d256
+3,29,0,0,3, ,as256d256
+3,30,0,0,3, ,as256d256
+3,31,0,0,3, ,as256d256
+3,32,0,0,3, ,as256d256
+3,33,0,0,3, ,as256d256
+3,34,0,0,3, ,as256d256
+3,35,0,0,3, ,as256d256
+3,36,0,0,3, ,as256d256
+3,37,0,0,3, ,as256d256
+3,38,0,0,3, ,as256d256
+3,39,0,0,3, ,as256d256
+3,40,0,0,3, ,as256d256
+3,41,0,0,3, ,as256d256
+3,42,0,0,3, ,as256d256
+3,43,0,0,3, ,as256d256
+3,44,0,0,3, ,as256d256
+3,45,0,0,3, ,as256d256
+3,46,0,0,3, ,as256d256
+3,47,0,0,3, ,as256d256
+3,48,0,0,3, ,as256d256
+3,49,0,0,3, ,as256d256
+3,50,0,0,3, ,as256d256
+
+[BG FOG 1]
+type  = normal
+spriteno = 4, 1
+start = 0, 110
+delta = 1,2
+mask = 1
+tile = 1, 0
+trans = addalpha
+alpha = 23,256
+velocity  = .1,0
+[BG FOG 2]
+type  = normal
+spriteno = 4, 1
+start = 0, 110
+delta = 1,2
+mask = 1
+tile = 1, 0
+trans = addalpha
+alpha = 23,256
+velocity  = -.1,0
+[BG FOG 3]
+type  = normal
+spriteno = 4, 1
+start = 0, 110
+delta = 1,2
+mask = 1
+tile = 1, 0
+trans = addalpha
+alpha = 23,256
+velocity  = .2,0
+[BG FOG 4]
+type  = normal
+spriteno = 4, 1
+start = 0, 110
+delta = 1,2
+mask = 1
+tile = 1, 0
+trans = addalpha
+alpha = 23,256
+velocity  = -.2,0
+[BG FOG 5]
+type  = normal
+spriteno = 4, 1
+start = 0, 110
+delta = 1,2
+mask = 1
+tile = 1, 0
+trans = addalpha
+alpha = 23,256
+velocity  = .3,0
+[BG FOG 6]
+type  = normal
+spriteno = 4, 1
+start = 0, 110
+delta = 1,2
+mask = 1
+tile = 1, 0
+trans = addalpha
+alpha = 23,256
+velocity  = -.3,0
+[BG FOG 7]
+type  = normal
+spriteno = 4, 1
+start = 0, 110
+delta = 1,2
+mask = 1
+tile = 1, 0
+trans = addalpha
+alpha = 23,256
+velocity  = .4,0
+[BG FOG 8]
+type  = normal
+spriteno = 4, 1
+start = 0, 110
+delta = 1,2
+mask = 1
+tile = 1, 0
+trans = addalpha
+alpha = 23,256
+velocity  = -.4,0
+[BG FOG 9]
+type  = normal
+spriteno = 4, 1
+start = 0, 110
+delta = 1,2
+mask = 1
+tile = 1, 0
+trans = addalpha
+alpha = 23,256
+velocity  = .5,0
+[BG FOG 10]
+type  = normal
+spriteno = 4, 1
+start = 0, 110
+delta = 1,2
+mask = 1
+tile = 1, 0
+trans = addalpha
+alpha = 23,256
+velocity  = -.5,0
+
+[BG FLASH]
+type  = anim
+actionno = 3
+start = -640,-210
+delta = 1,2
+mask = 1
+[Begin action 3]
+0,0, 0,0, 5
+0,5, 0,0, 5,,AS28D255
+[BG PULSE]
+type  = anim
+actionno = 4
+start = -640,-210
+delta = 1,2
+mask = 1
+[Begin action 4]
+0,6, 0,0, 5,,AS28D255
+0,0, 0,0, 5

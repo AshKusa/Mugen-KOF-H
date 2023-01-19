@@ -1,0 +1,33 @@
+[Info]
+Name         ="Kusanagi"
+DisplayName  ="Kusanagi"
+MugenVersion =1.1
+Author       ="jin"
+pal.defaults = 1,2,3,4,5,6
+localcoord   = 427,240
+
+[Files]
+cmd      =Kusanagi.cmd
+cns      =Kusanagi.cns
+sprite   =Kusanagi.sff
+anim     =Kusanagi.air
+sound    =Kusanagi.snd
+st       =Kusanagi.cns
+stCommon =common1.cns
+st1=Kusanagi-N.cns
+st2=Kusanagi-S.cns
+st3=Kusanagi-H.cns
+st4=Kusanagi-3.cns
+
+pal1 = Palettes\Kusanagi1.act
+pal2 = Palettes\Kusanagi2.act
+pal3 = Palettes\Kusanagi3.act
+pal4 = Palettes\Kusanagi4.act
+pal5 = Palettes\Kusanagi5.act
+pal6 = Palettes\Kusanagi6.act
+pal7 = Palettes\Kusanagi1.act
+pal8 = Palettes\Kusanagi2.act
+pal9 = Palettes\Kusanagi3.act
+pal10 = Palettes\Kusanagi4.act
+pal11 = Palettes\Kusanagi5.act
+pal12 = Palettes\Kusanagi6.act

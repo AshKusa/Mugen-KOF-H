@@ -1,0 +1,38 @@
+[Info]
+name         ="Chang Koehan"
+displayname  ="Chang"
+author       ="Le@n"
+versiondate  =08,07,2009    
+pal.defaults =1,2,3,4,5,6,7,8,9,10,11,12
+mugenversion = 1.1
+localcoord   = 427,240
+
+[Files]
+cmd      =Chang.cmd
+cns      =Chang.cns
+st       =Chang.cns
+stcommon =common1.cns
+sprite   =Chang.sff
+anim     =Chang.air
+sound    =Chang.snd
+st1=Chang-N.cns
+st2=Chang-S.cns
+st3=Chang-H.cns
+st4=Chang-3.cns
+
+pal1=Paletas\01.act
+pal2=Paletas\02.act
+pal3=Paletas\03.act
+pal4=Paletas\04.act
+pal5=Paletas\05.act
+pal6=Paletas\06.act
+pal7=Paletas\01.act
+pal8=Paletas\02.act
+pal9=Paletas\03.act
+pal10=Paletas\04.act
+pal11=Paletas\05.act
+pal12=Paletas\06.act
+
+[Arcade]
+intro.storyboard  = 
+ending.storyboard = 

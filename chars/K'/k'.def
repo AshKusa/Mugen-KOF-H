@@ -1,0 +1,36 @@
+[Info]
+name = "K'"
+displayname = "K'"
+mugenversion = 1.1
+localcoord   = 427,240
+author = "NAO&M. Updates by MikelAL93, Sky79"
+pal.defaults = 1,7
+
+[Files]
+sprite = k'.sff
+anim   = k'.air
+sound  = k'.snd
+cmd    = k'.cmd
+cns    = k'.cns
+stcommon = common1.cns
+st  = k'.cns
+st1 = k'-N.cns
+st2 = k'-S.cns
+st3 = k'-H.cns
+st4 = k'-3.cns
+st5 = ÐÂ.cns
+st6 = ÐÂ2.cns
+st7 = ÐÂ3.cns
+
+pal1 = Palettes\xi.act
+pal2 = Palettes\k'2.act
+pal3 = Palettes\k'3.act
+pal4 = Palettes\k'4.act
+pal5 = Palettes\k'5.act
+pal6 = Palettes\k'6.act
+pal7 = Palettes\K'Dash.act
+pal8 = Palettes\k'2003b.act
+pal9 = Palettes\k'9.act
+pal10 = Palettes\K'10.act
+pal11 = Palettes\K'11.act
+pal12 = Palettes\K'12.act

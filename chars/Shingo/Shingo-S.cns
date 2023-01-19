@@ -1,0 +1,3189 @@
+;======================================================
+;======================================================
+;======================================================
+; Special Moves
+;======================================================
+;======================================================
+;======================================================
+;======================================================
+; 114 Shiki: Aragami Mikansei
+;======================================================
+
+[Statedef 1000]
+type = S
+movetype = A
+physics = S
+juggle = ifelse((Var(8) = 11),2,10)
+velset = 0,0
+anim = 1000
+poweradd = ifelse(Var(23)>0,0,50)
+ctrl = 0
+sprpriority = 2
+
+[State 1000, 1]
+type = Varadd
+triggerall = time = 0
+trigger1 = prevstateno = 220 || prevstateno = 230 || Prevstateno = 250 || Prevstateno = 260 || prevstateno = 270 || (prevstateno = 410 && var(11) = 2)
+trigger2 = prevstateno = 1050 || prevstateno = 1100 || prevstateno = 1150 || prevstateno = 1201 || prevstateno = 1251 || prevstateno = 1400
+var(23) = -160
+ignorehitpause = 1
+persistent = 1
+
+[State 1000, 2]
+type = PalFX
+triggerall = (GameTime%2) = 0 && time < 8
+trigger1 = prevstateno = 220 || prevstateno = 230 || Prevstateno = 250 || Prevstateno = 260 || prevstateno = 270  || (prevstateno = 410 && var(11) = 2)
+trigger2 = prevstateno = 1050 || prevstateno = 1100 || prevstateno = 1150 || prevstateno = 1201 || prevstateno = 1251 || prevstateno = 1400
+time = 1
+add = 256,256,256
+mul = 256,256,256
+sinadd = 256,256,256,1
+invertall = 0
+color = 256
+ignorehitpause = 1
+
+[State 1000, 3]
+type = Varset
+triggerall = Var(8) = 11
+trigger1 = 1
+v = 8
+value = 12
+
+[State 1000, 4]
+type = PosAdd
+trigger1 = AnimElem = 2
+x = 6
+
+[State 1000, 5]
+type = PosAdd
+trigger1 = AnimElem = 3
+x = 5
+
+[State 1000, 6]
+type = PosAdd
+trigger1 = AnimElem = 4
+x = 16
+
+[State 1000, 7]
+type = PosAdd
+trigger1 = AnimElem = 5
+x = 19
+
+[State 1000, 8]
+type = PlaySnd
+trigger1 = Animelem = 6
+value = s1000,0
+
+[State 1000, 9]
+type = PosAdd
+trigger1 = AnimElem = 7
+x = 5
+
+[State 1000, 10]
+type = HitDef
+trigger1 = Animelem = 10
+attr = S, SA
+damage    = 77, 9
+getpower = ifelse(Var(23)>0,0,91), ifelse(Var(23)>0,0,91)
+givepower = 16, 16
+guardflag = MA
+priority = 4, Hit
+pausetime = 12,13
+sparkno = 2
+sparkxy = -24,-68
+guard.sparkno = 42
+hitsound   = s1,2
+guardsound = s2,1
+animtype = Hard
+ground.type = Low
+ground.slidetime = 17
+ground.hittime  = 16
+ground.velocity = -9
+guard.velocity = -9
+air.velocity = -4,-8
+airguard.velocity = -5,-4
+air.recover = 0
+fall.recover = 0 
+fall = 0
+air.fall = 1
+yaccel = 0.57
+
+[State 1000, 11]
+type = PosAdd
+trigger1 = AnimElem = 18
+x = -13
+
+[State 1000, 12]
+type = ChangeState
+trigger1 = Animtime = 0
+value = 0
+ctrl = 1
+
+;======================================================
+; 115 Shiki: Dokugami Mikansei
+;======================================================
+
+[Statedef 1050]
+type    = S
+movetype= A
+physics = S
+juggle  = ifelse(prevstateno = 1000,1,ifelse((Var(8) = 11),6,10))
+velset = 0,0
+anim = 1050
+poweradd = ifelse(Var(23)>0,0,50)
+ctrl = 0
+sprpriority = 2
+
+[State 1050, 1]
+type = Varadd
+triggerall = time = 0
+trigger1 = prevstateno = 220 || prevstateno = 230 || Prevstateno = 250 || Prevstateno = 260 || prevstateno = 270 || (prevstateno = 410 && var(11) = 2)
+trigger2 = Prevstateno = 261 || prevstateno = 1000 || prevstateno = 1100 || prevstateno = 1150
+var(23) = -160
+ignorehitpause = 1
+persistent = 1
+
+[State 1050, 2]
+type = PalFX
+triggerall = (GameTime%2) = 0 && time < 8
+trigger1 = prevstateno = 220 || prevstateno = 230 || Prevstateno = 250 || Prevstateno = 260 || prevstateno = 270 || (prevstateno = 410 && var(11) = 2)
+trigger2 = Prevstateno = 261 || prevstateno = 1000 || prevstateno = 1100 || prevstateno = 1150
+time = 1
+add = 256,256,256
+mul = 256,256,256
+sinadd = 256,256,256,1
+invertall = 0
+color = 256
+ignorehitpause = 1
+
+[State 1050, 3]
+type = PosAdd
+trigger1 = AnimElem = 2
+x = 29
+
+[State 1050, 4]
+type = PosAdd
+trigger1 = AnimElem = 3
+x = 15
+
+[State 1050, 5]
+type = PosAdd
+trigger1 = AnimElem = 4
+x = 7
+
+[State 1050, 6]
+type = PosAdd
+trigger1 = AnimElem = 5
+x = 23
+
+[State 1050, 7]
+type = PlaySnd
+trigger1 = Animelem = 5
+value = s1050,0
+
+[State 1050, 8]
+type = ReversalDef
+trigger1 = Animelem = 5
+trigger2 = Animelem = 6
+attr = S, SA
+pausetime = 18,18
+sparkno = 42
+hitsound = s2,1
+reversal.attr = SCA,AA
+numhits = 0
+
+[State 1050, 9]
+type = HitDef
+triggerall = Random <= 100
+triggerall = Prevstateno != 271
+trigger1 = Animelem = 6
+attr = S, SA
+damage = ifelse(P2MoveType = A,160,70), 9
+getpower = ifelse(Var(23)>0,0,91), ifelse(Var(23)>0,0,91)
+givepower = 16, 16
+guardflag = MA
+hitflag = MAF
+priority = 4, Hit
+pausetime = 30,30
+sparkno = 2
+sparkxy = -24,-68
+guard.sparkno = 42
+hitsound   = s1,2
+guardsound = s2,1
+animtype = Hard
+ground.type = Low
+ground.slidetime = 30
+ground.hittime  = 30
+ground.velocity = -6
+guard.velocity = -9
+air.velocity = -4,-7
+airguard.velocity = -5,-4
+air.recover = 0
+fall.recover = 0 
+fall = 0
+air.fall = 1
+envshake.time = 24 
+envshake.ampl = -3
+yaccel = 0.52
+
+[State 1050, 10]
+type = VarSet
+trigger1 = Animelemtime(7) <= 0 && MoveContact
+v = 8
+value = 1
+
+[State 1050, 11]
+type = VarRandom
+trigger1 = Var(8) = 1
+v = 8
+range = 2,3
+
+[State 1050, 12]
+type = PosAdd
+trigger1 = AnimElem = 7
+x = 6
+
+[State 1050, 13]
+type = PosAdd
+trigger1 = AnimElem = 8
+x = 22
+
+[State 1050, 14]
+type = VarRandom
+triggerall = Var(8) = 0
+trigger1 = Animelemtime(8) >= 0 && Animelemtime(11) <= 0
+trigger1 = !MoveContact
+v = 8
+range = 4,9
+
+[State 1050, 15]
+type = HitDef
+trigger1 = P2statetype != A && (Var(8) = 2 && Animelem = 10)
+attr = S, SA
+damage    = 160, 9
+getpower = ifelse(Var(23)>0,0,91), ifelse(Var(23)>0,0,91)
+givepower = 16, 16
+guardflag = MA
+hitflag = MAF
+priority = 4, Hit
+pausetime = 12,13
+sparkno = 2
+sparkxy = -24,-68
+guard.sparkno = 42
+hitsound   = s1,4
+guardsound = s2,1
+animtype = Diagup
+ground.type = High
+ground.slidetime = 17
+ground.hittime  = 17
+ground.velocity = -5,-10
+air.velocity = -5,-10
+air.recover = 0
+fall.recover = 0 
+fall = 1
+palfx.time = 42
+palfx.add = 240,50,0 
+palfx.mul = 250,224,120 
+palfx.sinadd = 110,55,85,10
+Palfx.color = 0 
+palfx.invertall = 1 
+envshake.time = 20 
+envshake.ampl = -2
+yaccel = 0.57
+
+[State 1050, 16]
+type = Helper
+triggerall = P2stateno != [120,155]
+trigger1 = Var(8) = 2 && Animelem = 10
+helpertype = Normal
+name = "Flame Sparks"
+id = 1060
+pos = 0,0
+postype = P2
+facing = 1
+stateno = 1060
+keyctrl = 0 
+ownpal = 1
+sprpriority = 4
+
+[State 1050, 17]
+type = HitDef
+trigger1 = Var(8) = 3 && Animelem = 10
+attr = S, SA
+damage    = 70, 9
+getpower = ifelse(Var(23)>0,0,91), ifelse(Var(23)>0,0,91)
+givepower = 16, 16
+guardflag = HA
+priority = 4
+pausetime = 8,8
+sparkno = 2
+sparkxy = -24,-68
+guard.sparkno = 42
+hitsound   = s1,4
+guardsound = s2,1
+animtype = Hard
+ground.type = High
+ground.slidetime = 20
+ground.hittime  = 20
+ground.velocity = -14,-7
+air.velocity = -14,-7
+air.recover = 0
+fall.recover = 0 
+fall = 1
+p2stateno = 351
+p2facing = 1
+
+[State 1050, 18]
+type = HitDef
+trigger1 = var(8) >= 4 && Animelem = 10
+attr = S, SA
+damage    = 100, 9
+getpower = ifelse(Var(23)>0,0,91), ifelse(Var(23)>0,0,91)
+givepower = 16, 16
+guardflag = MA
+hitflag = MAF
+priority = 4, Hit
+pausetime = 12,13
+sparkno = 2
+sparkxy = -24,-68
+guard.sparkno = 42
+hitsound   = s1,4
+guardsound = s2,1
+animtype = Hard
+ground.type = High
+ground.slidetime = 17
+ground.hittime  = 17
+ground.velocity = -4.6,-9
+guard.velocity = -9
+air.velocity = -4.6,-9
+airguard.velocity = -5,-4
+air.recover = 0
+fall.recover = 0 
+fall = 1
+air.fall = 1
+yaccel = 0.57
+
+[State 1050, 19]
+type = PosAdd
+trigger1 = AnimElem = 13
+x = 14
+
+[State 1050, 20]
+type = PosAdd
+trigger1 = AnimElem = 14
+x = 8
+
+[State 1050, 21]
+type = ChangeState
+triggerall = Var(8) = 3
+trigger1 = Animelem = 14
+value = 195
+ctrl = 0
+
+[State 1050, 22]
+type = ChangeState
+trigger1 = Animtime = 0
+value = 0
+ctrl = 1
+
+;------------------------------------------------------
+; Flame Sparks Helper
+;------------------------------------------------------
+
+[Statedef 1060]
+type    = S
+physics = S
+juggle = 0
+anim = 10000
+ctrl = 0
+sprpriority = 5
+
+[State 1060, 1]
+type = DestroySelf
+trigger1 = Time >= 40
+
+;======================================================
+;  100 Shiki: Oniyaki Mikansei Weak (1/3)
+;======================================================
+
+[Statedef 1100]
+type    = S
+movetype= A
+physics = S
+juggle  = ifelse((prevstateno = 1201 || prevstateno = 1251), 1, ifelse((Var(8) = 11),4,10))
+poweradd = ifelse(Var(23)>0,0,50)
+velset = 0,0
+anim = 1100
+ctrl = 0
+sprpriority = 2
+
+[State 1100, 1]
+type = Varadd
+triggerall = time = 0
+trigger1 = prevstateno = 220 || prevstateno = 230 || Prevstateno = 250 || Prevstateno = 260 || prevstateno = 270 || (prevstateno = 410 && var(11) = 2)
+trigger2 = prevstateno = 1201 || prevstateno = 1251
+var(23) = -160
+ignorehitpause = 1
+persistent = 1
+
+[State 1100, 2]
+type = PalFX
+triggerall = (GameTime%2) = 0 && time < 6
+trigger1 = prevstateno = 220 || prevstateno = 230 || Prevstateno = 250 || Prevstateno = 260 || prevstateno = 270 || (prevstateno = 410 && var(11) = 2)
+trigger2 = prevstateno = 1201 || prevstateno = 1251
+time = 1
+add = 256,256,256
+mul = 256,256,256
+sinadd = 256,256,256,1
+invertall = 0
+color = 256
+ignorehitpause = 1
+
+[State 1100, 3]
+type = PlaySnd
+trigger1 = Animelem = 3
+value = s1100,0
+
+[State 1100, 4]
+type = HitDef
+trigger1 = Animelem = 3
+attr = S, SA
+animtype  = Hard
+damage    = 91, 9
+getpower = ifelse(Var(23)>0,0,91), ifelse(Var(23)>0,0,91)
+givepower = 16, 16
+priority  = 5
+guardflag = MA
+hitflag = MAF
+pausetime = 11,12
+sparkno = 2
+sparkxy = -10,-70
+guard.sparkno = 42
+hitsound   = s1,2
+guardsound = s2,1
+ground.type = Low
+ground.slidetime = 17
+ground.hittime  = 16
+ground.velocity = -3,-11
+guard.velocity = -7
+air.velocity = -3,-11
+air.recover = 0
+fall.recover = 0 
+fall = 1
+air.fall = 1
+yaccel = 0.57
+
+[State 1100, 5]
+type = Varset
+trigger1 = Animtime = 0
+v = 9
+value = ifelse(MoveHit,1,0)
+ignorehitpause = 1
+
+[State 1100, 6]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 1101
+ctrl = 0
+
+;------------------------------------------------------
+;  100 Shiki: Oniyaki Mikansei Weak (2/3)
+;------------------------------------------------------
+
+[Statedef 1101]
+type    = A
+movetype= A
+physics = N
+velset = 3.4,-7.4
+anim = 1101
+
+[State 1101, 1]
+type = VelAdd
+trigger1 = 1
+y = .48
+
+[State 1101, 2]
+type = PosAdd
+trigger1 = Animelem = 1
+x = 20
+	
+[State 1101, 3]
+type = HitDef
+trigger1 = Time = 0 && numexplod(6019) = 1
+trigger2 = Animelem = 1 && var(9) != 1
+attr = A, SA
+animtype  = Hard
+damage    = 91, 9
+getpower = ifelse(Var(23)>0,0,91), ifelse(Var(23)>0,0,91)
+givepower = 16, 16
+priority  = 5
+guardflag = MA
+hitflag = MAF
+pausetime = 11,12
+sparkno = 2
+sparkxy = -10,-88
+guard.sparkno = 42
+hitsound   = s1,2
+guardsound = s2,1
+ground.type = Low
+ground.slidetime = 17
+ground.hittime  = 16
+ground.velocity = -3,-11
+guard.velocity = -7
+air.velocity = -3,-11
+air.recover = 0
+fall.recover = 0 
+fall = 1
+air.fall = 1
+yaccel = 0.57
+
+[State 1101, 4]
+type = PlaySnd
+trigger1 = Animelem = 1
+value = s3,1
+
+[State 1101, 5]
+type = Veladd
+trigger1 = Animelemtime(1) <= 4
+x = -0.4
+
+[State 1101, 6]
+type = Velset
+trigger1 = Animelem = 4
+x = 0.2
+
+[State 1101, 7]
+type = Varset
+trigger1 = Animtime = 0
+v = 9
+value = 0
+
+[State 1101, 8]
+type = ChangeState
+trigger1 = Vel Y > 0 && Pos Y >= -5
+value = 1102
+
+;------------------------------------------------------
+; 100 Shiki: Oniyaki Mikansei Weak (3/3)
+;------------------------------------------------------
+
+[Statedef 1102]
+type    = S
+movetype= A
+physics = S
+velset = 0,0
+anim = 1102
+ctrl = 0
+sprpriority = 2
+
+[State 1102, 1]
+type = Posset
+trigger1 = time = 0
+y = 0
+
+[State 1102, 2]
+type = Afterimage 
+triggerall = Prevstateno = 3602 || Prevstateno = 3611
+Trigger1 = Animelem = 2
+
+[State 1102, 3]
+type = ChangeState
+trigger1 = Animtime = 0
+value = 0
+ctrl = 1
+
+;======================================================
+;  100 Shiki: Oniyaki Mikansei Strong (1/2)
+;======================================================
+
+[Statedef 1150]
+type    = S
+movetype= A
+physics = S
+juggle  = ifelse((prevstateno = 1201 || prevstateno = 1251), 1, ifelse((Var(8) = 11),4,10))
+poweradd = ifelse(Var(23)>0,0,50)
+velset = 0,0
+anim = 1150
+ctrl = 0
+sprpriority = 2
+
+[State 1150, 1]
+type = Varadd
+triggerall = time = 0
+trigger1 = prevstateno = 220 || prevstateno = 230 || Prevstateno = 250 || Prevstateno = 260 || prevstateno = 270 || (prevstateno = 410 && var(11) = 2)
+trigger2 = prevstateno = 1201 || prevstateno = 1251
+var(23) = -160
+ignorehitpause = 1
+persistent = 1
+
+[State 1150, 2]
+type = PalFX
+triggerall = (GameTime%2) = 0 && time < 6
+trigger1 = prevstateno = 220 || prevstateno = 230 || Prevstateno = 250 || Prevstateno = 260 || prevstateno = 270 || (prevstateno = 410 && var(11) = 2)
+trigger2 = prevstateno = 1201 || prevstateno = 1251
+time = 1
+add = 256,256,256
+mul = 256,256,256
+sinadd = 256,256,256,1
+invertall = 0
+color = 256
+ignorehitpause = 1
+
+[State 1150, 3]
+type = PlaySnd
+trigger1 = Animelem = 3
+value = s1100,0
+
+[State 1150, 4]
+type = HitDef
+trigger1 = Animelem = 3
+attr = S, SA
+animtype  = Hard
+damage    = 100, 9
+getpower = ifelse(Var(23)>0,0,91), ifelse(Var(23)>0,0,91)
+givepower = 16, 16
+priority  = 5
+guardflag = MAF
+pausetime = 11,12
+sparkno = 2
+sparkxy = -10,-70
+guard.sparkno = 42
+hitsound   = s1,2
+guardsound = s2,1
+ground.type = Low
+ground.slidetime = 17
+ground.hittime  = 16
+ground.velocity = -4,-9.9
+guard.velocity = -7
+air.velocity = -4,-9.9
+fall = 1
+air.fall = 1
+air.recover = 0
+fall.recover = 0 
+yaccel = 0.57
+
+[State 1150, 5]
+type = Varset
+trigger1 = Animtime = 0
+v = 9
+value = ifelse(MoveHit,1,0)
+
+[State 1150, 6]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 1151
+ctrl = 0
+
+;------------------------------------------------------
+;  100 Shiki: Oniyaki Mikansei Strong (2/2)
+;------------------------------------------------------
+
+[Statedef 1151]
+type    = A
+movetype= A
+physics = N
+velset = 3.7,-8.7
+anim = 1151
+
+[State 1151, 1]
+type = VelAdd
+trigger1 = 1
+y = .48
+
+[State 1151, 2]
+type = PosAdd
+trigger1 = Animelem = 1
+x = 20
+
+[State 1151, 3]
+type = HitDef
+trigger1 = Time = 0 && numexplod(6019) = 1
+trigger2 = Animelem = 1 && var(9) != 1
+attr = A, SA
+animtype  = Hard
+damage    = 100, 9
+getpower = ifelse(Var(23)>0,0,91), ifelse(Var(23)>0,0,91)
+givepower = 16, 16
+priority  = 5
+guardflag = MA
+hitflag = MAF
+pausetime = 11,12
+sparkno = 2
+sparkxy = -10,-88
+guard.sparkno = 42
+hitsound   = s1,2
+guardsound = s2,1
+ground.type = Low
+ground.slidetime = 17
+ground.hittime  = 16
+ground.velocity = -4,-9.9
+guard.velocity = -7
+air.velocity = -4,-9.9
+fall = 1
+air.recover = 0
+fall.recover = 0 
+yaccel = 0.57
+
+[State 1151, 4]
+type = PlaySnd
+trigger1 = Animelem = 1
+value = s3,1
+
+[State 1151, 5]
+type = Veladd
+trigger1 = Animelemtime(1) <= 4
+x = -0.4
+
+[State 1151, 6]
+type = Velset
+trigger1 = Animelem = 3,2
+x = 0
+
+[State 1151, 7]
+type = Varset
+trigger1 = Animtime = 0
+v = 9
+value = 0
+
+[State 1151, 8]
+type = ChangeState
+trigger1 = Vel Y > 0 && Pos Y >= -5
+value = 1102
+
+;======================================================
+; 212 Shiki: Kototsuki Mikansei Weak (1/9)
+;======================================================
+
+[Statedef 1200]
+type    = S
+movetype= A
+physics = N
+juggle  = ifelse(prevstateno = 1000,1,5)
+poweradd = ifelse(Var(23)>0,0,50)
+velset = 0,0
+anim = 1200
+ctrl = 0
+sprpriority = 2
+
+[State 1200, 1]
+type = Varadd
+triggerall = time = 0
+trigger1 = prevstateno = 220 || prevstateno = 230 || Prevstateno = 250 || Prevstateno = 260 || prevstateno = 270 || (prevstateno = 410 && var(11) = 2)
+trigger2 = prevstateno = 1000 || prevstateno = 1100 || prevstateno = 1150 || prevstateno = 1400
+var(23) = -160
+ignorehitpause = 1
+persistent = 1
+
+[State 1200, 2]
+type = PalFX
+triggerall = (GameTime%2) = 0 && time < 8
+trigger1 = prevstateno = 220 || prevstateno = 230 || Prevstateno = 250 || Prevstateno = 260 || prevstateno = 270 || (prevstateno = 410 && var(11) = 2)
+trigger2 = prevstateno = 1000 || prevstateno = 1100 || prevstateno = 1150 || prevstateno = 1400
+time = 1
+add = 256,256,256
+mul = 256,256,256
+sinadd = 256,256,256,1
+invertall = 0
+color = 256
+ignorehitpause = 1
+
+[State 1200, 3]
+type = VelSet
+trigger1 = Animelem = 2
+x = 6.9
+
+[State 1200, 4]
+type = VelMul
+trigger1 = Animelemtime(7) >= 0
+x = 0.8
+
+[State 1200, 5]
+type = VelSet
+trigger1 = AnimElem = 8
+x = 0
+
+[State 1200, 6]
+type = ChangeState
+trigger1 = P2BodyDist X < 35
+trigger1 = Animelemtime(2) > 0
+trigger1 = Animelemtime(7) < 0
+value = 1201
+ctrl = 0
+
+[State 1200, 7]
+type = ChangeState
+trigger1 = Animtime = 0
+value = 0
+ctrl = 1
+
+;------------------------------------------------------
+; 212 Shiki: Kototsuki Mikansei Weak (2/9)
+;------------------------------------------------------
+
+[Statedef 1201]
+type = S
+movetype = A
+physics = N
+anim = 1201
+ctrl = 0
+
+[State 1201, 1]
+type = PlaySnd
+trigger1 = Animelem = 5
+value = s1200, 0
+
+[State 1201, 2]
+type = HitDef
+trigger1 = Animelem = 5
+persistent = 1
+attr = S, SA
+animtype  = Hard
+damage    = 70, 9
+getpower = ifelse(Var(23)>0,0,50), ifelse(Var(23)>0,0,50)
+givepower = 16, 16
+priority  = 5
+guardflag = MA
+hitflag = MAF
+pausetime = ifelse((P2statetype = A),11,7),ifelse((P2statetype = A),11,13)
+sparkno = 2
+sparkxy = -24,-72
+guard.sparkno = 42
+hitsound   = s1,2
+guardsound = s2,1
+ground.type = High
+ground.slidetime = 30
+ground.hittime  = 30
+ground.velocity = -8
+ground.cornerpush.veloff = -18
+guard.velocity = -7
+air.velocity = -4,-8
+forcestand = 1
+air.recover = 0
+fall.recover = 0 
+yaccel = 0.59
+air.fall = 1
+
+[State 1201, 3]
+type = VelMul
+trigger1 = Animelemtime(8) <= 3
+x = 0.94
+
+[State 1201, 4]
+type = ChangeState
+trigger1 = MoveHit && AnimTime = 0
+trigger2 = !MoveHit && Animelemtime(6) >= 2
+value = ifelse(MoveHit,1202,1208)
+ctrl = ifelse(MoveHit,0,1)
+
+;------------------------------------------------------
+; 212 Shiki: Kototsuki Mikansei Weak (3/9)
+;------------------------------------------------------
+
+[Statedef 1202]
+type = A
+movetype = A
+physics = A
+anim = 1202
+velset = 5.0,-4
+ctrl = 0
+
+[State 1202, 1]
+type = HitDef
+trigger1 = P2StateType = A
+trigger1 = Time = 0
+persistent = 1
+attr = A, SA
+animtype  = Up
+damage    = 30, 9
+getpower = ifelse(Var(23)>0,0,50), ifelse(Var(23)>0,0,50)
+givepower = 16, 16
+priority  = 5
+guardflag = MA
+hitflag = MAF
+pausetime = 11,11
+sparkno = 2
+sparkxy = -10,-70
+guard.sparkno = 42
+hitsound   = s1,4
+guardsound = s2,1
+ground.type = Low
+ground.slidetime = 24
+ground.hittime  = 24
+ground.velocity = 0,8
+guard.velocity = -4
+air.velocity = -4,-8.4
+air.recover = 0
+fall.recover = 0 
+fall = 1
+p2stateno = 1206
+p2facing = 1
+yaccel = 0.57
+
+[State 1202, 2]
+type = PlaySnd
+trigger1 = Animelem = 3
+value = s1200, 1
+
+[State 1202, 3]
+type = ChangeState
+trigger1 = Pos Y >= -5 && Vel Y > 0
+value = 1203
+
+;------------------------------------------------------
+; 212 Shiki: Kototsuki Mikansei Weak (4/9)
+;------------------------------------------------------
+
+[Statedef 1203]
+type = S
+movetype = A
+physics = N
+anim = 1203
+velset = 0,0
+ctrl = 0
+
+[State 1203, 1]
+type = posset
+trigger1 = Time = 0
+y= 0
+
+[State 1203, 3]
+type = PosAdd
+trigger1 = AnimElem = 1
+x = 20
+
+[State 1203, 4]
+type = HitDef
+trigger1 = P2StateType = A
+trigger1 = Animelem = 1
+persistent = 1
+attr = A, SA
+animtype  = Up
+damage    = 30, 9
+getpower = ifelse(Var(23)>0,0,50), ifelse(Var(23)>0,0,50)
+givepower = 16, 16
+priority  = 5
+guardflag = MA
+hitflag = MAF
+pausetime = 8,10
+sparkno = 2
+sparkxy = -10,-40
+guard.sparkno = 42
+hitsound   = s1,4
+guardsound = s2,1
+ground.type = Low
+ground.slidetime = 24
+ground.hittime  = 24
+ground.velocity = 0,8
+guard.velocity = -4
+air.velocity = -4,-8.4
+air.recover = 0
+fall.recover = 0 
+fall = 1
+p2stateno = 1206
+p2facing = 1
+yaccel = 0.54
+
+[State 1203, 5]
+type = HitDef
+trigger1 = P2StateType != A
+trigger1 = Animelem = 1
+persistent = 1
+attr = A, SA
+animtype  = Up
+damage    = 30, 9
+getpower = ifelse(Var(23)>0,0,91), ifelse(Var(23)>0,0,91)
+givepower = 16, 16
+priority  = 5
+guardflag = MA
+hitflag = MA
+pausetime = 12,14
+sparkno = 2
+sparkxy = -10,-40
+guard.sparkno = 42
+hitsound  = s1,4
+guardsound = s2,1
+ground.type = Low
+ground.slidetime = 24
+ground.hittime  = 24
+ground.velocity = 0,8
+guard.velocity = -4
+air.velocity = -4,-8.4
+air.recover = 0
+fall.recover = 0 
+fall = 1
+p2stateno = 1204
+p2facing = 1
+yaccel = 0.54
+
+[State 1203, 6]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+;------------------------------------------------------
+; 212 Shiki: Kototsuki Mikansei Weak P2 state (5/9)
+;------------------------------------------------------
+
+[Statedef 1204]
+type    = S
+movetype= H
+physics = N
+velset = 0,0
+
+[State 1204, 1]
+type = ChangeAnim2
+trigger1 = time = 0
+trigger1 = SelfAnimExist(5556+var(55)*30000)
+value = 5556+var(55)*30000
+
+[State 1204, 2]
+type = ChangeAnim2
+trigger1 = time = 0
+trigger1 = !SelfAnimExist(5556+var(55)*30000)
+value = 12040+var(55)*30000
+
+[State 1204, 3]
+type = ChangeState
+trigger1 = HitShakeOver = 1
+value = 1205
+
+;------------------------------------------------------
+; 212 Shiki: Kototsuki Mikansei Weak P2 state (6/9)
+;------------------------------------------------------
+
+[Statedef 1205]
+type    = L
+movetype= H
+physics = N
+
+[State 1205, 1]
+type = EnvShake
+trigger1 = time = 0
+time = 9
+freq = 240
+ampl = -3
+
+[State 1205, 2]
+type = ChangeAnim
+trigger1 = time = 0
+trigger1 = SelfAnimExist(5101)
+value = 5101
+
+[State 1205, 2]
+type = ChangeAnim
+trigger1 = time = 0
+trigger1 = !SelfAnimExist(5101)
+value = 5100
+
+[State 1205, 3]
+type = PosSet
+trigger1 = Time = 0
+y = 0
+
+[State 1205, 4]
+type = VelSet
+trigger1 = Time = 0
+y = 0
+
+[State 1205, 5]
+type = SelfState
+trigger1 = AnimTime = 0
+value = 5101
+
+;------------------------------------------------------
+; 212 Shiki: Kototsuki Mikansei Weak P2 state (7/9)
+;------------------------------------------------------
+
+[Statedef 1206]
+type    = A
+movetype= H
+physics = N
+velset = 0,0
+
+[State 1206, 1]
+type = ChangeAnim2
+trigger1 = time = 0
+value = 12060+var(55)*30000
+
+[State 1206, 2]
+type = ChangeState
+trigger1 = HitShakeOver = 1
+value = 1207
+
+;------------------------------------------------------
+; 212 Shiki: Kototsuki Mikansei Weak P2 state (8/9)
+;------------------------------------------------------
+
+[Statedef 1207]
+type = A
+movetype = H
+physics = N
+velset = ifelse((P2Stateno = 3002),-12,0),13
+
+[State 1207, 1]
+type = NotHitBy
+triggerall = P2Stateno != 3002
+trigger1 = 1
+value = SCA
+
+[State 1207, 2]
+type = VelAdd
+trigger1 = 1
+y = 0.57 
+
+[State 1207, 3]
+type = VelSet
+trigger1 = (Vel y > 0) && (Pos y >= 0)
+x = -1
+
+[State 1207, 4]
+type = ChangeAnim
+trigger1 = (Vel y > 0) && (Pos y >= 0)
+trigger1 = SelfAnimExist(5062)
+value = 5062
+
+[State 1207, 5]
+type = SelfState
+trigger1 = (Vel y > 0) && (Pos y >= 0)
+value = 5100
+
+;------------------------------------------------------
+; 212 Shiki: Kototsuki Mikansei Weak (9/9)
+;------------------------------------------------------
+
+[Statedef 1208]
+type = S
+movetype = A
+physics = N
+anim = 1208
+ctrl = 0
+
+[State 1208, 1]
+type = PosAdd
+trigger1 = Animelem = 2
+trigger2 = Animelem = 5
+x = -ifelse((Animelem = 5),13,11)
+
+[State 1208, 2]
+type = VelMul
+trigger1 = 1
+x = ifelse(Animelemtime(3) >= 0,0.5,0.6)
+
+[State 1208, 3]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+;======================================================
+; 212 Shiki: Kototsuki Mikansei Strong (1/3)
+;======================================================
+
+[Statedef 1250]
+type    = S
+movetype= A
+physics = N
+juggle  = ifelse(prevstateno = 1000,1,5)
+poweradd = ifelse(Var(23)>0,0,50)
+velset = 0,0
+anim = 1250
+ctrl = 0
+sprpriority = 2
+
+[State 1250, 1]
+type = Varadd
+triggerall = time = 0
+trigger1 = prevstateno = 220 || prevstateno = 230 || Prevstateno = 250 || Prevstateno = 260 || prevstateno = 270 || (prevstateno = 410 && var(11) = 2)
+trigger2 = prevstateno = 1000 || prevstateno = 1100 || prevstateno = 1150 || prevstateno = 1400
+var(23) = -160
+ignorehitpause = 1
+persistent = 1
+
+[State 1250, 2]
+type = PalFX
+triggerall = (GameTime%2) = 0 && time < 8
+trigger1 = prevstateno = 220 || prevstateno = 230 || Prevstateno = 250 || Prevstateno = 260 || prevstateno = 270 || (prevstateno = 410 && var(11) = 2)
+trigger2 = prevstateno = 1000 || prevstateno = 1100 || prevstateno = 1150 || prevstateno = 1400
+time = 1
+add = 256,256,256
+mul = 256,256,256
+sinadd = 256,256,256,1
+invertall = 0
+color = 256
+ignorehitpause = 1
+
+[State 1250, 3]
+type = VelSet
+trigger1 = Animelem = 2
+x = 6.9
+
+[State 1250, 4]
+type = VelMul
+trigger1 = Animelemtime(9) >= 0
+x = 0.8
+
+[State 1250, 5]
+type = VelSet
+trigger1 = AnimElem = 10
+x = 0
+
+[State 1250, 6]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+[State 1250, 7]
+type = ChangeState
+trigger1 = P2BodyDist X < 50
+trigger1 = Animelemtime(2) > 0
+trigger1 = Animelemtime(9) < 0
+value = 1251
+ctrl = 0
+
+[State 1250, 8]
+type = ChangeState
+trigger1 = Animtime = 0
+value = 0
+ctrl = 1
+
+;------------------------------------------------------
+; 212 Shiki: Kototsuki Mikansei Strong (2/3)
+;------------------------------------------------------
+
+[Statedef 1251]
+type = S
+movetype = A
+physics = N
+anim = 1251
+ctrl = 0
+
+[State 1251, 1]
+type = PlaySnd
+trigger1 = Animelem = 5
+value = s1200, 0
+
+[State 1251, 2]
+type = HitDef
+trigger1 = Animelem = 5
+persistent = 1
+attr = S, SA
+animtype  = Medium
+damage    = 90, 9
+getpower = ifelse(Var(23)>0,0,50), ifelse(Var(23)>0,0,50)
+givepower = 16, 16
+priority  = 5
+guardflag = MA
+hitflag = MAF
+pausetime = 8,13
+sparkno = 2
+sparkxy = -24,-72
+guard.sparkno = 42
+hitsound   = s1,2
+guardsound = s2,1
+ground.type = High
+ground.slidetime = 30
+ground.hittime  = 30
+ground.velocity = -9
+ground.cornerpush.veloff = -18
+guard.velocity = -7
+air.velocity = -4,-8
+forcestand = 1
+air.recover = 0
+fall.recover = 0 
+yaccel = 0.59
+air.fall = 1
+
+[State 1251, 3]
+type = VelMul
+trigger1 = Animelemtime(8) <= 3
+x = 0.94
+
+[State 1251, 4]
+type = ChangeState
+trigger1 = MoveHit && AnimTime = 0
+trigger2 = !MoveHit && Animelemtime(6) >= 2
+value = ifelse(MoveHit,1252,1208)
+ctrl = ifelse(MoveHit,0,1)
+
+;------------------------------------------------------
+; 212 Shiki: Kototsuki Mikansei Strong (3/3)
+;------------------------------------------------------
+
+[Statedef 1252]
+type = A
+movetype = A
+physics = A
+anim = 1202
+velset = 5.6,-4
+ctrl = 0
+
+[State 1252, 1]
+type = HitDef
+trigger1 = P2StateType = A
+trigger1 = Time = 0
+persistent = 1
+attr = A, SA
+animtype  = Up
+damage    = 30, 9
+getpower = ifelse(Var(23)>0,0,50), ifelse(Var(23)>0,0,50)
+givepower = 16, 16
+priority  = 5
+guardflag = MA
+hitflag = MAF
+pausetime = 11,11
+sparkno = 2
+sparkxy = -10,-70
+guard.sparkno = 42
+hitsound   = s1,4
+guardsound = s2,1
+ground.type = Low
+ground.slidetime = 24
+ground.hittime  = 24
+ground.velocity = 0,8
+guard.velocity = -4
+air.velocity = -4,-8.4
+fall = 1
+p2stateno = 1206
+p2facing = 1
+air.recover = 0
+fall.recover = 0 
+yaccel = 0.57
+
+[State 1252, 2]
+type = PlaySnd
+trigger1 = Animelem = 3
+value = s1200, 1
+
+[State 1252, 3]
+type = ChangeState
+trigger1 = Pos Y >= -5 && Vel Y > 0
+value = 1203
+
+;======================================================
+; Shingo Kick Weak (1/3)
+;======================================================
+
+[Statedef 1300]
+type    = S
+movetype= A
+physics = S
+juggle  = ifelse((prevstateno = 1000 || prevstateno = 1050 || prevstateno = 1100 || prevstateno = 1150 || prevstateno = 1201 || prevstateno = 1251), 1, ifelse((Var(8) = 11),6,10))
+poweradd = ifelse(Var(23)>0,0,50)
+velset = 0,0
+anim = 1300
+ctrl = 0
+sprpriority = 2
+
+[State 1300, 1]
+type = Varadd
+triggerall = time = 0
+trigger1 = prevstateno = 220 || prevstateno = 230 || Prevstateno = 250 || Prevstateno = 260 || prevstateno = 270 || (prevstateno = 410 && var(11) = 2)
+trigger2 = prevstateno = 1000 || prevstateno = 1050 || prevstateno = 1100 || prevstateno = 1150 || prevstateno = 1201 || prevstateno = 1251
+var(23) = -160
+ignorehitpause = 1
+persistent = 1
+
+[State 1300, 2]
+type = PalFX
+triggerall = (GameTime%2) = 0 && time < 8
+trigger1 = prevstateno = 220 || prevstateno = 230 || Prevstateno = 250 || Prevstateno = 260 || prevstateno = 270 || (prevstateno = 410 && var(11) = 2)
+trigger2 = prevstateno = 1000 || prevstateno = 1050 || prevstateno = 1100 || prevstateno = 1150 || prevstateno = 1201 || prevstateno = 1251
+time = 1
+add = 256,256,256
+mul = 256,256,256
+sinadd = 256,256,256,1
+invertall = 0
+color = 256
+ignorehitpause = 1
+
+[State 1300, 3]
+type = PosAdd
+trigger1 = Animelem = 2
+x = -5
+y = -1
+
+[State 1300, 4]
+type = PlaySnd
+trigger1 = Animelem = 3
+value = s1300,0
+
+[State 1300, 5]
+type = PosAdd
+trigger1 = Animelem = 5
+x = 28
+
+[State 1300, 6]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 1301
+ctrl = 0
+
+;------------------------------------------------------
+; Shingo Kick Weak (2/3)
+;------------------------------------------------------
+
+[Statedef 1301]
+type    = A
+movetype= A
+physics = A
+velset = 4.4,-3.8
+anim = 1301
+
+[State 1301, 1]
+type = PosAdd
+trigger1 = Animelem = 1
+y = -20
+
+[State 1301, 2]
+type = HitDef
+trigger1 = Time = 0
+attr = A, SA
+animtype  = Hard
+damage    = 111, 9
+getpower = ifelse(Var(23)>0,0,91), ifelse(Var(23)>0,0,91)
+givepower = 16, 16
+priority  = 5
+guardflag = MA
+hitflag = MAF
+pausetime = 9,11
+sparkno = 2
+sparkxy = -10,-52
+guard.sparkno = 42
+hitsound   = s1,4
+guardsound = s2,1
+ground.type = Low
+ground.slidetime = 17
+ground.hittime  = 16
+ground.velocity = -5,-8.5
+guard.velocity = -7
+air.velocity = -5,-7.5
+fall = 1
+air.recover = 0
+fall.recover = 0 
+yaccel = 0.59
+
+[State 1301, 3]
+type = PlaySnd
+trigger1 = Animelem = 2
+value = s3,1
+
+[State 1301, 4]
+type = veladd
+trigger1 = AnimElem = 5,> 0
+y = 0.5
+
+[State 1301, 5]
+type = ChangeState
+trigger1 = Vel Y > 0 && Pos Y >= -5
+value = 1302
+
+;------------------------------------------------------
+; Shingo Kick Weak (3/3)
+;------------------------------------------------------
+
+[Statedef 1302]
+type    = S
+movetype= A
+physics = S
+velset = 0,0
+anim = 1302
+ctrl = 0
+sprpriority = 2
+
+[State 1302, 1]
+type = Posset
+trigger1 = time = 0
+y = 0
+
+[State 1302, 2]
+type = PosAdd
+trigger1 = Animelem = 1
+x = 8
+
+[State 1302, 3]
+type = PosAdd
+trigger1 = Animelem = 2
+x = 15
+
+[State 1302, 4]
+type = PosAdd
+trigger1 = Animelem = 3
+x = 2
+
+[State 1302, 5]
+type = PosAdd
+trigger1 = Animelem = 4
+x = 6
+
+[State 1302, 6]
+type = ChangeState
+trigger1 = Animtime = 0
+value = 0
+ctrl = 1
+
+;======================================================
+; Shingo Kick Strong (1/3)
+;======================================================
+
+[Statedef 1330]
+type = S
+movetype = A
+physics = S
+juggle = ifelse((prevstateno = 1000 || prevstateno = 1050 || prevstateno = 1100 || prevstateno = 1150 || prevstateno = 1201 || prevstateno = 1251), 1, ifelse((Var(8) = 11),6,10))
+poweradd = ifelse(Var(23)>0,0,50)
+velset = 0,0
+anim = 1304
+ctrl = 0
+sprpriority = 2
+
+[State 1330, 1]
+type = Varadd
+triggerall = time = 0
+trigger1 = prevstateno = 220 || prevstateno = 230 || Prevstateno = 250 || Prevstateno = 260 || prevstateno = 270 || (prevstateno = 410 && var(11) = 2)
+trigger2 = prevstateno = 1000 || prevstateno = 1050 || prevstateno = 1100 || prevstateno = 1150 || prevstateno = 1201 || prevstateno = 1251
+var(23) = -160
+ignorehitpause = 1
+persistent = 1
+
+[State 1330, 2]
+type = PalFX
+triggerall = (GameTime%2) = 0 && time < 8
+trigger1 = prevstateno = 220 || prevstateno = 230 || Prevstateno = 250 || Prevstateno = 260 || prevstateno = 270 || (prevstateno = 410 && var(11) = 2)
+trigger2 = prevstateno = 1000 || prevstateno = 1050 || prevstateno = 1100 || prevstateno = 1150 || prevstateno = 1201 || prevstateno = 1251
+time = 1
+add = 256,256,256
+mul = 256,256,256
+sinadd = 256,256,256,1
+invertall = 0
+color = 256
+ignorehitpause = 1
+
+[State 1330, 3]
+type = PosAdd
+trigger1 = Animelem = 2
+x = -5
+y = -1
+
+[State 1330, 4]
+type = PlaySnd
+trigger1 = Animelem = 3
+value = s1300,0
+
+[State 1330, 5]
+type = PosAdd
+trigger1 = Animelem = 5
+x = 28
+
+[State 1330, 6]
+type = velset
+trigger1 = AnimElem = 5
+x = 2
+
+[State 1330, 7]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 1331
+ctrl = 0
+
+;------------------------------------------------------
+; Shingo Kick Strong (2/3)
+;------------------------------------------------------
+
+[Statedef 1331]
+type    = A
+movetype= A
+physics = A
+velset = 7.0,-4.0
+anim = 1301
+
+[State 1331, 1]
+type = PosAdd
+trigger1 = Animelem = 1
+y = -20
+
+[State 1331, 2]
+type = HitDef
+trigger1 = Time = 0
+attr = A, SA
+animtype  = Hard
+damage    = 111, 9
+getpower = ifelse(Var(23)>0,0,91), ifelse(Var(23)>0,0,91)
+givepower = 16, 16
+priority  = 5
+guardflag = MA
+hitflag = MAF
+pausetime = 10,12
+sparkno = 2
+sparkxy = -10,-52
+guard.sparkno = 42
+hitsound   = s1,4
+guardsound = s2,1
+ground.type = Low
+ground.slidetime = 17
+ground.hittime  = 16
+ground.velocity = -5,-8.5
+guard.velocity = -7
+air.velocity = -5,-7.5
+fall = 1
+air.recover = 0
+fall.recover = 0 
+yaccel = 0.59
+
+[State 1331, 3]
+type = veladd
+trigger1 = AnimElem = 5,> 0
+y = 0.432
+
+[State 1331, 4]
+type = PlaySnd
+trigger1 = Animelem = 2
+value = s3,1
+
+[State 1331, 5]
+type = ChangeState
+trigger1 = Vel Y > 0 && Pos Y >= -5
+value = 1332
+
+;------------------------------------------------------
+; Shingo Kick Strong (3/3)
+;------------------------------------------------------
+
+[Statedef 1332]
+type    = S
+movetype= A
+physics = S
+juggle  = 12
+velset = 0,0
+anim = 1303
+ctrl = 0
+sprpriority = 2
+
+[State 1332, 1]
+type = Posset
+trigger1 = time = 0
+y = 0
+
+[State 1332, 2]
+type = PosAdd
+trigger1 = Animelem = 1
+x = 8
+
+[State 1332, 3]
+type = PosAdd
+trigger1 = Animelem = 2
+x = 15
+
+[State 1332, 4]
+type = PosAdd
+trigger1 = Animelem = 3
+x = 2
+
+[State 1332, 5]
+type = PosAdd
+trigger1 = Animelem = 4
+x = 6
+
+[State 1332, 6]
+type = ChangeState
+trigger1 = Animtime = 0
+value = 0
+ctrl = 1
+
+;======================================================
+; Shingo Kick Air (1/2)
+;======================================================
+
+[Statedef 1360]
+type    = A
+movetype= A
+physics = N
+juggle = ifelse((Prevstateno=1401||Prevstateno=1101||Prevstateno=1151),1,ifelse((Var(8) = 11),6,ifelse(Prevstateno=1301||Prevstateno=1331||Prevstateno=1701||Prevstateno=1751,0,10)))
+poweradd = ifelse(Var(23)>0,0,50)
+anim   = ifelse(Prevstateno=1301||Prevstateno=1331,1362,1360)
+velset  = 0,0
+ctrl = 0
+
+[State 1360, 1]
+type = Varadd
+triggerall = Prevstateno=600||Prevstateno=610||Prevstateno=630||Prevstateno=635||Prevstateno=640||Prevstateno=645||Prevstateno=1401||Prevstateno=1101||Prevstateno=1151||Prevstateno=1301||Prevstateno=1331||Prevstateno=1701||Prevstateno=1751
+trigger1 = time = 0
+var(23) = -160
+ignorehitpause = 1
+persistent = 1
+
+[State 1360, 2]
+type = PalFX
+triggerall = Prevstateno=600||Prevstateno=610||Prevstateno=630||Prevstateno=635||Prevstateno=640||Prevstateno=645||Prevstateno=1401||Prevstateno=1101||Prevstateno=1151||Prevstateno=1301||Prevstateno=1331||Prevstateno=1701||Prevstateno=1751
+trigger1 = (GameTime%2) = 0 && time < 8
+time = 1
+add = 256,256,256
+mul = 256,256,256
+sinadd = 256,256,256,1
+invertall = 0
+color = 256
+ignorehitpause = 1
+
+[State 1360, 3]
+type = PosAdd
+triggerall = Prevstateno = [1301,1331]
+trigger1 = time = 0
+y = 20
+
+[State 1360, 4]
+type = PlaySnd
+trigger1 = Animelem = 1
+value = s1300,0
+
+[State 1360, 5]
+type = velset
+trigger1 = AnimElem = 3
+x = 4.0
+y = -3.8
+
+[State 1360, 6]
+type = velAdd
+trigger1 = AnimElem = 4,> 0
+y = 0.58
+
+[State 1360, 7]
+type = PlaySnd
+trigger1 = Animelem = 4
+value = s3,1
+
+[State 1360, 8]
+type = HitDef
+trigger1 = Time = 0
+attr = A, SA
+animtype  = Hard
+damage    = 111, 9
+getpower = ifelse(Var(23)>0,0,91), ifelse(Var(23)>0,0,91)
+givepower = 16, 16
+priority  = 5
+guardflag = MA
+hitflag = MAF
+pausetime = 10,12
+sparkno = 2
+sparkxy = -10,-52
+guard.sparkno = 42
+hitsound   = s1,4
+guardsound = s2,1
+ground.type = Low
+ground.slidetime = 17
+ground.hittime  = 16
+ground.velocity = -5,-8.5
+guard.velocity = -7
+air.velocity = -5,-7.5
+fall = 1
+air.recover = 0
+fall.recover = 0 
+yaccel = 0.59
+
+[State 1360, 9]
+type = ChangeState
+trigger1 = Pos Y >= 0 && Vel Y > 0
+value = 1361
+
+;------------------------------------------------------
+; Shingo Kick Air (2/2)
+;------------------------------------------------------
+
+[Statedef 1361]
+type = S
+movetype = A
+physics = S
+anim = 1361
+velset = 0,0
+
+[State 1361, 1]
+type = posset
+trigger1 = Time = 0
+y = 0
+
+[State 1361, 2]
+type = posadd
+trigger1 = Time = 0
+x = 18
+
+[State 1361, 3]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+;======================================================
+; Shingo Kinsei Oreshiki: Nie Togi (1/4)
+;======================================================
+
+[Statedef 1400]
+type    = S
+movetype= A
+physics = S
+juggle  = 5
+poweradd = ifelse(Var(23)>0,0,50)
+velset = 0,0
+anim = 1400
+ctrl = 0
+sprpriority = 2
+
+[State 1400, 1]
+type = Varadd
+triggerall = time = 0
+trigger1 = prevstateno = 220 || prevstateno = 230 || Prevstateno = 250 || Prevstateno = 260 || prevstateno = 270 || (prevstateno = 410 && var(11) = 2)
+trigger2 = Prevstateno = 261 || Prevstateno = 271 || prevstateno = 1000 || prevstateno = 1201 || prevstateno = 1251
+var(23) = -160
+ignorehitpause = 1
+persistent = 1
+
+[State 1400, 2]
+type = PalFX
+triggerall = (GameTime%2) = 0 && time < 8
+trigger1 = prevstateno = 220 || prevstateno = 230 || Prevstateno = 250 || Prevstateno = 260 || prevstateno = 270 || (prevstateno = 410 && var(11) = 2)
+trigger2 = Prevstateno = 261 || Prevstateno = 271 || prevstateno = 1000 || prevstateno = 1201 || prevstateno = 1251
+time = 1
+add = 256,256,256
+mul = 256,256,256
+sinadd = 256,256,256,1
+invertall = 0
+color = 256
+ignorehitpause = 1
+
+[State 1400, 3]
+type = PlayerPush
+trigger1 = AnimElem = 6 ,<0
+value = 0
+
+[State 1400, 4]
+type = PosAdd
+trigger1 = AnimElem = 4
+x = 16
+
+[State 1400, 5]
+type = PlaySnd
+trigger1 = Animelem = 4
+value = s1400,0
+
+[State 1400, 6]
+type = PosAdd
+trigger1 = AnimElem = 6
+x = 3
+
+[State 1400, 7]
+type = PlaySnd
+trigger1 = Animelem = 6
+value = s1400,1
+
+[State 1400, 8]
+type = HitDef
+trigger1 = Animelem = 4
+trigger2 = Animelem = 6
+attr = S, SA
+damage = 37, 9
+getpower = ifelse(Var(23)>0,0,50), ifelse(Var(23)>0,0,50)
+givepower = 16, 16
+animtype = Light
+guardflag = N
+hitflag = M
+priority = 3, Hit
+pausetime = 11, 12
+sparkno = 2
+sparkxy = -10, -74
+guard.sparkno = 42
+hitsound = s1, 2
+guardsound = s2, 1
+ground.type = High
+ground.slidetime = 17
+ground.hittime  = 16
+ground.velocity = -0.4
+airguard.velocity = -3,-5
+air.type = low
+air.velocity = -4,-8
+air.hittime = 14
+air.fall = 1
+air.recover = 0
+fall.recover = 0 
+yaccel = 0.59
+
+[State 1400, 9]
+type = ChangeState
+trigger1 = Movehit && AnimTime = 0
+trigger2 = !Movehit && Animelemtime(4)>=3
+value = ifelse(Movehit,1401,1403)
+ctrl = 0
+
+;------------------------------------------------------
+; Shingo Kinsei Oreshiki: Nie Togi (2/4)
+;------------------------------------------------------
+
+[Statedef 1401]
+type    = A
+movetype= A
+physics = A
+velset = 2.0,-7.5
+anim = 1401
+ctrl = 0
+sprpriority = 2
+
+[State 1401, 1]
+type = VelAdd
+trigger1 = 1
+y = 0.08
+
+[State 1401, 2]
+type = PlaySnd
+trigger1 = Animelem = 2
+value = s1400,2
+
+[State 1401, 3]
+type = HitDef
+trigger1 = Animelem = 2
+attr = A, SA
+damage = 37, 9
+getpower = ifelse(Var(23)>0,0,50), ifelse(Var(23)>0,0,50)
+givepower = 16, 16
+guardflag = N
+priority = 4
+pausetime = 10,12
+sparkno = 2
+sparkxy = -10,-76
+guard.sparkno = 42
+hitsound   = s1,4
+guardsound = s2,1
+animtype = Up
+ground.type = low
+ground.slidetime = 17
+ground.hittime  = 16
+ground.velocity = -1.5,-14.5
+air.velocity = -1.5,-14.5
+air.fall = 1
+fall = 1
+air.recover = 0
+fall.recover = 0 
+yaccel = 0.7
+
+[State 1401, 4]
+type = velset
+trigger1 = time = 18
+x = 0
+
+[State 1401, 5]
+type = Varset
+triggerall = Var(8) = 0
+trigger1 = Animelem = 3
+v = 8
+value = 10
+
+[State 1401, 6]
+type = ChangeState
+trigger1 = Vel Y > 0 && Pos Y >= -5
+value = 1402
+
+;------------------------------------------------------
+; Shingo Kinsei Oreshiki: Nie Togi (3/4)
+;------------------------------------------------------
+
+[Statedef 1402]
+type    = S
+movetype= A
+physics = S
+velset = 0,0
+anim = 1402
+ctrl = 0
+sprpriority = 2
+
+[State 1402, 1]
+type = Posset
+trigger1 = time = 0
+y = 0
+
+[State 1402, 2]
+type = ChangeState
+trigger1 = Animtime = 0
+value = 0
+ctrl = 1
+
+;------------------------------------------------------
+; Shingo Kinsei Oreshiki: Nie Togi (4/4)
+;------------------------------------------------------
+
+[Statedef 1403]
+type    = S
+movetype= A
+physics = S
+juggle  = 1
+velset = 0,0
+anim = 1403
+ctrl = 0
+sprpriority = 2
+
+[State 1403, 1]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+;======================================================
+; Gettyu Weak (1/2)
+;======================================================
+
+[Statedef 1500]
+type    = S
+movetype= A
+physics = S
+juggle  = ifelse((prevstateno = 1000 || prevstateno = 1201 || prevstateno = 1251), 1, ifelse((Var(8) = 11),6,10))
+poweradd = ifelse(Var(23)>0,0,50)
+velset = 0,0
+anim = 1500
+ctrl = 0
+sprpriority = 2
+
+[State 1500, 1]
+type = Varadd
+triggerall = time = 0
+trigger1 = prevstateno = 220 || prevstateno = 230 || Prevstateno = 250 || Prevstateno = 260 || prevstateno = 270 || (prevstateno = 410 && var(11) = 2)
+trigger2 = Prevstateno = 261 || prevstateno = 1000 || prevstateno = 1201 || prevstateno = 1251 || prevstateno = 1400
+var(23) = -160
+ignorehitpause = 1
+persistent = 1
+
+[State 1500, 2]
+type = PalFX
+triggerall = (GameTime%2) = 0 && time < 8
+trigger1 = prevstateno = 220 || prevstateno = 230 || Prevstateno = 250 || Prevstateno = 260 || prevstateno = 270 || (prevstateno = 410 && var(11) = 2)
+trigger2 = Prevstateno = 261 || prevstateno = 1000 || prevstateno = 1201 || prevstateno = 1251 || prevstateno = 1400
+time = 1
+add = 256,256,256
+mul = 256,256,256
+sinadd = 256,256,256,1
+invertall = 0
+color = 256
+ignorehitpause = 1
+
+[State 1500, 3]
+type = ReversalDef
+trigger1 = AnimElem = 3
+attr = S, SA
+reversal.attr = SCA, AA
+priority = 5,Miss
+numhits = 0
+pausetime = 12,12
+sparkno = 42
+hitsound = s2,1
+p1stateno = 1501
+
+[State 1500, 4]
+type = PlaySnd
+trigger1 = Animelem = 4
+value = s1500,0
+
+[State 1500, 5]
+type = HitDef
+trigger1 = P2StateType = A
+trigger1 = Animelem = 4
+persistent = 1
+attr = S, SA
+animtype  = Up
+damage    = 83, 9
+getpower = ifelse(Var(23)>0,0,91), ifelse(Var(23)>0,0,91)
+givepower = 16, 16
+priority  = 5
+guardflag = MA
+hitflag = MAF
+pausetime = 14,14
+sparkno = 2
+sparkxy = -8,-58
+guard.sparkno = 42
+hitsound   = s1,4
+guardsound = s2,1
+ground.type = Low
+ground.slidetime = 24
+ground.hittime  = 24
+ground.velocity = 8,6
+guard.velocity = -9
+ground.cornerpush.veloff = -16
+air.velocity = -8,6
+airguard.velocity = -5,-4
+fall = 1
+air.recover = 0
+fall.recover = 0 
+p2stateno = 1206
+p2facing = 1
+yaccel = 0.59
+
+[State 1500, 6]
+type = HitDef
+trigger1 = P2StateType != A
+trigger1 = Animelem = 4
+persistent = 1
+attr = S, SA
+animtype  = Up
+damage    = 83, 9
+getpower = ifelse(Var(23)>0,0,91), ifelse(Var(23)>0,0,91)
+givepower = 16, 16
+priority  = 5
+guardflag = MA
+hitflag = MA
+pausetime = 14,14
+sparkno = 2
+sparkxy = -8,-58
+guard.sparkno = 42
+hitsound   = s1,4
+guardsound = s2,1
+ground.type = Low
+ground.slidetime = 24
+ground.hittime  = 24
+ground.velocity = 0,8
+guard.velocity = -9
+ground.cornerpush.veloff = -16
+air.velocity = -2,8
+airguard.velocity = -5,-4
+fall = 1
+air.recover = 0
+fall.recover = 0 
+p2stateno = 1204
+p2facing = 1
+yaccel = 0.59
+
+[State 1500, 7]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+;------------------------------------------------------
+; Gettyu Weak (2/2)
+;------------------------------------------------------
+
+[Statedef 1501]
+type    = S
+movetype= A
+physics = S
+;velset = -3.4,0
+anim = 1501
+ctrl = 0
+sprpriority = 2
+
+[State 1501, 1]
+type = Velset
+trigger1 = Animelem = 3
+x = -4
+
+[State 1501, 2]
+type = PosAdd
+trigger1 = time = 0
+x = -12
+
+[State 1501, 3]
+type = PlaySnd
+trigger1 = Animelem = 1
+value = s1500, 1
+
+[State 1501, 4]
+type = HitDef
+trigger1 = Time = 0
+attr = S, SA
+damage = 85, 9
+getpower = ifelse(Var(23)>0,0,91), ifelse(Var(23)>0,0,91)
+givepower = 16, 16
+animtype = diagup
+hitflag = MAF
+guardflag = N
+sparkno = 3
+guard.sparkno = 42
+sparkxy = -10,-55
+hitsound = s1,4
+guardsound = s2,1
+pausetime = 12,14
+ground.hittime = 12
+ground.slidetime = 12
+ground.type = high
+ground.velocity = -18,0
+ground.cornerpush.veloff = -8
+air.velocity = -18,-1
+fall = 1
+air.recover = 0
+fall.recover = 0 
+p2stateno = 351
+p2facing = 1
+yaccel = 0.59
+ground.cornerpush.veloff = 0
+
+[State 1501, 5]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+;======================================================
+; Gettyu Strong
+;======================================================
+
+[Statedef 1550]
+type    = S
+movetype= A
+physics = S
+juggle  = ifelse((prevstateno = 1000 || prevstateno = 1201 || prevstateno = 1251), 1, ifelse((Var(8) = 11),6,10))
+poweradd = ifelse(Var(23)>0,0,50)
+velset = 0,0
+anim = 1550
+ctrl = 0
+sprpriority = 2
+
+[State 1550, 1]
+type = Varadd
+triggerall = time = 0
+trigger1 = prevstateno = 220 || prevstateno = 230 || Prevstateno = 250 || Prevstateno = 260 || prevstateno = 270 || (prevstateno = 410 && var(11) = 2)
+trigger2 = Prevstateno = 261 || prevstateno = 1000 || prevstateno = 1201 || prevstateno = 1251 || prevstateno = 1400
+var(23) = -160
+ignorehitpause = 1
+persistent = 1
+
+[State 1550, 2]
+type = PalFX
+triggerall = (GameTime%2) = 0 && time < 8
+trigger1 = prevstateno = 220 || prevstateno = 230 || Prevstateno = 250 || Prevstateno = 260 || prevstateno = 270 || (prevstateno = 410 && var(11) = 2)
+trigger2 = Prevstateno = 261 || prevstateno = 1000 || prevstateno = 1201 || prevstateno = 1251 || prevstateno = 1400
+time = 1
+add = 256,256,256
+mul = 256,256,256
+sinadd = 256,256,256,1
+invertall = 0
+color = 256
+ignorehitpause = 1
+
+[State 1550, 3]
+type = ReversalDef
+trigger1 = AnimElem = 3
+attr = S, SA
+reversal.attr = SCA, AA
+priority = 5,Miss
+numhits = 0
+pausetime = 12,12
+sparkno = 42
+hitsound = s2,1
+p1stateno = 1501
+
+[State 1550, 4]
+type = PlaySnd
+trigger1 = Animelem = 4
+value = s1500,0
+
+[State 1550, 5]
+type = HitDef
+trigger1 = P2StateType = A
+trigger1 = Animelem = 5
+persistent = 1
+attr = S, SA
+animtype  = Up
+damage    = 83, 9
+getpower = ifelse(Var(23)>0,0,91), ifelse(Var(23)>0,0,91)
+givepower = 16, 16
+priority  = 5
+guardflag = MA
+hitflag = CMAF
+pausetime = 14,14
+sparkno = 2
+sparkxy = -8,-58
+guard.sparkno = 42
+hitsound   = s1,4
+guardsound = s2,1
+ground.type = Low
+ground.slidetime = 24
+ground.hittime  = 24
+ground.velocity = 8,4
+ground.cornerpush.veloff = -16
+guard.velocity = -9
+air.velocity = -8,4
+airguard.velocity = -5,-4
+air.recover = 0
+fall.recover = 0 
+fall = 1
+p2stateno = 1206
+p2facing = 1
+yaccel = 0.59
+
+[State 1550, 6]
+type = HitDef
+trigger1 = P2StateType != A
+trigger1 = Animelem = 5
+persistent = 1
+attr = S, SA
+animtype  = Up
+damage    = 83, 9
+getpower = ifelse(Var(23)>0,0,91), ifelse(Var(23)>0,0,91)
+givepower = 16, 16
+priority  = 5
+guardflag = MA
+hitflag = MA
+pausetime = 14,14
+sparkno = 2
+sparkxy = -8,-58
+guard.sparkno = 42
+hitsound   = s1,4
+guardsound = s2,1
+ground.type = Low
+ground.slidetime = 24
+ground.hittime  = 24
+ground.velocity = 0,8
+guard.velocity = -9
+ground.cornerpush.veloff = -16
+air.velocity = -2,8
+airguard.velocity = -5,-4
+air.recover = 0
+fall.recover = 0 
+fall = 1
+p2stateno = 1204
+p2facing = 1
+yaccel = 0.59
+
+[State 1550, 7]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+;======================================================
+; Idou Yoke
+;======================================================
+
+[Statedef 1600]
+type    = S
+physics = S
+anim = 700
+sprpriority = -2
+velset = 0,0
+ctrl = 0
+
+[State 1600, 1]
+type = Varadd
+triggerall = time = 0
+trigger1 = prevstateno = 220 || prevstateno = 230 || Prevstateno = 250 || Prevstateno = 260 || prevstateno = 270
+trigger2 = prevstateno = 1000 || Prevstateno = 1050 || Prevstateno = 1201 || Prevstateno = 1251 || prevstateno = 1100 || prevstateno = 1150 || prevstateno = 1400
+var(23) = -160
+ignorehitpause = 1
+persistent = 1
+
+[State 1600, 2]
+type = PalFX
+triggerall = (GameTime%2) = 0 && time < 8
+trigger1 = prevstateno = 220 || prevstateno = 230 || Prevstateno = 250 || Prevstateno = 260 || prevstateno = 270
+trigger2 = prevstateno = 1000 || Prevstateno = 1050 || Prevstateno = 1201 || Prevstateno = 1251 || prevstateno = 1100 || prevstateno = 1150 || prevstateno = 1400
+time = 1
+add = 256,256,256
+mul = 256,256,256
+sinadd = 256,256,256,1
+invertall = 0
+color = 256
+ignorehitpause = 1
+
+[State 1600, 3]
+type = PlayerPush
+trigger1 = 1
+value = 0
+
+[State 1600, 4]
+type = NotHitBy
+trigger1 = 1
+value = SCA
+
+[State 1600, 5]
+type = HitBy
+trigger1 = 1
+value = SC, NT, ST, HT
+
+[State 1600, 6]
+type = PosAdd
+triggerall = prevstateno = 270 || prevstateno = 271
+trigger1 = time = 0
+x = 40
+
+[State 1600, 7]
+type = PlaySnd
+trigger1 = Animelem = 2
+value = s700,1
+
+[State 1600, 8]
+type = velset
+trigger1 = Animelemtime(2) >= 0 && Animelemtime(7) <=0
+x = 6.5
+
+[State 1600, 9]
+type = velset
+trigger1 = Animelemtime(7) >= 0
+x = 0
+
+[State 1600, 10]
+type = ChangeState
+Trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+;======================================================
+; 101 Shiki Oboro Guruma Mikansei Weak (1/3)
+;======================================================
+
+[Statedef 1700]
+type    = S
+movetype= A
+physics = S
+juggle  = ifelse((prevstateno = 1000 || prevstateno = 1050 || prevstateno = 1100 || prevstateno = 1150 || prevstateno = 1201 || prevstateno = 1251), 5, ifelse((Var(8) = 11),4,10))
+poweradd = ifelse(Var(23)>0,0,50)
+velset = 0,0
+anim = 1700
+ctrl = 0
+sprpriority = 2
+
+[State 1700, 1]
+type = Varadd
+triggerall = time = 0
+trigger1 = prevstateno = 220 || prevstateno = 230 || Prevstateno = 250 || Prevstateno = 260 || prevstateno = 270 || (prevstateno = 410 && var(11) = 2)
+trigger2 = prevstateno = 1000 || prevstateno = 1050 || prevstateno = 1100 || prevstateno = 1150 || prevstateno = 1201 || prevstateno = 1251 || prevstateno = 1400
+var(23) = -160
+ignorehitpause = 1
+persistent = 1
+
+[State 1700, 2]
+type = PalFX
+triggerall = (GameTime%2) = 0 && time < 8
+trigger1 = prevstateno = 220 || prevstateno = 230 || Prevstateno = 250 || Prevstateno = 260 || prevstateno = 270  || (prevstateno = 410 && var(11) = 2)
+trigger2 = prevstateno = 1000 || prevstateno = 1050 || prevstateno = 1100 || prevstateno = 1150 || prevstateno = 1201 || prevstateno = 1251 || prevstateno = 1400
+time = 1
+add = 256,256,256
+mul = 256,256,256
+sinadd = 256,256,256,1
+invertall = 0
+color = 256
+ignorehitpause = 1
+
+[State 1700, 3]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 1701
+ctrl = 0
+
+;------------------------------------------------------
+; 101 Shiki Oboro Guruma Mikansei Weak (2/3)
+;------------------------------------------------------
+
+[Statedef 1701]
+type    = A
+movetype= A
+physics = N
+velset = 4,-6.6
+anim = 1701
+
+[State 1701, 1]
+type = veladd
+trigger1 = Animelemtime(1) >= 0
+y = 0.53
+
+[State 1701, 2]
+type = PosAdd
+trigger1 = Animelem = 1
+x = 10
+y = -5
+
+[State 1701, 3]
+type = PlaySnd
+trigger1 = Animelem = 2
+value = s1600,0
+
+[State 1701, 4]
+type = HitDef
+trigger1 = Animelem = 2
+attr = A, HA
+animtype  = Hard
+damage    = 60, 10
+getpower = ifelse(Var(23)>0,0,91), ifelse(Var(23)>0,0,91)
+givepower = 16, 16
+priority  = 5
+guardflag = MA
+hitflag = MAF
+pausetime = 11,12
+sparkno = 2
+sparkxy = -10,-52
+guard.sparkno = 42
+hitsound   = s1,3
+guardsound = s2,1
+ground.type = Low
+ground.slidetime = 20
+ground.hittime  = 20
+ground.velocity = -3,-8.6
+guard.velocity = -7
+air.velocity = -3,-8.6
+fall = 1
+air.recover = 0
+fall.recover = 0
+yaccel = 0.59 
+
+[State 1701, 5]
+type = veladd
+trigger1 = AnimElem = 3,> 0
+x = -0.16
+
+[State 1701, 6]
+type = ChangeState
+trigger1 = Vel Y > 0 && Pos Y >= -20
+value = 1702
+
+;------------------------------------------------------
+; 101 Shiki Oboro Guruma Mikansei Weak (3/3)
+;------------------------------------------------------
+
+[Statedef 1702]
+type    = L
+movetype= H
+physics = N
+juggle  = 4
+velset = 0,0
+anim = 1702
+ctrl = 0
+sprpriority = 2
+
+[State 1702, 1]
+type = PosSet
+trigger1 = time = 0
+y = 0
+
+[State 1702, 2]
+type = ChangeState
+trigger1 = Animtime = 0
+value = 0
+ctrl = 1
+
+;======================================================
+; 101 Shiki Oboro Guruma Mikansei Strong (1/4)
+;======================================================
+
+[Statedef 1750]
+type    = S
+movetype= A
+physics = S
+juggle  = ifelse((prevstateno = 1000 || prevstateno = 1050 || prevstateno = 1100 || prevstateno = 1150 || prevstateno = 1201 || prevstateno = 1251), 5, ifelse((Var(8) = 11),4,10))
+poweradd = ifelse((Var(23)>0)||(prevstateno=1751),0,50)
+velset = 0,0
+anim = ifelse((prevstateno=1751),1753,1750)
+ctrl = 0
+sprpriority = 2
+
+[State 3200, 4]
+type = Explod
+trigger1 = time=1
+trigger1 = prevstateno!=1751
+anim = f993
+scale=0.5,0.5
+id = 993
+postype = p1
+pos= 10,0
+sprpriority = 6
+supermove = 1
+ownpal = 1
+supermovetime = 999
+pausemovetime = 999
+
+[State 3200, 4]
+type = Explod
+trigger1 = time=1
+trigger1 = prevstateno!=1751
+anim = f994
+scale=0.5,0.5
+id = 994
+postype = p1
+pos= 10,0
+sprpriority = -1
+supermove = 1
+ownpal = 1
+supermovetime = 999
+pausemovetime = 999
+
+[State 3500, 6]
+type = PlaySnd
+trigger1 = Time = 0
+trigger1 = prevstateno!=1751
+value = f7000,5
+
+[State 1750, 1]
+type = Posset
+trigger1 = time = 0
+y = 0
+
+[State 1750, 2]
+type = Varadd
+triggerall = time = 0
+trigger1 = prevstateno = 220 || prevstateno = 230 || Prevstateno = 250 || Prevstateno = 260 || prevstateno = 270 || (prevstateno = 410 && var(11) = 2)
+trigger2 = prevstateno = 1000 || prevstateno = 1050 || prevstateno = 1100 || prevstateno = 1150 || prevstateno = 1201 || prevstateno = 1251 || prevstateno = 1400
+var(23) = -160
+ignorehitpause = 1
+persistent = 1
+
+[State 1750, 3]
+type = PalFX
+triggerall = (GameTime%2) = 0 && time < 8
+trigger1 = prevstateno = 220 || prevstateno = 230 || Prevstateno = 250 || Prevstateno = 260 || prevstateno = 270  || (prevstateno = 410 && var(11) = 2)
+trigger2 = prevstateno = 1000 || prevstateno = 1050 || prevstateno = 1100 || prevstateno = 1150 || prevstateno = 1201 || prevstateno = 1251 || prevstateno = 1400
+time = 1
+add = 256,256,256
+mul = 256,256,256
+sinadd = 256,256,256,1
+invertall = 0
+color = 256
+ignorehitpause = 1
+
+[State 1750, 4]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = ifelse((prevstateno=1751),1753,1751)
+ctrl = 0
+
+;------------------------------------------------------
+; 101 Shiki Oboro Guruma Mikansei Strong (2/4)
+;------------------------------------------------------
+
+[Statedef 1751]
+type    = A
+movetype= A
+physics = N
+velset = 4,-5.3
+anim = 1751
+
+[State 1751, 1]
+type = veladd
+trigger1 = Animelemtime(1) >= 0
+y = 0.53
+
+[State 1751, 2]
+type = PosAdd
+trigger1 = Animelem = 1
+x = 10
+y = -5
+
+[State 1751, 3]
+type = PlaySnd
+trigger1 = Animelem = 2
+value = s1750,ifelse((prevstateno=1752),1,0)
+
+[State 1751, 4]
+type = HitDef
+trigger1 = Animelem = 2
+attr = A, HA
+animtype  = Hard
+damage    = 40, 10
+getpower = ifelse(Var(23)>0,0,50), ifelse(Var(23)>0,0,50)
+givepower = 16, 16
+priority  = 5
+guardflag = MA
+hitflag = MAF
+pausetime = 12,12
+sparkno = 2
+sparkxy = -10,-52
+guard.sparkno = 42
+hitsound   = s1,3
+guardsound = s2,1
+ground.type = Low
+ground.slidetime = 20
+ground.hittime  = 20
+ground.velocity = -3,-8
+guard.velocity = -7
+air.velocity = -4,-9
+fall = 1
+air.recover = 0
+fall.recover = 0
+yaccel = 0.59 
+
+[State 1751, 5]
+type = veladd
+trigger1 = AnimElem = 3,> 0
+x = -0.16
+
+[State 1751, 6]
+type = ChangeState
+trigger1 = Vel Y > 0 && Pos Y >= -20
+value = ifelse((prevstateno=1752),1750,1752)
+ctrl = 0
+
+;------------------------------------------------------
+; 101 Shiki Oboro Guruma Mikansei Strong (3/4)
+;------------------------------------------------------
+
+[Statedef 1752]
+type    = L
+movetype= H
+physics = N
+velset = 0,0
+anim = 1752
+ctrl = 0
+sprpriority = 2
+
+[State 1752, 1]
+type = PosSet
+trigger1 = time = 0
+y = 0
+
+[State 1752, 2]
+type = ChangeState
+trigger1 = Animtime = 0
+value = 1751
+ctrl = 0
+
+;------------------------------------------------------
+; 101 Shiki Oboro Guruma Mikansei Strong (4/4)
+;------------------------------------------------------
+
+[Statedef 1753]
+type    = A
+movetype= A
+physics = N
+velset = 4,-8.6
+anim = ifelse((random<250),1755,1754)
+juggle = 0
+
+[State 1753, 1]
+type = veladd
+trigger1 = 1
+y = 0.53
+
+[State 1753, 2]
+type = PosAdd
+trigger1 = Animelem = 1
+x = 10
+y = -5
+
+[State 1753, 3]
+type = PlaySnd
+trigger1 = Animelem = 2
+value = s1750,2
+
+[State 1753, 4]
+type = HitDef
+triggerall = Anim = 1754
+trigger1 = P2StateType = A
+trigger1 = Time = 0
+persistent = 1
+attr = A, SA
+animtype  = hard
+damage    = 80, 10
+getpower = ifelse(Var(23)>0,0,50), ifelse(Var(23)>0,0,50)
+givepower = 16, 16
+priority  = 5
+guardflag = MA
+hitflag = MAF
+pausetime = 10,10
+sparkno = 2
+sparkxy = -8,-58
+guard.sparkno = 42
+hitsound   = s1,4
+guardsound = s2,1
+ground.type = Low
+ground.slidetime = 1
+ground.hittime  = 1
+ground.velocity = 8,6
+guard.velocity = -9
+air.velocity = -6,10
+airguard.velocity = -5,-4
+fall = 1
+air.recover = 0
+fall.recover = 0 
+envshake.time = 15
+envshake.freq = 90
+envshake.ampl = -5
+
+[State 1753, 5]
+type = HitDef
+triggerall = Anim = 1754
+trigger1 = P2StateType != A
+trigger1 = Time = 0
+persistent = 1
+attr = A, SA
+animtype  = Up
+damage    = 80, 10
+getpower = ifelse(Var(23)>0,0,50), ifelse(Var(23)>0,0,50)
+givepower = 16, 16
+priority  = 5
+guardflag = MA
+hitflag = MA
+pausetime = 10,10
+sparkno = 2
+sparkxy = -8,-58
+guard.sparkno = 42
+hitsound   = s1,4
+guardsound = s2,1
+ground.type = Low
+ground.slidetime = 24
+ground.hittime  = 24
+ground.velocity = 0,8
+guard.velocity = -9
+air.velocity = -2,8
+airguard.velocity = -5,-4
+fall = 1
+air.recover = 0
+fall.recover = 0 
+p2stateno = 1204
+yaccel = 0.59
+envshake.time = 15
+envshake.freq = 90
+envshake.ampl = -5
+
+[State 1753, 6]
+type = HitDef
+triggerall = Anim = 1755
+trigger1 = time = 0
+persistent = 1
+attr = A, SA
+animtype  = DiagUp
+damage = 80, 10
+getpower = ifelse(Var(23)>0,0,50), ifelse(Var(23)>0,0,50)
+givepower = 16, 16
+priority  = 5
+guardflag = MA
+hitflag = MAF
+pausetime = 36,36
+sparkno = 2
+sparkxy = -8,-58
+guard.sparkno = 42
+hitsound   = s1,4
+guardsound = s2,1
+ground.type = Low
+ground.slidetime = 24
+ground.hittime  = 24
+ground.velocity = -1,-8
+guard.velocity = -4
+air.velocity = -1,-8
+air.recover = 0
+fall.recover = 0 
+fall = 1
+yaccel = 0.54
+envshake.time = 20
+envshake.freq = 90
+envshake.ampl = -5
+
+[State 1753, 7]
+type = veladd
+trigger1 = AnimElem = 3,> 0
+x = -0.01
+
+[State 1753, 8]
+type = ChangeState
+triggerall = Anim = 1755
+trigger1 = Animtime = 0
+value = 1802
+ctrl = 0
+
+[State 1753, 9]
+type = ChangeState
+trigger1 = Vel Y > 0 && Pos Y >= -20
+value = 1702
+ctrl = 0
+
+;======================================================
+; 101 Shiki Oboro Kurama Mikansei (1/4)
+;======================================================
+
+[Statedef 1800]
+type    = S
+movetype= A
+physics = S
+juggle  = ifelse((prevstateno = 1000 || prevstateno = 1050 || prevstateno = 1100 || prevstateno = 1150 || prevstateno = 1201 || prevstateno = 1251), 5, ifelse((Var(8) = 11),4,10))
+poweradd = ifelse(Var(23)>0,0,50)
+velset = 0,0
+anim = 1800
+ctrl = 0
+sprpriority = 2
+
+[State 1800, 1]
+type = Varadd
+triggerall = time = 0
+trigger1 = prevstateno = 220 || prevstateno = 230 || Prevstateno = 250 || Prevstateno = 260 || prevstateno = 270 || (prevstateno = 410 && var(11) = 2)
+trigger2 = prevstateno = 1000 || prevstateno = 1050 || prevstateno = 1100 || prevstateno = 1150 || prevstateno = 1201 || prevstateno = 1251 || prevstateno = 1400
+var(23) = -160
+ignorehitpause = 1
+persistent = 1
+
+[State 1800, 2]
+type = PalFX
+triggerall = (GameTime%2) = 0 && time < 8
+trigger1 = prevstateno = 220 || prevstateno = 230 || Prevstateno = 250 || Prevstateno = 260 || prevstateno = 270  || (prevstateno = 410 && var(11) = 2)
+trigger2 = prevstateno = 1000 || prevstateno = 1050 || prevstateno = 1100 || prevstateno = 1150 || prevstateno = 1201 || prevstateno = 1251 || prevstateno = 1400
+time = 1
+add = 256,256,256
+mul = 256,256,256
+sinadd = 256,256,256,1
+invertall = 0
+color = 256
+ignorehitpause = 1
+
+[State 1800, 3]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 1801
+ctrl = 0
+
+;------------------------------------------------------
+; 101 Shiki Oboro Kurama Mikansei (2/4)
+;------------------------------------------------------
+
+[Statedef 1801]
+type    = A
+movetype= A
+physics = N
+velset = 8.2,-7.1
+anim = 1801
+
+[State 1801, 1]
+type = veladd
+trigger1 = Animelemtime(4) <= 0
+y = 0.42
+
+[State 1801, 2]
+type = veladd
+trigger1 = Animelemtime(8) >= 0
+y = 0.52
+
+[State 1801, 3]
+type = PosAdd
+trigger1 = Animelem = 1
+x = 10
+
+[State 1801, 4]
+type = PlaySnd
+trigger1 = Animelem = 2
+value = s1600,0
+
+[State 1801, 5]
+type = HitDef
+trigger1 = Animelem = 2
+trigger2 = Animelem = 7
+attr = A, HA
+animtype  = Hard
+damage    = 38, 8
+getpower = ifelse(Var(23)>0,0,50), ifelse(Var(23)>0,0,50)
+givepower = 16, 16
+priority  = 5
+guardflag = MA
+hitflag = MAF
+pausetime = ifelse((Animelem = 2),7,12),ifelse((Animelem = 2),8,12)
+sparkno = 2
+sparkxy = -10,-52
+guard.sparkno = 42
+hitsound   = s1,3
+guardsound = s2,1
+ground.type = Low
+ground.slidetime = 20
+ground.hittime  = 20
+ground.velocity = -4,-8.6
+guard.velocity = -7
+air.velocity = -ifelse((Animelem = 7),1,2.5),-8.6
+fall = 1
+air.recover = 0
+fall.recover = 0
+yaccel = 0.59 
+
+[State 1801, 6]
+type = veladd
+trigger1 = AnimElemtime(1) >= 0
+x = -0.14
+
+[State 1801, 7]
+type = ChangeState
+trigger1 = (Animelemtime(7) >= 2 && Movehit) && Animelemtime(8) <= 4
+trigger1 = command = "holdback" && command = "a"
+trigger2 = (Animelemtime(7) >= 2 && Animelemtime(8) <= 4)
+trigger2 = command = "holdback" && command = "b"
+trigger3 = (Animelemtime(7) >= 2 && Animelemtime(8) <= 4)
+trigger3 = Var(8) = 3
+value = 1802
+
+[State 1801, 8]
+type = ChangeState
+trigger1 = Vel Y > 0 && Pos Y >= -20
+value = 1702
+
+;------------------------------------------------------
+; 101 Shiki Oboro Kurama Mikansei (3/4)
+;------------------------------------------------------
+
+[Statedef 1802]
+type    = A
+movetype= A
+physics = N
+velset = 2,-2
+anim = 1802
+ctrl = 0
+sprpriority = 2
+
+[State 1802, 1]
+type = VelAdd
+trigger1 = 1
+y = .11
+
+[State 1802, 2]
+type = PlaySnd
+trigger1 = Animelem = 7
+value = s1600,1
+
+[State 1802, 3]
+type = ChangeState
+trigger1 = Animtime = 0
+value = 1803
+
+;------------------------------------------------------
+; 101 Shiki Oboro Kurama Mikansei (4/4)
+;------------------------------------------------------
+
+[Statedef 1803]
+type    = A
+movetype= A
+physics = N
+anim = 3002
+ctrl = 0
+sprpriority = 2
+juggle = ifelse((prevstateno = 1753),15,0)
+
+[State 1803, 1]
+type = Velset
+triggerall = prevstateno = 1802
+trigger1 = time = 0
+x = 1.2
+y = 2
+
+[State 1803, 2]
+type = VelAdd
+trigger1 = 1
+y = ifelse((prevstateno = 1753),0.4,0.26)
+
+[State 1803, 3]
+type = PlaySnd
+trigger1 = Animelem = 2
+value = s1600,3
+
+[State 1803, 4]
+type = HitDef
+trigger1 = P2StateType = A
+trigger1 = Animelem = 1
+persistent = 1
+attr = S, SA
+animtype  = Hard
+damage    = 42, 10
+getpower = ifelse(Var(23)>0,0,91), ifelse(Var(23)>0,0,91)
+givepower = 16, 16
+priority  = 5
+guardflag = MA
+hitflag = MAF
+pausetime = 44,46
+sparkno = 2
+sparkxy = -10,-40
+guard.sparkno = 42
+hitsound   = s1,4
+guardsound = s2,1
+ground.type = High
+ground.slidetime = 24
+ground.hittime  = 24
+ground.velocity = -4,12
+guard.velocity = -4
+air.velocity = -4,12
+fall = 1
+envshake.time = 20
+envshake.freq = 90
+envshake.ampl = -5
+
+[State 1803, 5]
+type = HitDef
+trigger1 = P2StateType != A
+trigger1 = Animelem = 1
+persistent = 1
+attr = S, SA
+animtype  = Up
+damage    = 42, 10
+getpower = ifelse(Var(23)>0,0,91), ifelse(Var(23)>0,0,91)
+givepower = 16, 16
+priority  = 5
+guardflag = MA
+hitflag = MA
+pausetime = 44,46
+sparkno = 2
+sparkxy = -10,-40
+guard.sparkno = 42
+hitsound   = s1,4
+guardsound = s2,1
+ground.type = Low
+ground.slidetime = 24
+ground.hittime  = 24
+ground.velocity = 0,8
+guard.velocity = -4
+air.velocity = -2,8
+fall = 1
+p2stateno = 1204
+envshake.time = 20
+envshake.freq = 90
+envshake.ampl = -5
+
+[State 1803, 6]
+type = Explod
+triggerall = StageVar(info.author) != "water"
+triggerall = P2StateType != A
+trigger1 = Movehit
+trigger1 = Enemy, Time = 46
+anim = f66
+sprpriority = -4
+postype = p2
+pos = -5,0
+bindtime = 1
+supermove = 1
+
+[State 1803, 7]
+type = Explod
+triggerall = StageVar(info.author) != "water"
+triggerall = P2StateType != A
+trigger1 = Movehit
+trigger1 = Enemy, Time = 46
+anim = f67
+sprpriority = 4
+postype = p2
+pos = -5,0
+bindtime = 1
+supermove = 1
+
+[State 1803, 6]
+type = Explod
+triggerall = StageVar(info.author) = "water"
+triggerall = P2StateType != A
+trigger1 = Movehit
+trigger1 = Enemy, Time = 46
+anim = f24
+sprpriority = 4
+postype = p2
+pos = -5,0
+bindtime = 1
+supermove = 1
+
+[State 1803, 7]
+type = Explod
+triggerall = StageVar(info.author) = "water"
+triggerall = P2StateType != A
+trigger1 = Movehit
+trigger1 = Enemy, Time = 46
+anim = f24
+facing = -1
+sprpriority = 4
+postype = p2
+pos = -5,0
+bindtime = 1
+supermove = 1
+
+[State 1803, 8]
+type = PlaySnd
+triggerall = P2StateType != A
+trigger1 = Movehit
+trigger1 = Enemy, Time = 46
+value = s7,1
+
+[State 3001, 7]
+type = PlaySnd
+triggerall = prevstateno = 1753
+trigger1 = time = 4
+value = s3000,1
+
+[State 1803, 9]
+type = ChangeState
+trigger1 = Vel Y > 0 && Pos Y >= 5
+value = 3003

@@ -1,0 +1,510 @@
+[Info];GUILTY GEAR ISUKA
+name = "Zepp_GGI.def"
+displayname = "k"
+mugenversion = 1.1
+
+;------------------------------------------------------------------------------
+[Camera]
+startx = 0
+starty = 0
+boundleft = -269
+boundright = 269
+boundhigh  = -50
+boundlow   = 0
+verticalfollow = 0.93
+tension = 100
+floortension = 50
+overdrawhigh = 120
+overdrawlow = 120
+cuthigh = 0
+cutlow = 0
+zoomout = 0.9
+zoomin = 1
+tensionhigh = 200
+tensionlow = 200
+
+;------------------------------------------------------------------------------
+[PlayerInfo]
+p1startx =-120
+p1starty =0
+p1startz =0
+p1facing =1
+
+p2startx =120
+p2starty =0
+p2startz =0
+p2facing =-1
+
+p3startx 	= -250
+p3starty 	= 0
+p3facing 	= 1
+
+p4startx 	= 250
+p4starty 	= 0
+p4facing 	= -1
+
+leftbound =-4000
+rightbound =4000
+topbound =0
+botbound =0
+
+;------------------------------------------------------------------------------
+[Bound]
+screenleft = 30
+screenright = 30
+
+;------------------------------------------------------------------------------
+[StageInfo]
+localcoord = 854,480
+zoffset = 438
+autoturn = 1
+resetBG = 0
+
+;------------------------------------------------------------------------------
+[Shadow]
+color = 100,100,100
+yscale = 0.25
+;reflect = 1
+
+;------------------------------------------------------------------------------
+[Music]
+bgmusic = sound/»ê¶·ÂÞ.mp3
+bgvolume = 255
+
+;------------------------------------------------------------------------------
+[BGdef]
+spr = stages/Zepp_GGI.sff
+debugbg = 0
+
+;------------------------------------------------------------------------------
+[BG 0];”wŒi
+type = normal
+spriteno = 0,3
+layerno = 0
+start = -320,-401
+delta = 0,0
+trans = None
+mask  = 0
+ID = 0
+
+[bgctrldef 0]
+CtrlID = 0
+
+[BGCtrl 1]
+type = VelSet
+Time = 2000
+y = 0.0125
+
+[BGCtrl 1]
+type = VelSet
+Time = 19600
+y = 0
+
+[BG 0];”wŒi
+type = normal
+spriteno = 0,2
+layerno = 0
+start = -384,-441
+delta = 0.145,0
+trans = None
+mask  = 1
+ID = 2
+
+[bgctrldef 2]
+CtrlID = 2
+
+[BGCtrl 1]
+type = VelSet
+Time = 90
+y = 0.09
+
+[BG 0];“y‘ä
+type = normal
+spriteno = 0,4
+layerno = 0
+start = -320,15
+delta = 0,0.8
+trans = add
+tile = 1,1
+mask  = 1
+ID = 4
+
+[bgctrldef 4]
+CtrlID = 4
+
+[BGCtrl 1]
+type = Enable
+time = 0
+value = 0
+
+[BGCtrl 1]
+type = Enable
+time = 3440
+value = 1
+
+[BGCtrl 1]
+type = Enable
+time = 8595
+value = 0
+
+[BGCtrl 1]
+type = VelSet
+Time = 90
+y = 1.1
+
+; BACKGROUND ROBOTS ////////////////////////////////////////
+[BG Robots]
+type = normal
+layerno = 0
+spriteno = 1,1
+start = 128,-50
+delta = 0.5,1
+trans = None 
+mask = 1
+tile = 0,1
+velocity = 0,-2
+tilespacing = 0,300
+
+[BG Robots]
+type = normal
+layerno = 0
+spriteno = 1,1
+start = 512,100
+delta = 0.5,1
+trans = None 
+mask = 1
+tile = 0,1
+velocity = 0,-2.5
+tilespacing = 0,600
+
+[BG Robots]
+type = normal
+layerno = 0
+spriteno = 1,1
+start = 256,50
+delta = 0.5,1
+trans = None 
+mask = 1
+tile = 0,1
+velocity = 0,-3
+tilespacing = 0,1200
+
+[BG Robots]
+type = normal
+layerno = 0
+spriteno = 1,1
+start = 0,0
+delta = 0.5,1
+trans = None 
+mask = 1
+tile = 0,1
+velocity = 0,-2.5
+tilespacing = 0,1800
+
+[BG Robots]
+type = normal
+layerno = 0
+spriteno = 1,1
+start = -128,-50
+delta = 0.5,1
+trans = None 
+mask = 1
+tile = 0,1
+velocity = 0,-2
+tilespacing = 0,2400
+
+[BG Robots]
+type = normal
+layerno = 0
+spriteno = 1,1
+start = -256,-100
+delta = 0.5,1
+trans = None 
+mask = 1
+tile = 0,1
+velocity = 0,-2.5
+tilespacing = 0,300
+; BACKGROUND ROBOTS END ////////////////////////////////////
+
+
+; FOREGROUND ROBOTS ////////////////////////////////////////
+[BG Robots]
+type = normal
+layerno = 0
+spriteno = 1,0
+start = 128,-50
+delta = 0.5,1
+trans = None 
+mask = 1
+tile = 0,1
+velocity = 0,-4
+tilespacing = 0,300
+
+[BG Robots]
+type = normal
+layerno = 0
+spriteno = 1,0
+start = 512,0
+delta = 0.5,1
+trans = None 
+mask = 1
+tile = 0,1
+velocity = 0,-5
+tilespacing = 0,600
+
+[BG Robots]
+type = normal
+layerno = 0
+spriteno = 1,0
+start = 256,-50
+delta = 0.5,1
+trans = None 
+mask = 1
+tile = 0,1
+velocity = 0,-6
+tilespacing = 0,1200
+
+[BG Robots]
+type = normal
+layerno = 0
+spriteno = 1,0
+start = 0,-100
+delta = 0.5,1
+trans = None 
+mask = 1
+tile = 0,1
+velocity = 0,-5
+tilespacing = 0,1800
+
+[BG Robots]
+type = normal
+layerno = 0
+spriteno = 1,0
+start = -256,-150
+delta = 0.5,1
+trans = None 
+mask = 1
+tile = 0,1
+velocity = 0,-4
+tilespacing = 0,1600
+
+[BG Robots]
+type = normal
+layerno = 0
+spriteno = 1,0
+start = -512,-200
+delta = 0.5,1
+trans = None 
+mask = 1
+tile = 0,1
+velocity = 0,-5
+tilespacing = 0,300
+; FOREGROUND ROBOTS END ////////////////////////////////////
+
+
+[BG 0];“y‘ä
+type = normal
+spriteno = 0,1
+layerno = 0
+start = -618,15
+delta = 0.325,1.3
+trans = None
+tile = 0,1
+mask  = 1
+ID = 3
+
+[bgctrldef 3]
+CtrlID = 3
+
+[BGCtrl 1]
+type = Enable
+time = 0
+value = 1
+
+[BGCtrl 1]
+type = Enable
+time = 7000
+value = 0
+
+[BGCtrl 1]
+type = VelSet
+Time = 90
+y = 3
+
+[BG 0];“y‘ä
+type = normal
+spriteno = 0,5
+layerno = 0
+start = -618,15
+delta = 0.325,1.3
+trans = None
+tile = 0,1
+mask  = 1
+ID = 5
+
+[bgctrldef 5]
+CtrlID = 5
+
+[BGCtrl 1]
+type = Enable
+time = 0
+value = 0
+
+[BGCtrl 1]
+type = Enable
+time = 7000
+value = 1
+
+[BGCtrl 1]
+type = VelSet
+Time = 90
+y = 3
+
+[BGCtrl 1]
+type = VelSet
+Time = 19600
+y = 0
+
+[BG 0];“y‘ä
+type = normal
+spriteno = 0,0
+layerno = 0
+start = -768,165
+delta = 1,2
+trans = None
+mask  = 1
+ID = 1
+
+[bgctrldef 1]
+CtrlID = 1
+
+[BGCtrl 1]
+type = SinY
+time = 60
+value = 10, 10
+CtrlID = 1
+[BGCtrl 1]
+type = SinY
+time = 70
+value = 5, 10
+CtrlID = 1
+[BGCtrl 1]
+type = SinY
+time = 80
+value = 2, 10
+CtrlID = 1
+[BGCtrl 1]
+type = SinY
+time = 100
+value = 0
+CtrlID = 1
+[BGCtrl 1]
+type = SinY
+time = 19600
+value = 10, 10
+CtrlID = 1
+[BGCtrl 1]
+type = SinY
+time = 19610
+value = 5, 10
+CtrlID = 1
+[BGCtrl 1]
+type = SinY
+time = 19620
+value = 2, 10
+CtrlID = 1
+[BGCtrl 1]
+type = SinY
+time = 19650
+value = 0
+CtrlID = 1
+
+[Begin Action 1]
+0,9, 0,0, 1500
+0,8, 0,0, 5
+0,10, 0,0, 2500
+0,7, 0,0, 7
+0,8, 0,0, 5
+
+[Begin Action 2]
+0,11, 0,0, 1900
+0,12, 0,0, 8
+0,11, 0,0, 8
+0,12, 0,0, 8
+0,12, 0,0, 8
+0,11, 0,0, 8
+0,12, 0,0, 8
+0,12, 0,0, 8
+0,11, 0,0, 8
+0,12, 0,0, 8
+0,12, 0,0, 8
+0,11, 0,0, 8
+0,12, 0,0, 8
+0,12, 0,0, 8
+0,11, 0,0, 8
+0,12, 0,0, 8
+0,12, 0,0, 8
+0,11, 0,0, 8
+0,12, 0,0, 8
+0,11, 0,0, 80
+0,15, 0,0, 8
+0,13, 0,0, 700
+0,15, 0,0, 8
+
+[Begin Action 3]
+0,16, 0,0, 800
+0,17, 0,0, 9
+0,16, 0,0, 9
+0,17, 0,0, 9
+0,16, 0,0, 9
+0,17, 0,0, 9
+0,16, 0,0, 9
+0,17, 0,0, 9
+0,16, 0,0, 9
+0,17, 0,0, 9
+0,16, 0,0, 9
+0,17, 0,0, 9
+0,16, 0,0, 9
+0,17, 0,0, 9
+0,16, 0,0, 9
+0,17, 0,0, 9
+0,16, 0,0, 9
+0,17, 0,0, 9
+0,16, 0,0, 9
+0,17, 0,0, 9
+0,16, 0,0, 9
+0,17, 0,0, 9
+0,16, 0,0, 9
+0,17, 0,0, 9
+0,16, 0,0, 9
+0,17, 0,0, 9
+0,16, 0,0, 9
+0,18, 0,0, 390
+0,19, 0,0, 9
+0,18, 0,0, 9
+0,19, 0,0, 9
+0,18, 0,0, 9
+0,19, 0,0, 9
+0,18, 0,0, 9
+0,19, 0,0, 9
+0,18, 0,0, 9
+0,19, 0,0, 9
+0,18, 0,0, 9
+0,19, 0,0, 9
+0,18, 0,0, 9
+0,19, 0,0, 9
+0,18, 0,0, 9
+0,19, 0,0, 9
+0,18, 0,0, 9
+0,19, 0,0, 9
+0,18, 0,0, 9
+0,19, 0,0, 9
+0,18, 0,0, 9
+0,19, 0,0, 9
+0,18, 0,0, 9
+0,19, 0,0, 9
+0,18, 0,0, 9
+0,19, 0,0, 9
+0,18, 0,0, 9
+0,19, 0,0, 9
+0,18, 0,0, 9

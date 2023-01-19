@@ -1,0 +1,443 @@
+
+;===========================================================================
+[Statedef -3]
+;===========================================================================
+;---------------------------------------------------------------------------
+
+[State -3, 2];跳跃系统相关(普通跳)
+type = PlaySnd
+triggerall = time = 1
+trigger1 = stateno = 40 
+trigger1 = var(25) <= 0
+value = F40, 0
+channel = 13
+
+[State -3, 2];跳跃系统相关（大跳/小跳）
+type = PlaySnd
+triggerall = time = 1
+trigger1 = stateno = 40 
+trigger1 = var(25) > 1
+value = F40, 1
+channel = 13
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; AH大神的大跳系统
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[State -3, 5]
+type = varset
+trigger1 = stateno = 10
+trigger1 = time = 0
+trigger2 = stateno = 100
+v = 25
+value = 20
+
+[State -3, 5]
+type = varset
+trigger1 = stateno = 52
+trigger1 = time = 0
+v = 25
+value = 0
+
+[State -3, 5]
+type = varset
+trigger1 = stateno = 40
+trigger1 = command != "holdup"
+v = 26
+value = 1
+
+[State -3, 5]
+type = varset
+trigger1 = stateno = 40
+trigger1 = command = "holdup"
+v = 26
+value = 0
+
+[State -3, 5]
+type = VelAdd
+trigger1 = stateno = 50
+trigger1 = anim = 41
+trigger1 = time = 1
+trigger1 = var(25) >= 1
+y = -0.6
+
+[State -3, 5]
+type = velset
+trigger1 = stateno = 50
+trigger1 = anim = 42
+trigger1 = time = 1
+trigger1 = var(25) >= 1
+x = 4.5
+;y = -9
+
+[State -3, 5]
+type = velset
+trigger1 = stateno = 50
+trigger1 = anim = 43
+trigger1 = time = 1
+trigger1 = var(25) >= 1
+x = -4.5
+;y = -9
+
+[State -3, 5]
+type = veladd
+trigger1 = stateno = 50
+trigger1 = time = 1
+trigger1 = var(26) = 1
+y = 3
+
+[State -3, 5]
+type = AfterImage
+trigger1 = stateno = 50
+trigger1 = time = 1
+trigger1 = var(25) >= 1
+time = 10
+trans = add1
+timegap = 1
+framegap = 2
+length = 8
+palbright = 12,12,12
+palcontrast = 225,225,225
+palpostbright = 0,0,0
+paladd = 0,0,0
+palmul = 1,1,1
+;--------------------------------------------
+;---------------------------------------------------------------
+;----------------------火焰受击伴随烟雾-------------------------
+;---------------------------------------------------------------
+;人物受到带火属性的招式攻击Var设定
+[State 2300, Burn]
+type = Varset
+trigger1 = ProjHit1001 = 1, < 70
+trigger2 = ProjHit1020 = 1, < 70
+trigger3 = ProjHit1030 = 1, < 40
+trigger4 = Projhittime(1021) >= 0 && Projhittime(1021) <= 45
+trigger5 = Projhittime(1002) >= 0 && Projhittime(1002) <= 25
+trigger6 = Anim = 3280
+trigger6 = (AnimElemTime(27) >= 0) && (movehit)
+trigger7 = Anim = 978 || Anim = 13504 || Anim = 991 || Anim = 3290 || Anim = 3315 || Anim = 3820 || Anim = 3002 || Anim = 3003|| Anim = 3102 || Anim = 3103|| Anim = 3340|| Anim = 1503|| Anim = 1504|| Anim = 1500 || Anim = 1501|| Anim = 1003 || Anim = 1040 || Anim = 1041 || Anim = 1740 || Anim = 3622 || Anim = 3062 || Anim = 13212
+trigger7 = Movehit
+trigger8 = ProjHit3310 = 1, < 100
+trigger9 = Anim = 3700
+trigger9 = AnimElemTime(10) >= 5
+trigger10 = Anim = 3954 || Anim = 3920 
+trigger10 = time >=0
+persistent = 0
+ignorehitpause = 1
+var(23) = 1
+
+[State -2,红色双烟雾];Random < 50
+type = Explod
+triggerall = p2movetype = H
+triggerall = Random < 50
+trigger1 = ProjHit1001 = 1, < 70
+trigger2 = ProjHit1020 = 1, < 70
+trigger3 = ProjHit1030 = 1, < 40
+trigger4 = Projhittime(1021) >= 0 && Projhittime(1021) <= 45
+trigger5 = Projhittime(1002) >= 0 && Projhittime(1002) <= 25
+trigger6 = Anim = 3280
+trigger6 = (AnimElemTime(27) >= 0) && (movehit)
+trigger7 = Anim = 978 || Anim = 13504 || Anim = 991 || Anim = 3290 || Anim = 3315 || Anim = 3820 || Anim = 3002 || Anim = 3003|| Anim = 3102 || Anim = 3103 || Anim = 3340|| Anim = 1503|| Anim = 1504|| Anim = 1500 || Anim = 1501|| Anim = 1003 ||  Anim = 1040 || Anim = 1041 || Anim = 1740 || Anim = 3622 || Anim = 3062 || Anim = 13212
+trigger7 = Movehit
+trigger8 = ProjHit3310 = 1, < 100
+trigger9 = Anim = 3700
+trigger9 = AnimElemTime(10) >= 5
+trigger10 = Anim = 3954 || Anim = 3920 
+trigger10 = time >=0
+trigger11 = P2stateno = 3010
+persistent = 0
+anim = f400
+pos = 0,-50
+postype = p2
+sprpriority = 999
+bindtime = 1
+random = 100,100
+ownpal = 1
+supermove = 1
+
+[State -2,红色雾气]
+type = Explod
+triggerall = p2movetype = H
+triggerall = Random < 100
+trigger1 = ProjHit1001 = 1, < 70
+trigger2 = ProjHit1020 = 1, < 70
+trigger3 = ProjHit1030 = 1, < 40
+trigger4 = Projhittime(1021) >= 0 && Projhittime(1021) <= 45
+trigger5 = Projhittime(1002) >= 0 && Projhittime(1002) <= 25
+trigger6 = Anim = 3280
+trigger6 = (AnimElemTime(27) >= 0) && (movehit)
+trigger7 = Anim = 978 || Anim = 13504 || Anim = 991 || Anim = 3290 || Anim = 3315 || Anim = 3820|| Anim = 3002 || Anim = 3003|| Anim = 3102 || Anim = 3103|| Anim = 3340 || Anim = 1503|| Anim = 1504|| Anim = 1500 || Anim = 1501|| Anim = 1003 ||  Anim = 1040 || Anim = 1041 || Anim = 1740 || Anim = 3622 || Anim = 3062 || Anim = 13212
+trigger7 = Movehit
+trigger8 = ProjHit3310 = 1, < 100
+trigger9 = Anim = 3700
+trigger9 = AnimElemTime(10) >= 5
+trigger10 = Anim = 3954 || Anim = 3920 
+trigger10 = time >=0
+trigger11 = P2stateno = 3010
+persistent = 0
+anim = f401
+pos = 0,-50
+postype = p2
+sprpriority = 999
+bindtime = 1
+random = 100,100
+ownpal = 1
+supermove = 1
+
+[State -2,三个小爆点]
+type = Explod
+triggerall = p2movetype = H
+triggerall = Random < 100
+trigger1 = ProjHit1001 = 1, < 70
+trigger2 = ProjHit1020 = 1, < 70
+trigger3 = ProjHit1030 = 1, < 40
+trigger4 = Projhittime(1021) >= 0 && Projhittime(1021) <= 45
+trigger5 = Projhittime(1002) >= 0 && Projhittime(1002) <= 25
+trigger6 = Anim = 3280
+trigger6 = (AnimElemTime(27) >= 0) && (movehit)
+trigger7 = Anim = 978 || Anim = 13504 || Anim = 991 || Anim = 3290 || Anim = 3315 || Anim = 3820 || Anim = 3002 || Anim = 3003|| Anim = 3102 || Anim = 3103|| Anim = 3340 || Anim = 1503|| Anim = 1504|| Anim = 1500 || Anim = 1501|| Anim = 1003 ||  Anim = 1040 || Anim = 1041 || Anim = 1740 || Anim = 3622 || Anim = 3062 || Anim = 13212
+trigger7 = Movehit
+trigger8 = ProjHit3310 = 1, < 100
+trigger9 = Anim = 3700
+trigger9 = AnimElemTime(10) >= 5
+trigger10 = Anim = 3954 || Anim = 3920 
+trigger10 = time >=0
+trigger11 = P2stateno = 3010
+persistent = 0
+anim = f402
+pos = 0,-50
+postype = p2
+sprpriority = 999
+bindtime = 1
+random = 100,100
+ownpal = 1
+supermove = 1
+
+[State -2,红色单烟雾];Random < 70
+type = Explod
+triggerall = p2movetype = H
+triggerall = Random < 70
+trigger1 = ProjHit1001 = 1, < 70
+trigger2 = ProjHit1020 = 1, < 70
+trigger3 = ProjHit1030 = 1, < 40
+trigger4 = Projhittime(1021) >= 0 && Projhittime(1021) <= 45
+trigger5 = Projhittime(1002) >= 0 && Projhittime(1002) <= 25
+trigger6 = Anim = 3280
+trigger6 = (AnimElemTime(27) >= 0) && (movehit)
+trigger7 = Anim = 978 || Anim = 13504 || Anim = 991 || Anim = 3290 || Anim = 3315 || Anim = 3820 || Anim = 3002 || Anim = 3003|| Anim = 3102 || Anim = 3103|| Anim = 3340|| Anim = 1503|| Anim = 1504|| Anim = 1500 || Anim = 1501|| Anim = 1003 ||  Anim = 1040 || Anim = 1041 || Anim = 1740 || Anim = 3622 || Anim = 3062 || Anim = 13212
+trigger7 = Movehit
+trigger8 = ProjHit3310 = 1, < 100
+trigger9 = Anim = 3700
+trigger9 = AnimElemTime(10) >= 5
+trigger10 = Anim = 3954 || Anim = 3920 
+trigger10 = time >=0
+trigger11 = P2stateno = 3010
+persistent = 0
+anim = f403
+pos = 0,-50
+postype = p2
+sprpriority = 999
+bindtime = 1
+random = 100,100
+ownpal = 1
+supermove = 1
+
+;---------------------------------------------------------------
+;P2倒地之后的烟雾（红色）
+;---------------------------------------------------------------
+[State 1000, explods];红色小明火
+type = Explod
+triggerall = var(23) > 0 && Random < 70
+trigger1 = (p2stateno = [5100,5110]) && p2movetype = H
+trigger2 = p2stateno = 3850 && p2movetype = H
+trigger3 = (p2stateno = [4167,4169]) && p2movetype = H
+anim = f404
+pos = 0,0
+postype = p2
+sprpriority = 999
+bindtime = 1
+random = 100,100
+ownpal = 1
+supermove = 1
+ignorehitpause = 1
+
+[State 1000, explods];红色小灰雾
+type = Explod
+triggerall = var(23) > 0 && Random < 70
+trigger1 = (p2stateno = [5100,5110]) && p2movetype = H
+trigger2 = p2stateno = 3850 && p2movetype = H
+trigger3 = (p2stateno = [4167,4169]) && p2movetype = H
+anim = f405
+pos = 0,0
+postype = p2
+sprpriority = 999
+bindtime = 1
+random = 100,100
+ownpal = 1
+supermove = 1
+ignorehitpause = 1
+
+[State 1000, explods];红色小圈
+type = Explod
+triggerall = var(23) > 0 && Random < 70
+trigger1 = (p2stateno = [5100,5110]) && p2movetype = H
+trigger2 = p2stateno = 3850 && p2movetype = H
+trigger3 = (p2stateno = [4167,4169]) && p2movetype = H
+anim = f406
+pos = 0,0
+postype = p2
+sprpriority = 999
+bindtime = 1
+random = 100,100
+ownpal = 1
+supermove = 1
+ignorehitpause = 1
+
+[State 1000, explods];红色贴地喷雾1
+type = Explod
+triggerall = StageVar(info.author) != "water"
+triggerall = var(23) > 0 && Random < 50
+trigger1 = (p2stateno = [5100,5110]) && p2movetype = H
+trigger2 = p2stateno = 3850 && p2movetype = H
+trigger3 = (p2stateno = [4167,4169]) && p2movetype = H
+anim = f407
+pos = 0,0
+postype = p2
+sprpriority = 999
+bindtime = 1
+random = 100,0
+ownpal = 1
+supermove = 1
+ignorehitpause = 1
+
+[State 1000, explods];红色贴地喷雾2
+type = Explod
+triggerall = StageVar(info.author) != "water"
+triggerall = var(23) > 0 && Random < 50
+trigger1 = (p2stateno = [5100,5110]) && p2movetype = H
+trigger2 = p2stateno = 3850 && p2movetype = H
+trigger3 = (p2stateno = [4167,4169]) && p2movetype = H
+anim = f407
+pos = 0,0
+facing = -1
+postype = p2
+sprpriority = 999
+bindtime = 1
+random = 100,0
+ownpal = 1
+supermove = 1
+ignorehitpause = 1
+
+[State 1000, VarSet]
+type = VarSet
+trigger1 = p2movetype != H
+v = 23
+value = 0
+persistent = 0
+;---------------------------------------------------------------
+;------------------------END OF STATE---------------------------
+;---------------------------------------------------------------
+;-------------------------------------------------------------------------------
+
+;==================================== For var3
+
+[State -2, sunglass]
+type = envcolor
+trigger1 = projhit2020 = 1
+time = 1
+under = 1
+value = 240,240,240
+
+[state -2, stopsound]
+type = stopsnd
+trigger1 = stateno != 195 && prevstateno = 195
+trigger2 = movetype = H
+channel = 3
+
+; sliding sound
+[State -2, slidesound]
+type = PlaySnd
+trigger1 = P2stateno = 306
+trigger1 = P2movetype = H
+trigger1 = P2statetype = A
+trigger1 = enemy, Vel Y > 0
+trigger1 = enemy, Pos Y > 15
+value = 300,0
+persistent = 0
+;-------------------------
+; hit sounds
+
+; hit sound in light
+[State -3, light sound]
+type = PlaySnd
+triggerall = random < 249
+triggerall = time = 1
+triggerall = Alive
+triggerall = stateno = 5000
+trigger1 = anim = 5000
+trigger2 = anim = 5010
+trigger3 = anim = 5020
+value = 5000,0+(random%6)
+volume = 40
+ignorehitpause = 1
+
+; hit sound in medium
+[State -3, medium sound]
+type = PlaySnd
+triggerall = random < 249
+triggerall = time = 1
+triggerall = Alive
+triggerall = stateno = 5000
+trigger1 = anim = 5001
+trigger2 = anim = 5011
+trigger3 = anim = 5021
+value = 5000,0+(random%6)
+volume = 30
+ignorehitpause = 1
+
+; hit sound in medium
+[State -3, hard sound]
+type = PlaySnd
+triggerall = random < 249
+triggerall = time = 1
+triggerall = Alive
+triggerall = stateno = 5000
+trigger1 = anim = 5002
+trigger2 = anim = 5012
+trigger3 = anim = 5022
+value = 5000,0+(random%6)
+volume = 20
+ignorehitpause = 1
+
+[State -3, hard sound in air]
+type = PlaySnd
+triggerall = random < 249
+triggerall = Alive
+triggerall = stateno = 5020
+trigger1 = movetype = H
+trigger1 = time = 1
+value = 5000,0+(random%6)
+volume = 20
+persistent = 0
+ignorehitpause = 1
+
+[State -3, removehandflame]
+type = RemoveExplod
+trigger1 = (prevstateno = 3001 || prevstateno = 3006) && stateno != 3001
+trigger2 = movetype = H
+trigger3 = prevstateno = 3101 && stateno != 3101
+trigger4 = (prevstateno =  [3050,3051])&& (stateno != [3050,3051])
+trigger5 = prevstateno = 3800 && stateno != 3800
+ID = 2010
+
+[State -3, removecrowflame]
+type = RemoveExplod
+trigger1 = movetype = H
+trigger2 = stateno = 3400 || stateno = 3199
+ID = 1500
+
+[State -3, removecrowflame]
+type = RemoveExplod
+trigger1 = movetype = H
+trigger2 = stateno != 1972
+ID = 1455
+;----------------------------------------------------

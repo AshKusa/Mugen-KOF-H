@@ -1,0 +1,545 @@
+
+
+;---------------------------------------------------------------------------------
+[Statedef -3];忢帪娔帇僗僥乕僩(p2stateno側偳偱憡庤偵峴摦傪惂屼偝傟偨帪偼幚峴偟側偄)
+;---------------------------------------------------------------------------------
+;---------------------------------------------------------------------------
+
+[State -3, 2];跳跃系统相关(普通跳)
+type = PlaySnd
+triggerall = time = 1
+trigger1 = stateno = 40 
+trigger1 = var(25) <= 0
+value = F40, 0
+channel = 13
+
+[State -3, 2];跳跃系统相关（大跳/小跳）
+type = PlaySnd
+triggerall = time = 1
+trigger1 = stateno = 40 
+trigger1 = var(25) > 1
+value = F40, 1
+channel = 13
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; AH大神的大跳系统
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[State -3, 5]
+type = varset
+trigger1 = stateno = 10
+trigger1 = time = 0
+trigger2 = stateno = [100,101]
+v = 25
+value = 20
+
+[State -3, 5]
+type = varset
+trigger1 = stateno = 52
+trigger1 = time = 0
+v = 25
+value = 0
+
+[State -3, 5]
+type = varset
+trigger1 = stateno = 40
+trigger1 = command != "holdup"
+v = 26
+value = 1
+
+[State -3, 5]
+type = varset
+trigger1 = stateno = 40
+trigger1 = command = "holdup"
+v = 26
+value = 0
+
+[State -3, 5]
+type = VelAdd
+trigger1 = stateno = 50
+trigger1 = anim = 41+var(55)*10000
+trigger1 = time = 1
+trigger1 = var(25) >= 1
+y = -0.6
+
+[State -3, 5]
+type = velset
+trigger1 = stateno = 50
+trigger1 = anim = 42+var(55)*10000
+trigger1 = time = 1
+trigger1 = var(25) >= 1
+x = 4.5
+
+[State -3, 5]
+type = velset
+trigger1 = stateno = 50
+trigger1 = anim = 43+var(55)*10000
+trigger1 = time = 1
+trigger1 = var(25) >= 1
+x = -4.5
+
+[State -3, 5]
+type = veladd
+trigger1 = stateno = 50
+trigger1 = time = 1
+trigger1 = var(26) = 1
+y = 3
+
+[State -3, 5]
+type = AfterImage
+triggerall = fvar(20) < 1
+triggerall = fvar(21) < 1
+trigger1 = stateno = 50
+trigger1 = time = 1
+trigger1 = var(25) >= 1
+time = 10
+trans = add1
+timegap = 1
+framegap = 2
+length = 8
+palbright = 12,12,12
+palcontrast = 225,225,225
+palpostbright = 0,0,0
+paladd = 0,0,0
+palmul = 1,1,1
+;--------------------------------------------
+;--------------------------------------------
+[State 0, changeanim]
+type = changeanim
+triggerall = roundno >= 2
+trigger1 = palno > 6
+trigger1 = anim = 5+var(55)*10000
+value = 1
+
+[state varadd]
+type = varset
+triggerall = roundstate <= 1
+trigger1 = palno = [7,12]
+var(55) = 1
+;---------------------------------------------------------------
+;----------------------火焰受击伴随烟雾-------------------------
+;---------------------------------------------------------------
+;人物受到带火属性的招式攻击Var设定
+[State 2300, Burn]
+type = Varset
+trigger1 = p2stateno = 3551 || p2stateno = 4200
+trigger2 = Projhittime(2080) >= 0 && Projhittime(2080) <= 55
+trigger3 = Projhittime(2200) >= 0 && Projhittime(2200) <= 55
+trigger4 = Projhittime(3320) >= 0 && Projhittime(3320) <= 55
+trigger5 = stateno = 1105 || stateno = 1155 || (stateno = [1300,1750]) || stateno = 3300 || stateno = 2500  || stateno = 2810|| stateno = 3010 || stateno = 3100 || (stateno = [2100,2112] )|| (stateno = [2310,2340])|| (stateno = [3901,3906])
+trigger5 = Movehit
+trigger6= NumHelper(2205)|| NumHelper(2505)|| NumHelper(2510)|| NumHelper(2500)|| NumHelper(2000)|| NumHelper(2090)
+trigger7 = Projhittime(3400) >= 0 && Projhittime(3400) <= 55
+trigger8 = Projhittime(1950) >= 0 && Projhittime(1950) <= 25
+trigger9 = Projhittime(3604) >= 0 && Projhittime(3604) <= 55
+trigger10 = Projhittime(3605) >= 0 && Projhittime(3605) <= 55
+persistent = 0
+ignorehitpause = 1
+var(23) = 1
+
+[State -2,红色双烟雾];Random < 50
+type = Explod
+triggerall = p2movetype = H
+triggerall = Random < 50
+trigger1 = Projhittime(2080) >= 0 && Projhittime(2080) <= 55
+trigger2 = Projhittime(2200) >= 0 && Projhittime(2200) <= 55
+trigger3 = Projhittime(3320) >= 0 && Projhittime(3320) <= 55
+trigger4 = stateno = 1105 || stateno = 1155 || (stateno = [1300,1750]) || stateno = 3300 || stateno = 2500  || stateno = 2810 || stateno = 3010 || stateno = 3100 || (stateno = [2100,2112] )|| (stateno = [2310,2340])|| (stateno = [3901,3906])
+trigger4 = Movehit
+trigger5= NumHelper(2205)|| NumHelper(2505)|| NumHelper(2510)|| NumHelper(2500)|| NumHelper(2000)|| NumHelper(2090)
+trigger6 = Projhittime(3400) >= 0 && Projhittime(3400) <= 55
+trigger7 = Projhittime(1950) >= 0 && Projhittime(1950) <= 25
+trigger8 = Projhittime(3604) >= 0 && Projhittime(3604) <= 55
+trigger9 = Projhittime(3605) >= 0 && Projhittime(3605) <= 55
+trigger10 = p2stateno = 4200
+anim = f400
+pos = 0,-50
+postype = p2
+sprpriority = 999
+bindtime = 1
+random = 100,100
+ownpal = 1
+supermove = 1
+
+[State -2,红色雾气]
+type = Explod
+triggerall = p2movetype = H
+triggerall = Random < 100
+trigger1 = Projhittime(2080) >= 0 && Projhittime(2080) <= 55
+trigger2 = Projhittime(2200) >= 0 && Projhittime(2200) <= 55
+trigger3 = Projhittime(3320) >= 0 && Projhittime(3320) <= 55
+trigger4 = stateno = 1105 || stateno = 1155 || (stateno = [1300,1750]) || stateno = 3300 || stateno = 2500  || stateno = 2810 || stateno = 3010 || stateno = 3100 || (stateno = [2100,2112] )|| (stateno = [2310,2340])|| (stateno = [3901,3906])
+trigger4 = Movehit
+trigger5= NumHelper(2205)|| NumHelper(2505)|| NumHelper(2510)|| NumHelper(2500)|| NumHelper(2000)|| NumHelper(2090)
+trigger6 = Projhittime(3400) >= 0 && Projhittime(3400) <= 55
+trigger7 = Projhittime(1950) >= 0 && Projhittime(1950) <= 25
+trigger8 = Projhittime(3604) >= 0 && Projhittime(3604) <= 55
+trigger9 = Projhittime(3605) >= 0 && Projhittime(3605) <= 55
+trigger10 = p2stateno = 4200
+anim = f401
+pos = 0,-50
+postype = p2
+sprpriority = 999
+bindtime = 1
+random = 100,100
+ownpal = 1
+supermove = 1
+
+[State -2,三个小爆点]
+type = Explod
+triggerall = p2movetype = H
+triggerall = Random < 100
+trigger1 = Projhittime(2080) >= 0 && Projhittime(2080) <= 55
+trigger2 = Projhittime(2200) >= 0 && Projhittime(2200) <= 55
+trigger3 = Projhittime(3320) >= 0 && Projhittime(3320) <= 55
+trigger4 = stateno = 1105 || stateno = 1155 || (stateno = [1300,1750]) || stateno = 3300 || stateno = 2500  || stateno = 2810 || stateno = 3010 || stateno = 3100 || (stateno = [2100,2112] )|| (stateno = [2310,2340])|| (stateno = [3901,3906])
+trigger4 = Movehit
+trigger5= NumHelper(2205)|| NumHelper(2505)|| NumHelper(2510)|| NumHelper(2500)|| NumHelper(2000)|| NumHelper(2090)
+trigger6 = Projhittime(3400) >= 0 && Projhittime(3400) <= 55
+trigger7 = Projhittime(1950) >= 0 && Projhittime(1950) <= 25
+trigger8 = Projhittime(3604) >= 0 && Projhittime(3604) <= 55
+trigger9 = Projhittime(3605) >= 0 && Projhittime(3605) <= 55
+trigger10 = p2stateno = 4200
+anim = f402
+pos = 0,-50
+postype = p2
+sprpriority = 999
+bindtime = 1
+random = 100,100
+ownpal = 1
+supermove = 1
+
+[State -2,红色单烟雾];Random < 70
+type = Explod
+triggerall = p2movetype = H
+triggerall = Random < 70
+trigger1 = Projhittime(2080) >= 0 && Projhittime(2080) <= 55
+trigger2 = Projhittime(2200) >= 0 && Projhittime(2200) <= 55
+trigger3 = Projhittime(3320) >= 0 && Projhittime(3320) <= 55
+trigger4 = stateno = 1105 || stateno = 1155 || (stateno = [1300,1750]) || stateno = 3300 || stateno = 2500  || stateno = 2810 || stateno = 3010 || stateno = 3100 || (stateno = [2100,2112] )|| (stateno = [2310,2340])|| (stateno = [3901,3906])
+trigger4 = Movehit
+trigger5= NumHelper(2205)|| NumHelper(2505)|| NumHelper(2510)|| NumHelper(2500)|| NumHelper(2000)|| NumHelper(2090)
+trigger6 = Projhittime(3400) >= 0 && Projhittime(3400) <= 55
+trigger7 = Projhittime(1950) >= 0 && Projhittime(1950) <= 25
+trigger8 = Projhittime(3604) >= 0 && Projhittime(3604) <= 55
+trigger9 = Projhittime(3605) >= 0 && Projhittime(3605) <= 55
+trigger10 = p2stateno = 4200
+anim = f403
+pos = 0,-50
+postype = p2
+sprpriority = 999
+bindtime = 1
+random = 100,100
+ownpal = 1
+supermove = 1
+
+;---------------------------------------------------------------
+;P2倒地之后的烟雾（红色）
+;---------------------------------------------------------------
+[State 1000, explods];红色小明火
+type = Explod
+triggerall = var(23) > 0 && Random < 70
+trigger1 = (p2stateno = [5100,5110]) && p2movetype = H
+trigger2 = (p2stateno = [4167,4169]) && p2movetype = H
+trigger3 = p2stateno = 3551
+anim = f404
+pos = 0,0
+postype = p2
+sprpriority = 999
+bindtime = 1
+random = 100,100
+ownpal = 1
+supermove = 1
+ignorehitpause = 1
+
+[State 1000, explods];红色小灰雾
+type = Explod
+triggerall = var(23) > 0 && Random < 70
+trigger1 = (p2stateno = [5100,5110]) && p2movetype = H
+trigger2 = (p2stateno = [4167,4169]) && p2movetype = H
+trigger3 = p2stateno = 3551
+anim = f405
+pos = 0,0
+postype = p2
+sprpriority = 999
+bindtime = 1
+random = 100,100
+ownpal = 1
+supermove = 1
+ignorehitpause = 1
+
+[State 1000, explods];红色小圈
+type = Explod
+triggerall = var(23) > 0 && Random < 70
+trigger1 = (p2stateno = [5100,5110]) && p2movetype = H
+trigger2 = (p2stateno = [4167,4169]) && p2movetype = H
+trigger3 = p2stateno = 3551
+anim = f406
+pos = 0,0
+postype = p2
+sprpriority = 999
+bindtime = 1
+random = 100,100
+ownpal = 1
+supermove = 1
+ignorehitpause = 1
+
+[State 1000, explods];红色贴地喷雾1
+type = Explod
+triggerall = StageVar(info.author) != "water"
+triggerall = var(23) > 0 && Random < 50
+trigger1 = (p2stateno = [5100,5110]) && p2movetype = H
+trigger2 = (p2stateno = [4167,4169]) && p2movetype = H
+trigger3 = p2stateno = 3551
+anim = f407
+pos = 0,0
+postype = p2
+sprpriority = 999
+bindtime = 1
+random = 100,0
+ownpal = 1
+supermove = 1
+ignorehitpause = 1
+
+[State 1000, explods];红色贴地喷雾2
+type = Explod
+triggerall = StageVar(info.author) != "water"
+triggerall = var(23) > 0 && Random < 50
+trigger1 = (p2stateno = [5100,5110]) && p2movetype = H
+trigger2 = (p2stateno = [4167,4169]) && p2movetype = H
+trigger3 = p2stateno = 3551
+anim = f407
+pos = 0,0
+facing = -1
+postype = p2
+sprpriority = 999
+bindtime = 1
+random = 100,0
+ownpal = 1
+supermove = 1
+ignorehitpause = 1
+
+[State 1000, VarSet]
+type = VarSet
+trigger1 = p2movetype != H
+v = 23
+value = 0
+persistent = 0
+;---------------------------------------------------------------
+;------------------------END OF STATE---------------------------
+;---------------------------------------------------------------
+;----------------------------------------------------------------------------
+;AI梡廳椡壛懍搙寁應
+[state -2, yaccel]
+type = varset
+trigger1 = fvar(20) != enemynear,const(movement.yaccel)
+trigger1 = enemynear,stateno != [5000,5210]
+trigger1 = enemynear,Vel Y != 0
+FV = 20
+value = enemynear,const(movement.yaccel)
+ignorehitpause = 1
+
+[state -2, yaccel]
+type = varset
+trigger1 = fvar(20) != enemynear,GetHitVar(yaccel)
+trigger1 = enemynear,stateno = [5000,5210]
+trigger1 = enemynear,Vel Y != 0
+FV = 20
+value = enemynear,GetHitVar(yaccel);(懪寕摉偰偨帪偺yaccel抣)
+ignorehitpause = 1
+
+;揋偑嬻拞偠傖側偄帪
+[state -2, yaccel]
+type = varset
+trigger1 = fvar(20) != 0
+trigger1 = enemynear,Vel Y = 0
+FV = 20
+value = 0;(懪寕摉偰偨帪偺yaccel抣)
+ignorehitpause = 1
+
+[State 1000, ]
+type = Varset
+trigger1 = Enemy,Stateno = 5100
+trigger2 = Enemy,Stateno = 0
+var(17) = 0
+
+[State 1000, ]
+type = Varset
+trigger1 = Stateno = 0
+var(18) = 0
+
+[State -2, 巆憸]
+type = AfterImage
+trigger1 = Movetype = H
+time = 1
+
+[State -2,bunshin]
+type = SelfState
+trigger1 = IsHelper(2205)
+trigger1 = stateno != 2205
+value = 2025
+
+;///////////////////////////////////////////////////////////////////////////
+;AI僿儖僷乕
+;///////////////////////////////////////////////////////////////////////////
+[Statedef 10000]
+anim=10000;側偵傕昞帵偟側偄逼覀艂鄠瘋菗鼈陚葌瓊膫鄳S慠栤戣側偄
+ctrl=0
+
+[State 10000]
+type = assertspecial
+trigger1 = 1
+flag = invisible
+
+[State 10000]
+type = NotHitBy
+value = SCA
+trigger1 = 1
+
+[State 10000,娫堘偄偱杮懱偑棃偨傜棫偪傊堏峴]
+type=selfstate
+trigger1=!ishelper
+value=0
+
+[State 10000,僾儗僀儎乕敾掕]
+type=varset
+trigger1=command="up"&&root,command="up"
+trigger2=command="down"&&root,command="down"
+trigger3=command="back"&&root,command="back"
+trigger4=command="fwd"&&root,command="fwd"
+trigger5=command="a"&&root,command="a"
+trigger6=command="b"&&root,command="b"
+trigger7=command="c"&&root,command="c"
+trigger8=command="x"&&root,command="x"
+trigger9=command="y"&&root,command="y"
+trigger10=command="z"&&root,command="z"
+trigger11=command="start"&&root,command="start"
+var(59)=-1
+
+[State 10000,棫偭偨傜徚幐]
+Type = DestroySelf
+triggerAll = isHelper
+Trigger1 = root,var(59)||var(59)=-1
+trigger2=command="up"&&root,command="up"
+trigger3=command="down"&&root,command="down"
+trigger4=command="back"&&root,command="back"
+trigger5=command="fwd"&&root,command="fwd"
+trigger6=command="a"&&root,command="a"
+trigger7=command="b"&&root,command="b"
+trigger8=command="c"&&root,command="c"
+trigger9=command="x"&&root,command="x"
+trigger10=command="y"&&root,command="y"
+trigger11=command="z"&&root,command="z"
+trigger12=command="start"&&root,command="start"
+
+[State 10000,套皋ON]
+type=varset
+triggerall=var(59)!=-1
+trigger1=root,command="up"
+trigger2=root,command="down"
+trigger3=root,command="back"
+trigger4=root,command="fwd"
+trigger5=root,command="a"
+trigger6=root,command="b"
+trigger7=root,command="c"
+trigger8=root,command="x"
+trigger9=root,command="y"
+trigger10=root,command="z"
+trigger11=root,command="start"
+var(59)=1
+
+;------------------------------------------------------------------------------
+;忬嫷偵傛傞峴摦惂尷曇乮昁嶦媄丒僈乕僪乯
+
+;p2movetype丄p2statetype丄power丄Life側偳
+;屳偄偺忬嫷傪偍傕偵棙梡偟偨峴摦傪庢傜偣傞條偵偟偰偄傑偡丅
+
+
+[State -3, 嬻拞僈乕僪]
+type  = ChangeState
+value = 132
+triggerall = p2movetype = A          ;憡庤偑峌寕拞
+triggerall = statetype = A           ;帺暘偑嬻拞
+triggerall = var(20) = 1             ;CPU帪
+triggerall = ctrl                    ;帺桼偵摦偗傞偲偒
+triggerall = stateno != [190,194]    ;偄傠偄傠偲僶僌懳嶔側偳傪巤偟偰偍偒傑偟傚偆(椺)
+triggerall = p2statetype = A         ;憡庤偑嬻拞
+trigger1   = P2BodyDist X = [40,80]  ;墦嫍棧梡
+trigger1   = var(21) = [0,39]        ;妋棪掅偄
+trigger2   = P2BodyDist X = [-20,39] ;嬤嫍棧梡(攚屻傕娷傔偰偄傞)
+trigger2   = var(21) = [0,59]        ;妋棪崅偄
+
+[State -3, 懳抧 棫偪僈乕僪]
+type  = ChangeState
+value = 130
+triggerall = p2movetype = A
+triggerall = statetype != A
+triggerall = var(20) = 1
+triggerall = ctrl
+triggerall = stateno != [190,194]
+triggerall = p2statetype = S
+trigger1   = P2BodyDist X = [40,90]
+trigger1   = var(21) = [0,14]         ;CPU偺僈乕僪偑屌偄偲婥暘偑埆偔側偄偱偡偐丠
+trigger2   = P2BodyDist X = [-15,39]
+trigger2   = var(21) = [10,29]
+trigger3   = enemy,teammode = simul   ;憡庤偑僠乕儉儌乕僪
+trigger3   = P2BodyDist X = [-50,-16] ;屻傠傪岦偄偰偄傞偲偒偵峌寕偝傟偨応崌
+trigger3   = var(21) = [0,39]
+trigger4   = P2BodyDist X = [-15,39]
+trigger4   = enemy,hitdefattr = S, NA,SA,HA ;憡庤偑傑偝偵棫偪峌寕傪偟偨弖娫
+trigger4   = Random < 200                   ;崅妋棪偱僈乕僪
+
+[State -3, 懳嬻 棫偪僈乕僪]
+type  = ChangeState
+value = 130
+triggerall = p2movetype = A
+triggerall = statetype != A
+triggerall = var(20) = 1
+triggerall = ctrl
+triggerall = stateno != [190,194]
+triggerall = p2statetype = A
+trigger1   = P2BodyDist X = [40,90]
+trigger1   = var(21) = [0,15]
+trigger2   = P2BodyDist X = [-40,39] ;傔偔傝懳嶔傪娷傓
+trigger2   = var(21) = [0,32]
+trigger3   = P2BodyDist X = [-40,39]
+trigger3   = enemy,hitdefattr = A, NA,SA,HA ;憡庤偑傑偝偵嬻拞峌寕傪偟偨弖娫
+trigger3   = Random < 400
+
+[State -3, 偟傖偑傒僈乕僪]
+type  = ChangeState
+value = 131
+triggerall = p2movetype = A
+triggerall = statetype != A
+triggerall = var(20) = 1
+triggerall = ctrl
+triggerall = stateno != [190,194]
+trigger1   = p2statetype = C
+trigger1   = P2BodyDist X = [40,85]
+trigger1   = var(21) = [0,24]
+trigger2   = p2statetype = C
+trigger2   = P2BodyDist X = [-20,39]
+trigger2   = var(21) = [0,39]
+trigger3   = p2statetype = S         ;棫偪壓抜懳嶔乧
+trigger3   = P2BodyDist X = [-15,39]
+trigger3   = var(21) = [0,9]
+trigger4   = p2statetype = C
+trigger4   = enemy,teammode = simul
+trigger4   = P2BodyDist X = [-50,-16]
+trigger4   = var(21) = [0,39]
+trigger5   = P2BodyDist X = [-20,39]
+trigger5   = enemy,hitdefattr = C, NA,SA,HA ;憡庤偑傑偝偵孅傒峌寕傪偟偨弖娫
+trigger5   = Random < 300
+
+[State -3, 搳偘]
+type  = ChangeState
+value = 800
+triggerall = var(20) = 1
+triggerall = roundstate = 2
+triggerall = Random = [0,59]
+triggerall = statetype = S
+triggerall = ctrl
+trigger1   = P2BodyDist X = [-3,3)
+trigger1   = p2statetype != A
+trigger1   = p2statetype != L
+trigger1   = p2movetype != H
+

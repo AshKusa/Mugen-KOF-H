@@ -1,0 +1,452 @@
+[Info]
+name = "RAINING"
+displayname = "&"
+author = "water"
+mugenversion = 1.1
+
+[BGdef]
+spr = stages/œ¬”Í¡À.sff
+debugbg = 0
+
+[Music]
+bgmusic  = sound/ruthless.mp3
+bgvolume = 255
+
+[Camera]
+startx =0
+starty =0
+boundleft=-165
+boundright=165
+boundhigh=-50
+boundlow   = 0
+verticalfollow =.1
+floortension = 50
+tension = 100
+overdrawhigh = 120
+overdrawlow = 120
+cuthigh = 0
+cutlow = 0
+zoomout = 0.9
+zoomin = 1
+tensionhigh = 200
+tensionlow = 200
+
+[PlayerInfo]
+p1startx = -120       
+p1starty = 0            
+p1startz = 0            
+p1facing = 1            
+
+p2startx = 120
+p2starty = 0
+p2startz = 0
+p2facing = -1
+
+p3startx = -250       
+p3starty = 0            
+p3startz = 0            
+p3facing = 1            
+
+p4startx = 250
+p4starty = 0
+p4startz = 0
+p4facing = -1
+
+leftbound  = -4000 
+rightbound =  4000 
+topbound  =  0     
+botbound  =  0  
+
+[Bound]
+screenleft  =30
+screenright =30
+
+[StageInfo]
+localcoord = 854,480
+zoffset = 438
+autoturn = 1
+
+[Shadow]
+intensity = 0
+color = 0,0,0
+yscale = -.1
+fade.range = -400,-100
+
+[Reflection]
+intensity = 64
+
+[BG BACKDROP]
+type = normal
+spriteno = 1,31
+delta = 1,2
+
+[BG BG 1]
+type = normal
+spriteno = 1,1
+delta = 1,2
+mask = 1
+[BG BG 2]
+type = normal
+spriteno = 1,2
+delta = 1,2
+mask = 1
+[BG BG 3]
+type = normal
+spriteno = 1,3
+delta = 1,2
+mask = 1
+[BG BG 4]
+type = normal
+spriteno = 1,4
+delta = 1,2
+mask = 1
+[BG BG 5]
+type = normal
+spriteno = 1,5
+delta = 1,2
+mask = 1
+[BG BG 6]
+type = normal
+spriteno = 1,6
+delta = 1,2
+mask = 1
+[BG BG 7]
+type = normal
+spriteno = 1,7
+delta = 1,2
+mask = 1
+[BG BG 8]
+type = normal
+spriteno = 1,8
+delta = 1,2
+mask = 1
+[BG BG 9]
+type = normal
+spriteno = 1,9
+delta = 1,2
+mask = 1
+[BG BG 10]
+type = normal
+spriteno = 1,10
+delta = 1,2
+mask = 1
+[BG BG 11]
+type = normal
+spriteno = 1,11
+delta = 1,2
+mask = 1
+[BG BG 12]
+type = normal
+spriteno = 1,12
+delta = 1,2
+mask = 1
+[BG BG 13]
+type = normal
+spriteno = 1,13
+delta = 1,2
+mask = 1
+[BG BG 14]
+type = normal
+spriteno = 1,14
+delta = 1,2
+mask = 1
+[BG BG 15]
+type = normal
+spriteno = 1,15
+delta = 1,2
+mask = 1
+[BG BG 16]
+type = normal
+spriteno = 1,16
+delta = 1,2
+mask = 1
+[BG BG 17]
+type = normal
+spriteno = 1,17
+delta = 1,2
+mask = 1
+[BG BG 18]
+type = normal
+spriteno = 1,18
+delta = 1,2
+mask = 1
+[BG BG 19]
+type = normal
+spriteno = 1,19
+delta = 1,2
+mask = 1
+[BG BG 20]
+type = normal
+spriteno = 1,20
+delta = 1,2
+mask = 1
+[BG BG 21]
+type = normal
+spriteno = 1,21
+delta = 1,2
+mask = 1
+[BG BG 22]
+type = normal
+spriteno = 1,22
+delta = 1,2
+mask = 1
+[BG BG 23]
+type = normal
+spriteno = 1,23
+delta = 1,2
+mask = 1
+[BG BG 24]
+type = normal
+spriteno = 1,24
+delta = 1,2
+mask = 1
+[BG BG 25]
+type = normal
+spriteno = 1,25
+delta = 1,2
+mask = 1
+[BG BG 26]
+type = normal
+spriteno = 1,26
+delta = 1,2
+mask = 1
+[BG BG 27]
+type = normal
+spriteno = 1,27
+delta = 1,2
+mask = 1
+[BG BG 28]
+type = normal
+spriteno = 1,28
+delta = 1,2
+mask = 1
+[BG BG 29]
+type = normal
+spriteno = 1,29
+delta = 1,2
+mask = 1
+[BG BG 30]
+type = normal
+spriteno = 1,30
+delta = 1,2
+mask = 1
+[BG RAIN]
+type  = anim
+actionno = 2
+layerno = 1
+start = -800,-60
+delta = 0,0
+mask = 1
+
+[BG RAIN]
+type  = anim
+actionno = 2
+layerno = 1
+start = 0,-60
+delta = 0,0
+mask = 1
+
+[Begin Action 2]
+3,0, 0,0, 1,,AS110D256
+3,1, 0,0, 1,,AS110D256
+3,2, 0,0, 1,,AS110D256
+3,3, 0,0, 1,,AS110D256
+3,4, 0,0, 1,,AS110D256
+3,5, 0,0, 1,,AS110D256
+3,6, 0,0, 1,,AS110D256
+3,7, 0,0, 1,,AS110D256
+3,8, 0,0, 1,,AS110D256
+3,9, 0,0, 1,,AS110D256
+3,10, 0,0, 1,,AS110D256
+[BG BAT 1]
+type = anim
+actionno = 1
+delta = 1,2
+start = -310,-150
+mask = 1
+velocity = 3.9,0
+tile = 1,0
+tilespacing = 2900,0
+sin.y = 30,400
+[BG BAT 2]
+type = anim
+actionno = 1
+delta = 1,2
+start = -340,-50
+mask = 1
+velocity = 3.7,0
+tile = 1,0
+tilespacing = 2900,0
+sin.y = 30,400
+[BG BAT 3]
+type = anim
+actionno = 1
+delta = 1,2
+start = -320,50
+mask = 1
+velocity = 3.8,0
+tile = 1,0
+tilespacing = 2900,0
+sin.y = 30,400
+[BG BAT 4]
+type = anim
+actionno = 1
+delta = 1,2
+start = -330,150
+mask = 1
+velocity = 4,0
+tile = 1,0
+tilespacing = 2900,0
+sin.y = 30,200
+[Begin Action 1]
+4,0, 0,0, 5
+4,1, 0,0, 5
+4,2, 0,0, 5
+4,3, 0,0, 5
+[BG LIGHT 1]
+type = anim
+actionno = 3
+start = 1,160
+delta = 1,2
+[Begin Action 3]
+5,0,0,0,4,,AS180D256
+5,0,0,0,4,,AS167D256
+5,0,0,0,4,,AS153D256
+5,0,0,0,4,,AS140D256
+5,0,0,0,4,,AS128D256
+5,0,0,0,4,,AS114D256
+5,0,0,0,4,,AS96D256
+5,0,0,0,4,,AS72D256
+5,0,0,0,4,,AS64D256
+5,0,0,0,4,,AS56D256
+5,0,0,0,4,,AS48D256
+5,0,0,0,4,,AS40D256
+5,0,0,0,4,,AS32D256
+5,0,0,0,4,,AS24D256
+5,0,0,0,4,,AS16D256
+5,0,0,0,4,,AS24D256
+5,0,0,0,4,,AS32D256
+5,0,0,0,4,,AS40D256
+5,0,0,0,4,,AS48D256
+5,0,0,0,4,,AS56D256
+5,0,0,0,4,,AS64D256
+5,0,0,0,4,,AS72D256
+5,0,0,0,4,,AS96D256
+5,0,0,0,4,,AS114D256
+5,0,0,0,4,,AS128D256
+5,0,0,0,4,,AS140D256
+5,0,0,0,4,,AS153D256
+5,0,0,0,4,,AS167D256
+[BG LIGHT 2]
+type = anim
+actionno = 4
+start = 1,160
+delta = 1,2
+[Begin Action 4]
+5,1,0,0,52,,A
+9,0,0,0,5,,A
+5,1,0,0,14,,A
+9,0,0,0,3,,A
+5,1,0,0,5,,A
+9,0,0,0,2,,A
+5,1,0,0,7,,A
+9,0,0,0,3,,A
+5,1,0,0,102,,A
+9,0,0,0,3,,A
+5,1,0,0,60,,A
+9,0,0,0,5,,A
+5,1,0,0,14,,A
+9,0,0,0,3,,A
+5,1,0,0,5,,A
+9,0,0,0,2,,A
+5,1,0,0,7,,A
+9,0,0,0,3,,A
+5,1,0,0,112,,A
+9,0,0,0,3,,A
+[BG RIPPLE]
+type  = anim
+actionno = 5
+start = 0, 255
+delta = 1,2
+mask = 1
+[Begin Action 5]
+6,0,0,0,4
+6,1,0,0,4
+6,2,0,0,4
+6,3,0,0,4
+6,4,0,0,4
+6,5,0,0,4
+6,6,0,0,4
+6,7,0,0,4
+6,8,0,0,4
+6,9,0,0,4
+6,10,0,0,4
+6,11,0,0,4
+6,12,0,0,4
+6,13,0,0,4
+6,14,0,0,4
+6,15,0,0,4
+6,16,0,0,4
+6,17,0,0,4
+6,18,0,0,4
+6,19,0,0,4
+[BG FOG]
+type = normal
+start = 0,320
+spriteno = 2,0
+trans = addalpha
+alpha = 56,256
+tile = 1,0
+velocity = .4,0
+delta = 1,2
+[BG LEFT BUSH]
+type = normal
+spriteno = 1,32
+delta = 1,2
+mask = 1
+[BG RIGHT BUSH]
+type = normal
+spriteno = 1,33
+delta = 1,2
+mask = 1
+[BG LEFT BUSH OVERLAY]
+type = anim
+actionno = 32
+delta = 1,2
+mask = 1
+layerno = 1
+[Begin Action 32]
+1,32,0,0,-1,,AS256D92
+[BG RIGHT BUSH OVERLAY]
+type = anim
+actionno = 33
+delta = 1,2
+mask = 1
+layerno = 1
+[Begin Action 33]
+1,33,0,0,-1,,AS256D92
+
+[BG FLASH]
+type = anim
+actionno = 101
+layerno = 1
+delta = 0,0
+[Begin Action 101]
+0,0,0,0,94
+1,31,0,0,4,,AS256D256
+1,31,0,0,4,,AS240D256
+1,31,0,0,4,,AS224D256
+1,31,0,0,4,,AS208D256
+1,31,0,0,4,,AS192D256
+1,31,0,0,4,,AS176D256
+1,31,0,0,4,,AS160D256
+1,31,0,0,4,,AS144D256
+1,31,0,0,4,,AS128D256
+1,31,0,0,4,,AS112D256
+1,31,0,0,4,,AS96D256
+1,31,0,0,4,,AS80D256
+1,31,0,0,4,,AS64D256
+1,31,0,0,4,,AS48D256
+1,31,0,0,4,,AS32D256
+1,31,0,0,4,,AS16D256
+-1,0,0,0,-1
